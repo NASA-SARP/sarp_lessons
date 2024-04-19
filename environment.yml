@@ -10,6 +10,7 @@ dependencies:
   - dask
   - h5py
   - netcdf4
+  - earthaccess
   - openpyxl
   - seaborn
   - bokeh
