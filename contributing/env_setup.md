@@ -1,5 +1,13 @@
 # Contributing to SARP Lessons
 
+## How can I contribute?
+
+Want to help make the SARP programming website better? Here are a few ways:
+- submit [a Github Issue](https://github.com/NASA-SARP/sarp_lessons/issues) documenting a mistake or error you found on the website
+- contribute a piece of your code to the Examples section
+
+Talk to your coding mentor to learn more about the steps for completing either of these contributions!
+
 ## Set up the docs environment locally
 
 This repo can be cloned from github using the clone url:
@@ -19,7 +27,7 @@ To install an environment with the required developer dependencies run the follo
 conda env create -f developer_env.yml
 ```
 
-This will create an environment called `sarp_docs` for building and updating the website. It can be activated with `conda activate sarp_docs`.
+This will create an environment called `sarp_docs` for building and updating the website. It can be activated with `conda activate sarp_docs`. If working in Cryocloud `jupyter-book` is already installed in the base environment, so all the development code can be run by installing `ghp-import` with `conda install ghp-import`. 
 
 (Also, if you're not using [mamba](https://mamba.readthedocs.io/en/latest/) yet, check it out! It's a great package that really speeds up conda commands.)
 
@@ -27,16 +35,20 @@ This will create an environment called `sarp_docs` for building and updating the
 
 Once you have an environment created you can build the docs. This website is setup as a series of Jupyter notebooks, which Jupyter Book complies into HTML. After making changes to the Jupyter notebooks you need to re-compile the HTML to create updated website source code.
 
-To build the website HTML use:
+To build the website HTML run (from the environment with `jupyter-book` installed):
 
 ```bash
 jupyter-book build .
 ```
-After that command has completed a new folder should appear in the root, `_build`, which contains the website HTML files. You can view these files in the browser by running (also from the project root):
+If running this on the cloud make sure you are using an instance with 3.7GB of memory or more.
+
+After the `jupyter-build` command has completed a new folder should appear in the root, `_build`, which contains the website HTML files. You can view these files in the browser by running (also from the project root):
 ```bash
 python -m http.server --directory _build/html/
 ```
 This starts a local server by default on port 8000. Go to the browser, type  `localhost:8000` into the url box, and the locally compiled website should appear.
+
+If you are working on a cloud platform you will need to use `jupyter-server-proxy` to access server ports. From your platform (with `jupyter-server-proxy` installed) view the website build by opening the following url in a new tab: `hub.cryointhecloud.com/user/YOUR_USERNAME/proxy/8000/`.
 
 ### Development process
 
