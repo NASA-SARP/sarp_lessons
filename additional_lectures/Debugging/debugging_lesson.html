@@ -3,70 +3,68 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Debugging &#8212; SARP Programming Lessons</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional_lectures/Debugging/debugging_lesson';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Time Series Statistics" href="../time_series_statistics/oceans_stats_examples.html" />
     <link rel="prev" title="Mapping with cartopy and Colors" href="../../lessons/tabular_data/mapping_colors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,19 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +110,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -140,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -157,50 +180,50 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/1_variables_types_ifstatements.html">Variables, Data Types, and if Statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/2_lists_dictionaries.html">Lists and Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/datetimes.html">Datetimes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/spatial_data.html">Spatial Data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/1_xarray.html">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/2_xarray_computation.html">Starting Computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/3_xarray_groupby.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/spatial_operations.html">Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/1_pandas.html">The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/2_filtering_groupby.html">Filtering and groupby</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/3_geopandas.html"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/static_visualization_matplotlib.html">Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/mapping_colors.html">Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../time_series_statistics/oceans_stats_examples.html">Time Series Statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../rasters/index.html">Raster Data Lessons</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rasters/index.html">Raster Data Lessons</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/1_arrays_numpy.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/2_raster_fundamentals.html">Working with rasters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/3_accessing_coordinates.html">Accessing Data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Visualization/index.html">Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Visualization/index.html">Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Visualization/2_building_on_matplotlib.html">Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Visualization/3_dynamic_visualization.html">Dynamic Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Visualization/viewing_images.html">Viewing Images</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Sheets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/1_variables_data_practice.html">Variables, Data Types and If statements Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/2_lists_dicts_practice.html">Lists and Dictionaries Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_practice.html">Datetimes Practice</a></li>
@@ -210,28 +233,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_answers.html">Datetimes Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/spatial_data_answers.html">Spatial Data Answers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/2_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Computation Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_answers.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_practice.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_practice.html">Filtering and Groupby Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/3_geopandas_practice.html">Practice with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_answers.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_answers.html">Filtering and Groupby Answers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/1_arrays_numpy_practice.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/2_raster_fundamentals_practice.html">Raster Fundamentals Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/3_accessing_coordinates_practice.html">Accessing Coordinates Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/1_arrays_numpy_answers.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Answers</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
@@ -258,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -267,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -396,20 +419,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -468,12 +493,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="debugging">
-<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">#</a></h1>
-<section id="using-a-python-traceback">
-<h2>1) Using a Python Traceback<a class="headerlink" href="#using-a-python-traceback" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="debugging">
+<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h1>
+<div class="section" id="using-a-python-traceback">
+<h2>1) Using a Python Traceback<a class="headerlink" href="#using-a-python-traceback" title="Permalink to this heading">#</a></h2>
 <p>(Also called a slacktrace)</p>
 <img src="https://files.realpython.com/media/python_traceback_2.b27a4eb060a8.png">
 <ol class="arabic simple">
@@ -511,11 +536,11 @@ document.write(`
 </div>
 </div>
 <p><em>Indentify the parts of the slacktrace in the error message above.</em></p>
-<section id="python-error-messages">
-<h3>Python Error Messages<a class="headerlink" href="#python-error-messages" title="Permalink to this headline">#</a></h3>
+<div class="section" id="python-error-messages">
+<h3>Python Error Messages<a class="headerlink" href="#python-error-messages" title="Permalink to this heading">#</a></h3>
 <p>Python error messages are shown <strong>at the bottom</strong> of a Traceback.  This is the first thing you often read in the traceback.</p>
-<section id="indexerror">
-<h4><code class="docutils literal notranslate"><span class="pre">IndexError</span></code><a class="headerlink" href="#indexerror" title="Permalink to this headline">#</a></h4>
+<div class="section" id="indexerror">
+<h4><code class="docutils literal notranslate"><span class="pre">IndexError</span></code><a class="headerlink" href="#indexerror" title="Permalink to this heading">#</a></h4>
 <p>An <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> occurs when you try to access a value using an index and that index does not exist in the object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,9 +561,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="keyerror">
-<h4><code class="docutils literal notranslate"><span class="pre">KeyError</span></code><a class="headerlink" href="#keyerror" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="keyerror">
+<h4><code class="docutils literal notranslate"><span class="pre">KeyError</span></code><a class="headerlink" href="#keyerror" title="Permalink to this heading">#</a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> occurs when you are trying to access a named value of an object (a key) that does not exist.  This is common in dictionaries and pandas DataFrames.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -570,9 +595,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="nameerror">
-<h4><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="nameerror">
+<h4><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this heading">#</a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">NameError</span></code> occurs when you try to use a variable that doesn’t exist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,9 +616,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="syntaxerror">
-<h4><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code><a class="headerlink" href="#syntaxerror" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="syntaxerror">
+<h4><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code><a class="headerlink" href="#syntaxerror" title="Permalink to this heading">#</a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> occurs when you have typed something that breaks the grammar rules of the core Python language. This could be extra parenthesis, mismatching quotes, backwards brackets, or a variety of other things.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -625,9 +650,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="typeerror">
-<h4><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="typeerror">
+<h4><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this heading">#</a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is raised when you try to do something to an object, for example using a function, method, or operator, that the object can’t handle.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -648,9 +673,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="attributeerror">
-<h4><code class="docutils literal notranslate"><span class="pre">AttributeError</span></code><a class="headerlink" href="#attributeerror" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="attributeerror">
+<h4><code class="docutils literal notranslate"><span class="pre">AttributeError</span></code><a class="headerlink" href="#attributeerror" title="Permalink to this heading">#</a></h4>
 <p>An <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> occurs when you try to get information from an object and the type of information you are looking for doesn’t exist on that type of object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -671,9 +696,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="valueerror">
-<h4><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this headline">#</a></h4>
+</div>
+<div class="section" id="valueerror">
+<h4><code class="docutils literal notranslate"><span class="pre">ValueError</span></code><a class="headerlink" href="#valueerror" title="Permalink to this heading">#</a></h4>
 <p>A <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised when a function/method gets an input value that has the right type but the value is not appropriate.  It is a very broad reaching error so it sometimes isn’t obvious what the problem is if you get a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -694,10 +719,10 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="sometimes-it-s-mixed">
-<h3>Sometimes it’s mixed<a class="headerlink" href="#sometimes-it-s-mixed" title="Permalink to this headline">#</a></h3>
+</div>
+</div>
+<div class="section" id="sometimes-it-s-mixed">
+<h3>Sometimes it’s mixed<a class="headerlink" href="#sometimes-it-s-mixed" title="Permalink to this heading">#</a></h3>
 <p>At times the error message you get won’t be the most helpful thing to lead to you to the solution. Keep this in mind - while the error message is a very useful place to start your debugging be open to considering additional avenues of error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -724,9 +749,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="libraries">
-<h3>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="libraries">
+<h3>Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h3>
 <p>Additional libraries will have their own custom errors that you will learn as you use them.  Read the error message type to become familiar with the terminology then move on to reading the error message.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -779,9 +804,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="an-example">
-<h3>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="an-example">
+<h3>An Example<a class="headerlink" href="#an-example" title="Permalink to this heading">#</a></h3>
 <p>Take a few minutes to debug the following block of code.  Keep note of what strategies you use to find and fix errors.</p>
 <ul class="simple">
 <li><p>How do you know when something isn’t working?</p></li>
@@ -813,9 +838,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="example-2-pandas">
-<h3>Example 2 (pandas)<a class="headerlink" href="#example-2-pandas" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="example-2-pandas">
+<h3>Example 2 (pandas)<a class="headerlink" href="#example-2-pandas" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -849,12 +874,12 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="reading-documentation">
-<h2>3) Reading Documentation<a class="headerlink" href="#reading-documentation" title="Permalink to this headline">#</a></h2>
-<section id="remembering-arguments-args-and-keyword-arguments-kwargs">
-<h3>Remembering arguments (<code class="docutils literal notranslate"><span class="pre">args</span></code>) and keyword arguments (<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>)<a class="headerlink" href="#remembering-arguments-args-and-keyword-arguments-kwargs" title="Permalink to this headline">#</a></h3>
+</div>
+</div>
+<div class="section" id="reading-documentation">
+<h2>3) Reading Documentation<a class="headerlink" href="#reading-documentation" title="Permalink to this heading">#</a></h2>
+<div class="section" id="remembering-arguments-args-and-keyword-arguments-kwargs">
+<h3>Remembering arguments (<code class="docutils literal notranslate"><span class="pre">args</span></code>) and keyword arguments (<code class="docutils literal notranslate"><span class="pre">kwargs</span></code>)<a class="headerlink" href="#remembering-arguments-args-and-keyword-arguments-kwargs" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pollutants</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;co&#39;</span><span class="p">,</span> <span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="s1">&#39;no2&#39;</span><span class="p">,</span> <span class="s1">&#39;o3&#39;</span><span class="p">]</span>
@@ -890,9 +915,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="example-with-rasters-matplotlib-plot-imshow">
-<h3>Example with rasters: <code class="docutils literal notranslate"><span class="pre">matplotlib.plot.imshow</span></code><a class="headerlink" href="#example-with-rasters-matplotlib-plot-imshow" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="example-with-rasters-matplotlib-plot-imshow">
+<h3>Example with rasters: <code class="docutils literal notranslate"><span class="pre">matplotlib.plot.imshow</span></code><a class="headerlink" href="#example-with-rasters-matplotlib-plot-imshow" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">documentation page</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -942,9 +967,9 @@ document.write(`
 <img alt="../../_images/a38e3ec46731a815ae758861ad956020674420a4e4e147e11100030273d0fe43.png" src="../../_images/a38e3ec46731a815ae758861ad956020674420a4e4e147e11100030273d0fe43.png" />
 </div>
 </div>
-</section>
-<section id="example-with-pandas-plot-scatter">
-<h3>Example with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>: <code class="docutils literal notranslate"><span class="pre">.plot.scatter()</span></code><a class="headerlink" href="#example-with-pandas-plot-scatter" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="example-with-pandas-plot-scatter">
+<h3>Example with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>: <code class="docutils literal notranslate"><span class="pre">.plot.scatter()</span></code><a class="headerlink" href="#example-with-pandas-plot-scatter" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.scatter.html">documentation page</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -975,9 +1000,9 @@ document.write(`
 <img alt="../../_images/e3e0450a2973aedad760bc4445078a0aa371588ba22c7ec7ea236441919f0565.png" src="../../_images/e3e0450a2973aedad760bc4445078a0aa371588ba22c7ec7ea236441919f0565.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1004,11 +1029,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../../lessons/tabular_data/mapping_colors.html"
@@ -1028,10 +1052,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1039,6 +1060,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1090,9 +1112,10 @@ By Rachel Wegener
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1116,8 +1139,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,70 +3,68 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Building on top of matplotlib &#8212; SARP Programming Lessons</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional_lectures/Visualization/2_building_on_matplotlib';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Dynamic Visualization" href="3_dynamic_visualization.html" />
     <link rel="prev" title="Visualization" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,19 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +110,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -140,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -157,50 +180,50 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/1_variables_types_ifstatements.html">Variables, Data Types, and if Statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/2_lists_dictionaries.html">Lists and Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/datetimes.html">Datetimes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/spatial_data.html">Spatial Data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/1_xarray.html">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/2_xarray_computation.html">Starting Computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/3_xarray_groupby.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/spatial_operations.html">Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/1_pandas.html">The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/2_filtering_groupby.html">Filtering and groupby</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/3_geopandas.html"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/static_visualization_matplotlib.html">Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/mapping_colors.html">Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Debugging/debugging_lesson.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../time_series_statistics/oceans_stats_examples.html">Time Series Statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../rasters/index.html">Raster Data Lessons</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rasters/index.html">Raster Data Lessons</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/1_arrays_numpy.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/2_raster_fundamentals.html">Working with rasters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/3_accessing_coordinates.html">Accessing Data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Visualization</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Visualization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_dynamic_visualization.html">Dynamic Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="viewing_images.html">Viewing Images</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Sheets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/1_variables_data_practice.html">Variables, Data Types and If statements Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/2_lists_dicts_practice.html">Lists and Dictionaries Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_practice.html">Datetimes Practice</a></li>
@@ -210,28 +233,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_answers.html">Datetimes Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/spatial_data_answers.html">Spatial Data Answers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/2_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Computation Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_answers.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_practice.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_practice.html">Filtering and Groupby Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/3_geopandas_practice.html">Practice with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_answers.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_answers.html">Filtering and Groupby Answers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/1_arrays_numpy_practice.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/2_raster_fundamentals_practice.html">Raster Fundamentals Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/3_accessing_coordinates_practice.html">Accessing Coordinates Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/1_arrays_numpy_answers.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Answers</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
@@ -258,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -267,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -396,20 +419,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -459,12 +484,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="building-on-top-of-matplotlib">
-<h1>Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#building-on-top-of-matplotlib" title="Permalink to this headline">#</a></h1>
-<section id="read-in-datasets">
-<h2>Read in Datasets<a class="headerlink" href="#read-in-datasets" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="building-on-top-of-matplotlib">
+<h1>Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#building-on-top-of-matplotlib" title="Permalink to this heading">#</a></h1>
+<div class="section" id="read-in-datasets">
+<h2>Read in Datasets<a class="headerlink" href="#read-in-datasets" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>WAS 2020 Data</p></li>
 <li><p>Subset of an AVIRIS image</p></li>
@@ -496,9 +521,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="accessing-the-matplotlib-in-pandas">
-<h2>Accessing the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#accessing-the-matplotlib-in-pandas" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="accessing-the-matplotlib-in-pandas">
+<h2>Accessing the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#accessing-the-matplotlib-in-pandas" title="Permalink to this heading">#</a></h2>
 <p>pandas’ <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/04_plotting.html#">plotting tutorial</a>.  Useful for reference or for skimming to see more of what the library can do.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +547,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;CO over time for Flagstaff, AZ&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/b8bfecf6dfae375041d780e932fa90a282fab01203a24892b50dbbcca882b4c7.png" src="../../_images/b8bfecf6dfae375041d780e932fa90a282fab01203a24892b50dbbcca882b4c7.png" />
+<img alt="../../_images/dc491db68b8aa0d2d0ddae7ead19c6d738ee8ad67edf999ad5eeb0a170b0898b.png" src="../../_images/dc491db68b8aa0d2d0ddae7ead19c6d738ee8ad67edf999ad5eeb0a170b0898b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -543,12 +568,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ab2a0c2d024781d1e739522d02728b1e98cc28e2fa78b168f3a77a2181cff995.png" src="../../_images/ab2a0c2d024781d1e739522d02728b1e98cc28e2fa78b168f3a77a2181cff995.png" />
+<img alt="../../_images/aaa128c13f94bdc544bafce5a3634def256f8acca5e462d9c5f35a09fae163e6.png" src="../../_images/aaa128c13f94bdc544bafce5a3634def256f8acca5e462d9c5f35a09fae163e6.png" />
 </div>
 </div>
 <p><a class="reference external" href="https://stackoverflow.com/a/6541482/9081082"><code class="docutils literal notranslate"><span class="pre">.fig.subplots_adjust()</span></code> inputs</a></p>
-<section id="scatter-plot-example">
-<h3>Scatter plot example<a class="headerlink" href="#scatter-plot-example" title="Permalink to this headline">#</a></h3>
+<div class="section" id="scatter-plot-example">
+<h3>Scatter plot example<a class="headerlink" href="#scatter-plot-example" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -577,7 +602,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Butane ratios&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/fd03b17a1fbceccea8876b493ee7893667172a9afebc97e586f92f51a6144894.png" src="../../_images/fd03b17a1fbceccea8876b493ee7893667172a9afebc97e586f92f51a6144894.png" />
+<img alt="../../_images/7daa7862efcd0602c4a427af835f8953321e5d74fd5af3e57b900a4b70895245.png" src="../../_images/7daa7862efcd0602c4a427af835f8953321e5d74fd5af3e57b900a4b70895245.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -590,25 +615,25 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/6a57eb55a402385dbe798bffc38d4c218ef85a171ef222ecd27a0df24e1a3a5e.png" src="../../_images/6a57eb55a402385dbe798bffc38d4c218ef85a171ef222ecd27a0df24e1a3a5e.png" />
+<img alt="../../_images/59d8c38299f32261fbb03638719aced8dea9cf365aa5245a1f0ad69bd1ab9273.png" src="../../_images/59d8c38299f32261fbb03638719aced8dea9cf365aa5245a1f0ad69bd1ab9273.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="seaborn">
-<h2><code class="docutils literal notranslate"><span class="pre">seaborn</span></code><a class="headerlink" href="#seaborn" title="Permalink to this headline">#</a></h2>
-<section id="trading-control-for-ease">
-<h3>Trading control for ease<a class="headerlink" href="#trading-control-for-ease" title="Permalink to this headline">#</a></h3>
+</div>
+</div>
+<div class="section" id="seaborn">
+<h2><code class="docutils literal notranslate"><span class="pre">seaborn</span></code><a class="headerlink" href="#seaborn" title="Permalink to this heading">#</a></h2>
+<div class="section" id="trading-control-for-ease">
+<h3>Trading control for ease<a class="headerlink" href="#trading-control-for-ease" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> really lets you do most anything you can imagine to plots.  While the control is nice you don’t always need it.  If instead you are interested in making plots faster, you might use the library <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
 <p>Note: <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> is most useful if you are using data in a pandas dataframe.  Creating plots from seaborn for numpy matrices is totally fine, but you don’t get the same level of benefit as you do with column labelled pandas data.</p>
-</section>
-<section id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">-n</span> <span class="pre">lessons</span> <span class="pre">seaborn</span> <span class="pre">--yes</span></code></p>
 <p><strong>Feature:</strong> known for built in statistics support</p>
-</section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Nice tutorial section, seperated by need: <a class="reference external" href="https://seaborn.pydata.org/tutorial.html">https://seaborn.pydata.org/tutorial.html</a></p></li>
 <li><p>Example gallery also great for inspiration: <a class="reference external" href="https://seaborn.pydata.org/examples/index.html">https://seaborn.pydata.org/examples/index.html</a></p></li>
@@ -628,9 +653,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="example-with-a-pandas-dataframe">
-<h3>Example with a pandas dataframe<a class="headerlink" href="#example-with-a-pandas-dataframe" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="example-with-a-pandas-dataframe">
+<h3>Example with a pandas dataframe<a class="headerlink" href="#example-with-a-pandas-dataframe" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">relplot</span></code> <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html">docs page</a></p></li>
 </ul>
@@ -650,14 +675,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rwegener/miniconda3/envs/sarp/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7effb2a11c90&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x164cea620&gt;
-</pre></div>
-</div>
-<img alt="../../_images/bf6a1663d69c243865e9a07063127fbc1db4e6de43674c82d9dac0817140f671.png" src="../../_images/bf6a1663d69c243865e9a07063127fbc1db4e6de43674c82d9dac0817140f671.png" />
+<img alt="../../_images/d9cb8b91c894e0eeb75547a07860aafc0d189791d0b64670195c003091ac5530.png" src="../../_images/d9cb8b91c894e0eeb75547a07860aafc0d189791d0b64670195c003091ac5530.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -668,14 +689,105 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rwegener/miniconda3/envs/sarp/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OptionError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># A line plot version</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">was_2020_subset</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;i-Pentane (E/B)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;n-Pentane (E/B)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/relational.py:955,</span> in <span class="ni">relplot</span><span class="nt">(data, x, y, hue, size, style, units, row, col, col_wrap, row_order, col_order, palette, hue_order, hue_norm, sizes, size_order, size_norm, markers, dashes, style_order, legend, kind, height, aspect, facet_kws, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="n">g</span> <span class="o">=</span> <span class="n">FacetGrid</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">947</span>     <span class="n">data</span><span class="o">=</span><span class="n">full_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="o">**</span><span class="n">grid_kws</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">951</span>     <span class="o">**</span><span class="n">facet_kws</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">954</span> <span class="c1"># Draw the plot</span>
+<span class="ne">--&gt; </span><span class="mi">955</span> <span class="n">g</span><span class="o">.</span><span class="n">map_dataframe</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kws</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">957</span> <span class="c1"># Label the axes, using the original variables</span>
+<span class="g g-Whitespace">    </span><span class="mi">958</span> <span class="n">g</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="n">variables</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">),</span> <span class="n">ylabel</span><span class="o">=</span><span class="n">variables</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">))</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/axisgrid.py:819,</span> in <span class="ni">FacetGrid.map_dataframe</span><span class="nt">(self, func, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">816</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_ijk</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>     <span class="c1"># Draw the plot</span>
+<span class="ne">--&gt; </span><span class="mi">819</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_facet_plot</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span> <span class="c1"># For axis labels, prefer to use positional args for backcompat</span>
+<span class="g g-Whitespace">    </span><span class="mi">822</span> <span class="c1"># but also extract the x/y kwargs and use if no corresponding arg</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span> <span class="n">axis_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/axisgrid.py:848,</span> in <span class="ni">FacetGrid._facet_plot</span><span class="nt">(self, func, ax, plot_args, plot_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>     <span class="n">plot_args</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span>     <span class="n">plot_kwargs</span><span class="p">[</span><span class="s2">&quot;ax&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ax</span>
+<span class="ne">--&gt; </span><span class="mi">848</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">plot_args</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span> <span class="c1"># Sort out the supporting information</span>
+<span class="g g-Whitespace">    </span><span class="mi">851</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_legend_data</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/relational.py:645,</span> in <span class="ni">lineplot</span><span class="nt">(data, x, y, hue, size, style, units, palette, hue_order, hue_norm, sizes, size_order, size_norm, dashes, markers, style_order, estimator, errorbar, n_boot, seed, orient, sort, err_style, err_kws, legend, ci, ax, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span> <span class="n">color</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_default_color</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">,</span> <span class="n">hue</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">645</span> <span class="n">p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">646</span> <span class="k">return</span> <span class="n">ax</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/relational.py:423,</span> in <span class="ni">_LinePlotter.plot</span><span class="nt">(self, ax, kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span> <span class="c1"># TODO How to handle NA? We don&#39;t want NA to propagate through to the</span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span> <span class="c1"># estimate/CI when some values are present, but we would also like</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span> <span class="c1"># matplotlib to show &quot;gaps&quot; in the line when all values are missing.</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">420</span> 
+<span class="g g-Whitespace">    </span><span class="mi">421</span> <span class="c1"># Loop over the semantic subsets and add to the plot</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span> <span class="n">grouping_vars</span> <span class="o">=</span> <span class="s2">&quot;hue&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;style&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">423</span> <span class="k">for</span> <span class="n">sub_vars</span><span class="p">,</span> <span class="n">sub_data</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_data</span><span class="p">(</span><span class="n">grouping_vars</span><span class="p">,</span> <span class="n">from_comp_data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">426</span>         <span class="n">sort_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">,</span> <span class="n">orient</span><span class="p">,</span> <span class="n">other</span><span class="p">]</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/_oldcore.py:1028,</span> in <span class="ni">VectorPlotter.iter_data</span><span class="nt">(self, grouping_vars, reverse, from_comp_data, by_facet, allow_empty, dropna)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="n">grouping_vars</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="n">var</span> <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">grouping_vars</span> <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">variables</span>
+<span class="g g-Whitespace">   </span><span class="mi">1025</span> <span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1027</span> <span class="k">if</span> <span class="n">from_comp_data</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1028</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comp_data</span>
+<span class="g g-Whitespace">   </span><span class="mi">1029</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1030</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_data</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/_oldcore.py:1119,</span> in <span class="ni">VectorPlotter.comp_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1117</span> <span class="n">grouped</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_data</span><span class="p">[</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">converters</span><span class="p">[</span><span class="n">var</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1118</span> <span class="k">for</span> <span class="n">converter</span><span class="p">,</span> <span class="n">orig</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1119</span>     <span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;mode.use_inf_as_null&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1120</span>         <span class="n">orig</span> <span class="o">=</span> <span class="n">orig</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1121</span>         <span class="k">if</span> <span class="n">var</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">var_levels</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span>             <span class="c1"># TODO this should happen in some centralized location</span>
+<span class="g g-Whitespace">   </span><span class="mi">1123</span>             <span class="c1"># it is similar to GH2419, but more complicated because</span>
+<span class="g g-Whitespace">   </span><span class="mi">1124</span>             <span class="c1"># supporting `order` in categorical plots is tricky</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:480,</span> in <span class="ni">option_context.__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span> <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">480</span>     <span class="bp">self</span><span class="o">.</span><span class="n">undo</span> <span class="o">=</span> <span class="p">[(</span><span class="n">pat</span><span class="p">,</span> <span class="n">_get_option</span><span class="p">(</span><span class="n">pat</span><span class="p">))</span> <span class="k">for</span> <span class="n">pat</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ops</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="k">for</span> <span class="n">pat</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ops</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>         <span class="n">_set_option</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:480,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">479</span> <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">480</span>     <span class="bp">self</span><span class="o">.</span><span class="n">undo</span> <span class="o">=</span> <span class="p">[(</span><span class="n">pat</span><span class="p">,</span> <span class="n">_get_option</span><span class="p">(</span><span class="n">pat</span><span class="p">))</span> <span class="k">for</span> <span class="n">pat</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ops</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="k">for</span> <span class="n">pat</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ops</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span>         <span class="n">_set_option</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:146,</span> in <span class="ni">_get_option</span><span class="nt">(pat, silent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span> <span class="k">def</span> <span class="nf">_get_option</span><span class="p">(</span><span class="n">pat</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">146</span>     <span class="n">key</span> <span class="o">=</span> <span class="n">_get_single_key</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">silent</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="c1"># walk the nested dict</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="n">root</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">_get_root</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:132,</span> in <span class="ni">_get_single_key</span><span class="nt">(pat, silent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="n">_warn_if_deprecated</span><span class="p">(</span><span class="n">pat</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="k">raise</span> <span class="n">OptionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No such keys(s): </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">pat</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">raise</span> <span class="n">OptionError</span><span class="p">(</span><span class="s2">&quot;Pattern matched multiple keys&quot;</span><span class="p">)</span>
+
+<span class="ne">OptionError</span>: No such keys(s): &#39;mode.use_inf_as_null&#39;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x164e8af20&gt;
-</pre></div>
-</div>
-<img alt="../../_images/29dc42819f1a58dd050d875a0085de4098e845475ec847a1099aeda0e4afdb57.png" src="../../_images/29dc42819f1a58dd050d875a0085de4098e845475ec847a1099aeda0e4afdb57.png" />
+<img alt="../../_images/0d9968e9074952bd8fda5b82ccbbf68bbed67a77621725c9015004fdb7cc981d.png" src="../../_images/0d9968e9074952bd8fda5b82ccbbf68bbed67a77621725c9015004fdb7cc981d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -687,19 +799,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rwegener/miniconda3/envs/sarp/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x21c703f29a0&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x164eed870&gt;
-</pre></div>
-</div>
-<img alt="../../_images/3676332816e67ef694e908a4036e14c332073c86fdd6d2f66f8269ec3acfd302.png" src="../../_images/3676332816e67ef694e908a4036e14c332073c86fdd6d2f66f8269ec3acfd302.png" />
+<img alt="../../_images/fc6f56a2d4881a9677b18a01df675c41d6851635a848ccf7afc48049a1cd57ae.png" src="../../_images/fc6f56a2d4881a9677b18a01df675c41d6851635a848ccf7afc48049a1cd57ae.png" />
 </div>
 </div>
-</section>
-<section id="example-with-numpy-arrays">
-<h3>Example with numpy arrays<a class="headerlink" href="#example-with-numpy-arrays" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="example-with-numpy-arrays">
+<h3>Example with numpy arrays<a class="headerlink" href="#example-with-numpy-arrays" title="Permalink to this heading">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> with matrix data but in the case of numpy arrays you don’t get quite as much benefit.  The colors and styles are nice but you don’t get the axis lables with just a matrix of data.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">relplot</span></code> <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.relplot.html">docs page</a></p></li>
@@ -719,19 +827,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rwegener/miniconda3/envs/sarp/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x21c7038bb20&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x164de1b70&gt;
-</pre></div>
-</div>
-<img alt="../../_images/41e1d85fef0b8849b7b105e9488a61d8cb7c9e1d3f3040f33dadfc63768fe8b0.png" src="../../_images/41e1d85fef0b8849b7b105e9488a61d8cb7c9e1d3f3040f33dadfc63768fe8b0.png" />
+<img alt="../../_images/2c505b45e29ac5feb7340c7d9e08375213d42f4a16b3fde9d1fae18bf2109df1.png" src="../../_images/2c505b45e29ac5feb7340c7d9e08375213d42f4a16b3fde9d1fae18bf2109df1.png" />
 </div>
 </div>
-</section>
-<section id="customizing">
-<h3>Customizing<a class="headerlink" href="#customizing" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="customizing">
+<h3>Customizing<a class="headerlink" href="#customizing" title="Permalink to this heading">#</a></h3>
 <p>Because seaborn is built on top of matplotlib, you can still choose to customize the plots with the same commands as matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -743,19 +847,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rwegener/miniconda3/envs/sarp/lib/python3.10/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 850.0)
 </pre></div>
 </div>
-<img alt="../../_images/1b4a99665134c9036548997a70887cfe5c37ca2af0143785212b442acb54a660.png" src="../../_images/1b4a99665134c9036548997a70887cfe5c37ca2af0143785212b442acb54a660.png" />
+<img alt="../../_images/3af10020815909cba41fd48754ef92880b2b68c9756a904c7839d63159b18e79.png" src="../../_images/3af10020815909cba41fd48754ef92880b2b68c9756a904c7839d63159b18e79.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -782,11 +882,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -806,10 +905,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -817,6 +913,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -859,9 +956,10 @@ By Rachel Wegener
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -885,8 +983,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

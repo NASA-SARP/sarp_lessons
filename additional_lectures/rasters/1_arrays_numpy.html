@@ -3,70 +3,68 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arrays and numpy &#8212; SARP Programming Lessons</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional_lectures/rasters/1_arrays_numpy';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Working with rasters" href="2_raster_fundamentals.html" />
     <link rel="prev" title="Raster Data Lessons" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -74,19 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -108,12 +110,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -128,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -140,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -157,50 +180,50 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/1_variables_types_ifstatements.html">Variables, Data Types, and if Statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/2_lists_dictionaries.html">Lists and Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/datetimes.html">Datetimes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/spatial_data.html">Spatial Data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/1_xarray.html">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/2_xarray_computation.html">Starting Computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/3_xarray_groupby.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/spatial_operations.html">Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/1_pandas.html">The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/2_filtering_groupby.html">Filtering and groupby</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/3_geopandas.html"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/static_visualization_matplotlib.html">Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/mapping_colors.html">Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Lectures</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Debugging/debugging_lesson.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../time_series_statistics/oceans_stats_examples.html">Time Series Statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Raster Data Lessons</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Raster Data Lessons</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_raster_fundamentals.html">Working with rasters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_accessing_coordinates.html">Accessing Data</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Visualization/index.html">Visualization</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Visualization/index.html">Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Visualization/2_building_on_matplotlib.html">Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Visualization/3_dynamic_visualization.html">Dynamic Visualization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Visualization/viewing_images.html">Viewing Images</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Sheets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/1_variables_data_practice.html">Variables, Data Types and If statements Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/2_lists_dicts_practice.html">Lists and Dictionaries Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_practice.html">Datetimes Practice</a></li>
@@ -210,28 +233,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_answers.html">Datetimes Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/spatial_data_answers.html">Spatial Data Answers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/2_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Computation Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_answers.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_practice.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_practice.html">Filtering and Groupby Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/3_geopandas_practice.html">Practice with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_answers.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_answers.html">Filtering and Groupby Answers</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="practice/1_arrays_numpy_practice.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="practice/2_raster_fundamentals_practice.html">Raster Fundamentals Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="practice/3_accessing_coordinates_practice.html">Accessing Coordinates Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="practice/1_arrays_numpy_answers.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Answers</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
 <ul class="nav bd-sidenav">
@@ -258,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -267,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -396,20 +419,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -462,10 +487,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="arrays-and-numpy">
-<h1>Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#arrays-and-numpy" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="arrays-and-numpy">
+<h1>Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code><a class="headerlink" href="#arrays-and-numpy" title="Permalink to this heading">#</a></h1>
 <div class="note dropdown admonition">
 <p class="admonition-title">Lesson Content</p>
 <ul class="simple">
@@ -476,13 +501,13 @@ document.write(`
 <li><p>➕ Math and Aggregations</p></li>
 </ul>
 </div>
-<section id="context">
-<h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">#</a></h2>
+<div class="section" id="context">
+<h2>Context<a class="headerlink" href="#context" title="Permalink to this heading">#</a></h2>
 <p>Today we are building up our arsenal of data structures with a really exiting one - the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array.  Numpy arrays can be used on their own but they also underlie many really useful libraries.  <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, the primary library we will use to manipulate rasters, uses <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays to store the data.  <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is also highly optimized for large computations, which is the benefit we gain from stepping from the generic <code class="docutils literal notranslate"><span class="pre">list</span></code> Python structure to the more specialized <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array.</p>
 <p><img alt="Summary Slide" src="../../_images/summaryslide_3raster.jpg" /></p>
-</section>
-<section id="libraries">
-<h2>🗃️ Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="libraries">
+<h2>🗃️ Libraries<a class="headerlink" href="#libraries" title="Permalink to this heading">#</a></h2>
 <p>Today we are going to dig into our first library in Python!  A <strong>library</strong> is a like an “extras” package for a programming language (think Settlers of Catan expansion pack).  It is a set of commands that doesn’t automatically come activated when you use Python, but that you can still use if you just tell Python that you plan to do so.  You let python know you are going to use a library with an <code class="docutils literal notranslate"><span class="pre">import</span></code> statment.  After you do that the additional commands become availble.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,9 +550,9 @@ document.write(`
 <p>One large chunk of libraries are together referred to as the <strong>Python Standard Library</strong>. These libraries are not a part of the “core” language (everything we can do without import statments) but have still been offically accepted into the Python distribution package and are maintained in the same way as the rest of the core language.  You can read more <a class="reference external" href="https://docs.python.org/3/tutorial/stdlib.html">here</a>.</p>
 <p>There are also libraries which aren’t a part of this designation, and are still widely used and developed, but they are simply not included when you hit the “Download Python” button.  Non-standard libraries are maintained by groups of developers outside of the Python Software Foundation and anyone can make one.  That includes you!</p>
 </div>
-</section>
-<section id="data-structure-arrays">
-<h2>🧊 Data structure: Arrays<a class="headerlink" href="#data-structure-arrays" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="data-structure-arrays">
+<h2>🧊 Data structure: Arrays<a class="headerlink" href="#data-structure-arrays" title="Permalink to this heading">#</a></h2>
 <p>Arrays are the new data structure of this lesson.  They are similar to lists in that they represent a group of values.  Arrays are also simliar to list because you reference specific values using an index.  The main difference between lists and arrays is that arrays can have multiple dimensions.</p>
 <p>Still, if you array only has 1 dimension (like a list), why not just use a list?  Because:</p>
 <ul class="simple">
@@ -538,8 +563,8 @@ document.write(`
 <p><img alt="Numpy Arrays" src="../../_images/numpy_arrays.png" /></p>
 <p><em>Image ammended from
 <a class="reference external" href="https://indianaiproduction.com/python-numpy-tutorial/">Indian AI Production</a>.</em></p>
-<section id="numpy-library">
-<h3><code class="docutils literal notranslate"><span class="pre">numpy</span></code> library<a class="headerlink" href="#numpy-library" title="Permalink to this headline">#</a></h3>
+<div class="section" id="numpy-library">
+<h3><code class="docutils literal notranslate"><span class="pre">numpy</span></code> library<a class="headerlink" href="#numpy-library" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> is the standard Python library for dealing with arrays and matricies.  A lot of time and energy has gone into making <code class="docutils literal notranslate"><span class="pre">numpy</span></code> fast.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,9 +583,9 @@ document.write(`
 </ul>
 <p>These are both problems that are being actively worked on by members of the community and will, I think, be resolved in the near future.  Until then, though, and for the sake of stability, this summer we are focused on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.  If you are interested in trying <code class="docutils literal notranslate"><span class="pre">xarray</span></code>, certainly go for it or talk to me.</p>
 </div>
-</section>
-<section id="creating-and-inspecting-numpy-arrays">
-<h3>Creating and Inspecting <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays<a class="headerlink" href="#creating-and-inspecting-numpy-arrays" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="creating-and-inspecting-numpy-arrays">
+<h3>Creating and Inspecting <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays<a class="headerlink" href="#creating-and-inspecting-numpy-arrays" title="Permalink to this heading">#</a></h3>
 <p>Because arrays are so similar to lists one common way to make an array is by starting with a list.</p>
 <p>We use <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> to convert a list to an array.  In that line <code class="docutils literal notranslate"><span class="pre">np.</span></code> reminds Python which library we are referecing.  Here <code class="docutils literal notranslate"><span class="pre">np.</span></code> means <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, which is what we told Python to call <code class="docutils literal notranslate"><span class="pre">numpy</span></code> when we imported it with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>.</p>
 <div class="cell docutils container">
@@ -648,9 +673,9 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">list_ex.append('o3')</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">array_ex.full(3)</span></code></p></li>
 </ul>
-</section>
-<section id="array-indexes">
-<h3>Array Indexes<a class="headerlink" href="#array-indexes" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="array-indexes">
+<h3>Array Indexes<a class="headerlink" href="#array-indexes" title="Permalink to this heading">#</a></h3>
 <p>You can access elements of the array by index, just like with lists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -686,10 +711,10 @@ document.write(`
 <li><p>Get the value of the 3rd item in the array</p></li>
 </ol>
 </div>
-</section>
-</section>
-<section id="more-than-one-dimension">
-<h2>More than one dimension<a class="headerlink" href="#more-than-one-dimension" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="more-than-one-dimension">
+<h2>More than one dimension<a class="headerlink" href="#more-than-one-dimension" title="Permalink to this heading">#</a></h2>
 <p>The array we made so far is a one-dimensional array.  Very often when working with arrays you will have two or more dimensions.  You can create arrays like this by putting lists inside of lists, or <strong>nesting</strong> them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -700,7 +725,7 @@ document.write(`
 </div>
 </div>
 <p>The array we just created looks like this:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -718,6 +743,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">array_2d</span>
@@ -761,8 +787,8 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="indexing-multi-dimensional-arrays">
-<h3>Indexing multi-dimensional arrays<a class="headerlink" href="#indexing-multi-dimensional-arrays" title="Permalink to this headline">#</a></h3>
+<div class="section" id="indexing-multi-dimensional-arrays">
+<h3>Indexing multi-dimensional arrays<a class="headerlink" href="#indexing-multi-dimensional-arrays" title="Permalink to this heading">#</a></h3>
 <p>When indexing multi-dimensional arrays we use the same square bracket <code class="docutils literal notranslate"><span class="pre">[]</span></code> syntax.  To get a single number we need to specify the index for each of the axes that we have in the array.  So if we have a 3 dimensional array we need 3 indexes to specify exactly which value we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -834,7 +860,7 @@ document.write(`
 <div class="tip admonition">
 <p class="admonition-title">📝 Check your understanding</p>
 <p>Consider an array of the following form called <code class="docutils literal notranslate"><span class="pre">example_array</span></code>:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -870,6 +896,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <ol class="arabic simple">
 <li><p>What is the value at index [0, 2]?</p></li>
 <li><p>What is the result of <code class="docutils literal notranslate"><span class="pre">example_array[4]</span></code>?</p></li>
@@ -877,10 +904,10 @@ document.write(`
 <li><p>Give the index to return the value 15.</p></li>
 </ol>
 </div>
-</section>
-</section>
-<section id="array-math-and-aggregations">
-<h2>Array Math and Aggregations<a class="headerlink" href="#array-math-and-aggregations" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="array-math-and-aggregations">
+<h2>Array Math and Aggregations<a class="headerlink" href="#array-math-and-aggregations" title="Permalink to this heading">#</a></h2>
 <p>Once we start getting into manipulating the values of matrices we are approaching some of the principles of linear algebra.  If you have taken linear algebra before then you’ll be right at home.  If not, don’t worry too much.  The operations that you are most likely to use don’t get too deep.</p>
 <p>Because we are working with matricies instead of single numbers, if you want to do addition on a matrix, you have two options:</p>
 <ol class="arabic simple">
@@ -962,15 +989,15 @@ document.write(`
 </div>
 </div>
 <p>If this concept is confusing there are some really great visuals of adding arrays <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#basic-array-operations">in the numpy docs</a>.</p>
-<section id="more-math">
-<h3>More math<a class="headerlink" href="#more-math" title="Permalink to this headline">#</a></h3>
+<div class="section" id="more-math">
+<h3>More math<a class="headerlink" href="#more-math" title="Permalink to this heading">#</a></h3>
 <p>Since numpy in a library intended for computational mathematics it has most any function built ito it that you could ever want.  In general, googling “numpy”, then the function you want (Ex. “numpy dot product”) will get you want you need.  There is also a list of functions <a class="reference external" href="https://numpy.org/doc/stable/user/quickstart.html#universal-functions">in the docs</a>.</p>
-</section>
-</section>
-<section id="aggregations">
-<h2>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="aggregations">
+<h2>Aggregations<a class="headerlink" href="#aggregations" title="Permalink to this heading">#</a></h2>
 <p>Another really common operation, both during processing and while inspecting a dataset, is to run some kind of aggregation.  There are lots of them build into <code class="docutils literal notranslate"><span class="pre">numpy</span></code>:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Syntax</p></th>
 <th class="head"><p>Description</p></th>
@@ -994,6 +1021,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>These methods are all run with the <code class="docutils literal notranslate"><span class="pre">object.method()</span></code> syntax.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,7 +1088,7 @@ document.write(`
 <div class="tip admonition">
 <p class="admonition-title">📝 Check your understanding</p>
 <p>Consider an array of the following form called <code class="docutils literal notranslate"><span class="pre">example_array</span></code>:</p>
-<table class="colwidths-auto table">
+<div class="pst-scrollable-table-container"><table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p></p></th>
@@ -1078,13 +1106,14 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <ol class="arabic simple">
 <li><p>What is the output of <code class="docutils literal notranslate"><span class="pre">example_array.max()</span></code>?</p></li>
 <li><p>Over which axis (0 or 1) was the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> method run to get a result of <code class="docutils literal notranslate"><span class="pre">[10,</span> <span class="pre">14,</span> <span class="pre">18]</span></code>?</p></li>
 </ol>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1111,11 +1140,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="index.html"
@@ -1135,10 +1163,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1146,6 +1171,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1191,9 +1217,10 @@ By Rachel Wegener
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1217,8 +1244,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

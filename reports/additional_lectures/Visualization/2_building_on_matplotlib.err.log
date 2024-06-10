@@ -1,33 +1,122 @@
 Traceback (most recent call last):
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/srv/conda/envs/notebook/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+  File "/srv/conda/envs/notebook/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+  File "/srv/conda/envs/notebook/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/srv/conda/envs/notebook/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/srv/conda/envs/notebook/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "/srv/conda/envs/notebook/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/Users/rwegener/miniconda3/envs/sarp_docs/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "/srv/conda/envs/notebook/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-import rasterio
+# A line plot version
+sns.relplot(data=was_2020_subset, x='i-Pentane (E/B)', y='n-Pentane (E/B)', kind='line')
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 2[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mrasterio[39;00m
+[0;31mOptionError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[16], line 2[0m
+[1;32m      1[0m [38;5;66;03m# A line plot version[39;00m
+[0;32m----> 2[0m [43msns[49m[38;5;241;43m.[39;49m[43mrelplot[49m[43m([49m[43mdata[49m[38;5;241;43m=[39;49m[43mwas_2020_subset[49m[43m,[49m[43m [49m[43mx[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mi-Pentane (E/B)[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43my[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mn-Pentane (E/B)[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mkind[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mline[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
-[0;31mModuleNotFoundError[0m: No module named 'rasterio'
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/relational.py:955[0m, in [0;36mrelplot[0;34m(data, x, y, hue, size, style, units, row, col, col_wrap, row_order, col_order, palette, hue_order, hue_norm, sizes, size_order, size_norm, markers, dashes, style_order, legend, kind, height, aspect, facet_kws, **kwargs)[0m
+[1;32m    946[0m g [38;5;241m=[39m FacetGrid(
+[1;32m    947[0m     data[38;5;241m=[39mfull_data[38;5;241m.[39mdropna(axis[38;5;241m=[39m[38;5;241m1[39m, how[38;5;241m=[39m[38;5;124m"[39m[38;5;124mall[39m[38;5;124m"[39m),
+[1;32m    948[0m     [38;5;241m*[39m[38;5;241m*[39mgrid_kws,
+[0;32m   (...)[0m
+[1;32m    951[0m     [38;5;241m*[39m[38;5;241m*[39mfacet_kws
+[1;32m    952[0m )
+[1;32m    954[0m [38;5;66;03m# Draw the plot[39;00m
+[0;32m--> 955[0m [43mg[49m[38;5;241;43m.[39;49m[43mmap_dataframe[49m[43m([49m[43mfunc[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mplot_kws[49m[43m)[49m
+[1;32m    957[0m [38;5;66;03m# Label the axes, using the original variables[39;00m
+[1;32m    958[0m g[38;5;241m.[39mset(xlabel[38;5;241m=[39mvariables[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mx[39m[38;5;124m"[39m), ylabel[38;5;241m=[39mvariables[38;5;241m.[39mget([38;5;124m"[39m[38;5;124my[39m[38;5;124m"[39m))
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/axisgrid.py:819[0m, in [0;36mFacetGrid.map_dataframe[0;34m(self, func, *args, **kwargs)[0m
+[1;32m    816[0m     kwargs[[38;5;124m"[39m[38;5;124mdata[39m[38;5;124m"[39m] [38;5;241m=[39m data_ijk
+[1;32m    818[0m     [38;5;66;03m# Draw the plot[39;00m
+[0;32m--> 819[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_facet_plot[49m[43m([49m[43mfunc[49m[43m,[49m[43m [49m[43max[49m[43m,[49m[43m [49m[43margs[49m[43m,[49m[43m [49m[43mkwargs[49m[43m)[49m
+[1;32m    821[0m [38;5;66;03m# For axis labels, prefer to use positional args for backcompat[39;00m
+[1;32m    822[0m [38;5;66;03m# but also extract the x/y kwargs and use if no corresponding arg[39;00m
+[1;32m    823[0m axis_labels [38;5;241m=[39m [kwargs[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mx[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m), kwargs[38;5;241m.[39mget([38;5;124m"[39m[38;5;124my[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)]
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/axisgrid.py:848[0m, in [0;36mFacetGrid._facet_plot[0;34m(self, func, ax, plot_args, plot_kwargs)[0m
+[1;32m    846[0m     plot_args [38;5;241m=[39m []
+[1;32m    847[0m     plot_kwargs[[38;5;124m"[39m[38;5;124max[39m[38;5;124m"[39m] [38;5;241m=[39m ax
+[0;32m--> 848[0m [43mfunc[49m[43m([49m[38;5;241;43m*[39;49m[43mplot_args[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mplot_kwargs[49m[43m)[49m
+[1;32m    850[0m [38;5;66;03m# Sort out the supporting information[39;00m
+[1;32m    851[0m [38;5;28mself[39m[38;5;241m.[39m_update_legend_data(ax)
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/relational.py:645[0m, in [0;36mlineplot[0;34m(data, x, y, hue, size, style, units, palette, hue_order, hue_norm, sizes, size_order, size_norm, dashes, markers, style_order, estimator, errorbar, n_boot, seed, orient, sort, err_style, err_kws, legend, ci, ax, **kwargs)[0m
+[1;32m    642[0m color [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mcolor[39m[38;5;124m"[39m, kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mc[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m))
+[1;32m    643[0m kwargs[[38;5;124m"[39m[38;5;124mcolor[39m[38;5;124m"[39m] [38;5;241m=[39m _default_color(ax[38;5;241m.[39mplot, hue, color, kwargs)
+[0;32m--> 645[0m [43mp[49m[38;5;241;43m.[39;49m[43mplot[49m[43m([49m[43max[49m[43m,[49m[43m [49m[43mkwargs[49m[43m)[49m
+[1;32m    646[0m [38;5;28;01mreturn[39;00m ax
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/relational.py:423[0m, in [0;36m_LinePlotter.plot[0;34m(self, ax, kws)[0m
+[1;32m    415[0m [38;5;66;03m# TODO How to handle NA? We don't want NA to propagate through to the[39;00m
+[1;32m    416[0m [38;5;66;03m# estimate/CI when some values are present, but we would also like[39;00m
+[1;32m    417[0m [38;5;66;03m# matplotlib to show "gaps" in the line when all values are missing.[39;00m
+[0;32m   (...)[0m
+[1;32m    420[0m 
+[1;32m    421[0m [38;5;66;03m# Loop over the semantic subsets and add to the plot[39;00m
+[1;32m    422[0m grouping_vars [38;5;241m=[39m [38;5;124m"[39m[38;5;124mhue[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124msize[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mstyle[39m[38;5;124m"[39m
+[0;32m--> 423[0m [43m[49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43msub_vars[49m[43m,[49m[43m [49m[43msub_data[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43miter_data[49m[43m([49m[43mgrouping_vars[49m[43m,[49m[43m [49m[43mfrom_comp_data[49m[38;5;241;43m=[39;49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m[43m:[49m
+[1;32m    425[0m [43m    [49m[38;5;28;43;01mif[39;49;00m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msort[49m[43m:[49m
+[1;32m    426[0m [43m        [49m[43msort_vars[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43munits[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43morient[49m[43m,[49m[43m [49m[43mother[49m[43m][49m
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/_oldcore.py:1028[0m, in [0;36mVectorPlotter.iter_data[0;34m(self, grouping_vars, reverse, from_comp_data, by_facet, allow_empty, dropna)[0m
+[1;32m   1023[0m grouping_vars [38;5;241m=[39m [
+[1;32m   1024[0m     var [38;5;28;01mfor[39;00m var [38;5;129;01min[39;00m grouping_vars [38;5;28;01mif[39;00m var [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mvariables
+[1;32m   1025[0m ]
+[1;32m   1027[0m [38;5;28;01mif[39;00m from_comp_data:
+[0;32m-> 1028[0m     data [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcomp_data[49m
+[1;32m   1029[0m [38;5;28;01melse[39;00m:
+[1;32m   1030[0m     data [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mplot_data
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/seaborn/_oldcore.py:1119[0m, in [0;36mVectorPlotter.comp_data[0;34m(self)[0m
+[1;32m   1117[0m grouped [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mplot_data[var][38;5;241m.[39mgroupby([38;5;28mself[39m[38;5;241m.[39mconverters[var], sort[38;5;241m=[39m[38;5;28;01mFalse[39;00m)
+[1;32m   1118[0m [38;5;28;01mfor[39;00m converter, orig [38;5;129;01min[39;00m grouped:
+[0;32m-> 1119[0m [43m    [49m[38;5;28;43;01mwith[39;49;00m[43m [49m[43mpd[49m[38;5;241;43m.[39;49m[43moption_context[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mmode.use_inf_as_null[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m)[49m[43m:[49m
+[1;32m   1120[0m [43m        [49m[43morig[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43morig[49m[38;5;241;43m.[39;49m[43mdropna[49m[43m([49m[43m)[49m
+[1;32m   1121[0m [43m        [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mvar[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mvar_levels[49m[43m:[49m
+[1;32m   1122[0m [43m            [49m[38;5;66;43;03m# TODO this should happen in some centralized location[39;49;00m
+[1;32m   1123[0m [43m            [49m[38;5;66;43;03m# it is similar to GH2419, but more complicated because[39;49;00m
+[1;32m   1124[0m [43m            [49m[38;5;66;43;03m# supporting `order` in categorical plots is tricky[39;49;00m
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:480[0m, in [0;36moption_context.__enter__[0;34m(self)[0m
+[1;32m    479[0m [38;5;28;01mdef[39;00m [38;5;21m__enter__[39m([38;5;28mself[39m) [38;5;241m-[39m[38;5;241m>[39m [38;5;28;01mNone[39;00m:
+[0;32m--> 480[0m     [38;5;28mself[39m[38;5;241m.[39mundo [38;5;241m=[39m [43m[[49m[43m([49m[43mpat[49m[43m,[49m[43m [49m[43m_get_option[49m[43m([49m[43mpat[49m[43m)[49m[43m)[49m[43m [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mpat[49m[43m,[49m[43m [49m[43mval[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mops[49m[43m][49m
+[1;32m    482[0m     [38;5;28;01mfor[39;00m pat, val [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mops:
+[1;32m    483[0m         _set_option(pat, val, silent[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:480[0m, in [0;36m<listcomp>[0;34m(.0)[0m
+[1;32m    479[0m [38;5;28;01mdef[39;00m [38;5;21m__enter__[39m([38;5;28mself[39m) [38;5;241m-[39m[38;5;241m>[39m [38;5;28;01mNone[39;00m:
+[0;32m--> 480[0m     [38;5;28mself[39m[38;5;241m.[39mundo [38;5;241m=[39m [(pat, [43m_get_option[49m[43m([49m[43mpat[49m[43m)[49m) [38;5;28;01mfor[39;00m pat, val [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mops]
+[1;32m    482[0m     [38;5;28;01mfor[39;00m pat, val [38;5;129;01min[39;00m [38;5;28mself[39m[38;5;241m.[39mops:
+[1;32m    483[0m         _set_option(pat, val, silent[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:146[0m, in [0;36m_get_option[0;34m(pat, silent)[0m
+[1;32m    145[0m [38;5;28;01mdef[39;00m [38;5;21m_get_option[39m(pat: [38;5;28mstr[39m, silent: [38;5;28mbool[39m [38;5;241m=[39m [38;5;28;01mFalse[39;00m) [38;5;241m-[39m[38;5;241m>[39m Any:
+[0;32m--> 146[0m     key [38;5;241m=[39m [43m_get_single_key[49m[43m([49m[43mpat[49m[43m,[49m[43m [49m[43msilent[49m[43m)[49m
+[1;32m    148[0m     [38;5;66;03m# walk the nested dict[39;00m
+[1;32m    149[0m     root, k [38;5;241m=[39m _get_root(key)
+
+File [0;32m/srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/_config/config.py:132[0m, in [0;36m_get_single_key[0;34m(pat, silent)[0m
+[1;32m    130[0m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m silent:
+[1;32m    131[0m         _warn_if_deprecated(pat)
+[0;32m--> 132[0m     [38;5;28;01mraise[39;00m OptionError([38;5;124mf[39m[38;5;124m"[39m[38;5;124mNo such keys(s): [39m[38;5;132;01m{[39;00m[38;5;28mrepr[39m(pat)[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[1;32m    133[0m [38;5;28;01mif[39;00m [38;5;28mlen[39m(keys) [38;5;241m>[39m [38;5;241m1[39m:
+[1;32m    134[0m     [38;5;28;01mraise[39;00m OptionError([38;5;124m"[39m[38;5;124mPattern matched multiple keys[39m[38;5;124m"[39m)
+
+[0;31mOptionError[0m: No such keys(s): 'mode.use_inf_as_null'
 
