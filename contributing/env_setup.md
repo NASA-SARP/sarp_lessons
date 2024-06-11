@@ -94,8 +94,15 @@ At this point you may be prompted to enter your Github username and password. If
 
 ### Pull Request
 
-You can commit and push many times in the development process. Your changes will all stay on your own branch, so they won't be reflected in the `main` source code. To integrate your changes into `main` you create a pull request. I typically do this step in the browser. [This guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) walks through those steps.
+You can commit and push many times in the development process. Your changes will all stay on your own branch, so they won't be reflected in the `main` source code. To integrate your changes into `main` you create a pull request from the branch you created (ex. `my-new-feature`) into `main`. I typically do this step in the browser. [This guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) walks through those steps.
 
 ### Autodeployment
 
-The website is auto-deployed using Github pages. Github pages uses a [Github Action](https://github.com/features/actions) to build HTML from the Juptyer notebooks and deploy it to the public url. While I believe this can be configured to happen on merge to the repo, right now the deploy command needs to be run manually. For now we can discuss who will deploy in the PR, it can be anyone, not just the person who created the changes.
+The website is auto-deployed using Github pages. Github pages uses a [Github Action](https://github.com/features/actions) to build HTML from the Juptyer notebooks and deploy it to the public url. While I believe this can be configured to happen on merge to the repo, right now the deploy command needs to be run manually. 
+
+Once the PR has been approved and merged into main the steps to deploy are:
+1. Checkout / pull the new `main` branch
+2. Run `jupyter-book build .`
+3. From the repo root run `ghp-import -n -p -f _build/html`
+
+Running `ghp-import` updates https://nasa-sarp.github.io/sarp_lessons to show the HTML from the most recent build of main. It does this by pushing the content from `_build/html` to the `ghp-pages` branch of the repo which has been configured to deploy the HTML. There is no build process on the Github side (the developer is performing the build when they run `jupyter-book build .`. While there are more automated ways to do this, for now we can discuss who will deploy the changes in the PR comments. It can be anyone, not just the person who created the changes.
