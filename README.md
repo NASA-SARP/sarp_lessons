@@ -64,6 +64,17 @@ Happy coding!
 * `jupyter-book build .` from root
 * `python -m http.server --directory _build/html/`
 
+### Spell check
+
+* `pip install sphinxcontrib-spelling`
+* `jupyter-book config sphinx` generates `conf.py`
+* Add the following lines to `conf.py`:
+```
+spelling_ignore_pypi_package_names=True
+spelling_word_list_filename = 'spelling_correctwords.txt'
+```
+* `sphinx-build -b spelling . ./_build` from root (this is in place of `jupyter-book build .`
+
 ## Deploy
 [link](https://jupyterbook.org/start/publish.html#publish-your-book-online-with-github-pages)
 1. Build book
