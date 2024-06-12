@@ -7,11 +7,11 @@ The content is organized into a few folders:
 1. `lessons` - notebooks used in an organized lecture format.  Each one also has practice problems
 2. `additional_lectures` - supplemental notebooks used throughout the summer for quick code talks.  No practice problems
 3. `snippets` - useful pieces of code that were written to support student project, but aren't always organized well or consistently commented
-4. `language_agnostic_content` - PDFs that were used to teach coding concepts broader than just sytnax
+4. `language_agnostic_content` - PDFs that were used to teach coding concepts broader than just syntax
 
 ## Environments
 
-The `environment.yml` file in the root directory builds an enviroment that can be used to execute the notebooks. There is not currently an environment.yml for building the docs, but one could be make by starting with the student environment.yml environment and then adding `conda install -c conda-forge jupyter-book`.  You may also need to install some sphinx extensions. 
+The `environment.yml` file in the root directory builds an environment that can be used to execute the notebooks. There is not currently an environment.yml for building the docs, but one could be make by starting with the student environment.yml environment and then adding `conda install -c conda-forge jupyter-book`.  You may also need to install some sphinx extensions. 
 
 ## Getting Setup (Student)
 
@@ -54,7 +54,7 @@ From a new command line window (or your **base** conda environment) run:
 ```
 jupyter-lab
 ```
-A new Jupyter Lab session should open! When prompted to choose an enviroment, or anytime you create a new notebook,  select `Python [conda env:sarp]` as the kernel.
+A new Jupyter Lab session should open! When prompted to choose an environment, or anytime you create a new notebook,  select `Python [conda env:sarp]` as the kernel.
 
 Happy coding!
 
