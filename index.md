@@ -15,7 +15,7 @@ The contents of this website is split into three sections:
 
 ### Data Format Tracks
 The Lessons section is divided into subsections based on data format. The two data format groups for SARP are:
-1. gridded data - data in an array format that representing information in space. This format is often used for satellite images or model output.
+1. gridded data - data in an array format that representing information in space. This format is often used for satellite images or model output
 2. tabular data - data with rows and columns. This is data that would fit well in an excel sheet
 
 There is also a General Python section, which contains material relevant for anyone learning Python. In SARP everyone will work on the General Python section together, then we will split into two groups based on the two data formats described above.
