@@ -4,86 +4,86 @@
 format: jb-book
 root: index
 parts:
-  - caption: Lessons
+  - caption: Core Python Progression
     chapters:
-    - file: lessons/general_python/index.md
+    - file: sarp_lessons/1_python_progression/1-general_python/index.md
       sections:
-        - file: lessons/general_python/1_variables_types_ifstatements
-        - file: lessons/general_python/2_lists_dictionaries
-        - file: lessons/general_python/datetimes
-        - file: lessons/general_python/spatial_data
-    - file: lessons/gridded_data/index.md
+        - file: sarp_lessons/1_python_progression/1-general_python/1-1_variables_types_ifstatements
+        - file: sarp_lessons/1_python_progression/1-general_python/1-2_lists_dictionaries
+    - file: sarp_lessons/1_python_progression/2-tabular_data/index.md
       sections:
-        - file: lessons/gridded_data/1_xarray
-        - file: lessons/gridded_data/2_xarray_computation
-        - file: lessons/gridded_data/3_xarray_groupby
-        - file: lessons/gridded_data/spatial_operations
-    - file: lessons/tabular_data/index.md
+        - file: sarp_lessons/1_python_progression/2-tabular_data/2-1_pandas
+        - file: sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_groupby
+    - file: sarp_lessons/1_python_progression/3-gridded_data/index.md
       sections:
-        - file: lessons/tabular_data/1_pandas
-        - file: lessons/tabular_data/2_filtering_groupby
-        - file: lessons/tabular_data/3_geopandas
-        - file: lessons/tabular_data/static_visualization_matplotlib
-        - file: lessons/tabular_data/mapping_colors
+        - file: sarp_lessons/1_python_progression/3-gridded_data/3-1_xarray
+        - file: sarp_lessons/1_python_progression/3-gridded_data/3-2_xarray_computation
+        - file: sarp_lessons/1_python_progression/3-gridded_data/3-3_xarray_groupby
+    - file: sarp_lessons/1_python_progression/4-spatiotemporal/index.md
+      sections:
+        - file: sarp_lessons/1_python_progression/4-spatiotemporal/4-1_datetimes
+        - file: sarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data
+        - file: sarp_lessons/1_python_progression/4-spatiotemporal/4-3_geopandas
+        - file: sarp_lessons/1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio
+        - file: sarp_lessons/1_python_progression/4-spatiotemporal/4-5_mapping_cartopy
+    - file: sarp_lessons/1_python_progression/5-visualization/index.md
+      sections:
+        - file: sarp_lessons/1_python_progression/5-visualization/5-1_static_viz_matplotlib
+        - file: sarp_lessons/1_python_progression/5-visualization/5-2_building_on_matplotlib
+        - file: sarp_lessons/1_python_progression/5-visualization/5-3_dynamic_visualization
+        - file: sarp_lessons/1_python_progression/5-visualization/5-4_viewing_images
 
-  - caption: Additional Lectures
+  - caption: Computational Skills
     chapters:
     - file: additional_lectures/Debugging/debugging_lesson
-    - file: additional_lectures/time_series_statistics/oceans_stats_examples
+    # - file: additional_lectures/time_series_statistics/oceans_stats_examples
     - file: additional_lectures/hierarchical_data/hierarchical_data
-    - file: additional_lectures/rasters/index.md
-      sections:
-        - file: additional_lectures/rasters/1_arrays_numpy
-        - file: additional_lectures/rasters/2_raster_fundamentals
-        - file: additional_lectures/rasters/3_accessing_coordinates
-    - file: additional_lectures/Visualization/index.md
-      sections:
-        - file: additional_lectures/Visualization/2_building_on_matplotlib
-        - file: additional_lectures/Visualization/3_dynamic_visualization
-        - file: additional_lectures/Visualization/viewing_images
+    # - file: additional_lectures/rasters/index.md
+    #   sections:
+    #     - file: additional_lectures/rasters/1_arrays_numpy
+    #     - file: additional_lectures/rasters/2_raster_fundamentals
+    #     - file: additional_lectures/rasters/3_accessing_coordinates
 
-  - caption: Practice Sheets
+  - caption: Practice Problems & Answers  # Switch to "Exercises"?
     chapters:
-    - file: lessons/index_practice.md
-      title: General Python Practice
+    - file: sarp_lessons/4_practice_problems/index.md
+      title: Python Practice
       sections:
-        - file: lessons/general_python/practice/1_variables_data_practice
-        - file: lessons/general_python/practice/2_lists_dicts_practice
-        - file: lessons/general_python/practice/datetimes_practice
-        - file: lessons/general_python/practice/spatial_data_practice
-        - file: lessons/general_python/practice/1_variables_data_answers
-        - file: lessons/general_python/practice/2_lists_dicts_answers
-        - file: lessons/general_python/practice/datetimes_answers
-        - file: lessons/general_python/practice/spatial_data_answers
-    - file: lessons/index_practice_raster.md
-      title: Gridded Data Practice
-      sections:
-        - file: lessons/gridded_data/practice/1_xarray_practice
-        - file: lessons/gridded_data/practice/2_xarray_practice
-        - file: lessons/gridded_data/practice/1_xarray_answers
-    - file: lessons/index_practice_tabular.md
-      title: Tabular Data Practice
-      sections:
-        - file: lessons/tabular_data/practice/1_pandas_practice
-        - file: lessons/tabular_data/practice/2_filtering_groupby_practice
-        - file: lessons/tabular_data/practice/3_geopandas_practice
-        - file: lessons/tabular_data/practice/1_pandas_answers
-        - file: lessons/tabular_data/practice/2_filtering_groupby_answers
-    - file: additional_lectures/index_practice.md
-      title: Raster Data Practice (Additional Lectures)
-      sections:
-        - file: additional_lectures/rasters/practice/1_arrays_numpy_practice
-        - file: additional_lectures/rasters/practice/2_raster_fundamentals_practice
-        - file: additional_lectures/rasters/practice/3_accessing_coordinates_practice
-        - file: additional_lectures/rasters/practice/1_arrays_numpy_answers
+        - file: sarp_lessons/4_practice_problems/1_python/1-1_variables_data_practice
+        - file: sarp_lessons/4_practice_problems/1_python/1-1_variables_data_answers
+        - file: sarp_lessons/4_practice_problems/1_python/1-2_lists_dicts_practice
+        - file: sarp_lessons/4_practice_problems/1_python/1-2_lists_dicts_answers
+        - file: sarp_lessons/4_practice_problems/1_python/2-1_pandas_practice
+        - file: sarp_lessons/4_practice_problems/1_python/2-1_pandas_answers
+        - file: sarp_lessons/4_practice_problems/1_python/2-2_filtering_groupby_practice
+        - file: sarp_lessons/4_practice_problems/1_python/2-2_filtering_groupby_answers
+        - file: sarp_lessons/4_practice_problems/1_python/3-1_xarray_practice
+        - file: sarp_lessons/4_practice_problems/1_python/3-1_xarray_answers
+        - file: sarp_lessons/4_practice_problems/1_python/3-2_xarray_practice
+        - file: sarp_lessons/4_practice_problems/1_python/4-1_datetimes_practice
+        - file: sarp_lessons/4_practice_problems/1_python/4-1_datetimes_answers
+        - file: sarp_lessons/4_practice_problems/1_python/4-2_spatial_data_practice
+        - file: sarp_lessons/4_practice_problems/1_python/4-2_spatial_data_answers
+        - file: sarp_lessons/4_practice_problems/1_python/4-3_geopandas_practice
 
-  - caption: Examples
+    # - file: additional_lectures/index_practice.md
+    #   title: Raster Data Practice (Additional Lectures)
+    #   sections:
+    #     - file: additional_lectures/rasters/practice/1_arrays_numpy_practice
+    #     - file: additional_lectures/rasters/practice/2_raster_fundamentals_practice
+    #     - file: additional_lectures/rasters/practice/3_accessing_coordinates_practice
+    #     - file: additional_lectures/rasters/practice/1_arrays_numpy_answers
+
+  - caption: Example Gallery
     chapters:
-    - file: examples/logplot
-    - file: examples/flight_track
-    - file: examples/altitude_twin_axes
-    - file: examples/gridded_mapping
+    - file: sarp_lessons/5_example_gallery/index.md
+      sections:
+        - file: sarp_lessons/5_example_gallery/logplot
+        - file: sarp_lessons/5_example_gallery/flight_track
+        - file: sarp_lessons/5_example_gallery/altitude_twin_axes
+        - file: sarp_lessons/5_example_gallery/gridded_mapping
 
   - caption: Contributor Guide
     chapters:
-    - file: contributing/env_setup.md
+    - file: sarp_lessons/6_contributors_instructors/instructors_guide
+    - file: sarp_lessons/6_contributors_instructors/env_setup.md

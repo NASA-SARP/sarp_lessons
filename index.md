@@ -1,6 +1,6 @@
 # Welcome to SARP Programming
 
-The [NASA Student Airborne Research Program (SARP)](https://www.nasa.gov/centers/ames/earthscience/programs/airbornescience/studentairborneresearchprogram) is an earth science reasearch internship for undergraduates held every summer. The program is based out of Irvine, CA and Newport News, VA. At SARP, students experience 8 weeks of hands on NASA research and data training. This website hosts the online content for the programming instruction for the internship.
+The [NASA Student Airborne Research Program (SARP)](https://www.nasa.gov/centers/ames/earthscience/programs/airbornescience/studentairborneresearchprogram) is an earth science reasearch internship for undergraduates held every summer. The program is based out of Irvine, CA and Newport News, VA. At SARP, students experience 8 weeks of hands on NASA research and data training {cite}`schaller_2022`. This website hosts the online content for the programming instruction for the internship.
 
 This year SARP is fortunate to have access to the [Cryocloud platform](https://book.cryointhecloud.com/intro.html) for student research projects. The cloud is an exciting new science tool that allows researchers to more easily collaborate, spend less time setting up software environments, and scale their data analysis. Tutorials relating to doing science on the cloud are also hosted on this website.
 
@@ -24,4 +24,8 @@ There is also a General Python section, which contains material relevant for any
 ## Table of Contents
 
 ```{tableofcontents}
+```
+
+## Jupyter Book Citations
+```{bibliography}
 ```
