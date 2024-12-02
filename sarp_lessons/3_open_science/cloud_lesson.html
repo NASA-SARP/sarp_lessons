@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Science on the Cloud &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/3_open_science/cloud_lesson';</script>
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Practice Sheets" href="../4_practice_problems/index.html" />
+    <link rel="prev" title="Hierarchical Data Structure" href="../../additional_lectures/hierarchical_data/hierarchical_data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <img src="../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Python Programming for Earth Science Researchers
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1_python_progression/5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_python_progression/5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_computational_skills/file_organization.html">Organizing your Files</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../2_computational_skills/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Science on the Cloud</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4_practice_problems/index.html">Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/1-1_variables_data_answers.html">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/3-2_xarray_practice.html">3.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/4-1_datetimes_answers.html">4.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/4-2_spatial_data_practice.html">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4_practice_problems/1_python/4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/3_open_science/cloud_lesson.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/sarp_lessons/3_open_science/cloud_lesson.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Science on the Cloud</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-images">Computer Images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-interface">Tour of the interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#private-and-shared-files">Private and Shared Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal">Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-your-file-system">Navigating your File System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-and-copying-files">Moving and Copying Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-desktop">Virtual Desktop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-and-downloading-files">Uploading and Downloading Files</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="science-on-the-cloud">
+<h1>Science on the Cloud<a class="headerlink" href="#science-on-the-cloud" title="Link to this heading">#</a></h1>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h2>
+<p>Today we are going to be exploring the cloud platform and digging into some of the details of what it means to do science on the cloud. We aren’t actually going too write much code today, but we are going to look at a few pieces of how computers work and explore some of the ways that the cloud facilitates collaboration. It’s going to be a bit of a hodge-podge of skills, but together they give you some of the computer science building blocks to navigate the cloud interface.</p>
+</section>
+<section id="computer-images">
+<h2>Computer Images<a class="headerlink" href="#computer-images" title="Link to this heading">#</a></h2>
+<p>When you first started the hub you had a lot of options for what setup to choose. Choosing your setup options is a bit of a “build your own computer” moment every time your start the hub. You can choose what type of computer you want each time you start the hub! It’s a bit like building a custom burrito at chipotle.</p>
+<p>Every time you login to the cloud a computer gets turned on somewhere for you to use. In cloud lingo this computer is referred to as a <strong>node</strong>.</p>
+<blockquote>
+<div><p>When we talk about accessing a “computer” in the cloud we usually call it a <strong>node</strong> or a <strong>compute node</strong></p>
+</div></blockquote>
+<p>The two options you are choosing between on that first page are <strong>image</strong> and <strong>node</strong> size. The <strong>image</strong> defines the types of softwares that are availble when you start the hub. The options you’ll see are Python, R, and Matlab. The <strong>node</strong> size refers to how powerful of a computer you are going to start. You see options ranging from about 2 GB to 32 GB.</p>
+<p>Please only ever used the smallest node size that you need. It helps saves energy and money!</p>
+<p><img alt="chiptole" src="https://www.foodandwine.com/thmb/oCl8jGErMHGWoXWBUC-jZhvKTSA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chipotle-food-hacks-overhead-FT-BLOG0717-4cb0442dcddf4bc9b1d774374d00be8f.jpg" /></p>
+<div class="admonition-vocabulary admonition">
+<p class="admonition-title">Vocabulary</p>
+<p><strong>Image</strong>: An image contains the software setup of a computer. It knows the operating system, the installed softwares, and the programming packages or libraries availble.</p>
+</div>
+<div class="admonition-cloud-benefit-scalability admonition">
+<p class="admonition-title">Cloud benefit: Scalability</p>
+<p>The ability to choose the amount of computing power you need on demand and grow what you are using as you need more. This is <strong>scalability</strong>.</p>
+</div>
+</section>
+<section id="tour-of-the-interface">
+<h2>Tour of the interface<a class="headerlink" href="#tour-of-the-interface" title="Link to this heading">#</a></h2>
+<p>First, let’s tour the interface of JupyterHub! There are lots of exciting tools. We will look at the left and right side tab tools. On the left side you’ll find:</p>
+<ul class="simple">
+<li><p>file explorer</p></li>
+<li><p>kernel manager</p></li>
+<li><p>dask interface</p></li>
+<li><p>git interface</p></li>
+<li><p>markdown table of contents</p></li>
+<li><p>extension manager</p></li>
+<li><p>jupyter AI interface</p></li>
+</ul>
+<p>On the rigth side you’ll find:</p>
+<ul class="simple">
+<li><p>property inspector</p></li>
+<li><p>kernal usage</p></li>
+<li><p>debugger</p></li>
+</ul>
+</section>
+<section id="private-and-shared-files">
+<h2>Private and Shared Files<a class="headerlink" href="#private-and-shared-files" title="Link to this heading">#</a></h2>
+<p>One of the major benefits of the cloud is the way you can access shared spaces with your collaborators. In cryocloud there are both public and private spaces. The three public spaces on Cryocloud are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shared</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shared-public</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shared-readwrite</span></code></p></li>
+</ul>
+<p>Anything in these folders is visible to everyone on Cryocloud. Anything any files you create outside those folders are visible only to you.</p>
+<p>If you would like to distribute data to your group, feel free to use the <code class="docutils literal notranslate"><span class="pre">NASA-SARP</span></code> folder of <code class="docutils literal notranslate"><span class="pre">shared-public</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please do not delete anything you did not create in this folder, and don’t add or remove anything from any of the other folders in <code class="docutils literal notranslate"><span class="pre">shared-public</span></code>. We want to be good stewards of the space!</p>
+</div>
+<div class="admonition-cloud-benefit-2-collaboration admonition">
+<p class="admonition-title">Cloud benefit #2 – Collaboration</p>
+<p>Accessing shared resources (folders, data, environment) is a huge leap for collaboration. One way we take advantage of this is through access to shared folders.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Checkin</p>
+<p>Within your table pick one person to make a folder in the shared NASA-SARP folder. Have each person in the group create a text file in that folder. Type something in your file, close it, then open someone else’s to see what they wrote. Delete the file when you are done (but keep the folder)</p>
+<p>Be careful – when possible try not to access the same file at the same time. The computer can get confused about which version to save if different edits are being made at the same time.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Make it harder</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Instead of a text file, create a csv file. Open the csv file in the CSV” Viewer. Then right click on the file &gt; open with &gt; Editor and add the following text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span><span class="p">,</span> <span class="n">co2</span><span class="p">,</span> <span class="n">ch4</span>
+<span class="n">C</span><span class="p">,</span> <span class="n">ppm</span><span class="p">,</span> <span class="n">ppb</span>
+<span class="mi">80</span><span class="p">,</span> <span class="mi">420</span><span class="p">,</span> <span class="mi">1852</span>
+<span class="mi">82</span><span class="p">,</span> <span class="mi">411</span><span class="p">,</span> <span class="mi">1903</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Save the file, close it, then open it again in the CSV Viewer.</p>
+</div>
+</details></div>
+<div class="docutils">
+</div>
+</section>
+<section id="terminal">
+<h2>Terminal<a class="headerlink" href="#terminal" title="Link to this heading">#</a></h2>
+<p>Working in the command line is like working on the inside of your computer. There is no visual screen, or graphical user interface (GUI), for you to use, but you are accessing the same files and programs as you can access in your File Explorer.</p>
+<p>In general, command line commands can have multiple parts:</p>
+<ol class="arabic simple">
+<li><p>Command_name (Ex. <code class="docutils literal notranslate"><span class="pre">cd</span></code>, <code class="docutils literal notranslate"><span class="pre">ncdump</span></code>)</p></li>
+<li><p>Flags (Ex. <code class="docutils literal notranslate"><span class="pre">-r</span></code>, <code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code>)</p></li>
+<li><p>Arguments (Ex. <code class="docutils literal notranslate"><span class="pre">file1.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">outputfile.nc</span></code>)</p></li>
+</ol>
+<section id="navigating-your-file-system">
+<h3>Navigating your File System<a class="headerlink" href="#navigating-your-file-system" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> - “change directory” go into a folder or directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> goes back up a level in the folder hierarchy</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> - shows the contents of the current directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> - shows the absolute path of the current directory</p></li>
+</ul>
+<p>Doing these commands is all fine and good, but it’s easy to get lost inside of a computer if you don’t have a general idea of how it is setup. Let’s start building one of those by drawing a diagram for movement between folders and files.</p>
+<p>As a note, you can also run these terminal commands from your jupyter notebook by using a code cell that starts with <code class="docutils literal notranslate"><span class="pre">!</span></code>. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pwd
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rwegener/repos/sarp_lessons/sarp_lessons/3_open_science
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cloud_compute.jpg          clouds_are_datacenters.jpg
+cloud_lesson.ipynb         folder_structure.jpg
+</pre></div>
+</div>
+</div>
+</div>
+<p>Checkin: starting from <code class="docutils literal notranslate"><span class="pre">/shared-public/NASA-SARP</span></code> draw a tree diagram representing the folders / files present.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Checkin</p>
+<p>Starting with the folder <code class="docutils literal notranslate"><span class="pre">/shared-public/NASA-SARP/</span></code> draw a diagram the shows the structure of this folder. Start with the NASA-SARP folder at the top in a box and draw arrows for each of the folders in each sub-folder.</p>
+</div>
+<p>You likely made a diagram that has a similar shape to this:</p>
+<p><img alt="tree" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tree_%28computer_science%29.svg/800px-Tree_%28computer_science%29.svg.png" /></p>
+<p>Notice that each of the folders or files can be traced back to the single starting point. If you draw a diagram like this for your whole file systme this starting point is called the <strong>root</strong> folder and this type of organization in computer science is called a <strong>tree</strong> structure.</p>
+<div class="admonition-vocabulary admonition">
+<p class="admonition-title">Vocabulary</p>
+<p><strong>Root folder</strong>: The root folder is the folder at the very top of the tree. It is the folder in which every single folder on your computer lives.</p>
+</div>
+<p>Why go into all this detailed discussion? It’s easy to get mentally lost in terminal, but it helps to remember that we are always scooting around on this tree. When we are in terminal we are always <em>somewhere</em> on this tree, and every time we change directories we are just moving to another place on the tree. That’s how the inside of a computer is organized! 🌳💻</p>
+<p>Note about how Cryocloud works: When we start up a terminal from Cryocloud, the terminal is always going to initialize itself to whatever folder you have open in your file explorer window.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Checkin</p>
+<p>Create a new folder with a name of your choice (ex. lesson notebooks). <code class="docutils literal notranslate"><span class="pre">wget</span></code> a file into the folder.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Make it harder</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The command for making a new folder in terminal is <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>. Use <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> to create a new folder instead of using the clickable interface.</p>
+</div>
+</details></div>
+<div class="docutils">
+</div>
+</section>
+<section id="moving-and-copying-files">
+<h3>Moving and Copying Files<a class="headerlink" href="#moving-and-copying-files" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file1.txt</span> <span class="pre">file2.txt</span></code> - <code class="docutils literal notranslate"><span class="pre">mv</span></code> -  moves a file from one location to another. Also used for renaming files</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">file1.txt</span></code> - <code class="docutils literal notranslate"><span class="pre">rm</span></code> - permanently deletes a file.</p></li>
+<li><ul>
+<li><p>asterisk is a wildcard so it can be used to remove all the files that match a certain pattern
+Ex. rm -Confirm <em>.txt - removes all text files in a directory
+Ex. rm -Confirm m704_2022</em>.nc - removes all files that start with m704_2022 and end with .nc</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">file1.txt</span> <span class="pre">file1_copy.txt</span></code> - <code class="docutils literal notranslate"><span class="pre">cp</span></code> - copy a file to a new location</p></li>
+</ul>
+</section>
+</section>
+<section id="virtual-desktop">
+<h2>Virtual Desktop<a class="headerlink" href="#virtual-desktop" title="Link to this heading">#</a></h2>
+<p>Not all tasks are done best with code - sometimes an interface is better. For that purpose we have the Virtual Desktop. This tool allows us to access <em>the same files</em> from a graphical user interface (GUI) that is much more similar to a laptop.</p>
+<blockquote>
+<div><p>Demo: viewing WAS data in QGIS</p>
+</div></blockquote>
+</section>
+<section id="uploading-and-downloading-files">
+<h2>Uploading and Downloading Files<a class="headerlink" href="#uploading-and-downloading-files" title="Link to this heading">#</a></h2>
+<p>Something you may want to do very commonly is upload or download data. Let’s demo doing that in the cryocloud interface.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Final Checkin</p>
+<p>Go to earth data search and find one granule of any data product. You can choose any data product (maybe one you’re considering using?!). If you are not sure which one to use try MODIS chlorophyll-a. Download it and upload to your home directory.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Make it harder</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The code below shows how you would download data directly using a library called <code class="docutils literal notranslate"><span class="pre">earthaccess</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">earthaccess</span>
+
+<span class="n">earthaccess</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">earthaccess</span><span class="o">.</span><span class="n">search_data</span><span class="p">(</span>
+    <span class="n">short_name</span><span class="o">=</span><span class="s1">&#39;ECO4ESIPTJPL&#39;</span><span class="p">,</span>
+    <span class="n">bounding_box</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">77</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="o">-</span><span class="mi">76</span><span class="p">,</span> <span class="mi">38</span><span class="p">),</span>
+    <span class="n">temporal</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;2020-02-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-02-10&quot;</span><span class="p">),</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">earthaccess</span><span class="o">.</span><span class="n">download</span><span class="p">(</span>
+    <span class="n">results</span><span class="p">,</span>
+    <span class="n">local_path</span><span class="o">=</span><span class="n">data_dir</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Final Checkin</p>
+<p>Take out a piece of paper and pen. Draw a diagram that represents what happens when you logon to cryocloud. pieces you might include are:</p>
+<ul class="simple">
+<li><p>1+ nodes</p></li>
+<li><p>your computer</p></li>
+<li><p>the type of image</p></li>
+<li><p>the size of the node</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Make it harder</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Add to your diagram the process of uploading a data file to the cloud from your computer.</p>
+</div>
+</details></div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/3_open_science"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../additional_lectures/hierarchical_data/hierarchical_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hierarchical Data Structure</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../4_practice_problems/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Practice Sheets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-images">Computer Images</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tour-of-the-interface">Tour of the interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#private-and-shared-files">Private and Shared Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal">Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-your-file-system">Navigating your File System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-and-copying-files">Moving and Copying Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-desktop">Virtual Desktop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-and-downloading-files">Uploading and Downloading Files</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rachel Wegener
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

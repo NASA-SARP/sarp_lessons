@@ -1,4 +1,6 @@
-# Instructor’s Guide - _Programming for Earth Science Researchers_
+# Instructor’s Guide
+
+_Programming for Earth Science Researchers_
 
 ## Overview
 
@@ -43,22 +45,40 @@ The suggested method for teaching is to first build a Python progression that fi
 
 The example progressions here are organized by the data type that a student would be primarily working with. No matter the data type, however, both tracks start with two hours of Python building blocks. These first two days are typically important for both novice and skilled programmers, as they set up the mindset of viewing Python as a set of data structures which represent their data. The two lessons can move faster for more advanced programmers (ex. perhaps combining them into one lesson), but are still important for setting up their mental framework for programming.
 
+Other than the first two lessons, the goal is for the content to be able to be arranged differently dependeing on the teacher and the student group. If you tried out a different arrangement of lessons, let us know! We'd love to hear feedback.
+
 ### Example 1 - Tabular Data Track
 
-<!-- Testing a simple link. See {doc}`here <./env_setup>` for more information.
-
-Also trying this syntax See {doc}`./env_setup` for more information.
-
-Trying again but in another folder See {doc}`../1_python_progression/1-general_python/index` for more information.
-
-Now testing a notebook. See {doc}`../1_python_progression/1-general_python/1-1_variables_types_ifstatements` for more information. -->
-
-
+| Day  | Coding Topics    | Computational Skills |
+| :---: | :--- | :--- |
+| 1 | {doc}`../1_python_progression/1-general_python/1-1_variables_types_ifstatements` <ul><li>Building Blocks of Programming: Assigning variables, data types, booleans</li> <li>Control flow: if statements</li></ul> | JupyterLab Interface |
+| 2 | {doc}`../1_python_progression/1-general_python/1-2_lists_dictionaries` <ul><li>The Structure of Data: Lists and dictionaries</li> </ul> | Choosing a Python data structure |
+| 3 | {doc}`../1_python_progression/2-tabular_data/2-1_pandas` <ul><li>Python libraries (pandas)</li><li>Introduction to tabular data</li><li>Functions/Methods</li><li>Dataframe aggregations</li></ul> | {doc}`../2_computational_skills/file_organization` Organizing your files |
+| 4 | {doc}`../1_python_progression/2-tabular_data/2-2_filtering_groupby` <ul><li>Indexing dataframes</li><li>Reducing datasets: Filtering and groupby</li></ul> | Inspecting newly opened data (ex. checking for nans) |
+| 5 | {doc}`../2_computational_skills/debugging_lesson` <ul><li>Reading error messages</li><li>Debugging Strategies</li></ul> |  |
+| 6 | {doc}`../1_python_progression/5-visualization/5-1_static_viz_matplotlib` <ul><li>Introduction to visualization and matplotlib</li></ul> | <ul><li>Visualization in the scientific workflow</li><li>Reading documentation</li></ul> |
+| 7 | {doc}`../1_python_progression/4-spatiotemporal/4-1_datetimes` and {doc}`../1_python_progression/4-spatiotemporal/4-2_spatial_data` <ul><li>Dates and times in code</li><li>Geospatial data: bounding boxes and coordinate systems</li></ul> |  |
+| 8 | {doc}`../1_python_progression/4-spatiotemporal/4-3_geopandas` <ul><li>Geospatial Python</li><li>spatial data operations</li><li>reprojecting to meters</li><li>spatial filtering</li></ul> |  |
+| 9 | {doc}`../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy` <ul><li>Mapping with cartopy and seaborn</li></ul> | Planning your coding process |
+| 10 | <ul><li>Github</li></ul> | Coding, Github, and open science |
 
 ### Example 2 - Gridded Data Track
+
+| Day  | Coding Topics     | Computational Skills |
+| :---: | :--- | :--- |
+| 1 | {doc}`../1_python_progression/1-general_python/1-1_variables_types_ifstatements` <ul><li>Building Blocks of Programming: Assigning variables, data types, booleans</li> <li>Control flow: if statements</li></ul> | JupyterLab Interface|
+| 2 | {doc}`../1_python_progression/1-general_python/1-2_lists_dictionaries` <ul><li>The Structure of Data: Lists and dictionaries</li> </ul> | Choosing a Python data structure |
+| 3 | {doc}`../1_python_progression/3-gridded_data/3-1_xarray` <ul><li>Python libraries (xarray)</li><li>Introduction to gridded data</li><li>Functions/Methods</li><li>xarray data structures</li><li>Indexing and selecting data</li></ul> | {doc}`../2_computational_skills/file_organization` Organizing your files |
+| 4 | {doc}`../1_python_progression/3-gridded_data/3-2_xarray_computation` <ul><li>Aggregations</li><li>Filtering and Masking</li></ul> | Using the CLI |
+| 5 | {doc}`../2_computational_skills/debugging_lesson` <ul><li>Reading error messages</li><li>Debugging Strategies</li></ul> |  |
+| 6 | {doc}`../1_python_progression/5-visualization/5-1_static_viz_matplotlib` <ul><li>Introduction to visualization and matplotlib</li></ul> | <ul><li>Visualization in the scientific workflow</li><li>Reading documentation</li></ul> |
+| 7 | {doc}`../1_python_progression/3-gridded_data/3-3_xarray_groupby` and  {doc}`../1_python_progression/4-spatiotemporal/4-1_datetimes` <ul><li>Dates and times in code</li><li>Grouping and combining data</li></ul> |  |
+| 8 | {doc}`../../additional_lectures/hierarchical_data/hierarchical_data` | Common earth science file formats and Python libraries for reading them |
+| 9 | {doc}`../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy` <ul><li>Mapping with cartopy and seaborn</li></ul> | Planning your coding process |
+| 10 | <ul><li>Github</li></ul> | Coding, Github, and open science |
 
 ### Example 3 - Combined Tabular & Gridded Track
 
 Past instructors have taught both the tabular and gridded data tracks to their students. If doing this, the suggestion is:
 1. Teach tabular data first, as the pandas DataFrame is typically easier to grasp than an xarray DataSet
-2. Build competency in one data structure first, then move to a second one. Mixing the two can be more confusing for student that aren’t familiar with either construct.
+2. Build competency in one data structure first, then move to a second one. Mixing the two can be more confusing for students that aren’t familiar with either construct.

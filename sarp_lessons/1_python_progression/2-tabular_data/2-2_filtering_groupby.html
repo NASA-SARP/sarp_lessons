@@ -165,7 +165,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../../index.html">
-                    Welcome to SARP Programming
+                    Python Programming for Earth Science Researchers
                 </a>
             </li>
         </ul>
@@ -205,8 +205,14 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../2_computational_skills/file_organization.html">Organizing your Files</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../2_computational_skills/debugging_lesson.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../3_open_science/cloud_lesson.html">Science on the Cloud</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
 <ul class="nav bd-sidenav">
@@ -491,114 +497,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># This line shortens the output</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">sarp_docs2</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">37</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">_module</span> <span class="o">=</span> <span class="n">_err</span><span class="o">.</span><span class="n">name</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span>         <span class="sa">f</span><span class="s2">&quot;C extension: </span><span class="si">{</span><span class="n">_module</span><span class="si">}</span><span class="s2"> not built. If you want to import &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="s2">&quot;pandas from the source directory, you may need to run &quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="s2">&quot;&#39;python setup.py build_ext&#39; to build the C extensions first.&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="p">)</span> <span class="kn">from</span> <span class="nn">_err</span>
-<span class="ne">---&gt; </span><span class="mi">37</span> <span class="kn">from</span> <span class="nn">pandas._config</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>     <span class="n">get_option</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="n">set_option</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">reset_option</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="n">describe_option</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="n">option_context</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="n">options</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="c1"># let init-time option registration happen</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="kn">import</span> <span class="nn">pandas.core.config_init</span>  <span class="c1"># pyright: ignore[reportUnusedImport] # noqa: F401</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">sarp_docs2</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_config</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">20</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="sd"> pandas._config is considered explicitly upstream of everything else in pandas,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd"> should have no intra-pandas dependencies.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="sd"> are initialized.</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="s2">&quot;config&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="s2">&quot;detect_console_encoding&quot;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="s2">&quot;warn_copy_on_write&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">20</span> <span class="kn">from</span> <span class="nn">pandas._config</span> <span class="kn">import</span> <span class="n">config</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">from</span> <span class="nn">pandas._config</span> <span class="kn">import</span> <span class="n">dates</span>  <span class="c1"># pyright: ignore[reportUnusedImport]  # noqa: F401</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">from</span> <span class="nn">pandas._config.config</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">_global_config</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">describe_option</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">set_option</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">sarp_docs2</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_config</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">68</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="n">TYPE_CHECKING</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="n">Any</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="n">cast</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="kn">import</span> <span class="nn">warnings</span>
-<span class="ne">---&gt; </span><span class="mi">68</span> <span class="kn">from</span> <span class="nn">pandas._typing</span> <span class="kn">import</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="n">F</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>     <span class="n">T</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="kn">from</span> <span class="nn">pandas.util._exceptions</span> <span class="kn">import</span> <span class="n">find_stack_level</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">sarp_docs2</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pandas</span><span class="o">/</span><span class="n">_typing</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">198</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="n">Frequency</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;BaseOffset&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="n">Axes</span> <span class="o">=</span> <span class="n">ListLike</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="n">RandomState</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="nb">int</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">198</span>     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">Generator</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">BitGenerator</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span>     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="c1"># dtypes</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="n">NpDtype</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">type_t</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">complex</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]]</span>
-
-<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/numpy/__init__.py:340,</span> in <span class="ni">__getattr__</span><span class="nt">(attr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span>     <span class="k">return</span> <span class="n">dtypes</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="k">elif</span> <span class="n">attr</span> <span class="o">==</span> <span class="s2">&quot;random&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">340</span>     <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">random</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="k">return</span> <span class="n">random</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span> <span class="k">elif</span> <span class="n">attr</span> <span class="o">==</span> <span class="s2">&quot;polynomial&quot;</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">sarp_docs2</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">random</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">180</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span> <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="s1">&#39;beta&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="s1">&#39;binomial&#39;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="s1">&#39;zipf&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="c1"># add these for module-freeze analysis (like PyInstaller)</span>
-<span class="ne">--&gt; </span><span class="mi">180</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_pickle</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_common</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_bounded_integers</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">sarp_docs2</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">random</span><span class="o">/</span><span class="n">_pickle</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">.bit_generator</span> <span class="kn">import</span> <span class="n">BitGenerator</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">.mtrand</span> <span class="kn">import</span> <span class="n">RandomState</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">._philox</span> <span class="kn">import</span> <span class="n">Philox</span>
-
-<span class="nn">File bit_generator.pyx:1,</span> in <span class="ni">init numpy.random.bit_generator</span><span class="nt">()</span>
-
-<span class="nn">File &lt;frozen importlib._bootstrap&gt;:645,</span> in <span class="ni">parent</span><span class="nt">(self)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -679,7 +577,7 @@
       <td>8.3</td>
       <td>8.1</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>2</th>
@@ -689,7 +587,7 @@
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>3</th>
@@ -698,8 +596,8 @@
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>4</th>
@@ -708,8 +606,8 @@
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>5</th>
@@ -718,8 +616,8 @@
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>medium</td>
+      <td>True</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -738,8 +636,8 @@
       <td>6.7</td>
       <td>9.8</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>143</th>
@@ -749,7 +647,7 @@
       <td>9.9</td>
       <td>7.9</td>
       <td>False</td>
-      <td>medium</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>144</th>
@@ -758,8 +656,8 @@
       <td>6.7</td>
       <td>10.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>145</th>
@@ -769,7 +667,7 @@
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>146</th>
@@ -779,7 +677,7 @@
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
   </tbody>
 </table>
@@ -850,14 +748,24 @@
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>2021-03-12 00:15</td>
+      <th>3</th>
+      <td>2021-03-12 00:30</td>
       <td>44.5</td>
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>high</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-03-12 00:45</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>6</th>
@@ -877,27 +785,17 @@
       <td>8.0</td>
       <td>8.1</td>
       <td>False</td>
-      <td>low</td>
+      <td>high</td>
     </tr>
     <tr>
-      <th>10</th>
-      <td>2021-03-12 02:15</td>
+      <th>8</th>
+      <td>2021-03-12 01:45</td>
       <td>44.5</td>
       <td>8.0</td>
-      <td>8.0</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>2021-03-12 02:30</td>
-      <td>44.5</td>
-      <td>7.9</td>
       <td>8.0</td>
       <td>8.1</td>
       <td>True</td>
-      <td>high</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -910,26 +808,6 @@
       <td>...</td>
     </tr>
     <tr>
-      <th>137</th>
-      <td>2021-03-13 10:00</td>
-      <td>46.5</td>
-      <td>6.8</td>
-      <td>9.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>138</th>
-      <td>2021-03-13 10:15</td>
-      <td>44.5</td>
-      <td>6.8</td>
-      <td>9.4</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>low</td>
-    </tr>
-    <tr>
       <th>139</th>
       <td>2021-03-13 10:30</td>
       <td>44.5</td>
@@ -940,20 +818,40 @@
       <td>medium</td>
     </tr>
     <tr>
-      <th>142</th>
-      <td>2021-03-13 11:15</td>
+      <th>141</th>
+      <td>2021-03-13 11:00</td>
       <td>42.6</td>
       <td>6.7</td>
-      <td>9.8</td>
+      <td>9.7</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>2021-03-13 12:00</td>
-      <td>46.5</td>
+      <th>143</th>
+      <td>2021-03-13 11:30</td>
+      <td>42.6</td>
       <td>6.7</td>
+      <td>9.9</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>2021-03-13 11:45</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>10.2</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>2021-03-13 12:15</td>
+      <td>NaN</td>
+      <td>6.6</td>
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
@@ -961,7 +859,7 @@
     </tr>
   </tbody>
 </table>
-<p>71 rows × 7 columns</p>
+<p>73 rows × 7 columns</p>
 </div></div></div>
 </div>
 <p>That returned only the rows where the value in the list was True!</p>
@@ -1018,7 +916,7 @@
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1027,8 +925,8 @@
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>27</th>
@@ -1037,8 +935,8 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>28</th>
@@ -1047,8 +945,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>29</th>
@@ -1057,8 +955,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1077,8 +975,8 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>122</th>
@@ -1087,7 +985,7 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
+      <td>False</td>
       <td>low</td>
     </tr>
     <tr>
@@ -1107,7 +1005,7 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
+      <td>True</td>
       <td>medium</td>
     </tr>
     <tr>
@@ -1118,7 +1016,7 @@
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
-      <td>low</td>
+      <td>high</td>
     </tr>
   </tbody>
 </table>
@@ -1169,7 +1067,7 @@
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1178,8 +1076,8 @@
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>27</th>
@@ -1188,8 +1086,8 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>28</th>
@@ -1198,8 +1096,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>29</th>
@@ -1208,8 +1106,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1228,8 +1126,8 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>122</th>
@@ -1238,7 +1136,7 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
+      <td>False</td>
       <td>low</td>
     </tr>
     <tr>
@@ -1258,7 +1156,7 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
+      <td>True</td>
       <td>medium</td>
     </tr>
     <tr>
@@ -1269,7 +1167,7 @@
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
-      <td>low</td>
+      <td>high</td>
     </tr>
   </tbody>
 </table>
@@ -1354,20 +1252,20 @@ True
   </thead>
   <tbody>
     <tr>
-      <th>28</th>
-      <td>2021-03-12 06:45</td>
+      <th>27</th>
+      <td>2021-03-12 06:30</td>
       <td>48.5</td>
-      <td>7.0</td>
+      <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
       <td>high</td>
     </tr>
     <tr>
-      <th>30</th>
-      <td>2021-03-12 07:15</td>
+      <th>29</th>
+      <td>2021-03-12 07:00</td>
       <td>48.5</td>
-      <td>6.9</td>
+      <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
@@ -1391,17 +1289,17 @@ True
       <td>8.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>low</td>
+      <td>medium</td>
     </tr>
     <tr>
-      <th>34</th>
-      <td>2021-03-12 08:15</td>
+      <th>33</th>
+      <td>2021-03-12 08:00</td>
       <td>48.5</td>
-      <td>6.7</td>
+      <td>6.8</td>
       <td>8.4</td>
       <td>7.9</td>
       <td>True</td>
-      <td>low</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1414,6 +1312,16 @@ True
       <td>...</td>
     </tr>
     <tr>
+      <th>137</th>
+      <td>2021-03-13 10:00</td>
+      <td>46.5</td>
+      <td>6.8</td>
+      <td>9.3</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
       <th>139</th>
       <td>2021-03-13 10:30</td>
       <td>44.5</td>
@@ -1424,24 +1332,14 @@ True
       <td>medium</td>
     </tr>
     <tr>
-      <th>141</th>
-      <td>2021-03-13 11:00</td>
+      <th>144</th>
+      <td>2021-03-13 11:45</td>
       <td>42.6</td>
       <td>6.7</td>
-      <td>9.7</td>
+      <td>10.2</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>142</th>
-      <td>2021-03-13 11:15</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.8</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>145</th>
@@ -1451,7 +1349,7 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>146</th>
@@ -1461,11 +1359,11 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
   </tbody>
 </table>
-<p>36 rows × 7 columns</p>
+<p>35 rows × 7 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1511,27 +1409,17 @@ True
       <td>8.3</td>
       <td>8.1</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>2021-03-12 00:30</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2021-03-12 00:45</td>
+      <th>5</th>
+      <td>2021-03-12 01:00</td>
       <td>44.5</td>
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
       <td>True</td>
-      <td>medium</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1551,7 +1439,17 @@ True
       <td>8.0</td>
       <td>8.1</td>
       <td>True</td>
-      <td>medium</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2021-03-12 02:15</td>
+      <td>44.5</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.1</td>
+      <td>True</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1570,8 +1468,8 @@ True
       <td>6.7</td>
       <td>9.8</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>143</th>
@@ -1581,7 +1479,7 @@ True
       <td>9.9</td>
       <td>7.9</td>
       <td>False</td>
-      <td>medium</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>144</th>
@@ -1590,8 +1488,8 @@ True
       <td>6.7</td>
       <td>10.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>145</th>
@@ -1601,7 +1499,7 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>146</th>
@@ -1611,11 +1509,11 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
   </tbody>
 </table>
-<p>111 rows × 7 columns</p>
+<p>94 rows × 7 columns</p>
 </div></div></div>
 </div>
 <p>There is more than one way to do this type of filtering in pandas, but it is fine to start with one method and feel really comfortable with it before moving to the others.  <a class="reference external" href="https://www.listendata.com/2019/07/how-to-filter-pandas-dataframe.html">This article</a> has a pretty nice overview of some other methods.</p>
@@ -1903,7 +1801,7 @@ Name: Hassan A, dtype: int64
       <td>8.3</td>
       <td>8.1</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>2021-03-12 00:15</th>
@@ -1912,7 +1810,7 @@ Name: Hassan A, dtype: int64
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-12 00:30</th>
@@ -1920,8 +1818,8 @@ Name: Hassan A, dtype: int64
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>2021-03-12 00:45</th>
@@ -1929,8 +1827,8 @@ Name: Hassan A, dtype: int64
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>2021-03-12 01:00</th>
@@ -1938,8 +1836,8 @@ Name: Hassan A, dtype: int64
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>medium</td>
+      <td>True</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1956,8 +1854,8 @@ Name: Hassan A, dtype: int64
       <td>6.7</td>
       <td>9.8</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>2021-03-13 11:30</th>
@@ -1966,7 +1864,7 @@ Name: Hassan A, dtype: int64
       <td>9.9</td>
       <td>7.9</td>
       <td>False</td>
-      <td>medium</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>2021-03-13 11:45</th>
@@ -1974,8 +1872,8 @@ Name: Hassan A, dtype: int64
       <td>6.7</td>
       <td>10.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-13 12:00</th>
@@ -1984,7 +1882,7 @@ Name: Hassan A, dtype: int64
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-13 12:15</th>
@@ -1993,7 +1891,7 @@ Name: Hassan A, dtype: int64
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
   </tbody>
 </table>
@@ -2007,12 +1905,12 @@ Name: Hassan A, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>discharge             40.8
-temperature            7.4
-dissolved oxygen      11.6
-pH                     8.1
-dam release          False
-safety level        medium
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>discharge            40.8
+temperature           7.4
+dissolved oxygen     11.6
+pH                    8.1
+dam release         False
+safety level         high
 Name: 2021-03-12 13:00, dtype: object
 </pre></div>
 </div>
@@ -2115,8 +2013,8 @@ Name: 2021-03-12 13:00, dtype: object
     <tr>
       <th>high</th>
       <td>39.0</td>
-      <td>6.7</td>
-      <td>7.9</td>
+      <td>6.6</td>
+      <td>8.0</td>
       <td>7.8</td>
       <td>False</td>
     </tr>
@@ -2131,8 +2029,8 @@ Name: 2021-03-12 13:00, dtype: object
     <tr>
       <th>medium</th>
       <td>39.0</td>
-      <td>6.6</td>
-      <td>8.0</td>
+      <td>6.7</td>
+      <td>7.9</td>
       <td>7.8</td>
       <td>False</td>
     </tr>
@@ -2258,9 +2156,9 @@ Name: 2021-03-12 13:00, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>safety level
-high      44.800000
-low       45.176923
-medium    44.512245
+high      44.644000
+low       44.962264
+medium    44.795238
 Name: discharge, dtype: float64
 </pre></div>
 </div>
