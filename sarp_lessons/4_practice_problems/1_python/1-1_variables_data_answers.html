@@ -1,0 +1,1262 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.1 Answers &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/4_practice_problems/1_python/1-1_variables_data_answers';</script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.2 Problems" href="1-2_lists_dicts_practice.html" />
+    <link rel="prev" title="1.1 Problems" href="1-1_variables_data_practice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Welcome to SARP Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Python Practice</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-2_xarray_practice.html">3.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_answers.html">4.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_practice.html">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/4_practice_problems/1_python/1-1_variables_data_answers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/sarp_lessons/4_practice_problems/1_python/1-1_variables_data_answers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1.1 Answers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assigning-variables">Assigning Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">If statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems-part-2">Practice Problems Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="answers">
+<h1>1.1 Answers<a class="headerlink" href="#answers" title="Link to this heading">#</a></h1>
+<p>Variables, Data Types and If statements Answers</p>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<section id="assigning-variables">
+<h3>Assigning Variables<a class="headerlink" href="#assigning-variables" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create a variable called <code class="docutils literal notranslate"><span class="pre">location</span></code> and assign it the value: Quito, Ecuador. Print your variable.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location</span> <span class="o">=</span> <span class="s1">&#39;Quito, Ecuador&#39;</span>
+<span class="c1"># or</span>
+<span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Quito, Ecuador&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quito, Ecuador
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">print(location)</span></code> you may have used quotes, as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>location
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you run that cell you’ll notice that it prints the word location, because you gave <code class="docutils literal notranslate"><span class="pre">print</span></code> the string value location. When you remove the quotes the print gives the value of the variable.</p>
+<ol class="arabic simple" start="2">
+<li><p>Create two variables that are numbers and print the result of one of them divided by the other.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">number2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number1</span><span class="o">/</span><span class="n">number2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>What do you expect to be the output of the following block of code?</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_fav_icecream</span> <span class="o">=</span> <span class="s1">&#39;mint&#39;</span>
+<span class="n">your_fav_icecream</span> <span class="o">=</span> <span class="s1">&#39;blue moon&#39;</span>
+<span class="n">my_fav_icecream</span> <span class="o">=</span> <span class="s1">&#39;peanut butter cup&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_fav_icecream</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># peanut butter cup</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-types">
+<h3>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="4">
+<li><p>What are the data types of each of the following values?</p></li>
+</ol>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> – <strong>Boolean</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">832</span></code> – <strong>integer</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0.001</span></code> – <strong>float</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'giant</span> <span class="pre">kelp'</span></code> – <strong>string</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;false&quot;</span></code> – <strong>string</strong></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;5&quot;</span></code> – <strong>string</strong></p></li>
+</ol>
+<p>Check that you are correct using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function, as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;cheese&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="booleans">
+<h3>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="5">
+<li><p>What is a boolean?  When might a boolean be useful?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Booleans are a data type that have only two possible values -- either 0 or 1.</span>
+<span class="c1"># Booleans are often useful when doing comparisons.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>The following cell represents some data you are working with.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cloud_cover</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">city</span> <span class="o">=</span> <span class="s1">&#39;Oshkosh&#39;</span>
+<span class="n">cfc_present</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ozone</span> <span class="o">=</span> <span class="mf">3.8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Run the cell above, and use the variables to individually check for each of the following conditions:</p>
+<ul class="simple">
+<li><p>cloud cover is less than 90</p></li>
+<li><p>city is not Minneapolis</p></li>
+<li><p>there are no cfcs present</p></li>
+<li><p>ozone is greater than or equal to 2</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cloud_cover</span> <span class="o">&lt;</span> <span class="mi">90</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">city</span> <span class="o">!=</span> <span class="s1">&#39;Minneapolis&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cfc_present</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ozone</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Explain the difference between <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A single = is used to assign a value to a variable, while a double == is &quot;equals to&quot; and is a comparison</span>
+<span class="c1"># The result of == is a Boolean output - either True or False.  There isn&#39;t usually output when using a single =, just a new variable.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="logical-operators">
+<h3>Logical Operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="8">
+<li><p>How is <code class="docutils literal notranslate"><span class="pre">and</span></code> different from <code class="docutils literal notranslate"><span class="pre">or</span></code>?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and checks if both statements are true, while or checks if any single one of them is true.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>Fill out the values for <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">q</span></code> and <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span></code> in the following table, given each combination of the possible values for <code class="docutils literal notranslate"><span class="pre">p</span></code> and for <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+</ol>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>p</p></th>
+<th class="head"><p>q</p></th>
+<th class="head"><p>p and q</p></th>
+<th class="head"><p>p or q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>For each of the following scenarios do you think it would make more sense to use <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code>?</p></li>
+</ol>
+<ul class="simple">
+<li><p>You have several images and you want to make sure that at least one of them has the wavelength you need. – <strong>or</strong></p></li>
+<li><p>You have an algorithm which requires three variables in a specific range and you want to check those three variables in your image to make sure the image will work. – <strong>and</strong></p></li>
+<li><p>In a particular dataset you are looking at invalid results have the value -999. You also know that values above 1000 are not suitable for your use case.  You need to check the dataset to make sure that neither of those things are true. – <strong>and</strong></p></li>
+</ul>
+<ol class="arabic simple" start="11">
+<li><p>Write a statement using the following operators: <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visibility</span> <span class="o">=</span> <span class="mi">62</span>
+<span class="n">visibility</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="ow">and</span> <span class="n">visibility</span> <span class="o">!=</span> <span class="mi">74</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Write a statement using the following operators: <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">speed</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">speed</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">15</span> <span class="ow">or</span> <span class="n">speed</span> <span class="o">+</span> <span class="mi">25</span> <span class="o">&gt;</span> <span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="if-statements">
+<h3>If statements<a class="headerlink" href="#if-statements" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="12">
+<li><p>Write an if statement that uses the following elements:</p></li>
+</ol>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="k">if</span> <span class="n">depth</span> <span class="o">&lt;=</span> <span class="mi">150</span> <span class="ow">or</span> <span class="n">depth</span> <span class="o">&lt;</span> <span class="mi">500</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ideal conditions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ideal conditions
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="13">
+<li><p>You have species data with the variable <code class="docutils literal notranslate"><span class="pre">family</span></code> and you would like to assign the species to a group based on the family.  The groups are:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Group A - <code class="docutils literal notranslate"><span class="pre">pinaceae</span></code>, <code class="docutils literal notranslate"><span class="pre">lamiaceae</span></code></p></li>
+<li><p>Group B - <code class="docutils literal notranslate"><span class="pre">aceraceae</span></code>, <code class="docutils literal notranslate"><span class="pre">salicaceae</span></code></p></li>
+</ul>
+<p>Write a statement that checks the <code class="docutils literal notranslate"><span class="pre">family</span></code>variable and informs the user if the species belongs in group A or group B.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;salicaceae&#39;</span>
+<span class="k">if</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;pinaceae&#39;</span> <span class="ow">or</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;lamiacae&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;species in group A&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">family</span> <span class="ow">in</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;aceraceae&#39;</span> <span class="ow">or</span> <span class="n">family</span> <span class="o">==</span> <span class="s1">&#39;salicaceae&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;species in group B&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no family found.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>species in group B
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-problems-part-2">
+<h2>Practice Problems Part 2<a class="headerlink" href="#practice-problems-part-2" title="Link to this heading">#</a></h2>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
+<p>Write some code to take the mean value of the three sun angles below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sun_angle1</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">sun_angle2</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">sun_angle3</span> <span class="o">=</span> <span class="mi">67</span>
+<span class="c1"># Take the mean</span>
+<span class="c1"># Output the mean to the user</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_angle</span> <span class="o">=</span> <span class="p">(</span><span class="n">sun_angle1</span> <span class="o">+</span> <span class="n">sun_angle2</span> <span class="o">+</span> <span class="n">sun_angle3</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_angle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<p><strong>A)</strong> Google “Python operators”.  Find a webpage with some operators and use two of them below.
+If you are having a hard time finding a webpage you can use <a class="reference external" href="https://www.w3schools.com/python/python_operators.asp">this one</a>, which is the first page that shows up when I run the search.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Floor division</span>
+<span class="mi">10</span> <span class="o">//</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exponents</span>
+<span class="mi">3</span><span class="o">**</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> Fill in the <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Your</span> <span class="pre">code</span> <span class="pre">here</span></code> space below to compute the area of a circle given the radius.  You can approximate the value of pi with <code class="docutils literal notranslate"><span class="pre">3.14</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radius</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># Your code here</span>
+<span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.24
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>Hint</strong> I haven’t told you how to take the square of a variable, so you will either have to do that using the tools you have or do a google search for “square of a number Python”.</em></p>
+<p><strong>C)</strong> Calculate 2 to the 8th power.  Assign it to a variable and print the output.  Include a string in the print statement that says: <em>2 to the 8th power is:</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">8</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 to the 8th power is: &#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 to the 8th power is:  256
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
+<p>What is the output of the following block of code?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">updated_temp</span> <span class="o">=</span> <span class="mi">72</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">updated_temp</span><span class="p">)</span>
+<span class="n">updated_temp</span> <span class="o">=</span> <span class="n">updated_temp</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="n">updated_temp</span> <span class="o">=</span> <span class="n">updated_temp</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">updated_temp</span> <span class="o">=</span> <span class="n">updated_temp</span> <span class="o">-</span><span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">updated_temp</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 72</span>
+<span class="c1"># 70</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h3>
+<p>Use a comparison (less than, equal to, etc.) to determine if the result of 3 to the power of some number (the input variable <code class="docutils literal notranslate"><span class="pre">exponent</span></code>) is between 100 and 1000.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exponent</span> <span class="o">=</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">**</span><span class="n">exponent</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">**</span><span class="n">exponent</span> <span class="o">&lt;</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3>Question 4<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cloud_cover</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">city</span> <span class="o">=</span> <span class="s1">&#39;Oshkosh&#39;</span>
+<span class="n">cfc_present</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ozone</span> <span class="o">=</span> <span class="mf">3.8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A)</strong> Use the variables in the cell above and check that the following conditions are true:</p>
+<ul class="simple">
+<li><p>Cloud cover is less than 90</p></li>
+<li><p>city is not Minneapolis</p></li>
+<li><p>There are no cfcs present</p></li>
+<li><p>ozone is greater than or equal to 2 and above 0.5</p></li>
+</ul>
+<p><em>Print a message to the user informing them if all of the conditions were true or not.</em></p>
+<p><strong>I realize on this question that ozone being greater than 2 and above 0.5 is repetitive, so my apologies for the nonsensical request.  In the solution I just dropped the “above 0.5” off in my solution</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cloud_cover</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="ow">and</span> <span class="n">city</span> <span class="o">!=</span> <span class="s1">&#39;Minneapolis&#39;</span> <span class="ow">and</span> <span class="n">cfc_present</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">and</span> <span class="n">ozone</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;all conditions met&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not all conditions met&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>not all conditions met
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> Using the same variables and conditions as in part A, change your code so that it checks if any of the conditions are true.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">cloud_cover</span> <span class="o">&lt;</span> <span class="mi">90</span> <span class="ow">or</span> <span class="n">city</span> <span class="o">!=</span> <span class="s1">&#39;Minneapolis&#39;</span> <span class="ow">or</span> <span class="n">cfc_present</span> <span class="o">==</span> <span class="kc">False</span> <span class="ow">or</span> <span class="n">ozone</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;at least one condition met&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>at least one condition met
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h3>
+<p>As a variable, wind is often expressed as two different numbers, which together make up the complete wind vector:</p>
+<ol class="arabic simple">
+<li><p>wind speed</p></li>
+<li><p>wind direction</p></li>
+</ol>
+<p>Wind speed is expressed in degrees and follows the following quadrant:</p>
+<img src="https://slideplayer.com/slide/17852123/106/images/17/Wind+Direction+%28degrees%29+Meteorologists+generally+use+degrees.jpg" width=520>
+Note that 0 degrees is on top and the degrees increase going clockwise. Use this knowledge to work through the following problems.<p><strong>A)</strong> Sometimes wind directions are conveyed as greater than 360 degrees.  Numbers above 360 indicate a second loop around the quadrant. For example:</p>
+<ul class="simple">
+<li><p>450 degrees is the same as 90 degrees</p></li>
+<li><p>720 degrees is the same as 0 degrees</p></li>
+</ul>
+<p>Given wind directions that are greater than 360, write some code to return the wind direction expressed between 0 and 360.  Check your code works against both of the numbers below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_wind_direction</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">large_wind_direction</span> <span class="o">=</span> <span class="mi">750</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_wind_direction</span> <span class="o">%</span> <span class="mi">360</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>Hint</strong> check out the Python arithmetic operators</em></p>
+<p><strong>B)</strong> Write a statement to check if a given wind direction is coming from the west.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_direction</span> <span class="o">=</span> <span class="mi">145</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Due west only</span>
+<span class="n">wind_direction</span> <span class="o">==</span> <span class="mi">270</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Range of degrees</span>
+<span class="n">wind_direction</span> <span class="o">&gt;</span> <span class="mi">240</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&lt;</span> <span class="mi">300</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>C)</strong> <em>Write a block of code that takes a wind direction and prints back to the user the direction the wind is coming from.  You can use a range of values for each direction (i.e. “east” means wind coming from between 45 and 135 degrees).</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_direction</span> <span class="o">=</span> <span class="mi">132</span>
+<span class="k">if</span> <span class="n">wind_direction</span> <span class="o">&gt;</span> <span class="mi">45</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&lt;=</span> <span class="mi">135</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;East&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">wind_direction</span> <span class="o">&gt;</span> <span class="mi">135</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&lt;=</span> <span class="mi">225</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;South&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">wind_direction</span> <span class="o">&gt;</span> <span class="mi">225</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&lt;=</span> <span class="mi">315</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;West&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">wind_direction</span> <span class="o">&gt;</span> <span class="mi">315</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&lt;=</span> <span class="mi">360</span><span class="p">)</span> <span class="ow">or</span> <span class="n">wind_direction</span> <span class="o">&lt;</span> <span class="mi">45</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;North&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;invalid wind direction&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>East
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>C)</strong> Monsoon winds in some regions are identified by winds coming from the Northwest (+/- 30 degrees) at greater than or equal to 20 mph.  Write a statement to evaluate if the wind direction/wind speed combination would qualify as a monsoon-type wind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wind_speed</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="n">wind_direction</span> <span class="o">=</span> <span class="mi">43</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">wind_speed</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&gt;</span> <span class="mi">285</span> <span class="ow">and</span> <span class="n">wind_direction</span> <span class="o">&lt;</span> <span class="mi">345</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;monsoon wind&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;not a monsoon wind&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>not a monsoon wind
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h3>
+<p>Given a temperature in fahrenheit, write an equation to convert the temperature to celsius.  Print out a statement after converting to celsius informing the user whether or not the temperature has reached boiling point of water.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fahrenheit</span> <span class="o">=</span> <span class="mi">87</span>
+<span class="n">celsius</span> <span class="o">=</span> <span class="p">(</span><span class="n">fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">celsius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.555555555555557
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/4_practice_problems/1_python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="1-1_variables_data_practice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">1.1 Problems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1-2_lists_dicts_practice.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.2 Problems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assigning-variables">Assigning Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#booleans">Booleans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statements">If statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-problems-part-2">Practice Problems Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Question 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rachel Wegener
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

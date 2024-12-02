@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.2 Problems &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/4_practice_problems/1_python/4-2_spatial_data_practice';</script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.2 Answers" href="4-2_spatial_data_answers.html" />
+    <link rel="prev" title="4.1 Answers" href="4-1_datetimes_answers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Welcome to SARP Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Python Practice</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_answers.html">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-2_xarray_practice.html">3.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_answers.html">4.1 Answers</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/4_practice_problems/1_python/4-2_spatial_data_practice.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/sarp_lessons/4_practice_problems/1_python/4-2_spatial_data_practice.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4.2 Problems</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-boxes">Bounding boxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crs-and-map-projections">CRS and Map Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utm-grids">UTM Grids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapely"><code class="docutils literal notranslate"><span class="pre">shapely</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problems">
+<h1>4.2 Problems<a class="headerlink" href="#problems" title="Link to this heading">#</a></h1>
+<p>Spatial Data Practice</p>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<section id="bounding-boxes">
+<h3>Bounding boxes<a class="headerlink" href="#bounding-boxes" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Use google maps or another mapping application to get the approximate bounds of Venezuela.  Express the bounds as <code class="docutils literal notranslate"><span class="pre">minx</span></code>, <code class="docutils literal notranslate"><span class="pre">miny</span></code>, <code class="docutils literal notranslate"><span class="pre">maxx</span></code>, <code class="docutils literal notranslate"><span class="pre">maxy</span></code>.</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Using the points <code class="docutils literal notranslate"><span class="pre">minx</span></code>, <code class="docutils literal notranslate"><span class="pre">miny</span></code>, <code class="docutils literal notranslate"><span class="pre">maxx</span></code>, <code class="docutils literal notranslate"><span class="pre">maxy</span></code> write coordinates of the form longitude, latitude for each of the corners of a bounding box:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Upper left corner:</p></li>
+<li><p>Upper right corner:</p></li>
+<li><p>Lower left corner:</p></li>
+<li><p>Lower right corner:</p></li>
+</ul>
+</section>
+<section id="crs-and-map-projections">
+<h3>CRS and Map Projections<a class="headerlink" href="#crs-and-map-projections" title="Link to this heading">#</a></h3>
+<p>3a) You open a datafile and the unit of the coordinates is kilometers.  Is the CRS geographic or projected?</p>
+<p>3b) You open a datafile and the unit of the coordinates is degrees.  Is the CRS geographic or projected?</p>
+<ol class="arabic simple" start="4">
+<li><p>You open a file and see in the metadata that the EPSG code is 4326.  Find that reference system in on <a class="reference external" href="http://www.epsg.io">www.epsg.io</a>.  What is the unit of that coordinate system?  What area of the world does that system cover (what are the bounds)?</p></li>
+</ol>
+</section>
+<section id="utm-grids">
+<h3>UTM Grids<a class="headerlink" href="#utm-grids" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="5">
+<li><p>What is the EPSG code of the UTM grid zone that covers Los Angeles?</p></li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p>List any of the UTM grid zones that intersect Australia.</p></li>
+</ol>
+<ol class="arabic simple" start="7">
+<li><p>In “regular” degree latitude and longitude coordinate systems the latitude spans from -90 to 90 and longitude spans from -180 to 180.  What is the minimum and maximum values of latitude and longitude in a UTM grid zone?</p></li>
+</ol>
+<ul class="simple">
+<li><p>minimum latitude -</p></li>
+<li><p>maximum latitude -</p></li>
+<li><p>minimum longitude -</p></li>
+<li><p>maximum longitude -</p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p>Where is the UTM grid zone the widest?  Why is that?</p></li>
+</ol>
+<ol class="arabic simple" start="9">
+<li><p>What are the approximate coordinates of the colored locations on the utm grids?</p></li>
+</ol>
+<p><img alt="UTM Grid" src="../../../_images/utm_grid_with_points.gif" /></p>
+<ul class="simple">
+<li><p>green:</p></li>
+<li><p>red:</p></li>
+<li><p>orange:</p></li>
+<li><p>purple:</p></li>
+</ul>
+</section>
+<section id="shapely">
+<h3><code class="docutils literal notranslate"><span class="pre">shapely</span></code><a class="headerlink" href="#shapely" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="10">
+<li><p>Create a shapely point object to represent your current location.</p></li>
+</ol>
+<ol class="arabic simple" start="11">
+<li><p>Create a triangle that is a shapely polygon object.</p></li>
+</ol>
+<ol class="arabic simple" start="12">
+<li><p>Use the minimum and maximum x/y values of Venezuela from the first question to create a shapely bounding box.  Calculate the area of that box.  What are the units of the output?</p></li>
+</ol>
+<ol class="arabic simple" start="13">
+<li><p>The following bit of code loads the california geojson into a python dictionary.  Use shapely to convert that json to a shapely object.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/california.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ca_geom_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/california.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">ca_geom_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/IPython/core/interactiveshell.py:324,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">324</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/california.geojson&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_geom</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">ca_geom_json</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="14">
+<li><p>First take the difference between the california shapely object from the previous question and the <code class="docutils literal notranslate"><span class="pre">second_polygon</span></code> shape.  Then take the union of those two objects.  Calculate the difference in area between the two results.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_polygon</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">-</span><span class="mi">123</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="o">-</span><span class="mi">113</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_polygon</span> <span class="o">-</span> <span class="n">ca_geom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/3596dfccccf9b4b06f64d84e8a889f307f231eca47cc8981270e92f5f9e1100e.svg" src="../../../_images/3596dfccccf9b4b06f64d84e8a889f307f231eca47cc8981270e92f5f9e1100e.svg" />
+</div>
+</div>
+<ol class="arabic simple" start="15">
+<li><p>Buffer the calfornia shapely object by 0.6 degrees.  Take the difference between the buffered california object and the <code class="docutils literal notranslate"><span class="pre">second_polygon</span></code> polygon.</p></li>
+</ol>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
+<p><strong>A)</strong> There are 60 UTM grid zones that cover the globe.  How many degrees wide is each grid zone?</p>
+<p><strong>B)</strong> California is in UTM zone 10 and Maine reaches UTM zone 19.  How many degrees longitude does the contiguous United States span?</p>
+<p><strong>C)</strong> How wide is a grid zone at the equator?  How wide is it at the poles?  Why is there a difference?</p>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<p>I tell you I have am interested in the UTM grid point with easting value 9500 km and northing value 505 km.  What is wrong?  What is likely my error?</p>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
+<p>Load the geojson of California with the code below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/california.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ca_geom_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A)</strong> Look at the <code class="docutils literal notranslate"><span class="pre">properties</span></code> for the geojson.  What is the population of California?</p>
+<p><strong>B)</strong> Convert the geometry to a shapely object</p>
+<p><strong>C)</strong> What is the center of the state of California?</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>Google suggestion: “shapely center of polygon”</p></li>
+<li><p><a class="reference external" href="https://deparkes.co.uk/2015/02/28/how-to-find-the-centre-of-a-polygon-in-python/">suggested link</a></p></li>
+</ul>
+</div>
+<p><strong>D)</strong> What is the area of California?  What is the unit of the output?</p>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h3>
+<p>The area in degrees isn’t super useful.  It would be much nicer to get the area in square meters or kilometers, but to do that we would need a coordinate system that uses meters or kilometers.  To get there we will need to <strong>project</strong> or convert our crs from our geographic CRS to a projected one.</p>
+<p>We define CRSs with a library called <code class="docutils literal notranslate"><span class="pre">pyproj</span></code> like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_proj</span> <span class="o">=</span> <span class="s1">&#39;epsg:4326&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A)</strong> Define an output projection with a UTM grid that covers the majority of California</p>
+<p><strong>B)</strong> We then define a transformation object.  Notice it gives you a nice description of the applicable bounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyproj</span> <span class="kn">import</span> <span class="n">Transformer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Transformer</span><span class="o">.</span><span class="n">from_crs</span><span class="p">(</span><span class="n">start_proj</span><span class="p">,</span> <span class="n">end_proj</span><span class="p">,</span> <span class="n">always_xy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Concatenated Operation Transformer: pipeline&gt;
+Description: axis order change (2D) + UTM zone 11N
+Area of Use:
+- name: World
+- bounds: (-180.0, -90.0, 180.0, 90.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assign it to a variable</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Transformer</span><span class="o">.</span><span class="n">from_crs</span><span class="p">(</span><span class="n">start_proj</span><span class="p">,</span> <span class="n">end_proj</span><span class="p">,</span> <span class="n">always_xy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pick a point (in crs epsg:4326) within the area of the UTM grid that you chose.  Create a shapely object out of that point, then convert it to UTM by running:</p>
+<p><code class="docutils literal notranslate"><span class="pre">transform(TRANSFORMER,</span> <span class="pre">SHAPELY_POINT)</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">TRANSFORMER</span></code> is the varible <code class="docutils literal notranslate"><span class="pre">t</span></code> defined in the previous cell and <code class="docutils literal notranslate"><span class="pre">SHAPELY_POINT</span></code> is your point.</p>
+<p>What is the value of your coordinates in UTM?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.ops</span> <span class="kn">import</span> <span class="n">transform</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transform(TRANSFORMER, SHAPELY_POINT)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>D)</strong> Use the same syntax as part C to transform the entire california polygon from epsg:4326 to utm coordinates.  Print out the coordinates of the centroid to confirm that the output object is using UTM coordinates.  What is the unit of this coordinate?</p>
+<p><strong>E)</strong> What is the area of California in square km?  Look up the actual area of California is sq km to make sure you are (approximately) correct.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/4_practice_problems/1_python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4-1_datetimes_answers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4.1 Answers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4-2_spatial_data_answers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4.2 Answers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-boxes">Bounding boxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crs-and-map-projections">CRS and Map Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utm-grids">UTM Grids</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapely"><code class="docutils literal notranslate"><span class="pre">shapely</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rachel Wegener
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

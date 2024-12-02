@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Time Series Statistics &#8212; SARP Programming Lessons</title>
   
   
@@ -16,55 +16,59 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional_lectures/time_series_statistics/oceans_stats_examples';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Hierarchical Data Structure" href="../hierarchical_data/hierarchical_data.html" />
     <link rel="prev" title="Debugging" href="../Debugging/debugging_lesson.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +133,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -153,21 +148,17 @@
     
     
     <img src="../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
-    <script>document.write(`<img src="../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
+    <img src="../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -178,32 +169,34 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/general_python/index.html">General Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/1_variables_types_ifstatements.html">Variables, Data Types, and if Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/2_lists_dictionaries.html">Lists and Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/datetimes.html">Datetimes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/spatial_data.html">Spatial Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sarp_lessons/1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/gridded_data/index.html">Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/1_xarray.html">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/2_xarray_computation.html">Starting Computations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/3_xarray_groupby.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/spatial_operations.html">Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sarp_lessons/1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/tabular_data/index.html">Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/1_pandas.html">The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/2_filtering_groupby.html">Filtering and groupby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/3_geopandas.html"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/static_visualization_matplotlib.html">Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/mapping_colors.html">Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sarp_lessons/1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sarp_lessons/1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sarp_lessons/1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Lectures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Debugging/debugging_lesson.html">Debugging</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Time Series Statistics</a></li>
@@ -214,40 +207,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../rasters/3_accessing_coordinates.html">Accessing Data</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Visualization/index.html">Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Visualization/2_building_on_matplotlib.html">Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Visualization/3_dynamic_visualization.html">Dynamic Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Visualization/viewing_images.html">Viewing Images</a></li>
 </ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Sheets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice.html">General Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/1_variables_data_practice.html">Variables, Data Types and If statements Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/2_lists_dicts_practice.html">Lists and Dictionaries Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_practice.html">Datetimes Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/spatial_data_practice.html">Spatial Data Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/1_variables_data_answers.html">Variables, Data Types and If statements Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/2_lists_dicts_answers.html">Lists and Dictionaries Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/datetimes_answers.html">Datetimes Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/general_python/practice/spatial_data_answers.html">Spatial Data Answers</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_raster.html">Gridded Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/2_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Computation Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/gridded_data/practice/1_xarray_answers.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../lessons/index_practice_tabular.html">Tabular Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_practice.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_practice.html">Filtering and Groupby Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/3_geopandas_practice.html">Practice with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/1_pandas_answers.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../lessons/tabular_data/practice/2_filtering_groupby_answers.html">Filtering and Groupby Answers</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../index_practice.html">Raster Data Practice (Additional Lectures)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/1_arrays_numpy_practice.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../rasters/practice/2_raster_fundamentals_practice.html">Raster Fundamentals Practice</a></li>
@@ -256,12 +218,15 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../examples/logplot.html">Plot with multiple lines and a log axis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/flight_track.html">Flight Track Plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/gridded_mapping.html">Cartopy with gridded data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -295,9 +260,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -420,27 +385,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -491,8 +448,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="time-series-statistics">
-<h1>Time Series Statistics<a class="headerlink" href="#time-series-statistics" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="time-series-statistics">
+<h1>Time Series Statistics<a class="headerlink" href="#time-series-statistics" title="Link to this heading">#</a></h1>
 <div class="note dropdown admonition">
 <p class="admonition-title">Content</p>
 <ol class="arabic simple">
@@ -503,11 +460,21 @@ document.write(`
 <li><p>Theil Sen Estimator</p></li>
 </ol>
 </div>
-<div class="section" id="load-in-your-data-with-pandas">
-<h2>1) Load in your data with <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#load-in-your-data-with-pandas" title="Permalink to this heading">#</a></h2>
+<section id="load-in-your-data-with-pandas">
+<h2>1) Load in your data with <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#load-in-your-data-with-pandas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -527,161 +494,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>USGS</th>
-      <th>6711565</th>
-      <th>2021-03-12 02:15</th>
-      <th>MST</th>
-      <th>44.5</th>
-      <th>8</th>
-      <th>8.2</th>
-      <th>8.1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-12 02:30</td>
-      <td>MST</td>
-      <td>44.5</td>
-      <td>7.9</td>
-      <td>8.0</td>
-      <td>8.1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-12 02:45</td>
-      <td>MST</td>
-      <td>44.5</td>
-      <td>7.9</td>
-      <td>7.9</td>
-      <td>8.1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-12 03:00</td>
-      <td>MST</td>
-      <td>44.5</td>
-      <td>7.8</td>
-      <td>8.0</td>
-      <td>8.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-12 03:15</td>
-      <td>MST</td>
-      <td>44.5</td>
-      <td>7.8</td>
-      <td>8.0</td>
-      <td>8.1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-12 03:30</td>
-      <td>MST</td>
-      <td>44.5</td>
-      <td>7.7</td>
-      <td>8.0</td>
-      <td>8.1</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>131</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-13 11:15</td>
-      <td>MST</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.8</td>
-      <td>7.9</td>
-    </tr>
-    <tr>
-      <th>132</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-13 11:30</td>
-      <td>MST</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-    </tr>
-    <tr>
-      <th>133</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-13 11:45</td>
-      <td>MST</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>10.2</td>
-      <td>7.9</td>
-    </tr>
-    <tr>
-      <th>134</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-13 12:00</td>
-      <td>MST</td>
-      <td>46.5</td>
-      <td>6.7</td>
-      <td>10.3</td>
-      <td>7.9</td>
-    </tr>
-    <tr>
-      <th>135</th>
-      <td>USGS</td>
-      <td>6711565</td>
-      <td>2021-03-13 12:15</td>
-      <td>MST</td>
-      <td>NaN</td>
-      <td>6.6</td>
-      <td>10.3</td>
-      <td>7.9</td>
-    </tr>
-  </tbody>
-</table>
-<p>136 rows × 8 columns</p>
-</div></div></div>
 </div>
 <p>We see we have a pandas DataFrame with rows corresponding to 146 times and several data columns, the interesting ones being Discharge, Temperature, Dissolved oxygen and pH.</p>
 <div class="cell docutils container">
@@ -853,9 +665,9 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">gauge_data['Discharge']</span></code></p>
 <p>This will be helpful while plotting.</p>
 </div>
-</div>
-<div class="section" id="plotting-a-time-series">
-<h2>2) Plotting a time series<a class="headerlink" href="#plotting-a-time-series" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="plotting-a-time-series">
+<h2>2) Plotting a time series<a class="headerlink" href="#plotting-a-time-series" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -874,10 +686,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdcd284dd50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x28397dcb5b0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/4cfae635b514db6e9395fc19bf1a95b1ab4008fa6ee1f5bd5db37e21f0e8dc3a.png" src="../../_images/4cfae635b514db6e9395fc19bf1a95b1ab4008fa6ee1f5bd5db37e21f0e8dc3a.png" />
+<img alt="../../_images/d20b72fdfc96baa88123baaeae6286e81262391610e9e5d8a00a6855f759e06b.png" src="../../_images/d20b72fdfc96baa88123baaeae6286e81262391610e9e5d8a00a6855f759e06b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -893,11 +705,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/36cc5d518856771667e0fa05aee4c376ae3ed4cda65076521fe4d3f7871a813a.png" src="../../_images/36cc5d518856771667e0fa05aee4c376ae3ed4cda65076521fe4d3f7871a813a.png" />
+<img alt="../../_images/2738a6f8ac47f607a144765aa4e8c67949877d1493e84e05ca9b6154deae6402.png" src="../../_images/2738a6f8ac47f607a144765aa4e8c67949877d1493e84e05ca9b6154deae6402.png" />
 </div>
 </div>
-<div class="section" id="optional-extra-a-pandas-specific-way-to-plot">
-<h3>Optional Extra: A pandas-specific way to plot<a class="headerlink" href="#optional-extra-a-pandas-specific-way-to-plot" title="Permalink to this heading">#</a></h3>
+<section id="optional-extra-a-pandas-specific-way-to-plot">
+<h3>Optional Extra: A pandas-specific way to plot<a class="headerlink" href="#optional-extra-a-pandas-specific-way-to-plot" title="Link to this heading">#</a></h3>
 <p>This plotting method is faster but only works for pandas dataframes.  The benefit is that you get the lagend automatically.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -908,10 +720,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;datetime&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;datetime&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/a45ca2432ca4b7b078a868ac36b88888e654b092759f9e1cef3755f2694dd6f1.png" src="../../_images/a45ca2432ca4b7b078a868ac36b88888e654b092759f9e1cef3755f2694dd6f1.png" />
+<img alt="../../_images/456c8b9a7f990084913bd5c077050e0619f2c2d7fd9bf0e6a09d9e41b79301c1.png" src="../../_images/456c8b9a7f990084913bd5c077050e0619f2c2d7fd9bf0e6a09d9e41b79301c1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -927,15 +739,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1009c111bb43be879276a15be8d7ef45346a453f9a1f352d44be9639a4744726.png" src="../../_images/1009c111bb43be879276a15be8d7ef45346a453f9a1f352d44be9639a4744726.png" />
+<img alt="../../_images/114af4244ceb60ab500de725ecca19b63f4ef9416d640104b7f94e54471a8ea9.png" src="../../_images/114af4244ceb60ab500de725ecca19b63f4ef9416d640104b7f94e54471a8ea9.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="cumulative-sum">
-<h2>3) Cumulative sum<a class="headerlink" href="#cumulative-sum" title="Permalink to this heading">#</a></h2>
-<div class="section" id="subtracting-the-mean-value-as-a-baseline">
-<h3>Subtracting the mean value as a baseline<a class="headerlink" href="#subtracting-the-mean-value-as-a-baseline" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="cumulative-sum">
+<h2>3) Cumulative sum<a class="headerlink" href="#cumulative-sum" title="Link to this heading">#</a></h2>
+<section id="subtracting-the-mean-value-as-a-baseline">
+<h3>Subtracting the mean value as a baseline<a class="headerlink" href="#subtracting-the-mean-value-as-a-baseline" title="Link to this heading">#</a></h3>
 <p>In Raphe’s examples the mean value of a large value was used as the baseline and then used to compute the anomaly of each value.  Here we use the mean of our dataset (even though the record isn’t that long, hopefully it conveys the idea).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -974,9 +786,9 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="compute-the-cumulative-sum">
-<h3>Compute the cumulative sum<a class="headerlink" href="#compute-the-cumulative-sum" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="compute-the-cumulative-sum">
+<h3>Compute the cumulative sum<a class="headerlink" href="#compute-the-cumulative-sum" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1008,16 +820,16 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 141    2.712414e+00
 142    5.082759e-01
 143   -1.695862e+00
-144    5.684342e-14
+144   -2.003731e-12
 145             NaN
 Name: discharge_anomaly, Length: 146, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-the-cumulative-sum">
-<h3>Plot the cumulative sum<a class="headerlink" href="#plot-the-cumulative-sum" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="plot-the-cumulative-sum">
+<h3>Plot the cumulative sum<a class="headerlink" href="#plot-the-cumulative-sum" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1038,13 +850,13 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ba7cc824b9917d40147af15bb9e2d20f62c6080822b9a7708cfc255e371c4faf.png" src="../../_images/ba7cc824b9917d40147af15bb9e2d20f62c6080822b9a7708cfc255e371c4faf.png" />
+<img alt="../../_images/1b3abc5c8b3261a039503d172dedaa7da91a043c9241271be931cb2d0fb20335.png" src="../../_images/1b3abc5c8b3261a039503d172dedaa7da91a043c9241271be931cb2d0fb20335.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="kendall-s-tau">
-<h2>Kendall’s Tau<a class="headerlink" href="#kendall-s-tau" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="kendall-s-tau">
+<h2>Kendall’s Tau<a class="headerlink" href="#kendall-s-tau" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kendalltau.html">docs page</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1062,13 +874,13 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tau:  -0.5386593699749752  p_value:  1.1943988281013273e-14
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tau:  -0.5386593699749752  p_value:  1.19439882810134e-14
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="scatter-plot-of-the-discharge-and-ph">
-<h3>Scatter plot of the Discharge and pH<a class="headerlink" href="#scatter-plot-of-the-discharge-and-ph" title="Permalink to this heading">#</a></h3>
+<section id="scatter-plot-of-the-discharge-and-ph">
+<h3>Scatter plot of the Discharge and pH<a class="headerlink" href="#scatter-plot-of-the-discharge-and-ph" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gauge_data</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;Discharge&#39;</span><span class="p">,</span> <span class="s1">&#39;pH&#39;</span><span class="p">)</span>
@@ -1080,13 +892,13 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;pH vs. Discharge&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/0365857b2f9f7c38c3df33bac6b49f1918111b5982f35a3c6b67aaea97fcdd57.png" src="../../_images/0365857b2f9f7c38c3df33bac6b49f1918111b5982f35a3c6b67aaea97fcdd57.png" />
+<img alt="../../_images/77975f5e05524c7fdce4f5ce5cf8143ca628c10424b0691281d8a21171e25a71.png" src="../../_images/77975f5e05524c7fdce4f5ce5cf8143ca628c10424b0691281d8a21171e25a71.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="theil-sen-estimator">
-<h2>Theil Sen Estimator<a class="headerlink" href="#theil-sen-estimator" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="theil-sen-estimator">
+<h2>Theil Sen Estimator<a class="headerlink" href="#theil-sen-estimator" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.theilslopes.html#scipy.stats.theilslopes">docs page</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1121,13 +933,13 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TheilslopesResult(slope=-0.02702702702702691, intercept=9.202702702702698, low_slope=-0.03636363636363624, high_slope=-0.02564102564102556)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.02702702702702691, 9.202702702702698, -0.03636363636363624, -0.02564102564102556)
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="plot-the-lines">
-<h3>Plot the lines<a class="headerlink" href="#plot-the-lines" title="Permalink to this heading">#</a></h3>
+<section id="plot-the-lines">
+<h3>Plot the lines<a class="headerlink" href="#plot-the-lines" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -1151,16 +963,16 @@ Name: discharge_anomaly, Length: 146, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdcc7403210&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x28399fac250&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/e236fd83a879bc50743baf07b750f34ca1577c677e40eeb8376189884ed0858b.png" src="../../_images/e236fd83a879bc50743baf07b750f34ca1577c677e40eeb8376189884ed0858b.png" />
+<img alt="../../_images/52b9417938ead79a712b25c315fd9f679f2a1cfaddd67ff469515a89817af3c5.png" src="../../_images/52b9417938ead79a712b25c315fd9f679f2a1cfaddd67ff469515a89817af3c5.png" />
 </div>
 </div>
 <p>More color preferences for the plot are listed in the “Notes” section of the <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html"><code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> docs</a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1217,7 +1029,8 @@ Name: discharge_anomaly, Length: 146, dtype: float64
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1293,8 +1106,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

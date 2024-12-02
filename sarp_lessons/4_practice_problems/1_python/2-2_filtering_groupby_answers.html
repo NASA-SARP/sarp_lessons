@@ -1,0 +1,2157 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.2 Answers &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/4_practice_problems/1_python/2-2_filtering_groupby_answers';</script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3.1 Problems" href="3-1_xarray_practice.html" />
+    <link rel="prev" title="2.2 Problems" href="2-2_filtering_groupby_practice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Welcome to SARP Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Python Practice</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_answers.html">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-2_xarray_practice.html">3.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_answers.html">4.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_practice.html">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/4_practice_problems/1_python/2-2_filtering_groupby_answers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/sarp_lessons/4_practice_problems/1_python/2-2_filtering_groupby_answers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2.2 Answers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">Filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-indexes">Named Indexes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">Groupby</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-groupby-questions">Question 4 - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="answers">
+<h1>2.2 Answers<a class="headerlink" href="#answers" title="Link to this heading">#</a></h1>
+<p>Filtering and Groupby Answers</p>
+<p><em><strong>Note:</strong> This answers sheet is incomplete</em></p>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<p>Run the following cells to import and clean the usgs data for the practice problems in part 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in the data</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/englewood_3_12_21_usgs_water.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="c1"># There are a lot of variables here, so let&#39;s shorten our dataframe to a few variables</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="p">[[</span><span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;210920_00060&#39;</span><span class="p">,</span> <span class="s1">&#39;210922_00010&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">]]</span>
+<span class="c1"># Get rid of the first row of hard-coded datatype info</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Rename the columns from their USGS codes to more human-readible names</span>
+<span class="n">name_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;210920_00060&#39;</span><span class="p">:</span> <span class="s1">&#39;discharge&#39;</span><span class="p">,</span><span class="s1">&#39;210922_00010&#39;</span><span class="p">:</span> <span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">:</span> <span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">:</span> <span class="s1">&#39;pH&#39;</span><span class="p">}</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">name_codes</span><span class="p">)</span>
+<span class="c1"># Convert columns with numbers to a numeric type</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;discharge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;discharge&#39;</span><span class="p">])</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">])</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">])</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">])</span>
+
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dam release&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">water_vars</span><span class="p">))]</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;safety level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;low&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">water_vars</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Read in the data</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">water_vars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/englewood_3_12_21_usgs_water.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># There are a lot of variables here, so let&#39;s shorten our dataframe to a few variables</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="p">[[</span><span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;210920_00060&#39;</span><span class="p">,</span> <span class="s1">&#39;210922_00010&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">]]</span>
+
+<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/miniconda3/envs/sarp_docs2/lib/python3.12/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../data/englewood_3_12_21_usgs_water.tsv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="filtering">
+<h3>Filtering<a class="headerlink" href="#filtering" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Look at the output of <code class="docutils literal notranslate"><span class="pre">water_vars['safety</span> <span class="pre">level']</span> <span class="pre">==</span> <span class="pre">'high'</span></code>.  What is the output telling us?  Was the safety level high during the observation at index 3?</p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Create a dataframe showing which obersvations in <code class="docutils literal notranslate"><span class="pre">water_vars</span></code> recorded temperature less than 8.</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Create a dataframe showing which obersvations in <code class="docutils literal notranslate"><span class="pre">water_vars</span></code> recorded either dissolved oxygen less than or equal to 8 or pH greater than 8.</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Create a dataframe showing which obersvations in <code class="docutils literal notranslate"><span class="pre">water_vars</span></code> recorded discharge between 46 and 49.</p></li>
+</ol>
+</section>
+<section id="named-indexes">
+<h3>Named Indexes<a class="headerlink" href="#named-indexes" title="Link to this heading">#</a></h3>
+<p>The following bits of code add a new column to the dataframe made up of random letters and assigns them to a new column called <code class="docutils literal notranslate"><span class="pre">'sample</span> <span class="pre">id'</span></code>.  Run them before doing the next problems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">letter_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">146</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;sample id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">letter_ids</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Use the new <code class="docutils literal notranslate"><span class="pre">'sample</span> <span class="pre">id'</span></code> column and set it as the index in the <code class="docutils literal notranslate"><span class="pre">water_vars</span></code> dataframe.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;sample id&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime</th>
+      <th>discharge</th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+      <th>dam release</th>
+      <th>safety level</th>
+    </tr>
+    <tr>
+      <th>sample id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dtsqs</th>
+      <td>2021-03-12 00:00</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.3</td>
+      <td>8.1</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>jzsdq</th>
+      <td>2021-03-12 00:15</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.2</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>bkncz</th>
+      <td>2021-03-12 00:30</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.2</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>ieode</th>
+      <td>2021-03-12 00:45</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>ebeds</th>
+      <td>2021-03-12 01:00</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ribvb</th>
+      <td>2021-03-13 11:15</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>9.8</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>epwyu</th>
+      <td>2021-03-13 11:30</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>9.9</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>khqrz</th>
+      <td>2021-03-13 11:45</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>10.2</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>dmqyc</th>
+      <td>2021-03-13 12:00</td>
+      <td>46.5</td>
+      <td>6.7</td>
+      <td>10.3</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>rqmky</th>
+      <td>2021-03-13 12:15</td>
+      <td>NaN</td>
+      <td>6.6</td>
+      <td>10.3</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+  </tbody>
+</table>
+<p>146 rows × 7 columns</p>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Pick a sample id and get the data for just that row.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print out your dataframe to pick an index that exists</span>
+<span class="c1"># water_vars.loc[&#39;ceule&#39;]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>We have mostly been looking at boolean comparisons with numbers, but you can also interrogate strings with special methods and get a list of booleans as a result.  Consider the following bit of code:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False, False, False,  True,  True, False,
+        True, False, False,  True, False, False, False, False, False,
+       False, False,  True,  True, False,  True, False, False,  True,
+       False,  True, False, False,  True,  True, False, False, False,
+       False, False, False, False, False, False, False,  True, False,
+       False, False, False, False, False, False, False, False, False,
+        True, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+        True,  True, False, False, False, False, False, False, False,
+       False, False, False, False, False, False,  True, False, False,
+       False, False, False,  True, False, False, False, False, False,
+       False, False,  True, False,  True, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False,  True, False, False, False, False, False,  True, False,
+       False, False, False, False,  True,  True, False, False,  True,
+       False,  True])
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code is telling us True/False for which indexes contain the letter k in them.</p>
+<p>Using what you know about pandas filtering, use <code class="docutils literal notranslate"><span class="pre">water_vars.loc[]</span></code> and the code above (<code class="docutils literal notranslate"><span class="pre">water_vars.index.str.contains('k')</span></code>) to filter the data frame to only return the rows which have an index containing the letter k.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">water_vars</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime</th>
+      <th>discharge</th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+      <th>dam release</th>
+      <th>safety level</th>
+    </tr>
+    <tr>
+      <th>sample id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bkncz</th>
+      <td>2021-03-12 00:30</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.2</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>bwnkw</th>
+      <td>2021-03-12 01:30</td>
+      <td>44.5</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>cozgk</th>
+      <td>2021-03-12 01:45</td>
+      <td>44.5</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>kfgfq</th>
+      <td>2021-03-12 02:15</td>
+      <td>44.5</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>klccb</th>
+      <td>2021-03-12 03:00</td>
+      <td>44.5</td>
+      <td>7.8</td>
+      <td>8.0</td>
+      <td>8.1</td>
+      <td>True</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>gtrik</th>
+      <td>2021-03-12 05:00</td>
+      <td>46.5</td>
+      <td>7.4</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>snkxq</th>
+      <td>2021-03-12 05:15</td>
+      <td>46.5</td>
+      <td>7.4</td>
+      <td>8.0</td>
+      <td>8.0</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>lykrn</th>
+      <td>2021-03-12 05:45</td>
+      <td>48.5</td>
+      <td>7.3</td>
+      <td>8.1</td>
+      <td>8.0</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>kxdas</th>
+      <td>2021-03-12 06:30</td>
+      <td>48.5</td>
+      <td>7.1</td>
+      <td>8.2</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>qkdcf</th>
+      <td>2021-03-12 07:00</td>
+      <td>48.5</td>
+      <td>7.0</td>
+      <td>8.2</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>firuk</th>
+      <td>2021-03-12 07:45</td>
+      <td>48.5</td>
+      <td>6.8</td>
+      <td>8.3</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>knlyk</th>
+      <td>2021-03-12 08:00</td>
+      <td>48.5</td>
+      <td>6.8</td>
+      <td>8.4</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>ktbjf</th>
+      <td>2021-03-12 10:45</td>
+      <td>44.5</td>
+      <td>6.8</td>
+      <td>9.8</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>uzxkm</th>
+      <td>2021-03-12 13:30</td>
+      <td>40.8</td>
+      <td>7.6</td>
+      <td>11.9</td>
+      <td>8.1</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>xyypk</th>
+      <td>2021-03-12 20:15</td>
+      <td>46.5</td>
+      <td>8.1</td>
+      <td>10.2</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>bmrik</th>
+      <td>2021-03-12 20:30</td>
+      <td>46.5</td>
+      <td>8.1</td>
+      <td>10.0</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>lkvwz</th>
+      <td>2021-03-13 00:00</td>
+      <td>44.5</td>
+      <td>7.7</td>
+      <td>8.6</td>
+      <td>8.0</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>mkmid</th>
+      <td>2021-03-13 01:30</td>
+      <td>44.5</td>
+      <td>7.7</td>
+      <td>8.4</td>
+      <td>8.0</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>bgkpx</th>
+      <td>2021-03-13 03:30</td>
+      <td>44.5</td>
+      <td>7.6</td>
+      <td>8.2</td>
+      <td>8.0</td>
+      <td>True</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>zikfz</th>
+      <td>2021-03-13 04:00</td>
+      <td>44.5</td>
+      <td>7.5</td>
+      <td>8.2</td>
+      <td>8.0</td>
+      <td>False</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>omqok</th>
+      <td>2021-03-13 07:45</td>
+      <td>46.5</td>
+      <td>6.9</td>
+      <td>8.4</td>
+      <td>7.8</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>kfxir</th>
+      <td>2021-03-13 09:15</td>
+      <td>46.5</td>
+      <td>6.8</td>
+      <td>9.0</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>pgfyk</th>
+      <td>2021-03-13 10:45</td>
+      <td>44.5</td>
+      <td>6.7</td>
+      <td>9.6</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>knsjs</th>
+      <td>2021-03-13 11:00</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>9.7</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>khqrz</th>
+      <td>2021-03-13 11:45</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>10.2</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>rqmky</th>
+      <td>2021-03-13 12:15</td>
+      <td>NaN</td>
+      <td>6.6</td>
+      <td>10.3</td>
+      <td>7.9</td>
+      <td>False</td>
+      <td>high</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="groupby">
+<h3>Groupby<a class="headerlink" href="#groupby" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="8">
+<li><p>Fill in the three groupby questions for the following scenario:</p></li>
+</ol>
+<p><strong>Given the environmental sustainbility index (ESI) for every country, what is the minimum ESI on each continent?</strong></p>
+<ul class="simple">
+<li><p><em>Which variable to group together?</em></p></li>
+<li><p><em>How do we want to group?</em></p></li>
+<li><p><em>What variable do we want to look at?</em></p></li>
+</ul>
+<ol class="arabic simple" start="8">
+<li><p>Fill in the three groupby questions for the following scenario:</p></li>
+</ol>
+<p><strong>Given the graduation rates of many high school, what is the average graduation rate in public vs. private schools?</strong></p>
+<ul class="simple">
+<li><p><em>Which variable to group together?</em></p></li>
+<li><p><em>How do we want to group?</em></p></li>
+<li><p><em>What variable do we want to look at?</em></p></li>
+</ul>
+<ol class="arabic simple" start="9">
+<li><p>Find the mean values of all of the columns at each safety level</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;safety level&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>discharge</th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+      <th>dam release</th>
+    </tr>
+    <tr>
+      <th>safety level</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>high</th>
+      <td>44.845283</td>
+      <td>7.422222</td>
+      <td>9.390741</td>
+      <td>7.972222</td>
+      <td>0.481481</td>
+    </tr>
+    <tr>
+      <th>low</th>
+      <td>44.731429</td>
+      <td>7.577143</td>
+      <td>9.388571</td>
+      <td>8.008571</td>
+      <td>0.485714</td>
+    </tr>
+    <tr>
+      <th>medium</th>
+      <td>44.810526</td>
+      <td>7.560000</td>
+      <td>9.426316</td>
+      <td>7.991228</td>
+      <td>0.403509</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Find the mean values of all of the columns at each discharge (less meaningful, but just for practice)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;discharge&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+      <th>dam release</th>
+    </tr>
+    <tr>
+      <th>discharge</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>39.0</th>
+      <td>8.385714</td>
+      <td>12.957143</td>
+      <td>8.200000</td>
+      <td>0.571429</td>
+    </tr>
+    <tr>
+      <th>40.8</th>
+      <td>8.027273</td>
+      <td>12.309091</td>
+      <td>8.136364</td>
+      <td>0.272727</td>
+    </tr>
+    <tr>
+      <th>42.6</th>
+      <td>7.261538</td>
+      <td>10.807692</td>
+      <td>7.992308</td>
+      <td>0.461538</td>
+    </tr>
+    <tr>
+      <th>44.5</th>
+      <td>7.665385</td>
+      <td>8.778846</td>
+      <td>8.005769</td>
+      <td>0.480769</td>
+    </tr>
+    <tr>
+      <th>46.5</th>
+      <td>7.314583</td>
+      <td>8.820000</td>
+      <td>7.922000</td>
+      <td>0.360000</td>
+    </tr>
+    <tr>
+      <th>48.5</th>
+      <td>7.008333</td>
+      <td>8.216667</td>
+      <td>7.933333</td>
+      <td>0.833333</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Find the number of non-nan observations for each column at each safety level</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;safety level&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime</th>
+      <th>discharge</th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+      <th>dam release</th>
+    </tr>
+    <tr>
+      <th>safety level</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>high</th>
+      <td>46</td>
+      <td>46</td>
+      <td>46</td>
+      <td>46</td>
+      <td>46</td>
+      <td>46</td>
+    </tr>
+    <tr>
+      <th>low</th>
+      <td>53</td>
+      <td>53</td>
+      <td>51</td>
+      <td>53</td>
+      <td>53</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>medium</th>
+      <td>47</td>
+      <td>46</td>
+      <td>47</td>
+      <td>47</td>
+      <td>47</td>
+      <td>47</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ol class="arabic simple" start="12">
+<li><p>Display the mean values of just the temperature column at each safety level</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;safety level&quot;</span><span class="p">)[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>safety level
+high      7.426087
+low       7.590196
+medium    7.512766
+Name: temperature, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<p>For the next set of practice problems we are going to use the WAS 2020 SARP data.  Run the following lines of code to import the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020_filepath</span> <span class="o">=</span> <span class="s2">&quot;../data/SARP 2020 final.xlsx&quot;</span>
+<span class="n">was_2020</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">was_2020_filepath</span><span class="p">,</span> <span class="s2">&quot;INPUT&quot;</span><span class="p">,</span> <span class="n">skipfooter</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
+<p><strong>A)</strong> Using <code class="docutils literal notranslate"><span class="pre">was_2020</span></code> find data samples where <code class="docutils literal notranslate"><span class="pre">'CO2</span> <span class="pre">(ppmv)'</span></code> was greater than 420.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="p">[</span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;CO2 (ppmv)&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">420</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Can #</th>
+      <th>Snake can #</th>
+      <th>Location</th>
+      <th>State</th>
+      <th>Box</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Altitude (m)</th>
+      <th>Temp. Celsius</th>
+      <th>Wind Spd (mph)</th>
+      <th>...</th>
+      <th>3-Ethyltoluene (MS)</th>
+      <th>4-Ethyltoluene (MS)</th>
+      <th>2-Ethyltoluene (MS)</th>
+      <th>1,3,5-Trimethylbenzene (MS)</th>
+      <th>1,2,4-Trimethylbenzene (MS)</th>
+      <th>alpha-Pinene (B/MS)</th>
+      <th>beta-Pinene (B/MS)</th>
+      <th>Unnamed: 113</th>
+      <th>Box.1</th>
+      <th>CH4 (ppmv height).1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>7338</td>
+      <td>3716</td>
+      <td>Buffalo Park, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-04-24</td>
+      <td>11:44:00</td>
+      <td>2100</td>
+      <td>18</td>
+      <td>5</td>
+      <td>...</td>
+      <td>12</td>
+      <td>16</td>
+      <td>15</td>
+      <td>14</td>
+      <td>22</td>
+      <td>31</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.916</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5012</td>
+      <td>3702</td>
+      <td>Buffalo Park, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-05-01</td>
+      <td>11:16:00</td>
+      <td>2100</td>
+      <td>19</td>
+      <td>16</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>22</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.895</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5061</td>
+      <td>3703</td>
+      <td>Downtown Sedona, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-05-01</td>
+      <td>12:40:00</td>
+      <td>1350</td>
+      <td>26</td>
+      <td>8</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>26</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.907</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6123</td>
+      <td>3721</td>
+      <td>Mars Hill/Lowell Observatory, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-06-03</td>
+      <td>12:50:00</td>
+      <td>2200</td>
+      <td>27</td>
+      <td>8</td>
+      <td>...</td>
+      <td>4</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>6</td>
+      <td>67</td>
+      <td>16</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.887</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>7335</td>
+      <td>3711</td>
+      <td>Downtown Sedona, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-06-21</td>
+      <td>17:20:00</td>
+      <td>1350</td>
+      <td>36</td>
+      <td>12</td>
+      <td>...</td>
+      <td>34</td>
+      <td>15</td>
+      <td>13</td>
+      <td>16</td>
+      <td>51</td>
+      <td>16</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.902</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>898</th>
+      <td>9172</td>
+      <td>2211</td>
+      <td>Elizabeth Park, central Bellingham, Washington</td>
+      <td>Washington</td>
+      <td>22</td>
+      <td>2020-06-05</td>
+      <td>10:59:00</td>
+      <td>22</td>
+      <td>16.1</td>
+      <td>5</td>
+      <td>...</td>
+      <td>5</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>7</td>
+      <td>5</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>22</td>
+      <td>2.041</td>
+    </tr>
+    <tr>
+      <th>902</th>
+      <td>9168</td>
+      <td>2208</td>
+      <td>My backyard, rural Bellingham, Washington</td>
+      <td>Washington</td>
+      <td>22</td>
+      <td>2020-07-15</td>
+      <td>10:00:00</td>
+      <td>153</td>
+      <td>17.2</td>
+      <td>0-2mph</td>
+      <td>...</td>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>8</td>
+      <td>121</td>
+      <td>26</td>
+      <td>NaN</td>
+      <td>22</td>
+      <td>1.916</td>
+    </tr>
+    <tr>
+      <th>905</th>
+      <td>5109</td>
+      <td>2601</td>
+      <td>Carl Traeger middle school, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-04-15</td>
+      <td>10:49:00</td>
+      <td>243.84</td>
+      <td>-2.2</td>
+      <td>7</td>
+      <td>...</td>
+      <td>55</td>
+      <td>25</td>
+      <td>17</td>
+      <td>19</td>
+      <td>64</td>
+      <td>47</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1.968</td>
+    </tr>
+    <tr>
+      <th>906</th>
+      <td>7027</td>
+      <td>2616</td>
+      <td>South Park, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-04-15</td>
+      <td>11:01:00</td>
+      <td>231.64</td>
+      <td>-1.1</td>
+      <td>3</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>4</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1.965</td>
+    </tr>
+    <tr>
+      <th>908</th>
+      <td>5131</td>
+      <td>2602</td>
+      <td>South Park, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-04-22</td>
+      <td>12:26:00</td>
+      <td>231.64</td>
+      <td>7.2</td>
+      <td>17</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1.953</td>
+    </tr>
+  </tbody>
+</table>
+<p>420 rows × 116 columns</p>
+</div></div></div>
+</div>
+<p><strong>B)</strong> How many data samples had CO2 over 420?</p>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<p><strong>A)</strong> What is the mean value of <code class="docutils literal notranslate"><span class="pre">'Isoprene</span> <span class="pre">(E/B)'</span></code> accross all the samples?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;Isoprene (E/B)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>346.80193756727664
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> How many dta samples had values of ‘Isoprene (E/B)’ below 10?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="p">[</span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;Isoprene (E/B)&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">][</span><span class="s1">&#39;Isoprene (E/B)&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0        4
+26       5
+27    -888
+35       5
+66       6
+      ... 
+911      5
+912   -888
+915      5
+917      4
+920      4
+Name: Isoprene (E/B), Length: 157, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>C)</strong> Print out the values of isoprene from the previous part of the question which are less than 10.  Do you notice anything unusual about the values?</p>
+<p><strong>D)</strong> Looking at the values in the previous question you might see that several values are marked with -888.  This is likely a nodata value (but its always good to check the data documentation to be sure).</p>
+<p>Knowing that there are now nodata values, go back and ammend your code to find the rows where isoprene is less than 10 but also not equal to -888.  Now how many rows are there?</p>
+<p><strong>E)</strong> What is the true mean value of isoprene?</p>
+<p><em>This question was brought to you today as a gentle reminder to always be on the lookout for nodata 🙂</em></p>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
+<p>There are a lot of data columns in this dataset, many more than we can reasonably view in the preview.  To help us explore our data better we might want to view a smaller subset of the data at once.</p>
+<p><strong>A)</strong> Create a dataframe that includes only the following columns from the <code class="docutils literal notranslate"><span class="pre">was_2020</span></code> dataset: <code class="docutils literal notranslate"><span class="pre">'Can</span> <span class="pre">#'</span></code>, <code class="docutils literal notranslate"><span class="pre">'State'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Date'</span></code>, <code class="docutils literal notranslate"><span class="pre">'CO</span> <span class="pre">(ppbv)'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'OCS</span> <span class="pre">(MS)'</span></code>.</p>
+<p><strong>B)</strong> Let’s say you would like to view all of the columns of CFCs together.  There are several columns that all start with <code class="docutils literal notranslate"><span class="pre">CFC-</span></code>: ‘CFC-12 (C/D)’, ‘CFC-11 (D/MS)’, ‘CFC-113 (D)’, ‘CFC-114 (MS)’.</p>
+<p>Create a dataframe that includes just the columns whose names start with “CFC-“.</p>
+<p><em><strong>Google help:</strong> try “pandas filter by column name string”.  <a class="reference external" href="https://stackoverflow.com/questions/21285380/find-column-whose-name-contains-a-specific-string">This stackoverflow</a> also has several options.  The first few use a method called “list comprehension” that we haven’t talked about in lecture yet.  Further down are a few other options to try that don’t use that technique.</em></p>
+<p><strong>C)</strong> Use the subset of data you created in part be and return just the columns of CFCs and only the rows of samples that were taken in Arizona.</p>
+</section>
+<section id="question-4-groupby-questions">
+<h3>Question 4 - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> questions<a class="headerlink" href="#question-4-groupby-questions" title="Link to this heading">#</a></h3>
+<p><strong>A)</strong> What are the mean values of <code class="docutils literal notranslate"><span class="pre">'CO</span> <span class="pre">(ppbv)'</span></code> from each box?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Box&#39;</span><span class="p">)[</span><span class="s1">&#39;CO (ppbv)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Box
+1     128.652174
+3     141.217391
+4     125.565217
+6     114.333333
+7     138.695652
+8     204.454545
+9     182.045455
+10    122.217391
+12    240.041667
+14    121.818182
+15    136.850000
+16    127.083333
+17    147.826087
+19    137.863636
+22    108.695652
+23    151.958333
+26    119.625000
+27    157.739130
+28    150.391304
+29    152.304348
+30    115.909091
+31    136.125000
+32    120.565217
+34    118.380952
+35    154.318182
+36    159.541667
+37    111.727273
+38    120.285714
+40    121.652174
+41    197.045455
+46    155.136364
+49    102.125000
+50    132.363636
+52    102.625000
+54    101.400000
+55    107.521739
+56    155.590909
+57    143.000000
+60    112.333333
+61    110.260870
+62    133.391304
+Name: CO (ppbv), dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> What is the minimum value of <code class="docutils literal notranslate"><span class="pre">'CH4</span> <span class="pre">(ppmv</span> <span class="pre">height)'</span></code> for each <code class="docutils literal notranslate"><span class="pre">Weather</span></code> condition?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Weather&#39;</span><span class="p">)[</span><span class="s1">&#39;CH4 (ppmv height)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Weather
+Clear                            1.892
+Clear and sunny                  1.882
+Clear skies and sunny            1.936
+Clear skies, sunny, warm wind    1.933
+Clear/Sunny                      1.976
+                                 ...  
+sunny sky but hazy               1.980
+sunny, but a bit hazy            1.950
+sunny, hazy                      1.993
+sunny, slightly hazy             1.976
+windy, about to rain             1.932
+Name: CH4 (ppmv height), Length: 87, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>C)</strong> How many samples were taken in each state?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;State&quot;</span><span class="p">)[</span><span class="s2">&quot;Can #&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>State
+Arizona           22
+California       204
+Colorado          64
+Connecticut       23
+Florida           22
+Georgia           23
+Illinois          22
+Kentucky          24
+Louisiana         21
+Massachusetts     46
+Minnesota         24
+Missouri          22
+New Jersey        23
+New York          94
+Ohio              22
+Oregon            24
+Texas            113
+Utah              23
+Virginia          66
+Washington        23
+Wisconsin         24
+Name: Can #, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>For the final two questions we will switch back to the water dataset</em></p>
+</section>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">.groupby</span></code> also allows you to group on multiple fields.  So instead of saying “what is the mean value of CO in each state?”, we can be more specific, and ask, “What is the mean value of CO in each state at every wind speed?”</p>
+<p>We do this by using a <code class="docutils literal notranslate"><span class="pre">list</span></code> of values in the <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> argument instead of just a single column string.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.groupby([&quot;Box&quot;,</span> <span class="pre">&quot;Wind</span> <span class="pre">Spd</span> <span class="pre">(mph)&quot;])</span></code></p>
+<p><strong>A)</strong> Try using this syntax to find the mean value of CO in each state at every wind speed</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State&quot;</span><span class="p">,</span> <span class="s2">&quot;Wind Spd (mph)&quot;</span><span class="p">])[</span><span class="s1">&#39;CO (ppbv)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;Illinois&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wind Spd (mph)
+3        128.0
+4        124.5
+5        229.5
+6        122.5
+7        151.0
+8        153.0
+9         79.0
+10        97.0
+11       115.0
+15-25     94.0
+15-26    108.0
+15-27    116.0
+17-26    109.0
+18-26    111.0
+Name: CO (ppbv), dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> What was the mean value of CO in Georgia when the wind speed was 8 mph?</p>
+</section>
+<section id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h3>
+<p>The current <code class="docutils literal notranslate"><span class="pre">.groupby</span></code> function allows to use a single aggregation function at once – we can see either the means for every columns, or the max of every column, and so on.</p>
+<p>To look use different aggregation functions for different columns we drop the aggregation function and instead use <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>.</p>
+<p>Here is an example using the water dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;dam release&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">max_discharge</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;discharge&#39;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">),</span> 
+    <span class="n">mean_doxy</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s2">&quot;dissolved oxygen&quot;</span><span class="p">,</span> <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>max_discharge</th>
+      <th>mean_doxy</th>
+    </tr>
+    <tr>
+      <th>dam release</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>False</th>
+      <td>48.5</td>
+      <td>9.466667</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>48.5</td>
+      <td>9.343243</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">.agg()</span></code> function to find the maximum values of <code class="docutils literal notranslate"><span class="pre">'CH4</span> <span class="pre">(ppmv</span> <span class="pre">height)'</span></code>, the mean values of ‘Toluene (E/B/MS)’, and the total number of samples for each state.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># copied improperly</span>
+<span class="c1"># was_2020.groupby(&quot;State&quot;).agg(</span>
+<span class="c1">#     max_discharge=pd.NamedAgg(column=&#39;discharge&#39;, aggfunc=&#39;max&#39;), </span>
+<span class="c1">#     mean_doxy=pd.NamedAgg(column=&quot;dissolved oxygen&quot;, aggfunc=&#39;mean&#39;)</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/4_practice_problems/1_python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2-2_filtering_groupby_practice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2.2 Problems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3-1_xarray_practice.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3.1 Problems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">Filtering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#named-indexes">Named Indexes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">Groupby</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-groupby-questions">Question 4 - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rachel Wegener
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

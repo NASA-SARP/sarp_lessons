@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.2 Spatial Data &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data';</script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.3 geopandas" href="4-3_geopandas.html" />
+    <link rel="prev" title="4.1 Datetimes" href="4-1_datetimes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Welcome to SARP Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">4. Spatio-temporal Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../4_practice_problems/index.html">Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-1_variables_data_answers.html">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-2_xarray_practice.html">3.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-1_datetimes_answers.html">4.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-2_spatial_data_practice.html">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/sarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4.2 Spatial Data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data-vs-raster-data">Vector data vs. Raster data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geodesy">Geodesy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ellipsoids-and-datums">Ellipsoids and Datums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-projections">Map Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-geodesy-epsg-codes">Standardized Geodesy: EPSG Codes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-the-world-s-a-coordinate-system">All the world’s a coordinate system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-boxes">Bounding Boxes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utm-grids">UTM Grids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easting-and-northing">Easting and Northing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epsg-codes-for-utm-grids">EPSG codes for UTM grids</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-coding">Back to Coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapely-objects"><code class="docutils literal notranslate"><span class="pre">shapely</span></code> objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">Creating a <code class="docutils literal notranslate"><span class="pre">Point()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-polygon">Creating a <code class="docutils literal notranslate"><span class="pre">Polygon()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-bounding-box">Creating a Bounding Box</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-spatial-objects">Operations with spatial objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-buffer-using-the-shape-of-california">An example of buffer using the shape of California</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-ways-to-represent-spatial-objects">Different Ways to Represent Spatial Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geojson">geojson</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-geojson-from-a-file">Loading a geojson from a file</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wkt">WKT</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spatial-data">
+<h1>4.2 Spatial Data<a class="headerlink" href="#spatial-data" title="Link to this heading">#</a></h1>
+<div class="note dropdown admonition">
+<p class="admonition-title">Lesson Content</p>
+<ul class="simple">
+<li><p>raster vs. vector data</p></li>
+<li><p>The earth as a coordinate system; bounding boxes</p></li>
+<li><p>geodesy and UTM grids</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> vector object library</p></li>
+</ul>
+</div>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h2>
+<p>Spatial data, as defined by software firm <a class="reference external" href="https://www.safe.com/what-is/spatial-data/">Safe</a> is:</p>
+<blockquote>
+<div><p>a term used to describe any data related to or containing information about a specific location on the Earth’s surface</p>
+</div></blockquote>
+<p>As earth scientists we are all about the earth’s surface! Our data is inherently spatial.  Very little (or nothing) that we do is disconnected from location.  Learning how to deal with location, then, is a key part of learning to code for earth science research.</p>
+</section>
+<section id="vector-data-vs-raster-data">
+<h2>Vector data vs. Raster data<a class="headerlink" href="#vector-data-vs-raster-data" title="Link to this heading">#</a></h2>
+<p>Spatial data is most often divided between two types:</p>
+<ol class="arabic simple">
+<li><p><strong>raster data</strong> - made up of a continuous matrix of cells that each hold specific values</p></li>
+<li><p><strong>vector data</strong> - data storing discrete boundaries with attached attributes</p></li>
+</ol>
+<img src="https://i.ytimg.com/vi/zgAXPyU3euo/maxresdefault.jpg" width=600>
+<p>Lidar has become increasingly prevelent, and though it is often represented in raster file formats has also been called “the third branch of geospatial data”.</p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>What is the best type of data structure for each dataset?</p>
+<ol class="arabic simple">
+<li><p>temperature output from a weather model of spatitially continuous temperature predicitions</p></li>
+<li><p>temperature taken from individual ground stations</p></li>
+<li><p>whole air samples taken on an airplane flight</p></li>
+<li><p>elevation across an entire state</p></li>
+</ol>
+</div>
+</section>
+<section id="geodesy">
+<h2>Geodesy<a class="headerlink" href="#geodesy" title="Link to this heading">#</a></h2>
+<p><strong>geodesy</strong> is the science of understanding and measureing the earth’s shape.  There are people who spend their whole careers as geodesists.  Geodesy and mapping is an integral part of <strong>georeferencing</strong> your data - or placing your data in space.  Without georeferencing raster datasets are just pretty images that could have been taken anywhere in the world, or not on this world at all.</p>
+<p>The three concepts we will be distinguishing between today are:</p>
+<ol class="arabic simple">
+<li><p>ellipsoids and datums - define the shape of the earth</p></li>
+<li><p>map projections - define how we put a round earth on a flat map</p></li>
+<li><p>coordinate reference systems - define how we define distances on the flat map</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Vocabulary</p>
+<p><strong>Georeferencing:</strong> The process of assigning a data value a location in space.</p>
+</div>
+<section id="ellipsoids-and-datums">
+<h3>Ellipsoids and Datums<a class="headerlink" href="#ellipsoids-and-datums" title="Link to this heading">#</a></h3>
+<p>The earth is not a perfect circle. It isn’t even a perfect squished circle. It’s bumpy with mountain ranges, ocean topography (bathymetry) and ice sheets. Because of this, in order to define where something is we have to first agree on a basic starting shape for the earth. The agreed upon starting shape is called the <strong>ellipsoid</strong> and agreeing upon where to center that shape is called the <strong>datum</strong>.</p>
+<p>Geodesists have defined the shape of an ellipsoid which is believed to best align with the shape of the earth.  The mostly commonly used ellisoid is the WGS 84 ellipsoid which was defined in 1984. In addition to defining the size of the ellipsoid we also need to define where the center of the ellipsoid should sit so that it is acurrate for as many places on earth at once.  Defining where to put the ellipsoid is called the datum.</p>
+<p><img alt="Datums" src="../../../_images/datums.png" /></p>
+<p>Together the ellipsoid and the datum become the mathematical definition of the earth’s surface.</p>
+</section>
+<section id="map-projections">
+<h3>Map Projections<a class="headerlink" href="#map-projections" title="Link to this heading">#</a></h3>
+<p>The ellipsoid is a 3D shape.  Map projections are the result of taking a 3D shape and turning it into being 2D.</p>
+<img src="https://tomroth.com.au/projections/map-projections.png" width=500><p>There are <a class="reference external" href="https://xkcd.com/977/">an insane number of ways to do this</a> and they are grouped into different families.  The most important takeaway is just to know that when you convert a 3D object into a 2D you aren’t going to be able to be accurate in every aspect.  Something has to sacrifice.  It might be relative size or it might be straight lines but everything can’t be perfect on a given map projection.</p>
+<p><img alt="Projection Distortion" src="../../../_images/projection_distortion.png" /></p>
+</section>
+<section id="coordinate-reference-systems-crs">
+<h3>Coordinate Reference Systems (CRS)<a class="headerlink" href="#coordinate-reference-systems-crs" title="Link to this heading">#</a></h3>
+<p>Once you lay out your 2d surface representing the earth you next need to label the map so you can refer to points on that surface.  The system you uses for labelling points on the map is a <strong>coordinate reference system (crs)</strong>.</p>
+<p>CRS fit into two main categories:</p>
+<ul class="simple">
+<li><p>units of degrees (ex. latitude and longitude) - geographic CRS</p></li>
+<li><p>units of distance (ex. meters, kilometers, miles, …) - projected CRS</p></li>
+</ul>
+<p>The units of a CRS will be a piece of information that you use frequently when working with spatial data.</p>
+<p>Knowing what type of CRS you are using is important for measuring distances. If you have a dataset in degrees the benefit is that it is usually intuitive to think of data in latitude and longitudes. The downside is that if you ask a program about the distance between two things it will give you an answer back in degrees.</p>
+<p>In a projected system the general location of the image can be counter intuitive, but the distances from one point to another are easier because they will be returned to you in the units of the coordiante system.</p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>What purpose does each of the three elements of geodesy serve?</p>
+<ol class="arabic simple">
+<li><p>Ellipsoid + Datum</p></li>
+<li><p>Map projection</p></li>
+<li><p>Coordinate Reference System</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>What is the difference between a projected and a geographic coordinate system? What are the units in each one?</p>
+</div>
+</section>
+</section>
+<section id="standardized-geodesy-epsg-codes">
+<h2>Standardized Geodesy: EPSG Codes<a class="headerlink" href="#standardized-geodesy-epsg-codes" title="Link to this heading">#</a></h2>
+<p>We aren’t talking about geodesy to do a deep dive into it, but we do need to understand that any geospatial data we look at is going to need to communicate to us how they are describing place and distance.</p>
+<p>One common way to do that is with <strong>EPSG codes</strong>.  These codes assign an integer number to many of the common map projection/crs combinations.</p>
+<p>Really common projections include:</p>
+<ul class="simple">
+<li><p>EPSG:4326 - what most people think of as “regular” latitude/longitude coordinates</p></li>
+<li><p>EPSG:3857 - Web mercator, the projection used by Google maps and most web maps.  The de facto standard of web mapping. Nice for distance calculations on most parts of the globe.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>Look at the <a class="reference external" href="http://epsg.io">epsg.io</a> page for the 4326 projection (<a class="reference external" href="http://www.epsg.io/4326">www.epsg.io/4326</a>). What are the units of that projection?</p>
+</div>
+</section>
+<section id="all-the-world-s-a-coordinate-system">
+<h2>All the world’s a coordinate system<a class="headerlink" href="#all-the-world-s-a-coordinate-system" title="Link to this heading">#</a></h2>
+<p>A map of the world:</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mercator_projection_Square.JPG/350px-Mercator_projection_Square.JPG" width=450><p>We are familiar with a map like this. Latitudes run horizontally east/west and longitudes run vertically north and south.</p>
+<p>There are several ways to represent coordinates, but when we are representing coordinate locations on a computer we typically use decimal degrees:</p>
+<p>35 degrees 30 mintes = 35.5 degrees</p>
+<p>We also use a negative sign to denote the southern and western hemisphere:</p>
+<p>112 W, 15 S = -112, -15</p>
+<p>While this all is generally approachable it can get easy to get turned around when you’re in the nitty gritty of coordinates with your data.  One visual I like to keep myself on track is that the coordinate system on our map is just that, a coordinate system just like they x and y planes in math class.</p>
+<p><img alt="Map with CRS" src="../../../_images/crs_map.jpg" /></p>
+<section id="bounding-boxes">
+<h3>Bounding Boxes<a class="headerlink" href="#bounding-boxes" title="Link to this heading">#</a></h3>
+<p>Bounding boxes represent the minimum and maxiumum coordinates of the dataset.  These are often latitude and longitude lines, but the bounding box is given the units of whatever dataset the raster is using.  AVIRIS, for example, uses a UTM grid (more detail later) so the units of the bounding box are meters.</p>
+<p><img alt="Bounding Boxs" src="../../../_images/bounding_box.png" /></p>
+<p>In this example the outline of Italy is shown in red and the bounding box for Italy, which follows the minimum and maximum latitude and longitude lines, is shown in black.</p>
+<p>Bounding boxes are often written as a list of coordinates in the format <code class="docutils literal notranslate"><span class="pre">[minimum_x</span> <span class="pre">minimum_y</span> <span class="pre">maximum_x</span> <span class="pre">maximum_y]</span></code>.  So for our Italy example the bounding box would be <code class="docutils literal notranslate"><span class="pre">[6.634,</span> <span class="pre">36.62,</span> <span class="pre">18.511,</span> <span class="pre">47.08]</span></code>.</p>
+<p>When translating between north/south/east/west and x/y coordinates:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum_x</span></code> -&gt; most western</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum_y</span></code> -&gt; most southern</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maximum_x</span></code> -&gt; most eastern</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maximum_y</span></code> -&gt; most northern</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>Pull up Google maps or your favorite mapping appliation and zoom into the state of California. Click the map to view latitude and longitude locations for the edges.  Write down an approximate bounding box (to ~the nearest half of a degree) for the state in the form <code class="docutils literal notranslate"><span class="pre">[minimum_x</span> <span class="pre">minimum_y</span> <span class="pre">maximum_x</span> <span class="pre">maximum_y]</span></code></p>
+</div>
+</section>
+</section>
+<section id="utm-grids">
+<h2>UTM Grids<a class="headerlink" href="#utm-grids" title="Link to this heading">#</a></h2>
+<p>The Universal Transverse Mercator (UTM) projected coordinate system that covers the entire earth.  The system is broken up into 60 zones, each 6 degrees longitude wide, that span from the south to the north pole.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># UTM grid zones</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;https://gisgeography.com/wp-content/uploads/2016/05/UTM-Zones-Globe-2.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">330</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://gisgeography.com/wp-content/uploads/2016/05/UTM-Zones-Globe-2.png" width="330"/></div></div>
+</div>
+<p>Notice in the image how the area covered by each zone is widest at the equator and gets skinnier towards the poles.</p>
+<section id="easting-and-northing">
+<h3>Easting and Northing<a class="headerlink" href="#easting-and-northing" title="Link to this heading">#</a></h3>
+<p>Instead of latitude and longitude the UTM grid system uses a northing and an easting, respectively.</p>
+<ul class="simple">
+<li><p>Longtude -&gt; Eastings.  Eastings are measured from the central meridian, which has a value of 500,000m.</p></li>
+<li><p>Latitude -&gt; Northings.  Northings are measured from the from the equator, which has a value of 0 for the northern hemisphere and 10,000,000m for the southern hemisphere.</p></li>
+</ul>
+<p>Some benefits of UTM:</p>
+<ul class="simple">
+<li><p>All values of eastings/northings are positive, so there are no negative numbers nor is there an East-West designation</p></li>
+<li><p>constant distance relationship anywhere on the map</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;https://www.maptools.com/images/28ad74e.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">360</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://www.maptools.com/images/28ad74e.png" width="360"/></div></div>
+</div>
+<p>The x direction should only range from about 0 to 1,000,000 where as the y direction could range from 0 to about 10,000,000.</p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>What is the set of coordinates corresponding to the exact center of a northern hemisphere UTM grid at the equator?</p>
+</div>
+</section>
+<section id="epsg-codes-for-utm-grids">
+<h3>EPSG codes for UTM grids<a class="headerlink" href="#epsg-codes-for-utm-grids" title="Link to this heading">#</a></h3>
+<p>Each grid has its own EPSG code, meaning there are 120 total EPSG codes total for UTM grids.  Luckily there is an order to how these codes are assigned.</p>
+<ul class="simple">
+<li><p>northern hemisphere - 326{zone number}</p></li>
+<li><p>southern hemisphere - 327(zone number}</p></li>
+</ul>
+<p>To visually reference UTM grid zone numbers I use the image from <a class="reference external" href="http://www.dmap.co.uk/utmworld.htm">this website</a> as a reference:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># UTM grid zones</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;http://www.dmap.co.uk/utmworld.gif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="http://www.dmap.co.uk/utmworld.gif"/></div></div>
+</div>
+<p>Another source to referenece is <a class="reference external" href="http://epsg.io">epsg.io</a>.  Type the name of the reference system you are interested in to find information or view it on a map. Ex. <a class="reference external" href="https://epsg.io/32630">https://epsg.io/32630</a> or <a class="reference external" href="https://epsg.io/4326">https://epsg.io/4326</a></p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>What is the EPSG code for the UTM zone covering most of Ireland?</p>
+</div>
+</section>
+</section>
+<section id="back-to-coding">
+<h2>Back to Coding<a class="headerlink" href="#back-to-coding" title="Link to this heading">#</a></h2>
+<section id="shapely-objects">
+<h3><code class="docutils literal notranslate"><span class="pre">shapely</span></code> objects<a class="headerlink" href="#shapely-objects" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">shapely</span></code> is a library for handling vector data.  It has objects for <code class="docutils literal notranslate"><span class="pre">Point</span></code>s, <code class="docutils literal notranslate"><span class="pre">LineString</span></code>s, <code class="docutils literal notranslate"><span class="pre">LineRing</span></code>s,and <code class="docutils literal notranslate"><span class="pre">Polygon</span></code>s. <code class="docutils literal notranslate"><span class="pre">Point</span></code>s and <code class="docutils literal notranslate"><span class="pre">Polygon</span></code>s are what we will primarily use.</p>
+<p>See also:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/geospatial-adventures-step-1-shapely-e911e4f86361">medium article</a></p></li>
+</ul>
+<section id="creating-a-point">
+<h4>Creating a <code class="docutils literal notranslate"><span class="pre">Point()</span></code><a class="headerlink" href="#creating-a-point" title="Link to this heading">#</a></h4>
+<p>You create a <code class="docutils literal notranslate"><span class="pre">shapely</span></code> object by giving it a set of coordinates, in the format (x, y).</p>
+<p><strong>Notice!</strong> x, y for degree coordinates is longitude, latitude</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>POINT (0 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(4.0, 3.0)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-polygon">
+<h4>Creating a <code class="docutils literal notranslate"><span class="pre">Polygon()</span></code><a class="headerlink" href="#creating-a-polygon" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polygon</span> <span class="o">=</span> <span class="n">Polygon</span><span class="p">([(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When you create a <code class="docutils literal notranslate"><span class="pre">Polygon</span></code> object you get extra properties that tell you something about your object</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">area</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">length</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">polygon</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+3.414213562373095
+(0.0, 0.0, 1.0, 1.0)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-bounding-box">
+<h4>Creating a Bounding Box<a class="headerlink" href="#creating-a-bounding-box" title="Link to this heading">#</a></h4>
+<p>When we create a bounding box in code the order of inputs is:
+<code class="docutils literal notranslate"><span class="pre">minx</span></code>, <code class="docutils literal notranslate"><span class="pre">miny</span></code>, <code class="docutils literal notranslate"><span class="pre">maxx</span></code>, <code class="docutils literal notranslate"><span class="pre">maxy</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">box</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/e93f047a58073e6f893ae9afeb6838623e2c0ad911ba0347f8c9043dd8fd120b.svg" src="../../../_images/e93f047a58073e6f893ae9afeb6838623e2c0ad911ba0347f8c9043dd8fd120b.svg" />
+</div>
+</div>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h4>
+<p>Creating a bounding box Python object for the bounding box of Italy in the image above</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox_italy</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="mf">6.634</span><span class="p">,</span> <span class="mf">36.62</span><span class="p">,</span> <span class="mf">18.51</span><span class="p">,</span> <span class="mf">47.08</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox_italy</span><span class="o">.</span><span class="n">area</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>124.22296000000003
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="operations-with-spatial-objects">
+<h3>Operations with spatial objects<a class="headerlink" href="#operations-with-spatial-objects" title="Link to this heading">#</a></h3>
+<p>Just like addition or multiplication are operations for numbers, we also have operations we can run on spatial data which are unique.  Here are a few common ones:</p>
+<img src="https://docs.qgis.org/2.8/en/_images/overlay_operations.png">
+<p>Another common one is a buffer:
+<img src="https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/section_11/5c7eb6fc4bcbfc5117d778f0aabfded6.jpg" width=550></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox_italy</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="mf">6.634</span><span class="p">,</span> <span class="mf">36.62</span><span class="p">,</span> <span class="mf">18.51</span><span class="p">,</span> <span class="mf">47.08</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox_example</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mf">22.7</span><span class="p">,</span> <span class="mf">49.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox_example</span> <span class="o">-</span> <span class="n">bbox_italy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/13d6394292d0f5c9e4b4e1af8ca1ecaca409f61b1740c34fae39028effc14a09.svg" src="../../../_images/13d6394292d0f5c9e4b4e1af8ca1ecaca409f61b1740c34fae39028effc14a09.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox_example</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">bbox_italy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/61a8d3133df0f8012e1980009a04d9bd1ecf62a9928a95f2105277f3646d9564.svg" src="../../../_images/61a8d3133df0f8012e1980009a04d9bd1ecf62a9928a95f2105277f3646d9564.svg" />
+</div>
+</div>
+<section id="an-example-of-buffer-using-the-shape-of-california">
+<h4>An example of buffer using the shape of California<a class="headerlink" href="#an-example-of-buffer-using-the-shape-of-california" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Opening a geojson and convering to a shapely object.  We&#39;ll talk about this again below</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./data/california.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ca_geom_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">ca_geom</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">ca_geom_json</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_geom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/02250803ac05e25f0bd87866aa8a5f14ebd706645c3479bfcbd2ff4868c724bc.svg" src="../../../_images/02250803ac05e25f0bd87866aa8a5f14ebd706645c3479bfcbd2ff4868c724bc.svg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_geom</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/ed381b47eab839e2322e90b01b7f28d0d331ed8d707f8274f898e0dde4f45b8e.svg" src="../../../_images/ed381b47eab839e2322e90b01b7f28d0d331ed8d707f8274f898e0dde4f45b8e.svg" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>In the image below we have a shape <code class="docutils literal notranslate"><span class="pre">purple</span></code>, <code class="docutils literal notranslate"><span class="pre">tan</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code>.  What is the operation that was used on <code class="docutils literal notranslate"><span class="pre">purple</span></code> and <code class="docutils literal notranslate"><span class="pre">tan</span></code> to get green shape?</p>
+<img src="https://gisgeography.com/wp-content/uploads/2020/10/Erase-Tool-3D-550x178.jpg">
+</div>
+</section>
+</section>
+</section>
+<section id="different-ways-to-represent-spatial-objects">
+<h2>Different Ways to Represent Spatial Objects<a class="headerlink" href="#different-ways-to-represent-spatial-objects" title="Link to this heading">#</a></h2>
+<p>While Python objects are nice, they aren’t great if you are trying to take your objects out of Python.  For example, maybe you drew out a custom shape in QGIS that you want to use or you defined an ROI in ENVI and you want to import those into your Python code.</p>
+<p>Shapefiles are a really common way to move shapes around.  Opening those is a little more involved so we won’t look at those right now, but I will briefly mention two other common representations that are text-based: GeoJSON and WKT.</p>
+<section id="geojson">
+<h3>geojson<a class="headerlink" href="#geojson" title="Link to this heading">#</a></h3>
+<p>Geojson is a specific flavor of the very common JSON format.  JSON format is a way of sending data that looks just like a Python dictionary but it is used much more broadly than just Python.</p>
+<p>Links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://geojson.org/">geojson.org</a> - the full specification</p></li>
+<li><p><a class="reference external" href="https://geojson.tools/">geojson.tools</a> - for quick visualization of geojson objects</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">armstrong_geojson</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Point&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">117.89</span><span class="p">,</span> <span class="mf">34.94</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Armstrong Flight Research Center&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The geojson acts  just like a Python dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">armstrong_geojson</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-117.89, 34.94]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">armstrong_geometry</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">armstrong_geojson</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">armstrong_geometry</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(-117.89, 34.94)]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="loading-a-geojson-from-a-file">
+<h4>Loading a geojson from a file<a class="headerlink" href="#loading-a-geojson-from-a-file" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./data/california.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_geom</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="wkt">
+<h3>WKT<a class="headerlink" href="#wkt" title="Link to this heading">#</a></h3>
+<p>WKT stands for “Well Known Text”.  It is another way of saving vector geometries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">armstrong_geometry</span><span class="o">.</span><span class="n">wkt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;POINT (-117.89 34.94)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/1_python_progression/4-spatiotemporal"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4-1_datetimes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4.1 Datetimes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4-3_geopandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-data-vs-raster-data">Vector data vs. Raster data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geodesy">Geodesy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ellipsoids-and-datums">Ellipsoids and Datums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-projections">Map Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-reference-systems-crs">Coordinate Reference Systems (CRS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standardized-geodesy-epsg-codes">Standardized Geodesy: EPSG Codes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-the-world-s-a-coordinate-system">All the world’s a coordinate system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounding-boxes">Bounding Boxes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utm-grids">UTM Grids</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easting-and-northing">Easting and Northing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epsg-codes-for-utm-grids">EPSG codes for UTM grids</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-coding">Back to Coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shapely-objects"><code class="docutils literal notranslate"><span class="pre">shapely</span></code> objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-point">Creating a <code class="docutils literal notranslate"><span class="pre">Point()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-polygon">Creating a <code class="docutils literal notranslate"><span class="pre">Polygon()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-bounding-box">Creating a Bounding Box</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-spatial-objects">Operations with spatial objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-buffer-using-the-shape-of-california">An example of buffer using the shape of California</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-ways-to-represent-spatial-objects">Different Ways to Represent Spatial Objects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geojson">geojson</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-a-geojson-from-a-file">Loading a geojson from a file</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wkt">WKT</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rachel Wegener
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

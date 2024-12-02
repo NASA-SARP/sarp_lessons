@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Arrays and numpy Answers &#8212; SARP Programming Lessons</title>
   
   
@@ -16,55 +16,59 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'additional_lectures/rasters/practice/1_arrays_numpy_answers';</script>
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Plot with multiple lines and a log axis" href="../../../examples/logplot.html" />
+    <link rel="next" title="Visualization Examples" href="../../../examples/index.html" />
     <link rel="prev" title="Accessing Coordinates Practice" href="3_accessing_coordinates_practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +133,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../../index.html">
   
@@ -153,21 +148,17 @@
     
     
     <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
-    <script>document.write(`<img src="../../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -178,32 +169,34 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../lessons/general_python/index.html">General Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/1_variables_types_ifstatements.html">Variables, Data Types, and if Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/2_lists_dictionaries.html">Lists and Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/datetimes.html">Datetimes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/spatial_data.html">Spatial Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../lessons/gridded_data/index.html">Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/1_xarray.html">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/2_xarray_computation.html">Starting Computations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/3_xarray_groupby.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/spatial_operations.html">Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../lessons/tabular_data/index.html">Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/1_pandas.html">The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/2_filtering_groupby.html">Filtering and groupby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/3_geopandas.html"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/static_visualization_matplotlib.html">Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/mapping_colors.html">Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sarp_lessons/1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Lectures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Debugging/debugging_lesson.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../time_series_statistics/oceans_stats_examples.html">Time Series Statistics</a></li>
@@ -214,40 +207,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../3_accessing_coordinates.html">Accessing Data</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Visualization/index.html">Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../Visualization/2_building_on_matplotlib.html">Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Visualization/3_dynamic_visualization.html">Dynamic Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Visualization/viewing_images.html">Viewing Images</a></li>
 </ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Sheets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../lessons/index_practice.html">General Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/1_variables_data_practice.html">Variables, Data Types and If statements Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/2_lists_dicts_practice.html">Lists and Dictionaries Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/datetimes_practice.html">Datetimes Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/spatial_data_practice.html">Spatial Data Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/1_variables_data_answers.html">Variables, Data Types and If statements Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/2_lists_dicts_answers.html">Lists and Dictionaries Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/datetimes_answers.html">Datetimes Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/general_python/practice/spatial_data_answers.html">Spatial Data Answers</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../lessons/index_practice_raster.html">Gridded Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/practice/1_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/practice/2_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Computation Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/gridded_data/practice/1_xarray_answers.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../lessons/index_practice_tabular.html">Tabular Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/practice/1_pandas_practice.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/practice/2_filtering_groupby_practice.html">Filtering and Groupby Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/practice/3_geopandas_practice.html">Practice with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/practice/1_pandas_answers.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../lessons/tabular_data/practice/2_filtering_groupby_answers.html">Filtering and Groupby Answers</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index_practice.html">Raster Data Practice (Additional Lectures)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_arrays_numpy_practice.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_raster_fundamentals_practice.html">Raster Fundamentals Practice</a></li>
@@ -256,12 +218,15 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/logplot.html">Plot with multiple lines and a log axis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/flight_track.html">Flight Track Plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/gridded_mapping.html">Cartopy with gridded data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../examples/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -295,9 +260,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -420,27 +385,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -488,19 +445,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="arrays-and-numpy-answers">
-<h1>Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Answers<a class="headerlink" href="#arrays-and-numpy-answers" title="Permalink to this heading">#</a></h1>
-<div class="section" id="part-1">
-<h2>Part 1<a class="headerlink" href="#part-1" title="Permalink to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="arrays-and-numpy-answers">
+<h1>Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Answers<a class="headerlink" href="#arrays-and-numpy-answers" title="Link to this heading">#</a></h1>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
 </div>
-<div class="section" id="creating-and-inspecting-arrays">
-<h3>Creating and Inspecting arrays<a class="headerlink" href="#creating-and-inspecting-arrays" title="Permalink to this heading">#</a></h3>
+</div>
+</div>
+<section id="creating-and-inspecting-arrays">
+<h3>Creating and Inspecting arrays<a class="headerlink" href="#creating-and-inspecting-arrays" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Convert the following list into a numpy array</p></li>
 </ol>
@@ -582,9 +549,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="multiple-dimensions">
-<h3>Multiple dimensions<a class="headerlink" href="#multiple-dimensions" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="multiple-dimensions">
+<h3>Multiple dimensions<a class="headerlink" href="#multiple-dimensions" title="Link to this heading">#</a></h3>
 <ol class="arabic simple" start="5">
 <li><p>What is the shape of the following array?  Use the shape to determine how many elements are in the array</p></li>
 </ol>
@@ -681,9 +648,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="math-and-aggregations">
-<h3>Math and aggregations<a class="headerlink" href="#math-and-aggregations" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="math-and-aggregations">
+<h3>Math and aggregations<a class="headerlink" href="#math-and-aggregations" title="Link to this heading">#</a></h3>
 <p>For the next few problems consider that the <code class="docutils literal notranslate"><span class="pre">population_sparrows</span></code> array represents the populations of sparrows at 12 different reserach locations.</p>
 <ol class="arabic simple" start="10">
 <li><p>Let’s say our sparrow population grew, and the population of every location doubled.  Multiple all the values in the array by 2.  Make sure array is updated with the new values.</p></li>
@@ -760,13 +727,13 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="part-2">
-<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
 <p><strong>Note that the exact answers to the practice problems may not be the same on my sheet as on yours, because the random function used to generate the values won’t create the same array on your computer as on mine. Check that the code does the same thing, or run my code in your notebook to check the answer</strong></p>
-<div class="section" id="question-1">
-<h3>Question 1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h3>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reflectances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
@@ -782,9 +749,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[19, 50, 46, 70, 17, 37, 86, 60, 86, 26],
-       [43, 59, 60, 68, 90, 33, 81, 37, 19,  3],
-       [96, 30, 84, 68, 72,  1, 62, 40, 45, 11]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[67, 83, 54, 68, 13, 69, 69, 84, 40, 94],
+       [92, 37, 77, 37, 54,  2, 22, 93, 13, 67],
+       [99,  0, 37, 63, 83, 26, 94, 21, 48, 68]])
 </pre></div>
 </div>
 </div>
@@ -802,14 +769,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>69
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-2">
-<h3>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
 <p><strong>A)</strong> Add 10 to every value in the <code class="docutils literal notranslate"><span class="pre">reflectances</span></code> array which has an index of 2 in the axis=0 position.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -818,20 +785,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 91,  81,  13, ...,  20,  45,  44],
-       [ 69,  48,  39, ...,  13, 102,  33],
-       [ 11,  19,  72, ...,  87,  75,  57],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 45,  61,  57, ..., 107,  97,  15],
+       [105,  79,  34, ...,  18,  66,  13],
+       [100,  72,  75, ...,  54, 100,  62],
        ...,
-       [ 79,  30,  14, ..., 100,  71,  19],
-       [ 49,  51, 100, ...,  47,  12,  36],
-       [ 55,  73,  32, ...,  54,  79,  20]])
+       [ 34,  92,  17, ...,  85,  44,  39],
+       [ 93,  65,  84, ...,  16,  17,  66],
+       [ 80,  23,  34, ..., 104,  75,  52]])
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-3">
-<h3>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
 <p><strong>A)</strong> What will be the shapes of the following arrays?  First take a guess, then run the code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]])</span>
@@ -891,9 +858,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-4">
-<h3>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h3>
 <p><strong>A)</strong> Going back to our <code class="docutils literal notranslate"><span class="pre">reflectances</span></code> array, find the mean and standard deviation of all the values in the array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -909,7 +876,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.865833333333335
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.513333333333335
 </pre></div>
 </div>
 </div>
@@ -921,7 +888,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.979409344778272
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.948019314319627
 </pre></div>
 </div>
 </div>
@@ -946,9 +913,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="question-5">
-<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Link to this heading">#</a></h3>
 <p><strong>A)</strong> The <code class="docutils literal notranslate"><span class="pre">.astype()</span></code> method is a method that changes the datatype of the values in the array.  It takes one argument - the new data type (which you type in without quotations).</p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">.astype()</span></code> method on the reflectances array to change the data type to float.</p>
 <div class="cell docutils container">
@@ -971,45 +938,45 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[ 1., 87., 39., ..., 72., 40., 32.],
-        [76., 79., 83., ..., 27.,  7., 67.],
-        [92., 78., 15., ...,  1., 63., 61.],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[76., 67., 58., ..., 21., 17., 95.],
+        [22., 33., 55., ..., 43., 71., 38.],
+        [ 3., 15., 63., ..., 33., 40., 54.],
         ...,
-        [92., 66., 48., ..., 47., 81., 92.],
-        [26., 49., 81., ...,  2., 91., 85.],
-        [61., 68.,  0., ..., 35., 70., 14.]],
+        [53., 67., 58., ..., 58., 87., 91.],
+        [20., 10., 43., ..., 56., 75., 50.],
+        [86., 31.,  8., ..., 96., 68., 92.]],
 
-       [[29., 81., 91., ..., 47., 91., 93.],
-        [ 8., 44., 57., ..., 82., 95., 62.],
-        [93., 56., 56., ..., 14., 51., 92.],
+       [[66., 41., 28., ..., 69., 60., 70.],
+        [36.,  8., 28., ..., 66., 40., 28.],
+        [25., 90., 36., ..., 62., 68., 92.],
         ...,
-        [19., 23., 72., ..., 90., 88., 73.],
-        [67., 17., 78., ...,  0., 15., 93.],
-        [15.,  2.,  4., ..., 62.,  1., 82.]],
+        [74., 81., 72., ..., 45., 30., 51.],
+        [89., 42., 66., ...,  1., 38., 21.],
+        [76., 58., 57., ..., 68., 24.,  3.]],
 
-       [[71.,  2., 88., ..., 48., 42., 44.],
-        [24., 43., 99., ..., 38., 19., 17.],
-        [33.,  3.,  0., ..., 30., 95., 67.],
+       [[ 7., 33., 95., ..., 41., 32., 37.],
+        [49., 18.,  3., ...,  2., 29., 23.],
+        [75., 45., 19., ..., 15., 79., 49.],
         ...,
-        [68., 18., 58., ..., 11., 68.,  5.],
-        [82., 16., 91., ..., 21., 92., 76.],
-        [55., 75., 13., ..., 79., 87., 72.]],
+        [55., 81., 86., ...,  1.,  9., 95.],
+        [40., 71., 69., ..., 63., 32.,  0.],
+        [30., 25., 95., ..., 53., 39., 76.]],
 
-       [[55., 60., 53., ..., 91., 33., 84.],
-        [75., 44., 17., ..., 82., 53., 66.],
-        [71., 74., 20., ..., 48., 54., 19.],
+       [[10., 84., 19., ..., 40., 57., 45.],
+        [86., 56., 46., ..., 70., 67., 74.],
+        [19., 73., 88., ..., 56., 92., 48.],
         ...,
-        [15., 99., 37., ..., 93.,  1., 16.],
-        [37., 91., 23., ..., 73.,  3., 18.],
-        [55., 39., 10., ..., 18., 81., 53.]],
+        [ 4., 97., 79., ..., 27., 65., 57.],
+        [25., 28., 69., ..., 46., 77., 30.],
+        [36., 18., 41., ..., 12., 51., 59.]],
 
-       [[67., 60., 67., ..., 83., 10.,  2.],
-        [50.,  1., 77., ..., 20., 62., 65.],
-        [58., 87.,  1., ..., 62., 78., 77.],
+       [[89., 81., 79., ..., 85., 34., 38.],
+        [ 3., 39., 18., ..., 96., 82.,  8.],
+        [52.,  9.,  9., ..., 68., 44., 76.],
         ...,
-        [44.,  1., 11., ..., 90., 75., 51.],
-        [65., 81., 19., ...,  7.,  9., 80.],
-        [79., 27., 69., ..., 22., 52., 60.]]])
+        [86., 49., 63., ..., 96., 44., 79.],
+        [37., 49., 40., ..., 66., 57., 81.],
+        [40., 85., 36., ...,  4., 73., 98.]]])
 </pre></div>
 </div>
 </div>
@@ -1024,25 +991,25 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[97, 94, 98, 99, 99, 96, 91, 98, 99, 93, 99, 91, 98, 97, 99, 99,
-         96, 97, 99, 99, 99, 98, 93, 97, 99, 97, 98, 96, 98, 97, 98, 96,
-         95, 98, 89, 98, 99, 97, 91, 96]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[96, 98, 99, 92, 99, 96, 94, 97, 99, 94, 96, 96, 96, 99, 97, 95,
+         98, 98, 91, 97, 96, 96, 89, 92, 95, 97, 92, 99, 96, 95, 98, 98,
+         97, 90, 99, 95, 93, 99, 96, 95]],
 
-       [[96, 99, 91, 99, 96, 96, 97, 98, 96, 96, 97, 98, 96, 99, 98, 97,
-         97, 95, 91, 99, 98, 97, 98, 98, 94, 99, 99, 99, 94, 93, 99, 99,
-         94, 98, 99, 97, 96, 90, 96, 93]],
+       [[98, 97, 98, 99, 93, 92, 92, 96, 95, 93, 99, 98, 99, 96, 98, 98,
+         93, 98, 99, 99, 98, 99, 97, 96, 99, 97, 94, 97, 98, 99, 88, 99,
+         92, 97, 99, 90, 93, 95, 95, 98]],
 
-       [[99, 96, 99, 99, 93, 96, 98, 98, 99, 89, 94, 99, 94, 99, 94, 99,
-         90, 92, 99, 93, 93, 98, 99, 97, 99, 97, 99, 96, 92, 91, 96, 94,
-         99, 97, 85, 93, 97, 99, 97, 97]],
+       [[99, 95, 97, 99, 97, 95, 98, 98, 98, 99, 97, 98, 98, 98, 99, 97,
+         84, 99, 98, 90, 93, 97, 95, 92, 99, 85, 99, 94, 90, 92, 97, 93,
+         98, 99, 99, 99, 95, 98, 97, 95]],
 
-       [[93, 99, 96, 98, 86, 99, 99, 99, 96, 99, 99, 99, 99, 98, 94, 98,
-         99, 99, 88, 97, 97, 95, 96, 99, 92, 99, 97, 92, 87, 99, 98, 95,
-         97, 97, 96, 97, 99, 99, 98, 89]],
+       [[99, 97, 88, 93, 96, 98, 97, 99, 93, 92, 96, 98, 99, 95, 97, 97,
+         90, 97, 94, 95, 97, 98, 99, 97, 94, 94, 94, 97, 98, 99, 94, 94,
+         99, 98, 90, 99, 93, 98, 92, 98]],
 
-       [[99, 93, 97, 99, 97, 99, 99, 99, 99, 93, 98, 99, 99, 99, 98, 97,
-         97, 99, 93, 98, 95, 98, 94, 99, 96, 91, 99, 99, 98, 95, 98, 99,
-         94, 98, 99, 99, 99, 99, 97, 97]]])
+       [[89, 90, 98, 98, 96, 97, 97, 99, 97, 98, 96, 96, 96, 98, 99, 96,
+         98, 97, 93, 99, 94, 97, 99, 99, 98, 96, 99, 95, 99, 97, 96, 99,
+         94, 93, 99, 96, 95, 96, 82, 98]]])
 </pre></div>
 </div>
 </div>
@@ -1072,9 +1039,9 @@ document.write(`
 </div>
 </div>
 <p><em>Note: The “keepdims” concept is a bit conceptually abstract and I couldn’t find a good visual illustration for it right now.  If you leave this problem feeling a little iffy on “keepdims” that is totally fine and normal.  The more important concept to be comfortable with is using multiple kwargs in a function/method.</em></p>
-</div>
-<div class="section" id="question-6">
-<h3>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="question-6">
+<h3>Question 6<a class="headerlink" href="#question-6" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
@@ -1105,7 +1072,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3,  5,  6,  9, 10, 11, 12, 14]), array([1, 1, 3, 3, 1, 1, 1, 1]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3,  5,  6,  9, 10, 11, 12, 14]),
+ array([1, 1, 3, 3, 1, 1, 1, 1], dtype=int64))
 </pre></div>
 </div>
 </div>
@@ -1130,9 +1098,9 @@ document.write(`
 </div>
 </div>
 <p><em><strong>Google help:</strong> “numpy number of occurances of a value” or <a class="reference external" href="https://stackoverflow.com/questions/28663856/how-to-count-the-occurrence-of-certain-item-in-an-ndarray">this stackoverflow</a>.</em></p>
-</div>
-<div class="section" id="question-7">
-<h3>Question 7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="question-7">
+<h3>Question 7<a class="headerlink" href="#question-7" title="Link to this heading">#</a></h3>
 <p>NaNs are an important data point when working with real data - rarely do you have a totally complete dataset.</p>
 <p>You can make individual nans with <code class="docutils literal notranslate"><span class="pre">np.NaN</span></code>:</p>
 <div class="cell docutils container">
@@ -1182,9 +1150,9 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1226,11 +1194,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../../examples/logplot.html"
+       href="../../../examples/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Plot with multiple lines and a log axis</p>
+        <p class="prev-next-title">Visualization Examples</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1241,7 +1209,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1314,8 +1283,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>

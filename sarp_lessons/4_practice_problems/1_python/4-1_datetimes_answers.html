@@ -1,0 +1,2183 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.1 Answers &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/4_practice_problems/1_python/4-1_datetimes_answers';</script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="4.2 Problems" href="4-2_spatial_data_practice.html" />
+    <link rel="prev" title="4.1 Problems" href="4-1_datetimes_practice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Welcome to SARP Programming
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../1_python_progression/5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1_python_progression/5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Python Practice</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-1_variables_data_answers.html">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-2_xarray_practice.html">3.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_practice.html">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/4_practice_problems/1_python/4-1_datetimes_answers.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/sarp_lessons/4_practice_problems/1_python/4-1_datetimes_answers.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>4.1 Answers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-datetimes">Dates and Datetimes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dates-and-datetimes-from-strings">Creating Dates and Datetimes from Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timedeltas">Timedeltas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="answers">
+<h1>4.1 Answers<a class="headerlink" href="#answers" title="Link to this heading">#</a></h1>
+<p>Datetimes Answers</p>
+<section id="part-1">
+<h2>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h2>
+<section id="dates-and-datetimes">
+<h3>Dates and Datetimes<a class="headerlink" href="#dates-and-datetimes" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">date()</span></code> object representing your birthday.  Assign it to a variable and use the variable to print out your birthyear.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_birthday</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1994</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_birthday</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1994
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Explain why the following code returns an error:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">date</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: day is out of range for month
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It returns an error because there weren&#39;t 29 days in February in 2011</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Create a datetime object for the 6:23pm on March 13th 1998</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="p">(</span><span class="mi">1998</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(1998, 3, 13, 6, 23)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Create a list with 3 datetime objects in it</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampling_times</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2011</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sampling_times</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[datetime.datetime(2011, 4, 10, 12, 0),
+ datetime.datetime(2011, 4, 11, 12, 0),
+ datetime.datetime(2011, 4, 12, 12, 0)]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-dates-and-datetimes-from-strings">
+<h3>Creating Dates and Datetimes from Strings<a class="headerlink" href="#creating-dates-and-datetimes-from-strings" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="5">
+<li><p>Create a datetime object from the following string</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;01-22-2009 21:00&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;%m-</span><span class="si">%d</span><span class="s1">-%Y %H:%M&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2009, 1, 22, 21, 0)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Create a datetime object from the following string</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;Jul 23 1998 8:02:00&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>My mistake</strong> it turns out the windows machines don’t support the strftime format <code class="docutils literal notranslate"><span class="pre">%-H</span></code> because of the dash. I wrote below the correct syntax, but if you are using these notebooks on the SARP laptop they won’t run it.  Luckily unpadded hours is really uncommon so this hopefully won’t be a problem for your datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This errors</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1"> %Y %-H:%M:%S&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">001</span><span class="n">c4c88cc57</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># This errors</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;%b </span><span class="si">%d</span><span class="s1"> %Y %-H:%M:%S&#39;</span><span class="p">)</span>
+
+<span class="nn">~\.conda\envs\lessons\lib\_strptime.py</span> in <span class="ni">_strptime_datetime</span><span class="nt">(cls, data_string, format)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return a class cls instance based on the input string and the</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span><span class="sd">     format string.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">568</span>     <span class="n">tt</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">gmtoff_fraction</span> <span class="o">=</span> <span class="n">_strptime</span><span class="p">(</span><span class="n">data_string</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>     <span class="n">tzname</span><span class="p">,</span> <span class="n">gmtoff</span> <span class="o">=</span> <span class="n">tt</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>     <span class="n">args</span> <span class="o">=</span> <span class="n">tt</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">fraction</span><span class="p">,)</span>
+
+<span class="nn">~\.conda\envs\lessons\lib\_strptime.py</span> in <span class="ni">_strptime</span><span class="nt">(data_string, format)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>                     <span class="n">bad_directive</span> <span class="o">=</span> <span class="s2">&quot;%&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>                 <span class="k">del</span> <span class="n">err</span>
+<span class="ne">--&gt; </span><span class="mi">341</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is a bad directive in format &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>                                     <span class="p">(</span><span class="n">bad_directive</span><span class="p">,</span> <span class="nb">format</span><span class="p">))</span> <span class="kn">from</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="c1"># IndexError only occurs when the format string is &quot;%&quot;</span>
+
+<span class="ne">ValueError</span>: &#39;-&#39; is a bad directive in format &#39;%b %d %Y %-H:%M:%S&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Create a datetime object from the following string</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;12/1/72 01 52 12&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>My mistake</strong> it turns out the windows machines don’t support the strftime format <code class="docutils literal notranslate"><span class="pre">%-d</span></code> because of the dash. I wrote below the correct syntax, but if you are using these notebooks on the SARP laptop they won’t run it.  Luckily unpadded hours is really uncommon so this hopefully won’t be a problem for your datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This errors</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;%m/</span><span class="si">%-d</span><span class="s1">/%y %H %M %S&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">8273</span><span class="n">d2976c5f</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="s1">&#39;%m/</span><span class="si">%-*d</span><span class="s1">/%y %H %M %S&#39;</span><span class="p">)</span>
+
+<span class="nn">~\.conda\envs\lessons\lib\_strptime.py</span> in <span class="ni">_strptime_datetime</span><span class="nt">(cls, data_string, format)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return a class cls instance based on the input string and the</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span><span class="sd">     format string.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">568</span>     <span class="n">tt</span><span class="p">,</span> <span class="n">fraction</span><span class="p">,</span> <span class="n">gmtoff_fraction</span> <span class="o">=</span> <span class="n">_strptime</span><span class="p">(</span><span class="n">data_string</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">569</span>     <span class="n">tzname</span><span class="p">,</span> <span class="n">gmtoff</span> <span class="o">=</span> <span class="n">tt</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span>     <span class="n">args</span> <span class="o">=</span> <span class="n">tt</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">fraction</span><span class="p">,)</span>
+
+<span class="nn">~\.conda\envs\lessons\lib\_strptime.py</span> in <span class="ni">_strptime</span><span class="nt">(data_string, format)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>                     <span class="n">bad_directive</span> <span class="o">=</span> <span class="s2">&quot;%&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>                 <span class="k">del</span> <span class="n">err</span>
+<span class="ne">--&gt; </span><span class="mi">341</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;</span><span class="si">%s</span><span class="s2">&#39; is a bad directive in format &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>                                     <span class="p">(</span><span class="n">bad_directive</span><span class="p">,</span> <span class="nb">format</span><span class="p">))</span> <span class="kn">from</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="c1"># IndexError only occurs when the format string is &quot;%&quot;</span>
+
+<span class="ne">ValueError</span>: &#39;-&#39; is a bad directive in format &#39;%m/%-*d/%y %H %M %S&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Convert the date August 29th 2008 to the date in Julian days</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">starting_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">format_string</span> <span class="o">=</span> <span class="s1">&#39;%j&#39;</span>
+<span class="n">starting_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="n">format_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="timedeltas">
+<h3>Timedeltas<a class="headerlink" href="#timedeltas" title="Link to this heading">#</a></h3>
+<ol class="arabic simple" start="9">
+<li><p>Calculate how many days it has been since your last birthday.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">last_birthday</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_birthday</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(days=69)
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Calculate exactly how old you are, down to the hour, right now.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth_moment</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1994</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">birth_moment</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(days=9931, seconds=17267, microseconds=131821)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020_filepath</span> <span class="o">=</span> <span class="s2">&quot;./data/SARP 2020 final.xlsx&quot;</span>
+<span class="n">was_2020</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">was_2020_filepath</span><span class="p">,</span> <span class="s2">&quot;INPUT&quot;</span><span class="p">,</span> <span class="n">skipfooter</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-36-f4ef3a08305f&gt;:2: FutureWarning: Your version of xlrd is 1.2.0. In xlrd &gt;= 2.0, only the xls format is supported. As a result, the openpyxl engine will be used if it is installed and the engine argument is not specified. Install openpyxl instead.
+  was_2020 = pd.read_excel(was_2020_filepath, &quot;INPUT&quot;, skipfooter=7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Can #</th>
+      <th>Snake can #</th>
+      <th>Location</th>
+      <th>State</th>
+      <th>Box</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Altitude (m)</th>
+      <th>Temp. Celsius</th>
+      <th>Wind Spd (mph)</th>
+      <th>...</th>
+      <th>3-Ethyltoluene (MS)</th>
+      <th>4-Ethyltoluene (MS)</th>
+      <th>2-Ethyltoluene (MS)</th>
+      <th>1,3,5-Trimethylbenzene (MS)</th>
+      <th>1,2,4-Trimethylbenzene (MS)</th>
+      <th>alpha-Pinene (B/MS)</th>
+      <th>beta-Pinene (B/MS)</th>
+      <th>Unnamed: 113</th>
+      <th>Box.1</th>
+      <th>CH4 (ppmv height).1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5044</td>
+      <td>3701</td>
+      <td>Mars Hill/Lowell Observatory, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-04-24</td>
+      <td>11:23:00</td>
+      <td>2200</td>
+      <td>18</td>
+      <td>5</td>
+      <td>...</td>
+      <td>12</td>
+      <td>17</td>
+      <td>17</td>
+      <td>15</td>
+      <td>23</td>
+      <td>12</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.914</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7338</td>
+      <td>3716</td>
+      <td>Buffalo Park, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-04-24</td>
+      <td>11:44:00</td>
+      <td>2100</td>
+      <td>18</td>
+      <td>5</td>
+      <td>...</td>
+      <td>12</td>
+      <td>16</td>
+      <td>15</td>
+      <td>14</td>
+      <td>22</td>
+      <td>31</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.916</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6027</td>
+      <td>3717</td>
+      <td>Downtown Sedona, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-04-24</td>
+      <td>12:47:00</td>
+      <td>1350</td>
+      <td>27</td>
+      <td>5</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>6</td>
+      <td>11</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.914</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5012</td>
+      <td>3702</td>
+      <td>Buffalo Park, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-05-01</td>
+      <td>11:16:00</td>
+      <td>2100</td>
+      <td>19</td>
+      <td>16</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>22</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.895</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7330</td>
+      <td>3715</td>
+      <td>Mars Hill/Lowell Observatory, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2020-05-01</td>
+      <td>11:49:00</td>
+      <td>2200</td>
+      <td>19</td>
+      <td>16</td>
+      <td>...</td>
+      <td>6</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>8</td>
+      <td>23</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.900</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>924</th>
+      <td>7267</td>
+      <td>2610</td>
+      <td>Oakwood Manor, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-06-24</td>
+      <td>10:28:00</td>
+      <td>234.696</td>
+      <td>20</td>
+      <td>7</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>3</td>
+      <td>68</td>
+      <td>45</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>2.131</td>
+    </tr>
+    <tr>
+      <th>925</th>
+      <td>8257</td>
+      <td>2623</td>
+      <td>South Park, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-06-24</td>
+      <td>10:42:00</td>
+      <td>231.64</td>
+      <td>21.67</td>
+      <td>6</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>4</td>
+      <td>33</td>
+      <td>18</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>2.074</td>
+    </tr>
+    <tr>
+      <th>926</th>
+      <td>5194</td>
+      <td>2608</td>
+      <td>Carl Traeger middle school, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-07-01</td>
+      <td>13:09:00</td>
+      <td>243.84</td>
+      <td>28.89</td>
+      <td>9</td>
+      <td>...</td>
+      <td>4</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>7</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>2.017</td>
+    </tr>
+    <tr>
+      <th>927</th>
+      <td>7101</td>
+      <td>2609</td>
+      <td>Oakwood Manor, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-07-01</td>
+      <td>13:26:00</td>
+      <td>234.696</td>
+      <td>30.5</td>
+      <td>8</td>
+      <td>...</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>23</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>2.027</td>
+    </tr>
+    <tr>
+      <th>928</th>
+      <td>8190</td>
+      <td>2624</td>
+      <td>South Park, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>2020-07-01</td>
+      <td>13:50:00</td>
+      <td>231.64</td>
+      <td>30.5</td>
+      <td>9</td>
+      <td>...</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>11</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1.983</td>
+    </tr>
+  </tbody>
+</table>
+<p>929 rows × 116 columns</p>
+</div></div></div>
+</div>
+<section id="question-1">
+<h3>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h3>
+<p>Using datetime object calculate how long the data record <code class="docutils literal notranslate"><span class="pre">was_2020</span></code> is. In other words, how much time passed between the first and the last measurement in this sample list?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;132 days 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2">
+<h3>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h3>
+<p><em>Creating a datetime column from our <code class="docutils literal notranslate"><span class="pre">was_2020</span></code> Dataframe</em></p>
+<p><strong>A)</strong> In the <code class="docutils literal notranslate"><span class="pre">was_2020</span></code> dataset Date and Time are in two seperate columns.  Combine the two dataframes into one and assign the output to a new variable called <code class="docutils literal notranslate"><span class="pre">combined_datetime</span></code>.</p>
+<p>To do this you will need to:</p>
+<ol class="arabic simple">
+<li><p>Convert each column to a string type</p></li>
+<li><p>Use concatenation to combine them</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of string concatenation</span>
+<span class="s1">&#39;hello &#39;</span> <span class="o">+</span> <span class="s1">&#39;there&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hello there&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combined_datetime</span> <span class="o">=</span> <span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;Time &#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combined_datetime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      2020-04-2411:23:00
+1      2020-04-2411:44:00
+2      2020-04-2412:47:00
+3      2020-05-0111:16:00
+4      2020-05-0111:49:00
+              ...        
+924    2020-06-2410:28:00
+925    2020-06-2410:42:00
+926    2020-07-0113:09:00
+927    2020-07-0113:26:00
+928    2020-07-0113:50:00
+Length: 929, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> Now that you have a <code class="docutils literal notranslate"><span class="pre">'combined_datetime'</span></code> variable, you can use the pandas function <code class="docutils literal notranslate"><span class="pre">pd.to_datetime()</span></code> to convert it from a string to a Series of datetime objects.  Create a new column in your dataframe called <code class="docutils literal notranslate"><span class="pre">'datetime'</span></code> for the new datetime objects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">combined_datetime</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">%H:%M:%S&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>Google suggestion</strong> “pandas to_datetime” or the examples in <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html">the docs</a></em></p>
+<p><strong>C)</strong> Delete the old <code class="docutils literal notranslate"><span class="pre">'Date'</span></code> and <code class="docutils literal notranslate"><span class="pre">'Time'</span></code> columns with the <code class="docutils literal notranslate"><span class="pre">DATAFRAME.drop()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span> <span class="o">=</span> <span class="n">was_2020</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Time &#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>Google suggestion</strong></em> “pandas drop column, or the second (not the first) answer on <a class="reference external" href="https://stackoverflow.com/questions/13411544/delete-a-column-from-a-pandas-dataframe">this stackoverflow</a></p>
+</section>
+<section id="question-3">
+<h3>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h3>
+<p><em>Filtering our dataframe to include only the rows within 7 days of our target date</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>A)</strong> Let’s say that we are interested in a phenomena that occurred on July 5th, 2020 so we want to narrow down our dataframe to inclue only the observations that occured within a week of the 5th.</p>
+<p>Start by calculating the difference between each date in the ‘datetime’ column and July 5th, 2020. What type of object is returned in the result?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Even though we don&#39;t care about the specific time we need to use a datetime object, not a date object, because the</span>
+<span class="c1"># datetime column of the was_2020 dataframe is a datetime</span>
+<span class="n">target_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">target_date</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     -72 days +11:23:00
+1     -72 days +11:44:00
+2     -72 days +12:47:00
+3     -65 days +11:16:00
+4     -65 days +11:49:00
+             ...        
+924   -11 days +10:28:00
+925   -11 days +10:42:00
+926    -4 days +13:09:00
+927    -4 days +13:26:00
+928    -4 days +13:50:00
+Name: datetime, Length: 929, dtype: timedelta64[ns]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> Use the calculation from part A and write a conditional statement checking if each of the rows occured within 7 days of the 5th.  Don’t forget to include dates of samples both before and after the 5th.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">target_date</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      False
+1      False
+2      False
+3      False
+4      False
+       ...  
+924    False
+925    False
+926     True
+927     True
+928     True
+Name: datetime, Length: 929, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>C)</strong> Use the boolean series from part B as a filter to output the <code class="docutils literal notranslate"><span class="pre">was_2020</span></code> dataframe with only the rows within 7 days of July 5th, 2020.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># abs() or absolute value is what caputres days both before and after, since it gets positive and negative numbers</span>
+<span class="n">was_2020</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">was_2020</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">target_date</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Can #</th>
+      <th>Snake can #</th>
+      <th>Location</th>
+      <th>State</th>
+      <th>Box</th>
+      <th>Altitude (m)</th>
+      <th>Temp. Celsius</th>
+      <th>Wind Spd (mph)</th>
+      <th>Wind direction (blowing from direction)</th>
+      <th>Weather</th>
+      <th>...</th>
+      <th>4-Ethyltoluene (MS)</th>
+      <th>2-Ethyltoluene (MS)</th>
+      <th>1,3,5-Trimethylbenzene (MS)</th>
+      <th>1,2,4-Trimethylbenzene (MS)</th>
+      <th>alpha-Pinene (B/MS)</th>
+      <th>beta-Pinene (B/MS)</th>
+      <th>Unnamed: 113</th>
+      <th>Box.1</th>
+      <th>CH4 (ppmv height).1</th>
+      <th>datetime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17</th>
+      <td>7336</td>
+      <td>3710</td>
+      <td>Mars Hill/Lowell Observatory, Flagstaff, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>2200</td>
+      <td>27</td>
+      <td>10</td>
+      <td>SW</td>
+      <td>Slightly Cloudy</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>4</td>
+      <td>126</td>
+      <td>12</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.882</td>
+      <td>2020-07-04 12:48:00</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>6035</td>
+      <td>3723</td>
+      <td>Downtown Sedona, Arizona</td>
+      <td>Arizona</td>
+      <td>37</td>
+      <td>1350</td>
+      <td>36</td>
+      <td>7</td>
+      <td>SW</td>
+      <td>Clear and sunny</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>9</td>
+      <td>44</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>37</td>
+      <td>1.882</td>
+      <td>2020-07-04 14:09:00</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>7993</td>
+      <td>810</td>
+      <td>Anaheim AQMD site Loara Elementary school, Ana...</td>
+      <td>California</td>
+      <td>8</td>
+      <td>40</td>
+      <td>22</td>
+      <td>5</td>
+      <td>SSW</td>
+      <td>sunny, but a bit hazy</td>
+      <td>...</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>6</td>
+      <td>4</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>1.968</td>
+      <td>2020-07-02 12:06:00</td>
+    </tr>
+    <tr>
+      <th>210</th>
+      <td>8247</td>
+      <td>808</td>
+      <td>Imperial Park, Anaheim Hills, California</td>
+      <td>California</td>
+      <td>8</td>
+      <td>137</td>
+      <td>23</td>
+      <td>5</td>
+      <td>WSW</td>
+      <td>sunny, but a bit hazy</td>
+      <td>...</td>
+      <td>22</td>
+      <td>22</td>
+      <td>20</td>
+      <td>30</td>
+      <td>27</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>8</td>
+      <td>1.984</td>
+      <td>2020-07-02 12:35:00</td>
+    </tr>
+    <tr>
+      <th>211</th>
+      <td>9343</td>
+      <td>4110</td>
+      <td>Corona, California</td>
+      <td>California</td>
+      <td>41</td>
+      <td>NaN</td>
+      <td>29</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Clear</td>
+      <td>...</td>
+      <td>4</td>
+      <td>3</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>60</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>41</td>
+      <td>1.979</td>
+      <td>2020-07-03 11:21:00</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>785</th>
+      <td>6157</td>
+      <td>3210</td>
+      <td>Spring Creek Park (Downwind), Tomball, Texas</td>
+      <td>Texas</td>
+      <td>32</td>
+      <td>70</td>
+      <td>95 F</td>
+      <td>6</td>
+      <td>S</td>
+      <td>Partly Cloudy</td>
+      <td>...</td>
+      <td>8</td>
+      <td>6</td>
+      <td>7</td>
+      <td>19</td>
+      <td>147</td>
+      <td>58</td>
+      <td>NaN</td>
+      <td>32</td>
+      <td>1.881</td>
+      <td>2020-07-08 15:00:00</td>
+    </tr>
+    <tr>
+      <th>786</th>
+      <td>5105</td>
+      <td>3223</td>
+      <td>Spring Creek Park (Downwind), Tomball, Texas</td>
+      <td>Texas</td>
+      <td>32</td>
+      <td>70</td>
+      <td>94 F</td>
+      <td>5</td>
+      <td>SSW</td>
+      <td>Partly Cloudy</td>
+      <td>...</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>24</td>
+      <td>61</td>
+      <td>41</td>
+      <td>NaN</td>
+      <td>32</td>
+      <td>1.878</td>
+      <td>2020-07-08 16:00:00</td>
+    </tr>
+    <tr>
+      <th>926</th>
+      <td>5194</td>
+      <td>2608</td>
+      <td>Carl Traeger middle school, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>243.84</td>
+      <td>28.89</td>
+      <td>9</td>
+      <td>ENE</td>
+      <td>Clear skies and sunny</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>7</td>
+      <td>-888</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>2.017</td>
+      <td>2020-07-01 13:09:00</td>
+    </tr>
+    <tr>
+      <th>927</th>
+      <td>7101</td>
+      <td>2609</td>
+      <td>Oakwood Manor, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>234.696</td>
+      <td>30.5</td>
+      <td>8</td>
+      <td>ENE</td>
+      <td>Clear skies and sunny</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>23</td>
+      <td>5</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>2.027</td>
+      <td>2020-07-01 13:26:00</td>
+    </tr>
+    <tr>
+      <th>928</th>
+      <td>8190</td>
+      <td>2624</td>
+      <td>South Park, Oshkosh, Wisconsin</td>
+      <td>Wisconsin</td>
+      <td>26</td>
+      <td>231.64</td>
+      <td>30.5</td>
+      <td>9</td>
+      <td>ENE</td>
+      <td>Clear skies and sunny</td>
+      <td>...</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>-888</td>
+      <td>5</td>
+      <td>11</td>
+      <td>3</td>
+      <td>NaN</td>
+      <td>26</td>
+      <td>1.983</td>
+      <td>2020-07-01 13:50:00</td>
+    </tr>
+  </tbody>
+</table>
+<p>66 rows × 115 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="question-4">
+<h3>Question 4<a class="headerlink" href="#question-4" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in the data</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/englewood_3_12_21_usgs_water.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="c1"># There are a lot of variables here, so let&#39;s shorten our dataframe to a few variables</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="p">[[</span><span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;210920_00060&#39;</span><span class="p">,</span> <span class="s1">&#39;210922_00010&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">]]</span>
+<span class="c1"># Get rid of the first row of hard-coded datatype info</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Rename the columns from their USGS codes to more human-readible names</span>
+<span class="n">name_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;210920_00060&#39;</span><span class="p">:</span> <span class="s1">&#39;discharge&#39;</span><span class="p">,</span><span class="s1">&#39;210922_00010&#39;</span><span class="p">:</span> <span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">:</span> <span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">:</span> <span class="s1">&#39;pH&#39;</span><span class="p">}</span>
+<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">name_codes</span><span class="p">)</span>
+<span class="c1"># Convert columns with numbers to a numeric type</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;discharge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;discharge&#39;</span><span class="p">])</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">])</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">])</span>
+<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime</th>
+      <th>discharge</th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2021-03-12 00:00</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.3</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021-03-12 00:15</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.2</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021-03-12 00:30</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.2</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-03-12 00:45</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2021-03-12 01:00</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.1</td>
+      <td>8.1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>2021-03-13 11:15</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>9.8</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>2021-03-13 11:30</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>9.9</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>2021-03-13 11:45</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>10.2</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>2021-03-13 12:00</td>
+      <td>46.5</td>
+      <td>6.7</td>
+      <td>10.3</td>
+      <td>7.9</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>2021-03-13 12:15</td>
+      <td>NaN</td>
+      <td>6.6</td>
+      <td>10.3</td>
+      <td>7.9</td>
+    </tr>
+  </tbody>
+</table>
+<p>146 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p><strong>A)</strong> Convert the ‘datetime’ string column to a column of datetime objects using <code class="docutils literal notranslate"><span class="pre">pd.to_datetime()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>B)</strong> Set the new datetime column as the index of the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;datetime&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>C)</strong> Use the new index to retrieve the value for <code class="docutils literal notranslate"><span class="pre">'2021-03-12</span> <span class="pre">13:30:00'</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021-03-12 13:30:00&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>discharge           40.8
+temperature          7.6
+dissolved oxygen    11.9
+pH                   8.1
+Name: 2021-03-12 13:30:00, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>D)</strong> One cool thing we can do when we have a datetime index is easily <strong>resample</strong> the data.  Resampling is when we aggregate more finely resolved data to be more coarsely resolved. In this example we will be taking data that is reported every 15 minutes and resampling to an hourly resolution.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">DATAFRAME.resample()</span></code> function to resample to hourly resolution using the mean value of the 15 minute intervals.  Check out the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.resample.html">docs page</a> or the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-series-date-functionality">pandas datetime overview</a> for examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>discharge</th>
+      <th>temperature</th>
+      <th>dissolved oxygen</th>
+      <th>pH</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2021-03-12 00:00:00</th>
+      <td>44.500</td>
+      <td>8.100000</td>
+      <td>8.200</td>
+      <td>8.100</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 01:00:00</th>
+      <td>44.500</td>
+      <td>8.050000</td>
+      <td>8.050</td>
+      <td>8.100</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 02:00:00</th>
+      <td>44.500</td>
+      <td>7.950000</td>
+      <td>7.975</td>
+      <td>8.100</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 03:00:00</th>
+      <td>44.500</td>
+      <td>7.750000</td>
+      <td>8.000</td>
+      <td>8.100</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 04:00:00</th>
+      <td>46.500</td>
+      <td>7.533333</td>
+      <td>8.000</td>
+      <td>8.100</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 05:00:00</th>
+      <td>47.500</td>
+      <td>7.350000</td>
+      <td>8.050</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 06:00:00</th>
+      <td>48.500</td>
+      <td>7.100000</td>
+      <td>8.150</td>
+      <td>7.950</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 07:00:00</th>
+      <td>48.500</td>
+      <td>6.900000</td>
+      <td>8.250</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 08:00:00</th>
+      <td>47.500</td>
+      <td>6.725000</td>
+      <td>8.475</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 09:00:00</th>
+      <td>46.500</td>
+      <td>6.700000</td>
+      <td>8.850</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 10:00:00</th>
+      <td>44.500</td>
+      <td>6.725000</td>
+      <td>9.500</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 11:00:00</th>
+      <td>43.550</td>
+      <td>6.900000</td>
+      <td>10.325</td>
+      <td>7.950</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 12:00:00</th>
+      <td>42.600</td>
+      <td>7.150000</td>
+      <td>11.150</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 13:00:00</th>
+      <td>40.800</td>
+      <td>7.550000</td>
+      <td>11.850</td>
+      <td>8.100</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 14:00:00</th>
+      <td>39.900</td>
+      <td>8.075000</td>
+      <td>12.525</td>
+      <td>8.150</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 15:00:00</th>
+      <td>39.000</td>
+      <td>8.450000</td>
+      <td>13.025</td>
+      <td>8.200</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 16:00:00</th>
+      <td>40.350</td>
+      <td>8.475000</td>
+      <td>12.950</td>
+      <td>8.200</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 17:00:00</th>
+      <td>41.700</td>
+      <td>8.400000</td>
+      <td>12.125</td>
+      <td>8.125</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 18:00:00</th>
+      <td>44.025</td>
+      <td>8.300000</td>
+      <td>11.225</td>
+      <td>8.025</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 19:00:00</th>
+      <td>45.500</td>
+      <td>8.250000</td>
+      <td>10.650</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 20:00:00</th>
+      <td>46.500</td>
+      <td>8.100000</td>
+      <td>10.100</td>
+      <td>7.925</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 21:00:00</th>
+      <td>46.500</td>
+      <td>7.950000</td>
+      <td>9.575</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 22:00:00</th>
+      <td>46.000</td>
+      <td>7.800000</td>
+      <td>9.050</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-12 23:00:00</th>
+      <td>44.500</td>
+      <td>7.700000</td>
+      <td>8.750</td>
+      <td>7.925</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 00:00:00</th>
+      <td>44.500</td>
+      <td>7.700000</td>
+      <td>8.550</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 01:00:00</th>
+      <td>44.500</td>
+      <td>7.700000</td>
+      <td>8.375</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 02:00:00</th>
+      <td>44.500</td>
+      <td>7.675000</td>
+      <td>8.275</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 03:00:00</th>
+      <td>44.500</td>
+      <td>7.600000</td>
+      <td>8.200</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 04:00:00</th>
+      <td>46.000</td>
+      <td>7.475000</td>
+      <td>8.200</td>
+      <td>8.000</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 05:00:00</th>
+      <td>46.500</td>
+      <td>7.350000</td>
+      <td>8.200</td>
+      <td>7.950</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 06:00:00</th>
+      <td>46.500</td>
+      <td>7.150000</td>
+      <td>8.200</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 07:00:00</th>
+      <td>46.500</td>
+      <td>6.966667</td>
+      <td>8.300</td>
+      <td>7.850</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 08:00:00</th>
+      <td>46.500</td>
+      <td>6.875000</td>
+      <td>8.575</td>
+      <td>7.800</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 09:00:00</th>
+      <td>46.500</td>
+      <td>6.800000</td>
+      <td>9.050</td>
+      <td>7.875</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 10:00:00</th>
+      <td>45.000</td>
+      <td>6.775000</td>
+      <td>9.475</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 11:00:00</th>
+      <td>42.600</td>
+      <td>6.700000</td>
+      <td>9.900</td>
+      <td>7.900</td>
+    </tr>
+    <tr>
+      <th>2021-03-13 12:00:00</th>
+      <td>46.500</td>
+      <td>6.650000</td>
+      <td>10.300</td>
+      <td>7.900</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/4_practice_problems/1_python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="4-1_datetimes_practice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">4.1 Problems</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4-2_spatial_data_practice.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">4.2 Problems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">Part 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dates-and-datetimes">Dates and Datetimes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dates-and-datetimes-from-strings">Creating Dates and Datetimes from Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#timedeltas">Timedeltas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Rachel Wegener
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

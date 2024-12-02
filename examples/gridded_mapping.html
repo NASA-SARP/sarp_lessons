@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Cartopy with gridded data &#8212; SARP Programming Lessons</title>
   
   
@@ -16,55 +16,59 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'examples/gridded_mapping';</script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Contributing to SARP Lessons" href="../contributing/env_setup.html" />
     <link rel="prev" title="Altitude Plot with Twin Axes" href="altitude_twin_axes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -80,19 +84,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -100,7 +93,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -108,8 +100,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -125,7 +117,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +133,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -153,21 +148,17 @@
     
     
     <img src="../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
-    <script>document.write(`<img src="../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
+    <img src="../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -178,32 +169,34 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lessons/general_python/index.html">General Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/1_variables_types_ifstatements.html">Variables, Data Types, and if Statements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/2_lists_dictionaries.html">Lists and Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/datetimes.html">Datetimes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/spatial_data.html">Spatial Data</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sarp_lessons/1_python_progression/1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lessons/gridded_data/index.html">Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/1_xarray.html">The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/2_xarray_computation.html">Starting Computations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/3_xarray_groupby.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/spatial_operations.html">Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sarp_lessons/1_python_progression/2-tabular_data/index.html">2. Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/2-tabular_data/2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_groupby.html">2.2 Filtering and groupby</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lessons/tabular_data/index.html">Tabular Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/1_pandas.html">The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/2_filtering_groupby.html">Filtering and groupby</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/3_geopandas.html"><code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/static_visualization_matplotlib.html">Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/mapping_colors.html">Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sarp_lessons/1_python_progression/3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../sarp_lessons/1_python_progression/4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sarp_lessons/1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Additional Lectures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../additional_lectures/Debugging/debugging_lesson.html">Debugging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../additional_lectures/time_series_statistics/oceans_stats_examples.html">Time Series Statistics</a></li>
@@ -214,40 +207,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../additional_lectures/rasters/3_accessing_coordinates.html">Accessing Data</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../additional_lectures/Visualization/index.html">Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../additional_lectures/Visualization/2_building_on_matplotlib.html">Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../additional_lectures/Visualization/3_dynamic_visualization.html">Dynamic Visualization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../additional_lectures/Visualization/viewing_images.html">Viewing Images</a></li>
 </ul>
-</details></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Sheets</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lessons/index_practice.html">General Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/1_variables_data_practice.html">Variables, Data Types and If statements Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/2_lists_dicts_practice.html">Lists and Dictionaries Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/datetimes_practice.html">Datetimes Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/spatial_data_practice.html">Spatial Data Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/1_variables_data_answers.html">Variables, Data Types and If statements Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/2_lists_dicts_answers.html">Lists and Dictionaries Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/datetimes_answers.html">Datetimes Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/general_python/practice/spatial_data_answers.html">Spatial Data Answers</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lessons/index_practice_raster.html">Gridded Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/practice/1_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/practice/2_xarray_practice.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Computation Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/gridded_data/practice/1_xarray_answers.html"><code class="docutils literal notranslate"><span class="pre">xarray</span></code> Practice</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lessons/index_practice_tabular.html">Tabular Data Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/practice/1_pandas_practice.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/practice/2_filtering_groupby_practice.html">Filtering and Groupby Practice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/practice/3_geopandas_practice.html">Practice with <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/practice/1_pandas_answers.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lessons/tabular_data/practice/2_filtering_groupby_answers.html">Filtering and Groupby Answers</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../additional_lectures/index_practice.html">Raster Data Practice (Additional Lectures)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../additional_lectures/rasters/practice/1_arrays_numpy_practice.html">Arrays and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> Practice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../additional_lectures/rasters/practice/2_raster_fundamentals_practice.html">Raster Fundamentals Practice</a></li>
@@ -256,12 +218,15 @@
 </ul>
 </details></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="logplot.html">Plot with multiple lines and a log axis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="flight_track.html">Flight Track Plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cartopy with gridded data</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Visualization Examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
 <ul class="nav bd-sidenav">
@@ -295,9 +260,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -420,27 +385,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -480,8 +437,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="cartopy-with-gridded-data">
-<h1>Cartopy with gridded data<a class="headerlink" href="#cartopy-with-gridded-data" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="cartopy-with-gridded-data">
+<h1>Cartopy with gridded data<a class="headerlink" href="#cartopy-with-gridded-data" title="Link to this heading">#</a></h1>
 <p>This example demonstrates:</p>
 <ul class="simple">
 <li><p>plotting gridded data with cartopy</p></li>
@@ -493,6 +450,18 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;xarray&#39;
 </pre></div>
 </div>
 </div>
@@ -514,8 +483,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="section" id="quick-plots-with-xarray">
-<h2>Quick plots with xarray<a class="headerlink" href="#quick-plots-with-xarray" title="Permalink to this heading">#</a></h2>
+<section id="quick-plots-with-xarray">
+<h2>Quick plots with xarray<a class="headerlink" href="#quick-plots-with-xarray" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting one time step to plot</span>
@@ -524,14 +493,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fd0cd41d650&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x168304640&gt;
 </pre></div>
 </div>
-<img alt="../_images/4d1d962cba3ccc30e54511c026bab5476aecd1050a74598c7b3c2b9c46b9301b.png" src="../_images/4d1d962cba3ccc30e54511c026bab5476aecd1050a74598c7b3c2b9c46b9301b.png" />
+<img alt="../_images/debc5135b80f248cb63922ac2b01e298557397fcecc66a286298ddd7be1f3e40.png" src="../_images/debc5135b80f248cb63922ac2b01e298557397fcecc66a286298ddd7be1f3e40.png" />
 </div>
 </div>
-<div class="section" id="set-the-nodata-value-to-grey">
-<h3>Set the nodata value to grey<a class="headerlink" href="#set-the-nodata-value-to-grey" title="Permalink to this heading">#</a></h3>
+<section id="set-the-nodata-value-to-grey">
+<h3>Set the nodata value to grey<a class="headerlink" href="#set-the-nodata-value-to-grey" title="Link to this heading">#</a></h3>
 <p>“bwr” is the name of the colormap that I chose for this image. You can change “bwr” to <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">any other colormap</a> you want. Ex. <code class="docutils literal notranslate"><span class="pre">plt.cm.get_cmap(&quot;viridis&quot;).copy()</span></code></p>
 <p>Grey can also be changed to any color. I like using <code class="docutils literal notranslate"><span class="pre">grey</span></code> because it is clear, but I often prefer a slightly lighter shade than the default, so I’ll use the hexadecimal code <code class="docutils literal notranslate"><span class="pre">#c0c0c0</span></code>. (Example below in a comment)</p>
 <div class="cell docutils container">
@@ -543,12 +512,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1190/1320405681.py:2: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed two minor releases later. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap(obj)`` instead.
-  bwr_badgrey = plt.cm.get_cmap(&quot;bwr&quot;).copy()
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,16 +520,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fd0cd47ae10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x168480be0&gt;
 </pre></div>
 </div>
-<img alt="../_images/a4d8c30275eac9fab85ce109250d6336f1b6c19c1dae698392b497cb3941a285.png" src="../_images/a4d8c30275eac9fab85ce109250d6336f1b6c19c1dae698392b497cb3941a285.png" />
+<img alt="../_images/dab19cbf77d67dc60414e79afbeaee33a8d3b84339ebaefef68ea101c698e45c.png" src="../_images/dab19cbf77d67dc60414e79afbeaee33a8d3b84339ebaefef68ea101c698e45c.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="more-detailed-plots-with-cartopy">
-<h2>More detailed plots with cartopy<a class="headerlink" href="#more-detailed-plots-with-cartopy" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="more-detailed-plots-with-cartopy">
+<h2>More detailed plots with cartopy<a class="headerlink" href="#more-detailed-plots-with-cartopy" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the projection. PlateCarree is &quot;regular&quot; lat/lon</span>
@@ -590,10 +553,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fd0c2cb9590&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x168545cf0&gt;
 </pre></div>
 </div>
-<img alt="../_images/955fdbed29b83a59b44b05d072c7681145811f1c63863b5091feae4d7ac1c373.png" src="../_images/955fdbed29b83a59b44b05d072c7681145811f1c63863b5091feae4d7ac1c373.png" />
+<img alt="../_images/2fa67f548c4352ef023e7abf3dba7a0f97c7c7785042620450ac00fda3f2f88c.png" src="../_images/2fa67f548c4352ef023e7abf3dba7a0f97c7c7785042620450ac00fda3f2f88c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -623,14 +586,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fd0c29fd150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x1686d5240&gt;
 </pre></div>
 </div>
-<img alt="../_images/cdbd8f6d2c399bfffb2f303bb17c52633f1fcbef4dfd4fd538fa809912cddcfc.png" src="../_images/cdbd8f6d2c399bfffb2f303bb17c52633f1fcbef4dfd4fd538fa809912cddcfc.png" />
+<img alt="../_images/da2ab7f4543d96e039dade074e682c4ae87cb83d977fcd007d466c4dcb838791.png" src="../_images/da2ab7f4543d96e039dade074e682c4ae87cb83d977fcd007d466c4dcb838791.png" />
 </div>
 </div>
-<div class="section" id="transforming-the-map-to-another-projection">
-<h3>Transforming the map to another projection<a class="headerlink" href="#transforming-the-map-to-another-projection" title="Permalink to this heading">#</a></h3>
+<section id="transforming-the-map-to-another-projection">
+<h3>Transforming the map to another projection<a class="headerlink" href="#transforming-the-map-to-another-projection" title="Link to this heading">#</a></h3>
 <p>Alaska is pretty far north, so we may want to use a map projection that is more accurate for that region. Looking through the <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">cartopy projection list</a> it looks like an Albers Equal Area projection minimizes distortion in northern latitudes, so let’s use that one.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -668,16 +631,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fd0c2946710&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x168ca5f30&gt;
 </pre></div>
 </div>
-<img alt="../_images/22244b14a873a071d44e8689e1da9b508c582be5a2f83b1c10169c4d8c432405.png" src="../_images/22244b14a873a071d44e8689e1da9b508c582be5a2f83b1c10169c4d8c432405.png" />
+<img alt="../_images/a284a935f4897d0aad5e6b5ae71cc47bb80da5c547b104a802932fff492618f1.png" src="../_images/a284a935f4897d0aad5e6b5ae71cc47bb80da5c547b104a802932fff492618f1.png" />
 </div>
 </div>
 <p>Much less distorted!</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -734,7 +697,8 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -799,8 +763,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
