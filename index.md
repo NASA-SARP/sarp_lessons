@@ -1,25 +1,26 @@
-# Welcome to SARP Programming
+# Python Programming for Earth Science Researchers
 
-The [NASA Student Airborne Research Program (SARP)](https://www.nasa.gov/centers/ames/earthscience/programs/airbornescience/studentairborneresearchprogram) is an earth science reasearch internship for undergraduates held every summer. The program is based out of Irvine, CA and Newport News, VA. At SARP, students experience 8 weeks of hands on NASA research and data training {cite}`schaller_2022`. This website hosts the online content for the programming instruction for the internship.
+This website contains content for learning Python as an Earth Science researcher. It focuses on building core programming and computational skills that are applicable to researchers.
 
-This year SARP is fortunate to have access to the [Cryocloud platform](https://book.cryointhecloud.com/intro.html) for student research projects. The cloud is an exciting new science tool that allows researchers to more easily collaborate, spend less time setting up software environments, and scale their data analysis. Tutorials relating to doing science on the cloud are also hosted on this website.
+The materials were developed at the [NASA Student Airborne Research Program (SARP)](https://www.nasa.gov/centers/ames/earthscience/programs/airbornescience/studentairborneresearchprogram), and continues to be used by instructors. SARP is an earth science reasearch internship for undergraduates held every summer. The program is based out of California and Virginia. At SARP, students experience 8 weeks of hands on NASA research and data training {cite}`schaller_2022`.
 
-## Website Organization
+This year, SARP is fortunate to have access to the [Cryocloud platform](https://book.cryointhecloud.com/intro.html) for student research projects. The cloud is an exciting new science tool that allows researchers to more easily collaborate, spend less time setting up software environments, and scale their data analysis. Tutorials relating to doing science on the cloud are also hosted on this website.
+
+## Organization
 The contents of this website is split into three sections:
 
-* **Lessons** - Notebooks used for a lesson during the two code-intensive weeks. Many lessons include practice problems and answers in the Practice Sheets section
-* **Additional Lectures** - Less formal notebooks accompanying more sporadic as-needed instruction throughout the summer
-* **Practice Sheets** - Notebooks with practice problems to accompany some of the lessons
-* **Examples** - Example code for common analyses or visualizations
-* **Contributor Guide** - Want to help make this website better? Find out more about how you can do that in the Contributor Guide
+* **Core Python Progression** - Instructional material for learning Python. Many lessons include practice problems and answers in the Practice Sheets section.
+* **Computational Skills** - Notebooks focusing on more general computational skills to complement and round out the Python lessons.
+* **Open Science** - Notebooks focusing on additional technical competencies relating to open science.
+* **Practice Problems & Answers** - Practice problems to accompany selected lessons.
+* **Example Gallery** - Example code for common analyses or visualizations.
+* **Contributor's Guide** - Want to help make this website better? Find out more about how you can do that in the Contributor Guide.
 
-### Data Format Tracks
-The Lessons section is divided into subsections based on data format. The two data format groups for SARP are:
-1. gridded data - data in an array format that representing information in space. This format is often used for satellite images or model output
-2. tabular data - data with rows and columns. This is data that would fit well in an excel sheet
+## Where to start
 
-There is also a General Python section, which contains material relevant for anyone learning Python. In SARP everyone will work on the General Python section together, then we will split into two groups based on the two data formats described above.
+If you're a student, check out the **Core Python Progression**. This section can be followed as a step by step flow to build Python skills. Once you've gotten through the first two lessons, intermittently explore some of the lessons in the **Computational Skills** section. These are invaluable for developing a holistic understanding of programming.
 
+If your an educator, check out the **Instructor's Guide**. This section gives an introduction to the core instructional concepts and provides suggestions for how this material might be used in your classroom.
 
 ## Table of Contents
 
