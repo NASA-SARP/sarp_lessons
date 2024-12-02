@@ -35,14 +35,18 @@ parts:
 
   - caption: Computational Skills
     chapters:
-    - file: additional_lectures/Debugging/debugging_lesson
-    # - file: additional_lectures/time_series_statistics/oceans_stats_examples
+    - file: sarp_lessons/2_computational_skills/file_organization
+    - file: sarp_lessons/2_computational_skills/debugging_lesson
     - file: additional_lectures/hierarchical_data/hierarchical_data
     # - file: additional_lectures/rasters/index.md
     #   sections:
     #     - file: additional_lectures/rasters/1_arrays_numpy
     #     - file: additional_lectures/rasters/2_raster_fundamentals
     #     - file: additional_lectures/rasters/3_accessing_coordinates
+
+  - caption: Open Science
+    chapters:
+    - file: sarp_lessons/3_open_science/cloud_lesson
 
   - caption: Practice Problems & Answers  # Switch to "Exercises"?
     chapters:
