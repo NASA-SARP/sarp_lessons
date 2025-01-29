@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>5.1 Static Visualization with matplotlib &#8212; SARP Programming Lessons</title>
   
@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -258,9 +258,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -491,8 +496,8 @@
 <h2>Loading data<a class="headerlink" href="#loading-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -536,7 +541,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; BC_mass&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/bd154655eee5692cca7a430c43232e3b96deb5bf8187daca583290ef1256f2e5.png" src="../../../_images/bd154655eee5692cca7a430c43232e3b96deb5bf8187daca583290ef1256f2e5.png" />
+<img alt="../../../_images/6e8066528bfa5f97fa7a02ec59d164f68b88cc665e7f4f69f40e85b7c5a740df.png" src="../../../_images/6e8066528bfa5f97fa7a02ec59d164f68b88cc665e7f4f69f40e85b7c5a740df.png" />
 </div>
 </div>
 <p>What did we learn in this quick plot? The first thing we see is that there is likely some data that has a NAN value we did’t account for. This is likely because two of the way that we see all of the dots located in exactly the same spot in three locations. Let’s remove those and try again.</p>
@@ -554,7 +559,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; BC_mass&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/fb02e009f183cd9853874d1a0d1e3952cd175cfec33a68ad3c131eeb13216280.png" src="../../../_images/fb02e009f183cd9853874d1a0d1e3952cd175cfec33a68ad3c131eeb13216280.png" />
+<img alt="../../../_images/e7909161a4af8e58648c719c5999ade68aee579b7d508b1378b44f44d904b97f.png" src="../../../_images/e7909161a4af8e58648c719c5999ade68aee579b7d508b1378b44f44d904b97f.png" />
 </div>
 </div>
 <p>Much better!  What did we learn this time?</p>
@@ -594,7 +599,7 @@
 <p>Without looking too much at code yet, let’s look at the following example to see the difference between a figure and axes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -608,7 +613,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/f9de3a2f25fab931256dc5710a13c289845f7e47971d82474149f03b5eddb4c3.png" src="../../../_images/f9de3a2f25fab931256dc5710a13c289845f7e47971d82474149f03b5eddb4c3.png" />
+<img alt="../../../_images/8852035462ddaea257dd94f8f88f277b0993cb5e85d77d5a256d5d65b3ca98dc.png" src="../../../_images/8852035462ddaea257dd94f8f88f277b0993cb5e85d77d5a256d5d65b3ca98dc.png" />
 </div>
 </div>
 <p>Now let’s change the color of the figure (<code class="docutils literal notranslate"><span class="pre">fig</span></code>) and the axes (<code class="docutils literal notranslate"><span class="pre">ax</span></code>) to see how they occupy different parts of the plot.</p>
@@ -623,7 +628,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/43dda08fc872c8315be2fcecfa59c2e29348725bb373c50fd5e4d519458327dc.png" src="../../../_images/43dda08fc872c8315be2fcecfa59c2e29348725bb373c50fd5e4d519458327dc.png" />
+<img alt="../../../_images/f55b068aac97b987eca431fa1f521cde05541cbddab8f649d044357719d28fc8.png" src="../../../_images/f55b068aac97b987eca431fa1f521cde05541cbddab8f649d044357719d28fc8.png" />
 </div>
 </div>
 <p>Distinguishin between figure and axes seems redundant when you have a single dataset to show, but if you start adding multiple axes into a figure the distinction becomes more clear.</p>
@@ -642,10 +647,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x140cf81d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1487bf750&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/877aa3eaafa2e73ed79411e1fed6380596c0264fcded63886e0adadbbd598860.png" src="../../../_images/877aa3eaafa2e73ed79411e1fed6380596c0264fcded63886e0adadbbd598860.png" />
+<img alt="../../../_images/16514dc68a3ada5b01f10b26a772d9d41a018de4543da006aa563e1cfa21e9e9.png" src="../../../_images/16514dc68a3ada5b01f10b26a772d9d41a018de4543da006aa563e1cfa21e9e9.png" />
 </div>
 </div>
 <p>Above we see different aspects of the plot being added, one on top of each other. The black dot, which comes last, even totally covers up the red dot in the first line.</p>
@@ -690,7 +695,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <h4>Step 2: Make our graph<a class="headerlink" href="#step-2-make-our-graph" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -702,10 +707,10 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x140cf8380&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14884e490&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/5e23278936d71c1b31d6f0fda1f9c7f4968c7f772d09efc424f920ddf6a07d7b.png" src="../../../_images/5e23278936d71c1b31d6f0fda1f9c7f4968c7f772d09efc424f920ddf6a07d7b.png" />
+<img alt="../../../_images/4cb521767a7441b4d98c1746056cd8c41af688e24e8b019e382f07d5a0388603.png" src="../../../_images/4cb521767a7441b4d98c1746056cd8c41af688e24e8b019e382f07d5a0388603.png" />
 </div>
 </div>
 <p>Even though we didn’t explicitly create a figure, axes, axis, line, axis labels, or tick marks they were all created together with <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>.  If we want to change something about any of those elements or add elements that don’t exist right now we do that by using methods on the <code class="docutils literal notranslate"><span class="pre">plt</span></code> object.</p>
@@ -723,7 +728,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Altitude&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/f0a900beb581ca36b609a4cc0c3d35a7f4878b0ad0613774f6c5947948ac85f0.png" src="../../../_images/f0a900beb581ca36b609a4cc0c3d35a7f4878b0ad0613774f6c5947948ac85f0.png" />
+<img alt="../../../_images/30f119e18b32dc54731699f1dd695c894891f37a099ea924f48b60843cc4f2b3.png" src="../../../_images/30f119e18b32dc54731699f1dd695c894891f37a099ea924f48b60843cc4f2b3.png" />
 </div>
 </div>
 <p>How do you find out where all those options (ex. <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code>) came from? Realistically, you probably reference code example you found online. There are truly thousands of commands so googling is really an important skill while plotting.</p>
@@ -750,10 +755,10 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x140d34350&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14874c050&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/5826e4d080d8303ace142a09cb39d1a5661adb888641a5750725b67f07692e85.png" src="../../../_images/5826e4d080d8303ace142a09cb39d1a5661adb888641a5750725b67f07692e85.png" />
+<img alt="../../../_images/472f29f7dc594187f1b16cb7e212a107212a3aae1db996544ed422098b717f7a.png" src="../../../_images/472f29f7dc594187f1b16cb7e212a107212a3aae1db996544ed422098b717f7a.png" />
 </div>
 </div>
 <p>In addition to <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> there are a dozen or so other types of plots you can make that operate in the same way as <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>.  A list of all the options is <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html">here</a>.</p>
@@ -782,7 +787,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;CO Mixing Ratio vs. Time&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/eeb70637991f5b60123a8aff8c61828cf38b51f7f6299f4090bacd9e2fa2e302.png" src="../../../_images/eeb70637991f5b60123a8aff8c61828cf38b51f7f6299f4090bacd9e2fa2e302.png" />
+<img alt="../../../_images/b603e77a4bd698218d1db3a86fdd94395dfd480345e87074047a80d591e0ba08.png" src="../../../_images/b603e77a4bd698218d1db3a86fdd94395dfd480345e87074047a80d591e0ba08.png" />
 </div>
 </div>
 </section>
@@ -800,7 +805,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Carbon Monoxide Mixing Ratio (LARGE)&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/d8d5c28e070a000bc20f83ad3bd842511605c05771749727a5f4354158e77111.png" src="../../../_images/d8d5c28e070a000bc20f83ad3bd842511605c05771749727a5f4354158e77111.png" />
+<img alt="../../../_images/d839fb4222f2dfe158e61b24b2b378172d2c7e53da6093864759404c1ed46699.png" src="../../../_images/d839fb4222f2dfe158e61b24b2b378172d2c7e53da6093864759404c1ed46699.png" />
 </div>
 </div>
 <p>While you can read <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot">the API docs</a> to see every possible function available to you, I often prefer to peruse <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">the example gallery</a>.</p>
@@ -820,7 +825,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 1500x300 with 1 Axes&gt;, &lt;Axes: &gt;)
 </pre></div>
 </div>
-<img alt="../../../_images/b8f941e7880dbf4666766016fe7833d75ee989f39312573fe45fcc99025adfcd.png" src="../../../_images/b8f941e7880dbf4666766016fe7833d75ee989f39312573fe45fcc99025adfcd.png" />
+<img alt="../../../_images/ddadbb8f636ca48954dcf1482369b6d81a77d584155baa70525bc71a519c43ca.png" src="../../../_images/ddadbb8f636ca48954dcf1482369b6d81a77d584155baa70525bc71a519c43ca.png" />
 </div>
 </div>
 <p>Looks good. But what is so different about this method? In order to do anything with this figure/axes we need to use that command to create figure and axes objects. Those objects are what we will build the rest of the plot around.</p>
@@ -837,7 +842,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 &lt;class &#39;matplotlib.axes._axes.Axes&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/b8f941e7880dbf4666766016fe7833d75ee989f39312573fe45fcc99025adfcd.png" src="../../../_images/b8f941e7880dbf4666766016fe7833d75ee989f39312573fe45fcc99025adfcd.png" />
+<img alt="../../../_images/ddadbb8f636ca48954dcf1482369b6d81a77d584155baa70525bc71a519c43ca.png" src="../../../_images/ddadbb8f636ca48954dcf1482369b6d81a77d584155baa70525bc71a519c43ca.png" />
 </div>
 </div>
 <p>Now let’s add some data to the axes object.</p>
@@ -853,7 +858,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Altitude&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/688c04383ec4af33d8363cb651be2b1131c5241877f82279022a52dc3fb677a1.png" src="../../../_images/688c04383ec4af33d8363cb651be2b1131c5241877f82279022a52dc3fb677a1.png" />
+<img alt="../../../_images/62d66d237ca32684885788360947b1d32ca560f9bce75a333fd690f6c3a13642.png" src="../../../_images/62d66d237ca32684885788360947b1d32ca560f9bce75a333fd690f6c3a13642.png" />
 </div>
 </div>
 <p>And there we have a plot of alitutde!</p>
@@ -873,7 +878,7 @@ Where <code class="docutils literal notranslate"><span class="pre">x</span></cod
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;CO Mixing Ratio&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/bb0c015453349b1e71355207c0d34281b71f36e40008c8daddaaeec994866e37.png" src="../../../_images/bb0c015453349b1e71355207c0d34281b71f36e40008c8daddaaeec994866e37.png" />
+<img alt="../../../_images/93fa8fdcb74c4fd8e4eb167a78a830814efd9277aa684c8be2cfe479cc101dcd.png" src="../../../_images/93fa8fdcb74c4fd8e4eb167a78a830814efd9277aa684c8be2cfe479cc101dcd.png" />
 </div>
 </div>
 <p>Notice here that we used <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> to create a line plot for altitude, but we used <code class="docutils literal notranslate"><span class="pre">ax.scatter()</span></code> for CO Mixing Ratio to create individual points for each observation.</p>
@@ -1083,8 +1088,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

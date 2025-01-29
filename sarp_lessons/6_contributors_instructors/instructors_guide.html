@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Instructor’s Guide &#8212; SARP Programming Lessons</title>
   
@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -258,9 +258,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -439,7 +444,7 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-instructional-concepts">Core Instructional Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teach-syntax-build-more-component-programmers">1 - Teach Syntax, Build more Component Programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teach-less-syntax-build-more-component-programmers">1 - Teach Less Syntax, Build more Component Programmers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-first">2 - Data Structures First</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-skills-alongside-coding-languages">3 - Computational Skills alongside Coding Languages</a></li>
 </ul>
@@ -467,15 +472,15 @@
 <p><em>Programming for Earth Science Researchers</em></p>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>The goal of this content is to teach Python programming for the purpose of earth science research in a fast-paced manner that gives a solid footing in foundational concepts. Most lessons are designed to be taught in approximately 60-75 minutes, and suggested progressions below show two 10 lesson sequences.</p>
+<p>The goal of this content is to teach Python programming for earth science research in a fast-paced manner that also gives a solid footing in foundational concepts. Most lessons are designed to be taught in approximately 60-75 minutes, and suggested progressions below show two 10 lesson sequences.</p>
 <p>The content can be stand alone, but is most effective when used in conjunction with a hands-on application of coding skills. At NASA SARP that application is a 6-week independent research project. Any authentic hands-on experience, such as class projects or personal projects, would also provide that application element.</p>
-<p>This website serves as an online textbook. It is made up of Jupyter notebooks, all of which are downloadable through the website (top right corner of each page), or directly through the associated github repository <a class="github reference external" href="https://github.com/NASA-SARP/sarp_lessons">NASA-SARP/sarp_lessons</a>. There are over 16 lessons on the website, many of which have associated exercises with answers.</p>
+<p>This website serves as an online textbook. It is made up of Jupyter notebooks, all of which are downloadable through the website (top right corner of each page), or directly through the associated github repository <a class="github reference external" href="https://github.com/NASA-SARP/sarp_lessons">NASA-SARP/sarp_lessons</a>. There are over 16 lessons on the website, many of which have associated exercises with answer key.</p>
 </section>
 <section id="core-instructional-concepts">
 <h2>Core Instructional Concepts<a class="headerlink" href="#core-instructional-concepts" title="Link to this heading">#</a></h2>
-<section id="teach-syntax-build-more-component-programmers">
-<h3>1 - Teach Syntax, Build more Component Programmers<a class="headerlink" href="#teach-syntax-build-more-component-programmers" title="Link to this heading">#</a></h3>
-<p>This content does not introduce a plethora of Python functions. It instead focuses on a smaller set of objects and methods, using them as a demonstration of how programming languages work. This focus on using syntax to build a mental model for programming is what gives students the understanding to become independent programmers that can discover and learn new methods and functions on their own, even after the lessons are complete.</p>
+<section id="teach-less-syntax-build-more-component-programmers">
+<h3>1 - Teach Less Syntax, Build more Component Programmers<a class="headerlink" href="#teach-less-syntax-build-more-component-programmers" title="Link to this heading">#</a></h3>
+<p>This content does not introduce a plethora of Python functions. Instead, it focuses on a smaller set of objects and methods, using them as a demonstration of how programming languages work. This focus on using syntax to build a mental model for programming is what gives students the understanding to become independent programmers that can discover and learn new methods and functions on their own, even after the lessons are complete.</p>
 </section>
 <section id="data-structures-first">
 <h3>2 - Data Structures First<a class="headerlink" href="#data-structures-first" title="Link to this heading">#</a></h3>
@@ -484,12 +489,12 @@
 <li><p>Python is organized into data structures</p></li>
 <li><p>Data structures represent scientific data</p></li>
 </ol>
-<p>These ideas are planted in the first two days of content. These two lessons focus on fairly introductory Python concepts (data types, Lists, and Dictionaries). However, the big ideas of those two lessons are that Lists and Dictionaries are data structures and that different types of data make more sense as a List vs. a Dictionary. In this way a mental model for data structures is built from the beginning.</p>
+<p>These ideas are planted in the first two sessions of content. These two lessons focus on fairly introductory Python concepts (data types, Lists, and Dictionaries). However, the big ideas of those two lessons are that Lists and Dictionaries are data structures and that different types of data make more sense as a List vs. a Dictionary. In this way a mental model for data structures is built from the beginning.</p>
 <p>While most earth science programmers with Python experience have seen List and Dictionaries before, few have considered the organization of Python into data structures. Past instructors at SARP have received positive feedback from more experienced programmers that this framework was helpful for them to deepen their Python knowledge, even though they had already seen the content before.</p>
 </section>
 <section id="computational-skills-alongside-coding-languages">
 <h3>3 - Computational Skills alongside Coding Languages<a class="headerlink" href="#computational-skills-alongside-coding-languages" title="Link to this heading">#</a></h3>
-<p>A scientific Python programmer can only get so far if they cannot debug their code or write a filepath. Debugging in particular is often a skill that is too often assumed students will gain automatically. Poor debugging skills are a common reason students at SARP get discouraged and quit programming. For this reason, a set of lessons on important computational skills is provided, with the intention that they are integrated into Python lessons. The Example Lesson Progressions section below provides a few examples of how this could be done.</p>
+<p>A scientific Python programmer can only get so far if they cannot debug their code or write a filepath. Debugging in particular is often a skill that is assumed students will gain automatically. Poor debugging skills are a common reason students at SARP get discouraged and quit programming. For this reason, a set of lessons on debugging and other important computational skills is provided, with the intention that they are integrated into Python lessons. The Example Lesson Progressions section below provides a few examples of how this could be done.</p>
 </section>
 </section>
 <section id="mix-and-match-lesson-guide">
@@ -500,13 +505,12 @@
 <li><p>Computational Skills</p></li>
 <li><p>Open Science Tools</p></li>
 </ol>
-<p>The primary material on this website is about teaching Python, but that material has a limit if additional computational skills are not taught as well.</p>
-<p>The suggested method for teaching is to first build a Python progression that fits your students, then choose complementary computational or open science skills learning objectives to complement the Python progression. This modularity allows different instructors to build a progression that matches their teaching style and the learning needs of their students. Several example progressions are shown below.</p>
+<p>The suggested method for teaching is to first build a Python progression that fits your students, then choose complementary computational or open science skills learning objectives to complement the Python progression. This modularity allows different instructors to build a progression that matches their teaching style and the learning needs of their students. Keep in mind that the computational skills will be necesarry to get the most benefit from the Python instruction. Several example progressions are shown below.</p>
 </section>
 <section id="example-lesson-progressions">
 <h2>Example Lesson Progressions<a class="headerlink" href="#example-lesson-progressions" title="Link to this heading">#</a></h2>
-<p>The example progressions here are organized by the data type that a student would be primarily working with. No matter the data type, however, both tracks start with two hours of Python building blocks. These first two days are typically important for both novice and skilled programmers, as they set up the mindset of viewing Python as a set of data structures which represent their data. The two lessons can move faster for more advanced programmers (ex. perhaps combining them into one lesson), but are still important for setting up their mental framework for programming.</p>
-<p>Other than the first two lessons, the goal is for the content to be able to be arranged differently dependeing on the teacher and the student group. If you tried out a different arrangement of lessons, let us know! We’d love to hear feedback.</p>
+<p>The example progressions here are organized by the data type that a student would be primarily working with. Both data tracks start with two sessions of Python building blocks. These first two sessions are typically important for both novice and skilled programmers, as they set up the mindset of viewing Python as a set of data structures which represent their data. The two sessions can move faster for more advanced programmers (ex. perhaps combining them into one session), but are still important for setting up their mental framework for programming. The third session of each track introduces either a pandas Dataframe (tabular) or the xarray DataArray and DataSet as a new data structure.</p>
+<p>Other than the first few lessons, the goal is for the content to be able to be arranged differently depending on the teacher and the student group. If you tried out a different arrangement of lessons, let us know! We’d love to hear feedback.</p>
 <section id="example-1-tabular-data-track">
 <h3>Example 1 - Tabular Data Track<a class="headerlink" href="#example-1-tabular-data-track" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -519,7 +523,7 @@
 <tbody>
 <tr class="row-even"><td class="text-center"><p>1</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html"><span class="doc">1.1 Variables, Data Types, and if Statements</span></a> <ul><li>Building Blocks of Programming: Assigning variables, data types, booleans</li> <li>Control flow: if statements</li></ul></p></td>
-<td class="text-left"><p>JupyterLab Interface</p></td>
+<td class="text-left"><p>JupyterLab Interface (embedded in lesson 1.1)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>2</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/1-general_python/1-2_lists_dictionaries.html"><span class="doc">1.2 Lists and Dictionaries</span></a> <ul><li>The Structure of Data: Lists and dictionaries</li> </ul></p></td>
@@ -527,19 +531,19 @@
 </tr>
 <tr class="row-even"><td class="text-center"><p>3</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/2-tabular_data/2-1_pandas.html"><span class="doc">2.1 The pandas Library</span></a> <ul><li>Python libraries (pandas)</li><li>Introduction to tabular data</li><li>Functions/Methods</li><li>Dataframe aggregations</li></ul></p></td>
-<td class="text-left"><p><a class="reference internal" href="../2_computational_skills/file_organization.html"><span class="doc">Organizing your Files</span></a> Organizing your files</p></td>
+<td class="text-left"><p><a class="reference internal" href="../2_computational_skills/file_organization.html"><span class="doc">Organizing your Files</span></a></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>4</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/2-tabular_data/2-2_filtering_groupby.html"><span class="doc">2.2 Filtering and groupby</span></a> <ul><li>Indexing dataframes</li><li>Reducing datasets: Filtering and groupby</li></ul></p></td>
 <td class="text-left"><p>Inspecting newly opened data (ex. checking for nans)</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>5</p></td>
-<td class="text-left"><p><a class="reference internal" href="../2_computational_skills/debugging_lesson.html"><span class="doc">Debugging</span></a> <ul><li>Reading error messages</li><li>Debugging Strategies</li></ul></p></td>
 <td class="text-left"><p></p></td>
+<td class="text-left"><p><a class="reference internal" href="../2_computational_skills/debugging_lesson.html"><span class="doc">Debugging</span></a> <ul><li>Reading error messages</li><li>Debugging Strategies</li></ul></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>6</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html"><span class="doc">5.1 Static Visualization with matplotlib</span></a> <ul><li>Introduction to visualization and matplotlib</li></ul></p></td>
-<td class="text-left"><p><ul><li>Visualization in the scientific workflow</li><li>Reading documentation</li></ul></p></td>
+<td class="text-left"><p><ul><li>Visualization in the scientific workflow (embedded in lesson 5.1)</li><li>Reading documentation</li></ul></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>7</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-1_datetimes.html"><span class="doc">4.1 Datetimes</span></a> and <a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-2_spatial_data.html"><span class="doc">4.2 Spatial Data</span></a> <ul><li>Dates and times in code</li><li>Geospatial data: bounding boxes and coordinate systems</li></ul></p></td>
@@ -573,7 +577,7 @@
 <tbody>
 <tr class="row-even"><td class="text-center"><p>1</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/1-general_python/1-1_variables_types_ifstatements.html"><span class="doc">1.1 Variables, Data Types, and if Statements</span></a> <ul><li>Building Blocks of Programming: Assigning variables, data types, booleans</li> <li>Control flow: if statements</li></ul></p></td>
-<td class="text-left"><p>JupyterLab Interface</p></td>
+<td class="text-left"><p>JupyterLab Interface (embedded in lesson 1.1)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>2</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/1-general_python/1-2_lists_dictionaries.html"><span class="doc">1.2 Lists and Dictionaries</span></a> <ul><li>The Structure of Data: Lists and dictionaries</li> </ul></p></td>
@@ -588,20 +592,20 @@
 <td class="text-left"><p>Using the CLI</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>5</p></td>
-<td class="text-left"><p><a class="reference internal" href="../2_computational_skills/debugging_lesson.html"><span class="doc">Debugging</span></a> <ul><li>Reading error messages</li><li>Debugging Strategies</li></ul></p></td>
 <td class="text-left"><p></p></td>
+<td class="text-left"><p><a class="reference internal" href="../2_computational_skills/debugging_lesson.html"><span class="doc">Debugging</span></a> <ul><li>Reading error messages</li><li>Debugging Strategies</li></ul></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>6</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/5-visualization/5-1_static_viz_matplotlib.html"><span class="doc">5.1 Static Visualization with matplotlib</span></a> <ul><li>Introduction to visualization and matplotlib</li></ul></p></td>
-<td class="text-left"><p><ul><li>Visualization in the scientific workflow</li><li>Reading documentation</li></ul></p></td>
+<td class="text-left"><p><ul><li>Visualization in the scientific workflow (embedded in lesson 5.1)</li><li>Reading documentation</li></ul></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>7</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/3-gridded_data/3-3_xarray_groupby.html"><span class="doc">3.3 xarray Groupby</span></a> and  <a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-1_datetimes.html"><span class="doc">4.1 Datetimes</span></a> <ul><li>Dates and times in code</li><li>Grouping and combining data</li></ul></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>8</p></td>
-<td class="text-left"><p><a class="reference internal" href="../../additional_lectures/hierarchical_data/hierarchical_data.html"><span class="doc">Hierarchical Data Structure</span></a></p></td>
-<td class="text-left"><p>Common earth science file formats and Python libraries for reading them</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p><a class="reference internal" href="../../additional_lectures/hierarchical_data/hierarchical_data.html"><span class="doc">Hierarchical Data Structure</span></a> <ul><li>Common earth science file formats and Python libraries for reading them</li></ul></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>9</p></td>
 <td class="text-left"><p><a class="reference internal" href="../1_python_progression/4-spatiotemporal/4-5_mapping_cartopy.html"><span class="doc">4.5 Mapping with cartopy and Colors</span></a> <ul><li>Mapping with cartopy and seaborn</li></ul></p></td>
@@ -693,7 +697,7 @@
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-instructional-concepts">Core Instructional Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teach-syntax-build-more-component-programmers">1 - Teach Syntax, Build more Component Programmers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teach-less-syntax-build-more-component-programmers">1 - Teach Less Syntax, Build more Component Programmers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures-first">2 - Data Structures First</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-skills-alongside-coding-languages">3 - Computational Skills alongside Coding Languages</a></li>
 </ul>
@@ -753,8 +757,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

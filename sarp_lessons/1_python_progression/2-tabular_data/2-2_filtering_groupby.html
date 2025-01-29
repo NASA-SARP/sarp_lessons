@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>2.2 Filtering and groupby &#8212; SARP Programming Lessons</title>
   
@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
@@ -258,9 +258,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -490,7 +495,7 @@
 <p>We’ll be using the same USGS water dataset as lesson 3.  Here we read and pre-process the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># This line shortens the output</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -521,7 +526,7 @@
 <p>Today I’m also going to add two fake columns of data, “dam release” and “safety level”, that will help us as we go through some of the new concepts.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 </pre></div>
 </div>
 </div>
@@ -577,7 +582,7 @@
       <td>8.3</td>
       <td>8.1</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2</th>
@@ -587,7 +592,7 @@
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>3</th>
@@ -596,8 +601,8 @@
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>4</th>
@@ -606,8 +611,8 @@
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>5</th>
@@ -616,8 +621,8 @@
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>False</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>...</th>
@@ -636,8 +641,8 @@
       <td>6.7</td>
       <td>9.8</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>143</th>
@@ -647,7 +652,7 @@
       <td>9.9</td>
       <td>7.9</td>
       <td>False</td>
-      <td>low</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>144</th>
@@ -656,8 +661,8 @@
       <td>6.7</td>
       <td>10.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>145</th>
@@ -667,7 +672,7 @@
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>146</th>
@@ -677,7 +682,7 @@
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
   </tbody>
 </table>
@@ -698,7 +703,7 @@
 <p>So what is the use of a list of booleans?  Let’s start with a simplified list of booleans and experiment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 </pre></div>
 </div>
 </div>
@@ -748,24 +753,14 @@
   </thead>
   <tbody>
     <tr>
-      <th>3</th>
-      <td>2021-03-12 00:30</td>
+      <th>2</th>
+      <td>2021-03-12 00:15</td>
       <td>44.5</td>
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2021-03-12 00:45</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>6</th>
@@ -785,17 +780,27 @@
       <td>8.0</td>
       <td>8.1</td>
       <td>False</td>
-      <td>high</td>
+      <td>low</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>2021-03-12 01:45</td>
+      <th>10</th>
+      <td>2021-03-12 02:15</td>
       <td>44.5</td>
       <td>8.0</td>
       <td>8.0</td>
       <td>8.1</td>
-      <td>True</td>
+      <td>False</td>
       <td>low</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2021-03-12 02:30</td>
+      <td>44.5</td>
+      <td>7.9</td>
+      <td>8.0</td>
+      <td>8.1</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>...</th>
@@ -808,6 +813,26 @@
       <td>...</td>
     </tr>
     <tr>
+      <th>137</th>
+      <td>2021-03-13 10:00</td>
+      <td>46.5</td>
+      <td>6.8</td>
+      <td>9.3</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>2021-03-13 10:15</td>
+      <td>44.5</td>
+      <td>6.8</td>
+      <td>9.4</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>low</td>
+    </tr>
+    <tr>
       <th>139</th>
       <td>2021-03-13 10:30</td>
       <td>44.5</td>
@@ -818,40 +843,20 @@
       <td>medium</td>
     </tr>
     <tr>
-      <th>141</th>
-      <td>2021-03-13 11:00</td>
+      <th>142</th>
+      <td>2021-03-13 11:15</td>
       <td>42.6</td>
       <td>6.7</td>
-      <td>9.7</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>143</th>
-      <td>2021-03-13 11:30</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>144</th>
-      <td>2021-03-13 11:45</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>10.2</td>
+      <td>9.8</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>2021-03-13 12:15</td>
-      <td>NaN</td>
-      <td>6.6</td>
+      <th>145</th>
+      <td>2021-03-13 12:00</td>
+      <td>46.5</td>
+      <td>6.7</td>
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
@@ -859,7 +864,7 @@
     </tr>
   </tbody>
 </table>
-<p>73 rows × 7 columns</p>
+<p>71 rows × 7 columns</p>
 </div></div></div>
 </div>
 <p>That returned only the rows where the value in the list was True!</p>
@@ -916,7 +921,7 @@
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>3</th>
@@ -925,8 +930,8 @@
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>27</th>
@@ -935,8 +940,8 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>28</th>
@@ -945,8 +950,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>29</th>
@@ -955,8 +960,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -975,8 +980,8 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>122</th>
@@ -985,7 +990,7 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
+      <td>True</td>
       <td>low</td>
     </tr>
     <tr>
@@ -1005,7 +1010,7 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
+      <td>False</td>
       <td>medium</td>
     </tr>
     <tr>
@@ -1016,7 +1021,7 @@
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>low</td>
     </tr>
   </tbody>
 </table>
@@ -1067,7 +1072,7 @@
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1076,8 +1081,8 @@
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>27</th>
@@ -1086,8 +1091,8 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>28</th>
@@ -1096,8 +1101,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>29</th>
@@ -1106,8 +1111,8 @@
       <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <td>False</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1126,8 +1131,8 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>122</th>
@@ -1136,7 +1141,7 @@
       <td>7.2</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>False</td>
+      <td>True</td>
       <td>low</td>
     </tr>
     <tr>
@@ -1156,7 +1161,7 @@
       <td>7.1</td>
       <td>8.2</td>
       <td>7.9</td>
-      <td>True</td>
+      <td>False</td>
       <td>medium</td>
     </tr>
     <tr>
@@ -1167,7 +1172,7 @@
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>low</td>
     </tr>
   </tbody>
 </table>
@@ -1252,20 +1257,20 @@ True
   </thead>
   <tbody>
     <tr>
-      <th>27</th>
-      <td>2021-03-12 06:30</td>
+      <th>28</th>
+      <td>2021-03-12 06:45</td>
       <td>48.5</td>
-      <td>7.1</td>
+      <td>7.0</td>
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
       <td>high</td>
     </tr>
     <tr>
-      <th>29</th>
-      <td>2021-03-12 07:00</td>
+      <th>30</th>
+      <td>2021-03-12 07:15</td>
       <td>48.5</td>
-      <td>7.0</td>
+      <td>6.9</td>
       <td>8.2</td>
       <td>7.9</td>
       <td>True</td>
@@ -1289,17 +1294,17 @@ True
       <td>8.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>low</td>
     </tr>
     <tr>
-      <th>33</th>
-      <td>2021-03-12 08:00</td>
+      <th>34</th>
+      <td>2021-03-12 08:15</td>
       <td>48.5</td>
-      <td>6.8</td>
+      <td>6.7</td>
       <td>8.4</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>low</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1312,16 +1317,6 @@ True
       <td>...</td>
     </tr>
     <tr>
-      <th>137</th>
-      <td>2021-03-13 10:00</td>
-      <td>46.5</td>
-      <td>6.8</td>
-      <td>9.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
-    </tr>
-    <tr>
       <th>139</th>
       <td>2021-03-13 10:30</td>
       <td>44.5</td>
@@ -1332,14 +1327,24 @@ True
       <td>medium</td>
     </tr>
     <tr>
-      <th>144</th>
-      <td>2021-03-13 11:45</td>
+      <th>141</th>
+      <td>2021-03-13 11:00</td>
       <td>42.6</td>
       <td>6.7</td>
-      <td>10.2</td>
+      <td>9.7</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>2021-03-13 11:15</td>
+      <td>42.6</td>
+      <td>6.7</td>
+      <td>9.8</td>
+      <td>7.9</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>145</th>
@@ -1349,7 +1354,7 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>146</th>
@@ -1359,11 +1364,11 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
   </tbody>
 </table>
-<p>35 rows × 7 columns</p>
+<p>36 rows × 7 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1409,17 +1414,27 @@ True
       <td>8.3</td>
       <td>8.1</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>2021-03-12 01:00</td>
+      <th>3</th>
+      <td>2021-03-12 00:30</td>
+      <td>44.5</td>
+      <td>8.1</td>
+      <td>8.2</td>
+      <td>8.1</td>
+      <td>True</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021-03-12 00:45</td>
       <td>44.5</td>
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
       <td>True</td>
-      <td>low</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1439,17 +1454,7 @@ True
       <td>8.0</td>
       <td>8.1</td>
       <td>True</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>2021-03-12 02:15</td>
-      <td>44.5</td>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1468,8 +1473,8 @@ True
       <td>6.7</td>
       <td>9.8</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>143</th>
@@ -1479,7 +1484,7 @@ True
       <td>9.9</td>
       <td>7.9</td>
       <td>False</td>
-      <td>low</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>144</th>
@@ -1488,8 +1493,8 @@ True
       <td>6.7</td>
       <td>10.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>145</th>
@@ -1499,7 +1504,7 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>146</th>
@@ -1509,11 +1514,11 @@ True
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
   </tbody>
 </table>
-<p>94 rows × 7 columns</p>
+<p>111 rows × 7 columns</p>
 </div></div></div>
 </div>
 <p>There is more than one way to do this type of filtering in pandas, but it is fine to start with one method and feel really comfortable with it before moving to the others.  <a class="reference external" href="https://www.listendata.com/2019/07/how-to-filter-pandas-dataframe.html">This article</a> has a pretty nice overview of some other methods.</p>
@@ -1801,7 +1806,7 @@ Name: Hassan A, dtype: int64
       <td>8.3</td>
       <td>8.1</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-12 00:15</th>
@@ -1810,7 +1815,7 @@ Name: Hassan A, dtype: int64
       <td>8.2</td>
       <td>8.1</td>
       <td>False</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>2021-03-12 00:30</th>
@@ -1818,8 +1823,8 @@ Name: Hassan A, dtype: int64
       <td>8.1</td>
       <td>8.2</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-12 00:45</th>
@@ -1827,8 +1832,8 @@ Name: Hassan A, dtype: int64
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-12 01:00</th>
@@ -1836,8 +1841,8 @@ Name: Hassan A, dtype: int64
       <td>8.1</td>
       <td>8.1</td>
       <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>False</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1854,8 +1859,8 @@ Name: Hassan A, dtype: int64
       <td>6.7</td>
       <td>9.8</td>
       <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <td>True</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>2021-03-13 11:30</th>
@@ -1864,7 +1869,7 @@ Name: Hassan A, dtype: int64
       <td>9.9</td>
       <td>7.9</td>
       <td>False</td>
-      <td>low</td>
+      <td>medium</td>
     </tr>
     <tr>
       <th>2021-03-13 11:45</th>
@@ -1872,8 +1877,8 @@ Name: Hassan A, dtype: int64
       <td>6.7</td>
       <td>10.2</td>
       <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <td>False</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>2021-03-13 12:00</th>
@@ -1882,7 +1887,7 @@ Name: Hassan A, dtype: int64
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>medium</td>
+      <td>high</td>
     </tr>
     <tr>
       <th>2021-03-13 12:15</th>
@@ -1891,7 +1896,7 @@ Name: Hassan A, dtype: int64
       <td>10.3</td>
       <td>7.9</td>
       <td>True</td>
-      <td>high</td>
+      <td>medium</td>
     </tr>
   </tbody>
 </table>
@@ -1905,12 +1910,12 @@ Name: Hassan A, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>discharge            40.8
-temperature           7.4
-dissolved oxygen     11.6
-pH                    8.1
-dam release         False
-safety level         high
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>discharge             40.8
+temperature            7.4
+dissolved oxygen      11.6
+pH                     8.1
+dam release          False
+safety level        medium
 Name: 2021-03-12 13:00, dtype: object
 </pre></div>
 </div>
@@ -2013,8 +2018,8 @@ Name: 2021-03-12 13:00, dtype: object
     <tr>
       <th>high</th>
       <td>39.0</td>
-      <td>6.6</td>
-      <td>8.0</td>
+      <td>6.7</td>
+      <td>7.9</td>
       <td>7.8</td>
       <td>False</td>
     </tr>
@@ -2029,8 +2034,8 @@ Name: 2021-03-12 13:00, dtype: object
     <tr>
       <th>medium</th>
       <td>39.0</td>
-      <td>6.7</td>
-      <td>7.9</td>
+      <td>6.6</td>
+      <td>8.0</td>
       <td>7.8</td>
       <td>False</td>
     </tr>
@@ -2156,9 +2161,9 @@ Name: 2021-03-12 13:00, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>safety level
-high      44.644000
-low       44.962264
-medium    44.795238
+high      44.800000
+low       45.176923
+medium    44.512245
 Name: discharge, dtype: float64
 </pre></div>
 </div>
@@ -2324,8 +2329,8 @@ By Rachel Wegener
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
