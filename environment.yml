@@ -6,7 +6,7 @@ dependencies:
   - ipykernel
   - geopandas
   - xarray[complete]
-  - rasterio
+  - rioxarray
   - dask
   - h5py
   - netcdf4
@@ -16,3 +16,4 @@ dependencies:
   - bokeh
   - cartopy
   - shapely
+  - plotly_express

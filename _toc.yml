@@ -63,7 +63,7 @@ parts:
         - file: sarp_lessons/4_practice_problems/1_python/2-2_filtering_groupby_answers
         - file: sarp_lessons/4_practice_problems/1_python/3-1_xarray_practice
         - file: sarp_lessons/4_practice_problems/1_python/3-1_xarray_answers
-        - file: sarp_lessons/4_practice_problems/1_python/3-2_xarray_practice
+        # - file: sarp_lessons/4_practice_problems/1_python/3-2_xarray_practice
         - file: sarp_lessons/4_practice_problems/1_python/4-1_datetimes_practice
         - file: sarp_lessons/4_practice_problems/1_python/4-1_datetimes_answers
         - file: sarp_lessons/4_practice_problems/1_python/4-2_spatial_data_practice
