@@ -36,6 +36,11 @@ html:
   use_repository_button: true
   favicon : "favicon.ico"
 
+# Include sphinx extensions
+sphinx:
+  extra_extensions:
+  - "sphinxcontrib.spelling"
+
 # Surpress binder link since it doesn't work
 launch_buttons:
   binderhub_url: ""
