@@ -1,7 +1,21 @@
-name: sarp_docs
+name: sarp_docs2
 channels:
   - conda-forge
 # Using Python3.10
 dependencies:
+  - ipykernel
+  - geopandas
+  - xarray[complete]
+  - rasterio
+  - dask
+  - h5py
+  - netcdf4
+  - earthaccess
+  - openpyxl
+  - seaborn
+  - bokeh
+  - cartopy
+  - shapely
   - jupyter-book
+  - sphinx >= 6.2.0  # imghdr deprecation error
   - ghp-import

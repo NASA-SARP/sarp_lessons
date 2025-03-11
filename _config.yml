@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: SARP Programming Lessons
-author: Rachel Wegener
+# author: Rachel Wegener
 logo: sarp_logo.png
 
 # Force re-execution of notebooks on each build.
@@ -39,3 +39,7 @@ html:
 # Surpress binder link since it doesn't work
 launch_buttons:
   binderhub_url: ""
+
+# sphinx:
+#   config:
+#     html_show_copyright: false
