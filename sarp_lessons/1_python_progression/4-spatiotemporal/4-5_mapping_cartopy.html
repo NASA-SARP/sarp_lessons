@@ -227,7 +227,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-1_xarray_practice.html">3.1 Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-1_xarray_answers.html">3.1 Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-2_xarray_practice.html">3.2 Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-1_datetimes_practice.html">4.1 Problems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-1_datetimes_answers.html">4.1 Answers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-2_spatial_data_practice.html">4.2 Problems</a></li>
@@ -490,71 +489,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">naames</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/naames-mrg01-c130_merge_20151112_R5_thru20151114.csv&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">223</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/sarp/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/sarp/lib/python3.13/site-packages/pandas/io/parsers/readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
-<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
-
-<span class="nn">File ~/miniconda3/envs/sarp/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/sarp/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
-
-<span class="nn">File ~/miniconda3/envs/sarp/lib/python3.13/site-packages/pandas/io/common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
-<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
-<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
-<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
-<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./data/naames-mrg01-c130_merge_20151112_R5_thru20151114.csv&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,10 +515,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../../_images/abaeb14b92099dddfd85b2e8998e7f788a1c6e5cb174980a6e0f25607d3df9e4.png" src="../../../_images/abaeb14b92099dddfd85b2e8998e7f788a1c6e5cb174980a6e0f25607d3df9e4.png" />
+<img alt="../../../_images/9c4a4d938e2a063ecaceb85a5312ab2513313996ff5fb05eb5e2b13de44d5250.png" src="../../../_images/9c4a4d938e2a063ecaceb85a5312ab2513313996ff5fb05eb5e2b13de44d5250.png" />
 </div>
 </div>
 <p>To expand our map we are going to use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>. Some advantages of <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> are:</p>
@@ -612,10 +546,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../../_images/abaeb14b92099dddfd85b2e8998e7f788a1c6e5cb174980a6e0f25607d3df9e4.png" src="../../../_images/abaeb14b92099dddfd85b2e8998e7f788a1c6e5cb174980a6e0f25607d3df9e4.png" />
+<img alt="../../../_images/9c4a4d938e2a063ecaceb85a5312ab2513313996ff5fb05eb5e2b13de44d5250.png" src="../../../_images/9c4a4d938e2a063ecaceb85a5312ab2513313996ff5fb05eb5e2b13de44d5250.png" />
 </div>
 </div>
 <p>Now the plot above doesn’t use cartopy, it’s just the same map as the geopandas version but plotted in a different way. To change to using cartopy we have to:</p>
@@ -654,10 +588,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;GeoAxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;GeoAxes: &gt;
 </pre></div>
 </div>
-<img alt="../../../_images/eb4f42ac7ff110eaf0a7b13591251e1a91eb417cddc9018db88a7f017fcb9efe.png" src="../../../_images/eb4f42ac7ff110eaf0a7b13591251e1a91eb417cddc9018db88a7f017fcb9efe.png" />
+<img alt="../../../_images/320794fe9759d846c9adc4e93419ed748b7676c110322fbcc48b17b3c06ee48c.png" src="../../../_images/320794fe9759d846c9adc4e93419ed748b7676c110322fbcc48b17b3c06ee48c.png" />
 </div>
 </div>
 <p>So far it looks like we’ve taken a step backwards because we have lost our nice axis labels. We can add those back, however, using the <code class="docutils literal notranslate"><span class="pre">.gridlines()</span></code> method. Additionally, we can use the <code class="docutils literal notranslate"><span class="pre">.coastlines()</span></code> feature to add in the shape of the nearby continent. I’m also going to use <code class="docutils literal notranslate"><span class="pre">.set_extent()</span></code> to give us a bit broader view and a title for clarity.</p>
@@ -686,7 +620,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Flight Track Altitude&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/c411405bbb3068cff55ec0fe08ed3e52c34e3f31db9de861d6f8bb9c18b7eb6a.png" src="../../../_images/c411405bbb3068cff55ec0fe08ed3e52c34e3f31db9de861d6f8bb9c18b7eb6a.png" />
+<img alt="../../../_images/50429755f00f6a3dec8e3c9274bb57bb722326186d638ad9bd3170d7aa7fdf25.png" src="../../../_images/50429755f00f6a3dec8e3c9274bb57bb722326186d638ad9bd3170d7aa7fdf25.png" />
 </div>
 </div>
 <p>Looks nice! So with a bit of extra work we have converted out quick geopandas plot into a map with nice labels, gridlines and coastlines.</p>
@@ -731,7 +665,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Flight Track Altitude&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/b6b9071fd038a395f4f1d3e5a98493dbe84fa55ee77b5282383747785fc4ac82.png" src="../../../_images/b6b9071fd038a395f4f1d3e5a98493dbe84fa55ee77b5282383747785fc4ac82.png" />
+<img alt="../../../_images/7ede4dbbc2a7a86f4f4ddaed82e907ab48519d046274411800c24833104024cd.png" src="../../../_images/7ede4dbbc2a7a86f4f4ddaed82e907ab48519d046274411800c24833104024cd.png" />
 </div>
 </div>
 </section>
@@ -775,7 +709,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Flight Track Altitude&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/6b4c5e57635cbbe330b17dfd077281caa6ac18bba9b89dd33637d7f27d1e3cbf.png" src="../../../_images/6b4c5e57635cbbe330b17dfd077281caa6ac18bba9b89dd33637d7f27d1e3cbf.png" />
+<img alt="../../../_images/4af95ba88d5f4d5f24e1e5aa3631f62415fe0bbe283b43f7eee08728387ae1b0.png" src="../../../_images/4af95ba88d5f4d5f24e1e5aa3631f62415fe0bbe283b43f7eee08728387ae1b0.png" />
 </div>
 </div>
 <p>There are lots of projections and which one you want depends on where in the world you are. A full list of projections can be found <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">here</a>.</p>
@@ -793,10 +727,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/5dbe81a69b9ca803ec883983c9059cdd25fed97a7d352d56230b093b4f0f3e9d.png" src="../../../_images/5dbe81a69b9ca803ec883983c9059cdd25fed97a7d352d56230b093b4f0f3e9d.png" />
+<img alt="../../../_images/e24137cda0aef641a6ecd5ea8259c4da99a5a9752133400425d5fa407ad0f834.png" src="../../../_images/e24137cda0aef641a6ecd5ea8259c4da99a5a9752133400425d5fa407ad0f834.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -806,10 +740,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/c3c4f6d74b66cea7ad9db271a5ffb7e2ea9cd3c390a9645e38eb89a35981e356.png" src="../../../_images/c3c4f6d74b66cea7ad9db271a5ffb7e2ea9cd3c390a9645e38eb89a35981e356.png" />
+<img alt="../../../_images/ee0a43a78630402fa48e68e482a86cf6786cb1da80a737b63a7dfc8e69959a4f.png" src="../../../_images/ee0a43a78630402fa48e68e482a86cf6786cb1da80a737b63a7dfc8e69959a4f.png" />
 </div>
 </div>
 <p>We have also seen that you can use another column to create the color for a scatter plot.</p>
@@ -820,10 +754,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/fe2275836469b8d9c42b6bb98076fd02304e52d44f8bddeac7eccee118c76bb0.png" src="../../../_images/fe2275836469b8d9c42b6bb98076fd02304e52d44f8bddeac7eccee118c76bb0.png" />
+<img alt="../../../_images/31c24683e008db097a96cb8f370c0215dd6425cba46ea96f989ea0c71ac2baf5.png" src="../../../_images/31c24683e008db097a96cb8f370c0215dd6425cba46ea96f989ea0c71ac2baf5.png" />
 </div>
 </div>
 <p>Adding a color-based legend to a plot is called adding a colorbar. When adding a colorbar there are multiple components:</p>
@@ -840,10 +774,10 @@ These two things are two seperate inputs, <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/b98c205eb839f67038512bf9dbe76ecf1f4c5e881a36262ae90a556364947643.png" src="../../../_images/b98c205eb839f67038512bf9dbe76ecf1f4c5e881a36262ae90a556364947643.png" />
+<img alt="../../../_images/31c24683e008db097a96cb8f370c0215dd6425cba46ea96f989ea0c71ac2baf5.png" src="../../../_images/31c24683e008db097a96cb8f370c0215dd6425cba46ea96f989ea0c71ac2baf5.png" />
 </div>
 </div>
 <p>A list of the available colormaps can be found <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">here</a>.</p>
@@ -855,10 +789,10 @@ These two things are two seperate inputs, <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; Fractional_Day&#39;, ylabel=&#39; ALTP&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/19fc89ee9033687061912edb6f74a388f05fe87cddce1ecddd8fcea42fda8656.png" src="../../../_images/19fc89ee9033687061912edb6f74a388f05fe87cddce1ecddd8fcea42fda8656.png" />
+<img alt="../../../_images/24fe5d0f0bf7bfa08b8041452a6636fc245945d7aa40cb63cda0082b6456385e.png" src="../../../_images/24fe5d0f0bf7bfa08b8041452a6636fc245945d7aa40cb63cda0082b6456385e.png" />
 </div>
 </div>
 <p>It is possible to have your colorbar have a log colormap, you just have to switch into matplotlib.</p>
@@ -879,10 +813,10 @@ These two things are two seperate inputs, <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x170c072b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x14760f9d0&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/8937194f6e9f8615603420b1eb70dabe9c8c16da34edc8dd43e7b73e829ad1cb.png" src="../../../_images/8937194f6e9f8615603420b1eb70dabe9c8c16da34edc8dd43e7b73e829ad1cb.png" />
+<img alt="../../../_images/6fd7c61de53d30f18c70fe808be35cc5b7f38cef9224daae8e9b01e9c9c84323.png" src="../../../_images/6fd7c61de53d30f18c70fe808be35cc5b7f38cef9224daae8e9b01e9c9c84323.png" />
 </div>
 </div>
 </section>
@@ -930,10 +864,10 @@ These two things are two seperate inputs, <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../../_images/abaeb14b92099dddfd85b2e8998e7f788a1c6e5cb174980a6e0f25607d3df9e4.png" src="../../../_images/abaeb14b92099dddfd85b2e8998e7f788a1c6e5cb174980a6e0f25607d3df9e4.png" />
+<img alt="../../../_images/9c4a4d938e2a063ecaceb85a5312ab2513313996ff5fb05eb5e2b13de44d5250.png" src="../../../_images/9c4a4d938e2a063ecaceb85a5312ab2513313996ff5fb05eb5e2b13de44d5250.png" />
 </div>
 </div>
 </section>
@@ -943,15 +877,15 @@ These two things are two seperate inputs, <code class="docutils literal notransl
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recreate the plot with the projection as an argument</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 
 <span class="c1"># Add the data</span>
-<span class="n">naames_platecarree</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39; ALTP&#39;</span><span class="p">)</span>
+<span class="n">naames_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39; ALTP&#39;</span><span class="p">)</span>
 
 <span class="c1"># Change the field of view</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">63</span><span class="p">,</span> <span class="o">-</span><span class="mi">38</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">57</span><span class="p">])</span>
 <span class="c1"># Add labels and gridlines</span>
-<span class="c1"># ax.gridlines(crs=crs, color=&#39;grey&#39;, linestyle=&#39;--&#39;, draw_labels=True)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">draw_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Add background features</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAND</span><span class="p">)</span>
@@ -970,210 +904,7 @@ These two things are two seperate inputs, <code class="docutils literal notransl
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Flight Track Altitude&#39;)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in callback &lt;function flush_figures at 0x16b55e320&gt; (for post_execute):
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib_inline/backend_inline.py:121,</span> in <span class="ni">flush_figures</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span> <span class="k">if</span> <span class="n">InlineBackend</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">close_figures</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="c1"># ignore the tracking, just draw and close all figures</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">121</span>         <span class="k">return</span> <span class="n">show</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="c1"># safely show traceback if in IPython, else raise</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib_inline/backend_inline.py:41,</span> in <span class="ni">show</span><span class="nt">(close, block)</span>
-<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="k">for</span> <span class="n">figure_manager</span> <span class="ow">in</span> <span class="n">Gcf</span><span class="o">.</span><span class="n">get_all_fig_managers</span><span class="p">():</span>
-<span class="ne">---&gt; </span><span class="mi">41</span>         <span class="n">display</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>             <span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="n">metadata</span><span class="o">=</span><span class="n">_fetch_figure_metadata</span><span class="p">(</span><span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">show</span><span class="o">.</span><span class="n">_to_draw</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/IPython/core/display_functions.py:298,</span> in <span class="ni">display</span><span class="nt">(include, exclude, metadata, transient, display_id, raw, clear, *objs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span>     <span class="n">publish_display_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">298</span>     <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">format_dict</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="c1"># nothing to display (e.g. _ipython_display_ took over)</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="k">continue</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/IPython/core/formatters.py:178,</span> in <span class="ni">DisplayFormatter.format</span><span class="nt">(self, obj, include, exclude)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">178</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="c1"># FIXME: log the exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="k">raise</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/decorator.py:232,</span> in <span class="ni">decorate.&lt;locals&gt;.fun</span><span class="nt">(*args, **kw)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">kwsyntax</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">args</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">fix</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">232</span> <span class="k">return</span> <span class="n">caller</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">extras</span> <span class="o">+</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/IPython/core/formatters.py:222,</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">222</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_return</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/IPython/core/formatters.py:339,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span>     <span class="k">pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">339</span>     <span class="k">return</span> <span class="n">printer</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="c1"># Finally look for special method names</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/IPython/core/pylabtools.py:151,</span> in <span class="ni">print_figure</span><span class="nt">(fig, fmt, bbox_inches, base64, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.backend_bases</span><span class="w"> </span><span class="kn">import</span> <span class="n">FigureCanvasBase</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span>     <span class="n">FigureCanvasBase</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">151</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">bytes_io</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span> <span class="n">data</span> <span class="o">=</span> <span class="n">bytes_io</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s1">&#39;svg&#39;</span><span class="p">:</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/backend_bases.py:2295,</span> in <span class="ni">FigureCanvasBase.print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2289</span>     <span class="n">renderer</span> <span class="o">=</span> <span class="n">_get_renderer</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2290</span>         <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2291</span>         <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2292</span>             <span class="n">print_method</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="n">orientation</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2293</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2294</span>     <span class="k">with</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="s2">&quot;_draw_disabled&quot;</span><span class="p">,</span> <span class="n">nullcontext</span><span class="p">)():</span>
-<span class="ne">-&gt; </span><span class="mi">2295</span>         <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2297</span> <span class="k">if</span> <span class="n">bbox_inches</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2298</span>     <span class="k">if</span> <span class="n">bbox_inches</span> <span class="o">==</span> <span class="s2">&quot;tight&quot;</span><span class="p">:</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/artist.py:73,</span> in <span class="ni">_finalize_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="k">def</span><span class="w"> </span><span class="nf">draw_wrapper</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">73</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>     <span class="k">if</span> <span class="n">renderer</span><span class="o">.</span><span class="n">_rasterizing</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/artist.py:50,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">50</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/figure.py:2810,</span> in <span class="ni">Figure.draw</span><span class="nt">(self, renderer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2807</span>         <span class="c1"># ValueError can occur when resizing a window.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2809</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2810</span> <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2811</span>     <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2813</span> <span class="k">for</span> <span class="n">sfig</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subfigs</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2814</span>     <span class="n">sfig</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/image.py:132,</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>         <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="c1"># Composite any adjacent images together</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="n">image_group</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/artist.py:50,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">50</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/cartopy/mpl/geoaxes.py:558,</span> in <span class="ni">GeoAxes.draw</span><span class="nt">(self, renderer, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">553</span>         <span class="bp">self</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">extent</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">554</span>                     <span class="n">transform</span><span class="o">=</span><span class="n">factory</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="o">*</span><span class="n">factory_args</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
-<span class="g g-Whitespace">    </span><span class="mi">555</span>                     <span class="o">**</span><span class="n">factory_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">556</span> <span class="bp">self</span><span class="o">.</span><span class="n">_done_img_factory</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">558</span> <span class="k">return</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="n">renderer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/artist.py:50,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">50</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/axes/_base.py:3082,</span> in <span class="ni">_AxesBase.draw</span><span class="nt">(self, renderer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3079</span>         <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3080</span>     <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">3082</span> <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">3083</span>     <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3085</span> <span class="n">renderer</span><span class="o">.</span><span class="n">close_group</span><span class="p">(</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3086</span> <span class="bp">self</span><span class="o">.</span><span class="n">stale</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/image.py:132,</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">132</span>         <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="c1"># Composite any adjacent images together</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="n">image_group</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/matplotlib/artist.py:50,</span> in <span class="ni">allow_rasterization.&lt;locals&gt;.draw_wrapper</span><span class="nt">(artist, renderer)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">50</span>     <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/cartopy/mpl/feature_artist.py:184,</span> in <span class="ni">FeatureArtist.draw</span><span class="nt">(self, renderer, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="k">if</span> <span class="n">geom_paths</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="k">if</span> <span class="n">ax</span><span class="o">.</span><span class="n">projection</span> <span class="o">!=</span> <span class="n">feature_crs</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">184</span>         <span class="n">projected_geom</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">project_geometry</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>             <span class="n">geom</span><span class="p">,</span> <span class="n">feature_crs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>         <span class="n">projected_geom</span> <span class="o">=</span> <span class="n">geom</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/cartopy/crs.py:805,</span> in <span class="ni">Projection.project_geometry</span><span class="nt">(self, geometry, src_crs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">method_name</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">804</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unsupported geometry type </span><span class="si">{</span><span class="n">geom_type</span><span class="si">!r}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">805</span> <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">src_crs</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/cartopy/crs.py:921,</span> in <span class="ni">Projection._project_multipolygon</span><span class="nt">(self, geometry, src_crs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">919</span> <span class="n">geoms</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">920</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">geometry</span><span class="o">.</span><span class="n">geoms</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">921</span>     <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_project_polygon</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">src_crs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">922</span>     <span class="k">if</span> <span class="n">r</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">923</span>         <span class="n">geoms</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">geoms</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/cartopy/crs.py:960,</span> in <span class="ni">Projection._project_polygon</span><span class="nt">(self, polygon, src_crs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="n">rings</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_attach_lines_to_boundary</span><span class="p">(</span><span class="n">multi_lines</span><span class="p">,</span> <span class="n">is_ccw</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">958</span> <span class="c1"># Resolve all the inside vs. outside rings, and convert to the</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span> <span class="c1"># final MultiPolygon.</span>
-<span class="ne">--&gt; </span><span class="mi">960</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rings_to_multi_polygon</span><span class="p">(</span><span class="n">rings</span><span class="p">,</span> <span class="n">is_ccw</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/cartopy/crs.py:1177,</span> in <span class="ni">Projection._rings_to_multi_polygon</span><span class="nt">(self, rings, is_ccw)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1175</span> <span class="k">if</span> <span class="n">prep_polygon</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">interior_ring</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1176</span>     <span class="n">holes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interior_ring</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1177</span>     <span class="n">interior_rings</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">interior_ring</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span> <span class="k">elif</span> <span class="n">polygon</span><span class="o">.</span><span class="n">crosses</span><span class="p">(</span><span class="n">interior_ring</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="c1"># Likely that we have an invalid geometry such as</span>
-<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="c1"># that from #509 or #537.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">holes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">interior_ring</span><span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/shapely/geometry/base.py:281,</span> in <span class="ni">BaseGeometry.__eq__</span><span class="nt">(self, other)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="k">return</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="ow">and</span>
-<span class="ne">--&gt; </span><span class="mi">281</span>         <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="o">==</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-
-<span class="nn">File ~/.pyenv/versions/miniconda3-4.7.12/envs/sarp/lib/python3.10/site-packages/shapely/coords.py:51,</span> in <span class="ni">CoordinateSequence.__len__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_ndim</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__p__</span><span class="o">.</span><span class="n">_ndim</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_cseq</span> <span class="o">=</span> <span class="n">lgeos</span><span class="o">.</span><span class="n">GEOSGeom_getCoordSeq</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__p__</span><span class="o">.</span><span class="n">_geom</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">51</span> <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_update</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cseq</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
+<img alt="../../../_images/660d4767ce82cb66ca753fdebfb1f365edb1e4c6a159db5f7d73ba564286f7fe.png" src="../../../_images/660d4767ce82cb66ca753fdebfb1f365edb1e4c6a159db5f7d73ba564286f7fe.png" />
 </div>
 </div>
 </section>
@@ -1283,6 +1014,13 @@ By The Jupyter Book community
   
   <div class="footer-item">
     
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
 
   </div>
   

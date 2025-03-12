@@ -46,7 +46,7 @@ File [0;32m~/miniconda3/envs/sarp/lib/python3.13/site-packages/xarray/backends/
 [0;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('https://www.ncei.noaa.gov/thredds/dodsC/OisstBase/NetCDF/V2.1/AVHRR/198210/oisst-avhrr-v02r01.19821007.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '6c6513cb-95f1-4fea-a0b4-39652c00231e']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('https://www.ncei.noaa.gov/thredds/dodsC/OisstBase/NetCDF/V2.1/AVHRR/198210/oisst-avhrr-v02r01.19821007.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '2e829dbf-78db-4bdf-be66-0831d99df3dc']
 
 During handling of the above exception, another exception occurred:
 

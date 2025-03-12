@@ -44,12 +44,12 @@ File [0;32m~/miniconda3/envs/sarp/lib/python3.13/site-packages/xarray/backends/
 [0;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/rwegener/repos/sarp_lessons/sarp_lessons/4_practice_problems/data/oisst-avhrr-v02r01.20220304.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'a1c9f513-c3f2-41f1-8724-9d2c020f2cdf']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/rwegener/repos/sarp_lessons/sarp_lessons/4_practice_problems/data/oisst-avhrr-v02r01.20220304.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '476318c1-424b-4498-a308-fc41e3774beb']
 
 During handling of the above exception, another exception occurred:
 
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[2], line 1[0m
+Cell [0;32mIn[24], line 1[0m
 [0;32m----> 1[0m sst [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_dataset[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../data/oisst-avhrr-v02r01.20220304.nc[39;49m[38;5;124;43m'[39;49m[43m)[49m
 
 File [0;32m~/miniconda3/envs/sarp/lib/python3.13/site-packages/xarray/backends/api.py:679[0m, in [0;36mopen_dataset[0;34m(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, chunked_array_type, from_array_kwargs, backend_kwargs, **kwargs)[0m

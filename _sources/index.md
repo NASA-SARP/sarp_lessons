@@ -27,6 +27,6 @@ If your an educator, check out the **Instructor's Guide**. This section gives an
 ```{tableofcontents}
 ```
 
-## Jupyter Book Citations
+<!-- ## Jupyter Book Citations
 ```{bibliography}
-```
+``` -->

@@ -35,7 +35,7 @@ with open('../data/california.geojson') as f:
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[2], line 1[0m
+Cell [0;32mIn[9], line 1[0m
 [0;32m----> 1[0m [38;5;28;01mwith[39;00m [38;5;28;43mopen[39;49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43m../data/california.geojson[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mas[39;00m f:
 [1;32m      2[0m     ca_geom_json [38;5;241m=[39m json[38;5;241m.[39mload(f)
 
