@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2.2 Filtering and groupby &#8212; SARP Programming Lessons</title>
   
@@ -16,50 +16,49 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_groupby';</script>
     <link rel="icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -68,7 +67,6 @@
     <link rel="prev" title="2.1 The pandas Library" href="2-1_pandas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -93,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -133,8 +142,6 @@
         <div class="sidebar-primary-item">
 
   
-    
-  
 
 <a class="navbar-brand logo" href="../../../index.html">
   
@@ -148,17 +155,21 @@
     
     
     <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
-    <img src="../../../_static/sarp_logo.png" class="logo__image only-dark pst-js-only" alt="SARP Programming Lessons - Home"/>
+    <script>document.write(`<img src="../../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -257,14 +268,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -283,9 +289,9 @@
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -408,19 +414,27 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -456,6 +470,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">Groupby</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-groupby-into-conceptual-parts">Breaking <code class="docutils literal notranslate"><span class="pre">groupby</span></code> into conceptual parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-syntax"><code class="docutils literal notranslate"><span class="pre">groupby</span></code> syntax</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#which-group"><code class="docutils literal notranslate"><span class="pre">'WHICH_GROUP'</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation-functions">Aggregation Functions</a></li>
@@ -491,56 +506,108 @@
 <p>We spent yesterday getting comfortable in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. We opened some data, explored it, and ran a few functions.  Today we are going to expand on what we are doing by learning a few powerful ways to interrogate our data – filtering and grouping.  These manipulations help us get at the specific part of a dataset that we need.</p>
 <section id="loading-our-data">
 <h3>Loading our data<a class="headerlink" href="#loading-our-data" title="Link to this heading">#</a></h3>
-<p>We’ll be using the same USGS water dataset as lesson 3.  Here we read and pre-process the data.</p>
+<p>In this lesson we will be using data from the Picarro instrument onboard a 2024 SARP flight.</p>
+<p><a class="reference external" href="https://www-air.larc.nasa.gov/cgi-bin/ArcView/sarp.2024?DA-B200=1">https://www-air.larc.nasa.gov/cgi-bin/ArcView/sarp.2024?DA-B200=1</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1"># This line shortens the output</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in the data</span>
-<span class="n">water_vars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/englewood_3_12_21_usgs_water.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<span class="c1"># There are a lot of variables here, so let&#39;s shorten our dataframe to a few variables</span>
-<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="p">[[</span><span class="s1">&#39;datetime&#39;</span><span class="p">,</span> <span class="s1">&#39;210920_00060&#39;</span><span class="p">,</span> <span class="s1">&#39;210922_00010&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">]]</span>
-<span class="c1"># Get rid of the first row of hard-coded datatype info</span>
-<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="c1"># Rename the columns from their USGS codes to more human-readible names</span>
-<span class="n">name_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;210920_00060&#39;</span><span class="p">:</span> <span class="s1">&#39;discharge&#39;</span><span class="p">,</span><span class="s1">&#39;210922_00010&#39;</span><span class="p">:</span> <span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;210924_00300&#39;</span><span class="p">:</span> <span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">,</span> <span class="s1">&#39;210925_00400&#39;</span><span class="p">:</span> <span class="s1">&#39;pH&#39;</span><span class="p">}</span>
-<span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">name_codes</span><span class="p">)</span>
-<span class="c1"># Convert columns with numbers to a numeric type</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;discharge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;discharge&#39;</span><span class="p">])</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">])</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">])</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">])</span>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># This line shortens the output</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Today I’m also going to add two fake columns of data, “dam release” and “safety level”, that will help us as we go through some of the new concepts.</p>
+<p>File format: The file below is an icartt file. This file is specifically designed for flight data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/io/parsers/readers.py:626,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="k">with</span> <span class="n">parser</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">626</span>     <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/io/parsers/readers.py:1923,</span> in <span class="ni">TextFileReader.read</span><span class="nt">(self, nrows)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1916</span> <span class="n">nrows</span> <span class="o">=</span> <span class="n">validate_integer</span><span class="p">(</span><span class="s2">&quot;nrows&quot;</span><span class="p">,</span> <span class="n">nrows</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1917</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1918</span>     <span class="c1"># error: &quot;ParserBase&quot; has no attribute &quot;read&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1919</span>     <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1920</span>         <span class="n">index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1921</span>         <span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1922</span>         <span class="n">col_dict</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1923</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>  <span class="c1"># type: ignore[attr-defined]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1924</span>         <span class="n">nrows</span>
+<span class="g g-Whitespace">   </span><span class="mi">1925</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1926</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1927</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File /srv/conda/envs/notebook/lib/python3.11/site-packages/pandas/io/parsers/c_parser_wrapper.py:234,</span> in <span class="ni">CParserWrapper.read</span><span class="nt">(self, nrows)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">low_memory</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">234</span>         <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">read_low_memory</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>         <span class="c1"># destructive to chunks</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">_concatenate_chunks</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File parsers.pyx:838,</span> in <span class="ni">pandas._libs.parsers.TextReader.read_low_memory</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:905,</span> in <span class="ni">pandas._libs.parsers.TextReader._read_rows</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:874,</span> in <span class="ni">pandas._libs.parsers.TextReader._tokenize_rows</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:891,</span> in <span class="ni">pandas._libs.parsers.TextReader._check_tokenize_status</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:2061,</span> in <span class="ni">pandas._libs.parsers.raise_parser_error</span><span class="nt">()</span>
+
+<span class="ne">ParserError</span>: Error tokenizing data. C error: Expected 2 fields in line 7, saw 6
+</pre></div>
+</div>
+</div>
+</div>
+<p>icartt files store metadata in the first few lines of the file. This metadata information is useful to read through, but isn’t used by pandas for creating the dataframe. What we need to do is let pandas know that it should skip past those first few lines of metadata. We do that with the <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">,</span>
+    <span class="n">skiprows</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dam release&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">water_vars</span><span class="p">))]</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;safety level&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;low&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">water_vars</span><span class="p">))]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
 </pre></div>
 </div>
 </div>
@@ -563,65 +630,77 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>datetime</th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>50535.78</th>
+      <th>50537.78</th>
+      <th>-9999.000</th>
+      <th>-9999.00000</th>
+      <th>-9999</th>
+      <th>-9999.0</th>
+      <th>-9999.000000</th>
+      <th>-9999.000000.1</th>
+      <th>-9999.000000.2</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>50537.78</td>
+      <td>50539.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
       <th>1</th>
-      <td>2021-03-12 00:00</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.3</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>50539.78</td>
+      <td>50541.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2021-03-12 00:15</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <td>50541.78</td>
+      <td>50543.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2021-03-12 00:30</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>50543.78</td>
+      <td>50545.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2021-03-12 00:45</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>2021-03-12 01:00</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <td>50545.78</td>
+      <td>50547.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
     </tr>
     <tr>
       <th>...</th>
@@ -632,62 +711,528 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>142</th>
-      <td>2021-03-13 11:15</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.8</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <th>7271</th>
+      <td>65079.78</td>
+      <td>65081.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.527118</td>
+      <td>-117.612080</td>
+      <td>34.051416</td>
     </tr>
     <tr>
-      <th>143</th>
-      <td>2021-03-13 11:30</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>7272</th>
+      <td>65081.78</td>
+      <td>65083.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.472604</td>
+      <td>-117.612087</td>
+      <td>34.051407</td>
     </tr>
     <tr>
-      <th>144</th>
-      <td>2021-03-13 11:45</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>10.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <th>7273</th>
+      <td>65083.78</td>
+      <td>65085.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.305524</td>
+      <td>-117.612095</td>
+      <td>34.051402</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>2021-03-13 12:00</td>
-      <td>46.5</td>
-      <td>6.7</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>7274</th>
+      <td>65085.78</td>
+      <td>65087.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.175135</td>
+      <td>-117.612098</td>
+      <td>34.051393</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>2021-03-13 12:15</td>
-      <td>NaN</td>
-      <td>6.6</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>7275</th>
+      <td>65087.78</td>
+      <td>65089.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.044566</td>
+      <td>-117.612098</td>
+      <td>34.051386</td>
     </tr>
   </tbody>
 </table>
-<p>146 rows × 7 columns</p>
+<p>7276 rows × 9 columns</p>
 </div></div></div>
 </div>
+<p>What have we got? Well we’ve made progress in that we have read the file without errors. Notice the column names, however. Those look like data values, not column names. It appears as though we have skipped too many rows. But how do we know how many rows to skip without reading the file?</p>
+<p><strong>Option 1: Open the file outside Python</strong></p>
+<p>Because icartt files are csv files they can be opened in any csv viewer. Cryocloud has a csv viewer built in, or you can use excel if you are on you computer. Double click the file to open it.</p>
+<p><img alt="ICARRT File Viewer" src="../../../_images/icartt_header.png" /></p>
+<p>We can see on that first line the number 41. That 41 tells us that the data header is on line 41 of the file. So, if we skip the first 40 rows of data we should start exactly where we want. Let’s try it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">,</span>
+    <span class="n">skiprows</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>50517.78</td>
+      <td>50519.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>50519.78</td>
+      <td>50521.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>50521.78</td>
+      <td>50523.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>50523.78</td>
+      <td>50525.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>50525.78</td>
+      <td>50527.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7281</th>
+      <td>65079.78</td>
+      <td>65081.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.527118</td>
+      <td>-117.612080</td>
+      <td>34.051416</td>
+    </tr>
+    <tr>
+      <th>7282</th>
+      <td>65081.78</td>
+      <td>65083.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.472604</td>
+      <td>-117.612087</td>
+      <td>34.051407</td>
+    </tr>
+    <tr>
+      <th>7283</th>
+      <td>65083.78</td>
+      <td>65085.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.305524</td>
+      <td>-117.612095</td>
+      <td>34.051402</td>
+    </tr>
+    <tr>
+      <th>7284</th>
+      <td>65085.78</td>
+      <td>65087.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.175135</td>
+      <td>-117.612098</td>
+      <td>34.051393</td>
+    </tr>
+    <tr>
+      <th>7285</th>
+      <td>65087.78</td>
+      <td>65089.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.044566</td>
+      <td>-117.612098</td>
+      <td>34.051386</td>
+    </tr>
+  </tbody>
+</table>
+<p>7286 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>Beautiful! Our raw data.</p>
+<p><strong>(intermediate) Option 2: Use Python to read the first line</strong></p>
+<p>On smaller files its fine to open them in a csv reader. Larger files, though, will struggle to render in Cryocloud and even in excel. To perform the same check programmatically we can use Python to read the file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">firstline</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">firstline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41, 1001
+</pre></div>
+</div>
+</div>
+</div>
+<p>There we have the same information as we found manually – the magic <code class="docutils literal notranslate"><span class="pre">41</span></code> that tells use we need to skip <code class="docutils literal notranslate"><span class="pre">40</span></code> rows of metadata information.</p>
+<p>Next we are going to do a bit of data cleaning to get our dataset ready for the rest of the lesson.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill -9999 with NaN</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Remove any rows before data started to be collected</span>
+<span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="p">[</span><span class="o">~</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CO2_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Convert the star time to a datetime and insert it as the first column in the dataframe</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;datetime (UTC)&#39;</span><span class="p">,</span> <span class="n">picarro_flight</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Time_Start&#39;</span><span class="p">])),</span> 
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cleaned data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:52</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:54</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-07-02 15:00:56</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:58</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-07-02 15:01:00</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5298</th>
+      <td>2024-07-02 17:57:28</td>
+      <td>64647.78</td>
+      <td>64649.78</td>
+      <td>453.317</td>
+      <td>2.13683</td>
+      <td>16550.0</td>
+      <td>311.7</td>
+      <td>335.601082</td>
+      <td>-117.582164</td>
+      <td>34.056872</td>
+    </tr>
+    <tr>
+      <th>5299</th>
+      <td>2024-07-02 17:57:30</td>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
+    </tr>
+    <tr>
+      <th>5300</th>
+      <td>2024-07-02 17:57:32</td>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
+    </tr>
+    <tr>
+      <th>5301</th>
+      <td>2024-07-02 17:57:34</td>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
+    </tr>
+    <tr>
+      <th>5302</th>
+      <td>2024-07-02 17:57:36</td>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
+    </tr>
+  </tbody>
+</table>
+<p>5303 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p><strong>Intermediate topic: lambda functions</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_datetime</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Time_Start&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">time</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">convert_to_datetime</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As usual, since we just opened new data let’s make a quick plot as a sanity check to make sure things look as we expect. As our sanity check plot let’s just plot the <span class="math notranslate nohighlight">\(CH_4\)</span> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/53d152eb5658ad5af3b49a297c5e56224e5bbbaeaa16b2e352e1bf2e0d1689e2.png" src="../../../_images/53d152eb5658ad5af3b49a297c5e56224e5bbbaeaa16b2e352e1bf2e0d1689e2.png" />
+</div>
+</div>
+<p>What do we see? Well the y axis, <span class="math notranslate nohighlight">\(CH_4\)</span> looks pretty reasonable. ~1.9-3ppm is in the range of normal for <span class="math notranslate nohighlight">\(CH_4\)</span>. The x axis is just showing the data in order. We can tell from looking at the <code class="docutils literal notranslate"><span class="pre">Start_Time</span></code> column of our dataframe that the data are organized in chronological order, following the flight track. So we are seeing the observed values of <span class="math notranslate nohighlight">\(CH_4\)</span> over the course of this flight. That’s all looking normal so far, so let’s move onto to some new operations.</p>
+<p><em>Do you wish that the x axis would show the time instead of the row number? Hang tight until the “Setting an Index” section to make that dream come true.</em></p>
 </section>
 </section>
 <section id="filtering">
@@ -702,7 +1247,7 @@
 <p>So what is the use of a list of booleans?  Let’s start with a simplified list of booleans and experiment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 </div>
 </div>
@@ -710,7 +1255,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create just a list of booleans, instead of a full dataframe</span>
-<span class="n">random_booleans</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">146</span><span class="p">)]</span>
+<span class="n">random_booleans</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5303</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -718,7 +1263,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the list of booleans with square brackets, sort of like a key in a dictionary</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="n">random_booleans</span><span class="p">]</span>
+<span class="n">picarro_flight</span><span class="p">[</span><span class="n">random_booleans</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -741,65 +1286,83 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>datetime</th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>2021-03-12 00:15</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <th>0</th>
+      <td>2024-07-02 15:00:51.780</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2021-03-12 00:30</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2021-03-12 00:45</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>2024-07-02 15:00:57.780</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>2021-03-12 01:00</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <td>2024-07-02 15:01:01.780</td>
+      <td>54061.78</td>
+      <td>54063.78</td>
+      <td>465.513</td>
+      <td>2.41768</td>
+      <td>17196.0</td>
+      <td>304.5</td>
+      <td>491.383527</td>
+      <td>-117.637150</td>
+      <td>34.029310</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>2021-03-12 01:15</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>2024-07-02 15:01:03.780</td>
+      <td>54063.78</td>
+      <td>54065.78</td>
+      <td>459.283</td>
+      <td>2.40071</td>
+      <td>17181.0</td>
+      <td>300.5</td>
+      <td>519.658339</td>
+      <td>-117.636573</td>
+      <td>34.027919</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2024-07-02 15:01:05.780</td>
+      <td>54065.78</td>
+      <td>54067.78</td>
+      <td>459.978</td>
+      <td>2.41435</td>
+      <td>17232.0</td>
+      <td>294.0</td>
+      <td>545.366933</td>
+      <td>-117.635968</td>
+      <td>34.026508</td>
     </tr>
     <tr>
       <th>...</th>
@@ -810,68 +1373,272 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>138</th>
-      <td>2021-03-13 10:15</td>
-      <td>44.5</td>
-      <td>6.8</td>
-      <td>9.4</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>low</td>
+      <th>5296</th>
+      <td>2024-07-02 17:57:23.780</td>
+      <td>64643.78</td>
+      <td>64645.78</td>
+      <td>453.254</td>
+      <td>2.14017</td>
+      <td>16415.0</td>
+      <td>320.0</td>
+      <td>353.344198</td>
+      <td>-117.578940</td>
+      <td>34.056842</td>
     </tr>
     <tr>
-      <th>141</th>
-      <td>2021-03-13 11:00</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.7</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
+      <th>5299</th>
+      <td>2024-07-02 17:57:29.780</td>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
     </tr>
     <tr>
-      <th>143</th>
-      <td>2021-03-13 11:30</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5300</th>
+      <td>2024-07-02 17:57:31.780</td>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>2021-03-13 12:00</td>
-      <td>46.5</td>
-      <td>6.7</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5301</th>
+      <td>2024-07-02 17:57:33.780</td>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>2021-03-13 12:15</td>
-      <td>NaN</td>
-      <td>6.6</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>5302</th>
+      <td>2024-07-02 17:57:35.780</td>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
     </tr>
   </tbody>
 </table>
-<p>83 rows × 7 columns</p>
+<p>2607 rows × 10 columns</p>
 </div></div></div>
 </div>
 <p>That returned only the rows where the value in the list was True!</p>
 <p>This is exciting, because this is the basis for filtering rows in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  Trying it again with our conditional statement from above <code class="docutils literal notranslate"><span class="pre">water_vars['dissolved</span> <span class="pre">oxygen']</span> <span class="pre">==</span> <span class="pre">8.2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:51.780</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:53.780</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-07-02 15:00:55.780</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:57.780</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-07-02 15:00:59.780</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5298</th>
+      <td>2024-07-02 17:57:27.780</td>
+      <td>64647.78</td>
+      <td>64649.78</td>
+      <td>453.317</td>
+      <td>2.13683</td>
+      <td>16550.0</td>
+      <td>311.7</td>
+      <td>335.601082</td>
+      <td>-117.582164</td>
+      <td>34.056872</td>
+    </tr>
+    <tr>
+      <th>5299</th>
+      <td>2024-07-02 17:57:29.780</td>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
+    </tr>
+    <tr>
+      <th>5300</th>
+      <td>2024-07-02 17:57:31.780</td>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
+    </tr>
+    <tr>
+      <th>5301</th>
+      <td>2024-07-02 17:57:33.780</td>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
+    </tr>
+    <tr>
+      <th>5302</th>
+      <td>2024-07-02 17:57:35.780</td>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
+    </tr>
+  </tbody>
+</table>
+<p>5303 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a dataframe indicating where dissolved oxygen == 8.2</span>
-<span class="n">boolean_dataframe</span> <span class="o">=</span> <span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">8.2</span>
+<span class="n">boolean_dataframe</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span>
 </pre></div>
 </div>
 </div>
@@ -879,7 +1646,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># returns only the rows where dissolved oxygen == 8.2</span>
-<span class="n">water_vars</span><span class="p">[</span><span class="n">boolean_dataframe</span><span class="p">]</span>
+<span class="n">picarro_flight</span><span class="p">[</span><span class="n">boolean_dataframe</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -902,65 +1669,83 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>datetime</th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:51.780</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:53.780</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
       <th>2</th>
-      <td>2021-03-12 00:15</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <td>2024-07-02 15:00:55.780</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2021-03-12 00:30</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>2024-07-02 15:00:57.780</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
     </tr>
     <tr>
-      <th>27</th>
-      <td>2021-03-12 06:30</td>
-      <td>48.5</td>
-      <td>7.1</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>2021-03-12 06:45</td>
-      <td>48.5</td>
-      <td>7.0</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>2021-03-12 07:00</td>
-      <td>48.5</td>
-      <td>7.0</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>4</th>
+      <td>2024-07-02 15:00:59.780</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
     </tr>
     <tr>
       <th>...</th>
@@ -971,66 +1756,84 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>121</th>
-      <td>2021-03-13 06:00</td>
-      <td>46.5</td>
-      <td>7.2</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5298</th>
+      <td>2024-07-02 17:57:27.780</td>
+      <td>64647.78</td>
+      <td>64649.78</td>
+      <td>453.317</td>
+      <td>2.13683</td>
+      <td>16550.0</td>
+      <td>311.7</td>
+      <td>335.601082</td>
+      <td>-117.582164</td>
+      <td>34.056872</td>
     </tr>
     <tr>
-      <th>122</th>
-      <td>2021-03-13 06:15</td>
-      <td>46.5</td>
-      <td>7.2</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5299</th>
+      <td>2024-07-02 17:57:29.780</td>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
     </tr>
     <tr>
-      <th>123</th>
-      <td>2021-03-13 06:30</td>
-      <td>46.5</td>
-      <td>7.1</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <th>5300</th>
+      <td>2024-07-02 17:57:31.780</td>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>124</th>
-      <td>2021-03-13 06:45</td>
-      <td>46.5</td>
-      <td>7.1</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>5301</th>
+      <td>2024-07-02 17:57:33.780</td>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>125</th>
-      <td>2021-03-13 07:00</td>
-      <td>46.5</td>
-      <td>NaN</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>5302</th>
+      <td>2024-07-02 17:57:35.780</td>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
     </tr>
   </tbody>
 </table>
-<p>24 rows × 7 columns</p>
+<p>2231 rows × 10 columns</p>
 </div></div></div>
 </div>
 <p>While there are several steps, this process is most commonly done in a single step:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="p">[</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dissolved oxygen&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">8.2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1053,65 +1856,83 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>datetime</th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:52</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:54</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
       <th>2</th>
-      <td>2021-03-12 00:15</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <td>2024-07-02 15:00:56</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2021-03-12 00:30</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <td>2024-07-02 15:00:58</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
     </tr>
     <tr>
-      <th>27</th>
-      <td>2021-03-12 06:30</td>
-      <td>48.5</td>
-      <td>7.1</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>2021-03-12 06:45</td>
-      <td>48.5</td>
-      <td>7.0</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>2021-03-12 07:00</td>
-      <td>48.5</td>
-      <td>7.0</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>4</th>
+      <td>2024-07-02 15:01:00</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1122,61 +1943,107 @@
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>121</th>
-      <td>2021-03-13 06:00</td>
-      <td>46.5</td>
-      <td>7.2</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>1943</th>
+      <td>2024-07-02 16:05:38</td>
+      <td>57937.78</td>
+      <td>57939.78</td>
+      <td>454.269</td>
+      <td>2.20592</td>
+      <td>11064.0</td>
+      <td>182.0</td>
+      <td>105.771602</td>
+      <td>-115.423041</td>
+      <td>33.110165</td>
     </tr>
     <tr>
-      <th>122</th>
-      <td>2021-03-13 06:15</td>
-      <td>46.5</td>
-      <td>7.2</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>1944</th>
+      <td>2024-07-02 16:05:40</td>
+      <td>57939.78</td>
+      <td>57941.78</td>
+      <td>453.157</td>
+      <td>2.22177</td>
+      <td>11094.0</td>
+      <td>182.7</td>
+      <td>105.505902</td>
+      <td>-115.421393</td>
+      <td>33.110432</td>
     </tr>
     <tr>
-      <th>123</th>
-      <td>2021-03-13 06:30</td>
-      <td>46.5</td>
-      <td>7.1</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <th>2097</th>
+      <td>2024-07-02 16:10:46</td>
+      <td>58245.78</td>
+      <td>58247.78</td>
+      <td>445.517</td>
+      <td>2.20064</td>
+      <td>12216.0</td>
+      <td>163.3</td>
+      <td>105.562942</td>
+      <td>-115.426698</td>
+      <td>33.052851</td>
     </tr>
     <tr>
-      <th>124</th>
-      <td>2021-03-13 06:45</td>
-      <td>46.5</td>
-      <td>7.1</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>2098</th>
+      <td>2024-07-02 16:10:48</td>
+      <td>58247.78</td>
+      <td>58249.78</td>
+      <td>444.504</td>
+      <td>2.20760</td>
+      <td>12141.0</td>
+      <td>164.5</td>
+      <td>106.693839</td>
+      <td>-115.427742</td>
+      <td>33.051837</td>
     </tr>
     <tr>
-      <th>125</th>
-      <td>2021-03-13 07:00</td>
-      <td>46.5</td>
-      <td>NaN</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>2532</th>
+      <td>2024-07-02 16:25:16</td>
+      <td>59115.78</td>
+      <td>59117.78</td>
+      <td>429.246</td>
+      <td>2.20904</td>
+      <td>13983.0</td>
+      <td>123.5</td>
+      <td>171.185377</td>
+      <td>-115.320763</td>
+      <td>32.758445</td>
     </tr>
   </tbody>
 </table>
-<p>24 rows × 7 columns</p>
+<p>122 rows × 10 columns</p>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span><span class="p">][</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/051a12f26eeeb82a2042431d6adee778bebade123deff62651d54ffd279d37cf.png" src="../../../_images/051a12f26eeeb82a2042431d6adee778bebade123deff62651d54ffd279d37cf.png" />
+</div>
+</div>
+<p>What’s happening in this sanity check plot? Well we can see that our filter worked because there aren’t any values below 2.2. But what is happening in betweeen? In a line plot pandas is going to connect each value to the next value with a line. The lines are connecting across the regions that now don’t have any data in them, making them look odd.</p>
+<p>If you just wanted a simple plot to make sure that all the values are above 2.2 then the plot above does that job. If you’d like it to look a little neater you can use the <code class="docutils literal notranslate"><span class="pre">style</span></code> argument with a value of <code class="docutils literal notranslate"><span class="pre">'.'</span></code>. This tells pandas to render little dots instead of connecting each observation with a line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span><span class="p">][</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;datetime (UTC)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/3bf07e962b47a2c538a14cea5c8d03f9b728056ed434c29a90acee5aa6ce589c.png" src="../../../_images/3bf07e962b47a2c538a14cea5c8d03f9b728056ed434c29a90acee5aa6ce589c.png" />
+</div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">📝 Check your understanding</p>
@@ -1221,8 +2088,7 @@ True
 <p>You also have to be sure to wrap each individual conditional statement in parenthesis <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cells where pH &lt; 8 and dam release was True</span>
-<span class="n">water_vars</span><span class="p">[(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dam release&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
 </pre></div>
 </div>
 </div>
@@ -1245,65 +2111,83 @@ True
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>datetime</th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>28</th>
-      <td>2021-03-12 06:45</td>
-      <td>48.5</td>
-      <td>7.0</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>0</th>
+      <td>2024-07-02 15:00:51.780</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
     </tr>
     <tr>
-      <th>29</th>
-      <td>2021-03-12 07:00</td>
-      <td>48.5</td>
-      <td>7.0</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>1</th>
+      <td>2024-07-02 15:00:53.780</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
     </tr>
     <tr>
-      <th>30</th>
-      <td>2021-03-12 07:15</td>
-      <td>48.5</td>
-      <td>6.9</td>
-      <td>8.2</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>low</td>
+      <th>2</th>
+      <td>2024-07-02 15:00:55.780</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
     </tr>
     <tr>
-      <th>31</th>
-      <td>2021-03-12 07:30</td>
-      <td>48.5</td>
-      <td>6.9</td>
-      <td>8.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>3</th>
+      <td>2024-07-02 15:00:57.780</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
     </tr>
     <tr>
-      <th>32</th>
-      <td>2021-03-12 07:45</td>
-      <td>48.5</td>
-      <td>6.8</td>
-      <td>8.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>4</th>
+      <td>2024-07-02 15:00:59.780</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1314,65 +2198,84 @@ True
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>139</th>
-      <td>2021-03-13 10:30</td>
-      <td>44.5</td>
-      <td>6.8</td>
-      <td>9.6</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>low</td>
+      <th>5298</th>
+      <td>2024-07-02 17:57:27.780</td>
+      <td>64647.78</td>
+      <td>64649.78</td>
+      <td>453.317</td>
+      <td>2.13683</td>
+      <td>16550.0</td>
+      <td>311.7</td>
+      <td>335.601082</td>
+      <td>-117.582164</td>
+      <td>34.056872</td>
     </tr>
     <tr>
-      <th>140</th>
-      <td>2021-03-13 10:45</td>
-      <td>44.5</td>
-      <td>6.7</td>
-      <td>9.6</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5299</th>
+      <td>2024-07-02 17:57:29.780</td>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
     </tr>
     <tr>
-      <th>143</th>
-      <td>2021-03-13 11:30</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5300</th>
+      <td>2024-07-02 17:57:31.780</td>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>2021-03-13 12:00</td>
-      <td>46.5</td>
-      <td>6.7</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5301</th>
+      <td>2024-07-02 17:57:33.780</td>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>2021-03-13 12:15</td>
-      <td>NaN</td>
-      <td>6.6</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>5302</th>
+      <td>2024-07-02 17:57:35.780</td>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
     </tr>
   </tbody>
 </table>
-<p>35 rows × 7 columns</p>
+<p>5303 rows × 10 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="p">[(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;pH&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">water_vars</span><span class="p">[</span><span class="s1">&#39;dam release&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cells where pH &lt; 8 and dam release was True</span>
+<span class="n">picarro_flight</span><span class="p">[(</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CO2_ppm&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">440</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -1395,65 +2298,83 @@ True
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>datetime</th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1</th>
-      <td>2021-03-12 00:00</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.3</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>38</th>
+      <td>2024-07-02 15:02:07.780</td>
+      <td>54127.78</td>
+      <td>54129.78</td>
+      <td>439.095</td>
+      <td>2.07115</td>
+      <td>14441.0</td>
+      <td>198.6</td>
+      <td>764.617646</td>
+      <td>-117.594656</td>
+      <td>34.002401</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>2021-03-12 00:30</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>39</th>
+      <td>2024-07-02 15:02:09.780</td>
+      <td>54129.78</td>
+      <td>54131.78</td>
+      <td>432.902</td>
+      <td>2.04689</td>
+      <td>13602.0</td>
+      <td>164.2</td>
+      <td>787.966822</td>
+      <td>-117.592941</td>
+      <td>34.001951</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>2021-03-12 00:45</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>40</th>
+      <td>2024-07-02 15:02:11.780</td>
+      <td>54131.78</td>
+      <td>54133.78</td>
+      <td>430.113</td>
+      <td>2.02776</td>
+      <td>12941.0</td>
+      <td>180.8</td>
+      <td>809.645831</td>
+      <td>-117.591265</td>
+      <td>34.001496</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>2021-03-12 01:15</td>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>41</th>
+      <td>2024-07-02 15:02:13.780</td>
+      <td>54133.78</td>
+      <td>54135.78</td>
+      <td>432.392</td>
+      <td>2.01841</td>
+      <td>12095.0</td>
+      <td>190.7</td>
+      <td>829.670768</td>
+      <td>-117.589655</td>
+      <td>34.001055</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>2021-03-12 01:30</td>
-      <td>44.5</td>
-      <td>8.0</td>
-      <td>8.0</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>42</th>
+      <td>2024-07-02 15:02:15.780</td>
+      <td>54135.78</td>
+      <td>54137.78</td>
+      <td>434.077</td>
+      <td>2.02114</td>
+      <td>11732.0</td>
+      <td>179.4</td>
+      <td>849.024002</td>
+      <td>-117.588064</td>
+      <td>34.000617</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1464,60 +2385,264 @@ True
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>142</th>
-      <td>2021-03-13 11:15</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.8</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <th>5252</th>
+      <td>2024-07-02 17:55:55.780</td>
+      <td>64555.78</td>
+      <td>64557.78</td>
+      <td>432.241</td>
+      <td>2.02297</td>
+      <td>11823.0</td>
+      <td>182.1</td>
+      <td>738.176644</td>
+      <td>-117.493828</td>
+      <td>34.056728</td>
     </tr>
     <tr>
-      <th>143</th>
-      <td>2021-03-13 11:30</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5253</th>
+      <td>2024-07-02 17:55:57.780</td>
+      <td>64557.78</td>
+      <td>64559.78</td>
+      <td>431.925</td>
+      <td>2.01713</td>
+      <td>11284.0</td>
+      <td>178.2</td>
+      <td>728.306846</td>
+      <td>-117.496191</td>
+      <td>34.056706</td>
     </tr>
     <tr>
-      <th>144</th>
-      <td>2021-03-13 11:45</td>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>10.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <th>5254</th>
+      <td>2024-07-02 17:55:59.780</td>
+      <td>64559.78</td>
+      <td>64561.78</td>
+      <td>432.113</td>
+      <td>2.01684</td>
+      <td>11257.0</td>
+      <td>157.5</td>
+      <td>719.288783</td>
+      <td>-117.498544</td>
+      <td>34.056692</td>
     </tr>
     <tr>
-      <th>145</th>
-      <td>2021-03-13 12:00</td>
-      <td>46.5</td>
-      <td>6.7</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>5255</th>
+      <td>2024-07-02 17:56:01.780</td>
+      <td>64561.78</td>
+      <td>64563.78</td>
+      <td>432.144</td>
+      <td>2.00731</td>
+      <td>11370.0</td>
+      <td>152.3</td>
+      <td>710.368556</td>
+      <td>-117.500843</td>
+      <td>34.056692</td>
     </tr>
     <tr>
-      <th>146</th>
-      <td>2021-03-13 12:15</td>
-      <td>NaN</td>
-      <td>6.6</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>5256</th>
+      <td>2024-07-02 17:56:03.780</td>
+      <td>64563.78</td>
+      <td>64565.78</td>
+      <td>432.524</td>
+      <td>2.03067</td>
+      <td>12158.0</td>
+      <td>250.5</td>
+      <td>701.251764</td>
+      <td>-117.503202</td>
+      <td>34.056705</td>
     </tr>
   </tbody>
 </table>
-<p>104 rows × 7 columns</p>
+<p>1762 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[(</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CO2_ppm&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">440</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:51.780</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:53.780</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-07-02 15:00:55.780</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:57.780</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-07-02 15:00:59.780</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5298</th>
+      <td>2024-07-02 17:57:27.780</td>
+      <td>64647.78</td>
+      <td>64649.78</td>
+      <td>453.317</td>
+      <td>2.13683</td>
+      <td>16550.0</td>
+      <td>311.7</td>
+      <td>335.601082</td>
+      <td>-117.582164</td>
+      <td>34.056872</td>
+    </tr>
+    <tr>
+      <th>5299</th>
+      <td>2024-07-02 17:57:29.780</td>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
+    </tr>
+    <tr>
+      <th>5300</th>
+      <td>2024-07-02 17:57:31.780</td>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
+    </tr>
+    <tr>
+      <th>5301</th>
+      <td>2024-07-02 17:57:33.780</td>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
+    </tr>
+    <tr>
+      <th>5302</th>
+      <td>2024-07-02 17:57:35.780</td>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
+    </tr>
+  </tbody>
+</table>
+<p>5303 rows × 10 columns</p>
 </div></div></div>
 </div>
 <p>There is more than one way to do this type of filtering in pandas, but it is fine to start with one method and feel really comfortable with it before moving to the others.  <a class="reference external" href="https://www.listendata.com/2019/07/how-to-filter-pandas-dataframe.html">This article</a> has a pretty nice overview of some other methods.</p>
@@ -1540,7 +2665,7 @@ True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Beatriz S&#39;</span><span class="p">,</span> <span class="s1">&#39;Sara H&#39;</span><span class="p">,</span> <span class="s1">&#39;Joel T&#39;</span><span class="p">,</span> <span class="s1">&#39;Ari T&#39;</span><span class="p">,</span> <span class="s1">&#39;Hassan A&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Beatriz S&#39;</span><span class="p">,</span> <span class="s1">&#39;Joel H&#39;</span><span class="p">,</span> <span class="s1">&#39;Lashandra T&#39;</span><span class="p">,</span> <span class="s1">&#39;Ari T&#39;</span><span class="p">,</span> <span class="s1">&#39;Hassan A&#39;</span><span class="p">],</span>
         <span class="s1">&#39;history&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">79</span><span class="p">],</span>
         <span class="s1">&#39;science&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">91</span><span class="p">],</span>
         <span class="s1">&#39;music&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">81</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">89</span><span class="p">],</span>
@@ -1591,14 +2716,14 @@ True
     </tr>
     <tr>
       <th>1</th>
-      <td>Sara H</td>
+      <td>Joel H</td>
       <td>69</td>
       <td>80</td>
       <td>81</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Joel T</td>
+      <td>Lashandra T</td>
       <td>80</td>
       <td>80</td>
       <td>90</td>
@@ -1667,13 +2792,13 @@ True
       <td>81</td>
     </tr>
     <tr>
-      <th>Sara H</th>
+      <th>Joel H</th>
       <td>69</td>
       <td>80</td>
       <td>81</td>
     </tr>
     <tr>
-      <th>Joel T</th>
+      <th>Lashandra T</th>
       <td>80</td>
       <td>80</td>
       <td>90</td>
@@ -1716,7 +2841,7 @@ True
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>history    69
 science    80
 music      81
-Name: Sara H, dtype: int64
+Name: Joel H, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1750,14 +2875,14 @@ Name: Hassan A, dtype: int64
 <p>Dates and times are generally fantastic indices, because, if the world is working in proper order, each moment in time only happens once, meaning their values are unique and they are really common indices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span> <span class="o">=</span> <span class="n">water_vars</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;datetime&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;datetime (UTC)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
 </pre></div>
 </div>
 </div>
@@ -1780,15 +2905,21 @@ Name: Hassan A, dtype: int64
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
     </tr>
     <tr>
-      <th>datetime</th>
+      <th>datetime (UTC)</th>
+      <th></th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -1799,49 +2930,64 @@ Name: Hassan A, dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>2021-03-12 00:00</th>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.3</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>2024-07-02 15:00:52</th>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
     </tr>
     <tr>
-      <th>2021-03-12 00:15</th>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <th>2024-07-02 15:00:54</th>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
     </tr>
     <tr>
-      <th>2021-03-12 00:30</th>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.2</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>2024-07-02 15:00:56</th>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
     </tr>
     <tr>
-      <th>2021-03-12 00:45</th>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>True</td>
-      <td>low</td>
+      <th>2024-07-02 15:00:58</th>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
     </tr>
     <tr>
-      <th>2021-03-12 01:00</th>
-      <td>44.5</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>8.1</td>
-      <td>False</td>
-      <td>high</td>
+      <th>2024-07-02 15:01:00</th>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1851,75 +2997,111 @@ Name: Hassan A, dtype: int64
       <td>...</td>
       <td>...</td>
       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
-      <th>2021-03-13 11:15</th>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.8</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>low</td>
+      <th>2024-07-02 17:57:28</th>
+      <td>64647.78</td>
+      <td>64649.78</td>
+      <td>453.317</td>
+      <td>2.13683</td>
+      <td>16550.0</td>
+      <td>311.7</td>
+      <td>335.601082</td>
+      <td>-117.582164</td>
+      <td>34.056872</td>
     </tr>
     <tr>
-      <th>2021-03-13 11:30</th>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>9.9</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>2024-07-02 17:57:30</th>
+      <td>64649.78</td>
+      <td>64651.78</td>
+      <td>453.916</td>
+      <td>2.14152</td>
+      <td>16617.0</td>
+      <td>313.5</td>
+      <td>327.524082</td>
+      <td>-117.583783</td>
+      <td>34.056886</td>
     </tr>
     <tr>
-      <th>2021-03-13 11:45</th>
-      <td>42.6</td>
-      <td>6.7</td>
-      <td>10.2</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>medium</td>
+      <th>2024-07-02 17:57:32</th>
+      <td>64651.78</td>
+      <td>64653.78</td>
+      <td>454.102</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>319.5</td>
+      <td>320.590900</td>
+      <td>-117.585301</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>2021-03-13 12:00</th>
-      <td>46.5</td>
-      <td>6.7</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>medium</td>
+      <th>2024-07-02 17:57:34</th>
+      <td>64653.78</td>
+      <td>64655.78</td>
+      <td>455.835</td>
+      <td>2.14418</td>
+      <td>17055.0</td>
+      <td>330.2</td>
+      <td>313.019498</td>
+      <td>-117.586845</td>
+      <td>34.056888</td>
     </tr>
     <tr>
-      <th>2021-03-13 12:15</th>
-      <td>NaN</td>
-      <td>6.6</td>
-      <td>10.3</td>
-      <td>7.9</td>
-      <td>True</td>
-      <td>high</td>
+      <th>2024-07-02 17:57:36</th>
+      <td>64655.78</td>
+      <td>64657.78</td>
+      <td>455.938</td>
+      <td>2.15877</td>
+      <td>17167.0</td>
+      <td>331.4</td>
+      <td>306.001105</td>
+      <td>-117.588324</td>
+      <td>34.056887</td>
     </tr>
   </tbody>
 </table>
-<p>146 rows × 6 columns</p>
+<p>5303 rows × 9 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021-03-12 13:00&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2024-07-02 15:00:56&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>discharge             40.8
-temperature            7.4
-dissolved oxygen      11.6
-pH                     8.1
-dam release          False
-safety level        medium
-Name: 2021-03-12 13:00, dtype: object
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time_Start    54055.780000
+ Time_Stop    54057.780000
+ CO2_ppm        460.070000
+ CH4_ppm          2.414310
+ H2O_ppm      17171.000000
+ CO_ppb         303.100000
+ GPS_Alt        428.501557
+ GPS_Lon       -117.638719
+ GPS_Lat         34.034044
+Name: 2024-07-02 15:00:56, dtype: float64
 </pre></div>
 </div>
 </div>
 </div>
+<p>Another benefit of setting the index is that it makes our plots a little cleaner. Remember how that first plot in the lesson of Methane vs. Time showed a generic row number on the x axis? Checkout what happens on that the index is a datetime:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;datetime (UTC)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/fa79901bb79de45a111a0dd299dafd612016aebb9b147f9184422da7a47bdf59.png" src="../../../_images/fa79901bb79de45a111a0dd299dafd612016aebb9b147f9184422da7a47bdf59.png" />
+</div>
+</div>
+<p>Beautiful! A much more readable x axis.</p>
 <div class="tip admonition">
 <p class="admonition-title">📝 Check your understanding</p>
 <p>Write a line of code to get the row corresponding to March 13th 2021 at 8:00am.</p>
@@ -1967,6 +3149,76 @@ Name: 2021-03-12 13:00, dtype: object
 </ol>
 </div>
 </section>
+<section id="pre-processing">
+<h3>Pre-processing<a class="headerlink" href="#pre-processing" title="Link to this heading">#</a></h3>
+<p>The code below adds to new columns “CO2_rating”, and “CH4_rating” to the dataframe. These classify the <span class="math notranslate nohighlight">\(CO_2\)</span> and <span class="math notranslate nohighlight">\(CO_4\)</span> measurements qualitatively instead of quantitatively so we can experiment with using groupby. Don’t worry too much about the code below, but notice the new columns at the end of the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define cutoffs for the carbon dioxide and methane ratings</span>
+<span class="n">bins_co2</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">),</span> <span class="mi">430</span><span class="p">,</span> <span class="mi">440</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)]</span>
+<span class="n">bins_ch4</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;-inf&#39;</span><span class="p">),</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;low&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add carbon dioxide rating</span>
+<span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CO2_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span>
+    <span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CO2_ppm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins_co2</span><span class="p">,</span> 
+    <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;str&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_rating&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime (UTC)
+2024-07-02 15:00:52      high
+2024-07-02 15:00:54      high
+2024-07-02 15:00:56      high
+2024-07-02 15:00:58      high
+2024-07-02 15:01:00      high
+                        ...  
+2024-07-02 17:57:28    medium
+2024-07-02 17:57:30    medium
+2024-07-02 17:57:32    medium
+2024-07-02 17:57:34    medium
+2024-07-02 17:57:36    medium
+Name: CH4_rating, Length: 5303, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add methane rating</span>
+<span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span>
+    <span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins_ch4</span><span class="p">,</span> 
+    <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">include_lowest</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;str&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Drop unneeded columns for the next exercise</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;Time_Start&#39;</span><span class="p">,</span> <span class="s1">&#39; Time_Stop&#39;</span><span class="p">,</span> <span class="s1">&#39; GPS_Lon&#39;</span><span class="p">,</span> <span class="s1">&#39; GPS_Lat&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="groupby-syntax">
 <h3><code class="docutils literal notranslate"><span class="pre">groupby</span></code> syntax<a class="headerlink" href="#groupby-syntax" title="Link to this heading">#</a></h3>
 <p>We can take these <code class="docutils literal notranslate"><span class="pre">groupby</span></code> concepts and translate them into syntax.  The first two parts (which variable to group &amp; how do we want to group) are required for pandas.  The third one is optional.</p>
@@ -1975,7 +3227,26 @@ Name: 2021-03-12 13:00, dtype: object
 <p>Words in all capitals are variables.  We’ll go into each part a little more below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;safety level&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> CO2_ppm       float64
+ CH4_ppm       float64
+ H2O_ppm       float64
+ CO_ppb        float64
+ GPS_Alt       float64
+CO2_rating    category
+CH4_rating    category
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;CO2_rating&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1998,14 +3269,14 @@ Name: 2021-03-12 13:00, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>pH</th>
-      <th>dam release</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
     </tr>
     <tr>
-      <th>safety level</th>
+      <th>CO2_rating</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2016,39 +3287,44 @@ Name: 2021-03-12 13:00, dtype: object
   <tbody>
     <tr>
       <th>high</th>
-      <td>40.8</td>
-      <td>6.6</td>
-      <td>8.0</td>
-      <td>7.8</td>
-      <td>False</td>
+      <td>450.436554</td>
+      <td>2.192665</td>
+      <td>15200.166311</td>
+      <td>196.034755</td>
+      <td>261.402532</td>
     </tr>
     <tr>
       <th>low</th>
-      <td>39.0</td>
-      <td>6.7</td>
-      <td>8.0</td>
-      <td>7.8</td>
-      <td>False</td>
+      <td>426.565941</td>
+      <td>1.967308</td>
+      <td>6102.602509</td>
+      <td>103.925914</td>
+      <td>1078.394145</td>
     </tr>
     <tr>
       <th>medium</th>
-      <td>39.0</td>
-      <td>6.7</td>
-      <td>7.9</td>
-      <td>7.8</td>
-      <td>False</td>
+      <td>433.416890</td>
+      <td>2.019003</td>
+      <td>12846.384051</td>
+      <td>146.918542</td>
+      <td>171.895462</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<p>What do we see in the output?</p>
+<ul class="simple">
+<li><p>Which (if any) of the other species are directly correlated with carbon dioxide?</p></li>
+<li><p>Are the highest <span class="math notranslate nohighlight">\(CO_2\)</span> values near the surface or higher up?</p></li>
+</ul>
 <section id="which-group">
 <h4><code class="docutils literal notranslate"><span class="pre">'WHICH_GROUP'</span></code><a class="headerlink" href="#which-group" title="Link to this heading">#</a></h4>
 <p>This variable can be any of the columns in the dataframe that can be put into discrete piles.  We used <code class="docutils literal notranslate"><span class="pre">'safety_level'</span></code> because it can easily be put into piles – <code class="docutils literal notranslate"><span class="pre">low</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code> and <code class="docutils literal notranslate"><span class="pre">high</span></code>.</p>
 <p>We are still allowed to group on other columns, it’s just that the practicality can become questionable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;pH&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;CH4_rating&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2071,14 +3347,14 @@ Name: 2021-03-12 13:00, dtype: object
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>discharge</th>
-      <th>temperature</th>
-      <th>dissolved oxygen</th>
-      <th>dam release</th>
-      <th>safety level</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
     </tr>
     <tr>
-      <th>pH</th>
+      <th>CH4_rating</th>
       <th></th>
       <th></th>
       <th></th>
@@ -2088,44 +3364,28 @@ Name: 2021-03-12 13:00, dtype: object
   </thead>
   <tbody>
     <tr>
-      <th>7.8</th>
-      <td>46.5</td>
-      <td>6.8</td>
-      <td>8.3</td>
-      <td>False</td>
-      <td>high</td>
+      <th>high</th>
+      <td>440.061</td>
+      <td>2.30336</td>
+      <td>10057.0</td>
+      <td>131.0</td>
+      <td>49.318883</td>
     </tr>
     <tr>
-      <th>7.9</th>
-      <td>42.6</td>
-      <td>6.6</td>
-      <td>8.2</td>
-      <td>False</td>
-      <td>high</td>
+      <th>low</th>
+      <td>419.591</td>
+      <td>1.92809</td>
+      <td>1080.0</td>
+      <td>57.3</td>
+      <td>18.900000</td>
     </tr>
     <tr>
-      <th>8.0</th>
-      <td>42.6</td>
-      <td>6.9</td>
-      <td>8.0</td>
-      <td>False</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>8.1</th>
-      <td>40.8</td>
-      <td>7.4</td>
-      <td>7.9</td>
-      <td>False</td>
-      <td>high</td>
-    </tr>
-    <tr>
-      <th>8.2</th>
-      <td>39.0</td>
-      <td>8.1</td>
-      <td>12.5</td>
-      <td>False</td>
-      <td>high</td>
+      <th>medium</th>
+      <td>425.214</td>
+      <td>2.00006</td>
+      <td>4060.0</td>
+      <td>97.8</td>
+      <td>-7.338963</td>
     </tr>
   </tbody>
 </table>
@@ -2133,7 +3393,7 @@ Name: 2021-03-12 13:00, dtype: object
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Because they are right next to each other it can be really tempting to want to put the variable you are most interested in seeing in place of <code class="docutils literal notranslate"><span class="pre">WHICH_GROUP</span></code>.  If you do this and use a column that can’t be grouped, so consider <code class="docutils literal notranslate"><span class="pre">WHICH_GROUP</span></code> variable if you are debugging.</p>
+<p>Because they are right next to each other it can be really tempting to want to put the variable you are most interested in seeing in place of <code class="docutils literal notranslate"><span class="pre">WHICH_GROUP</span></code>.  If you do this and use a column that can’t be grouped, so consider the <code class="docutils literal notranslate"><span class="pre">WHICH_GROUP</span></code> variable if you are debugging.</p>
 </div>
 </section>
 <section id="aggregation-functions">
@@ -2146,6 +3406,80 @@ Name: 2021-03-12 13:00, dtype: object
 <li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code>- find the mean value of those rows</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.sum()</span></code> - find the sum of the values of those rows</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;CH4_rating&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>CO2_rating</th>
+    </tr>
+    <tr>
+      <th>CH4_rating</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>high</th>
+      <td>89</td>
+      <td>89</td>
+      <td>89</td>
+      <td>89</td>
+      <td>89</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <th>low</th>
+      <td>3072</td>
+      <td>3072</td>
+      <td>3072</td>
+      <td>3072</td>
+      <td>3072</td>
+      <td>3072</td>
+    </tr>
+    <tr>
+      <th>medium</th>
+      <td>2142</td>
+      <td>2142</td>
+      <td>2142</td>
+      <td>2142</td>
+      <td>2142</td>
+      <td>2142</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </section>
 <section id="the-third-input">
 <h4>The third input<a class="headerlink" href="#the-third-input" title="Link to this heading">#</a></h4>
@@ -2154,16 +3488,16 @@ Name: 2021-03-12 13:00, dtype: object
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Group our water dataframe by saftey level and take the mean of the discharge values for each safety level group</span>
-<span class="n">water_vars</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;safety level&quot;</span><span class="p">)[</span><span class="s1">&#39;discharge&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;CO2_rating&quot;</span><span class="p">)[</span><span class="s1">&#39; CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>safety level
-high      45.011628
-low       44.484000
-medium    44.940385
-Name: discharge, dtype: float64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CO2_rating
+high      2.192665
+low       1.967308
+medium    2.019003
+Name:  CH4_ppm, dtype: float64
 </pre></div>
 </div>
 </div>
@@ -2246,8 +3580,7 @@ Name: discharge, dtype: float64
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -2271,6 +3604,7 @@ Name: discharge, dtype: float64
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">Groupby</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#breaking-groupby-into-conceptual-parts">Breaking <code class="docutils literal notranslate"><span class="pre">groupby</span></code> into conceptual parts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing">Pre-processing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby-syntax"><code class="docutils literal notranslate"><span class="pre">groupby</span></code> syntax</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#which-group"><code class="docutils literal notranslate"><span class="pre">'WHICH_GROUP'</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation-functions">Aggregation Functions</a></li>
@@ -2328,8 +3662,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
