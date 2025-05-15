@@ -1,0 +1,2467 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.2 Filtering and indexes &#8212; SARP Programming Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_indexes';</script>
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="3. Gridded Data" href="../3-gridded_data/index.html" />
+    <link rel="prev" title="2.1 The pandas Library" href="2-1_pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sarp_logo.png" class="logo__image only-light" alt="SARP Programming Lessons - Home"/>
+    <script>document.write(`<img src="../../../_static/sarp_logo.png" class="logo__image only-dark" alt="SARP Programming Lessons - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Python Programming for Earth Science Researchers
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Python Progression</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../1-general_python/index.html">1. Python Building Blocks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1-general_python/1-1_variables_types_ifstatements.html">1.1 Variables, Data Types, and if Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1-general_python/1-2_lists_dictionaries.html">1.2 Lists and Dictionaries</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">2. Tabular Data</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2-1_pandas.html">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2 Filtering and indexes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../3-gridded_data/index.html">3. Gridded Data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3-gridded_data/3-1_xarray.html">3.1 The <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-gridded_data/3-2_xarray_computation.html">3.2 Starting Computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3-gridded_data/3-3_xarray_groupby.html">3.3 <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Groupby</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../4-spatiotemporal/index.html">4. Spatio-temporal Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../4-spatiotemporal/4-1_datetimes.html">4.1 Datetimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4-spatiotemporal/4-2_spatial_data.html">4.2 Spatial Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4-spatiotemporal/4-3_geopandas.html">4.3 <code class="docutils literal notranslate"><span class="pre">geopandas</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4-spatiotemporal/4-4_spatial_operations_rio.html">4.4 Spatial Operations and <code class="docutils literal notranslate"><span class="pre">rio</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../4-spatiotemporal/4-5_mapping_cartopy.html">4.5 Mapping with <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> and Colors</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../5-visualization/index.html">5. Visualization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-1_static_viz_matplotlib.html">5.1 Static Visualization with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-2_building_on_matplotlib.html">5.2 Building on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-3_dynamic_visualization.html">5.3 Dynamic Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../5-visualization/5-4_viewing_images.html">5.4 Viewing Images</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Computational Skills</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../2_computational_skills/file_organization.html">Organizing your Files</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../2_computational_skills/debugging_lesson.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../additional_lectures/hierarchical_data/hierarchical_data.html">Hierarchical Data Structure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../3_open_science/cloud_lesson.html">Science on the Cloud</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Practice Problems &amp; Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../4_practice_problems/index.html">Python Practice</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-1_variables_data_practice.html">1.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-1_variables_data_answers.html">1.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-2_lists_dicts_practice.html">1.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/1-2_lists_dicts_answers.html">1.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-1_pandas_practice.html">2.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-1_pandas_answers.html">2.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-2_filtering_groupby_practice.html">2.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/2-2_filtering_groupby_answers.html">2.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-1_xarray_practice.html">3.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/3-1_xarray_answers.html">3.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-1_datetimes_practice.html">4.1 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-1_datetimes_answers.html">4.1 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-2_spatial_data_practice.html">4.2 Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-2_spatial_data_answers.html">4.2 Answers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../4_practice_problems/1_python/4-3_geopandas_practice.html">4.3 Problems</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Example Gallery</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../5_example_gallery/index.html">Visualization Examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/logplot.html">Plot with multiple lines and a log axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/flight_track.html">Flight Track Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../5_example_gallery/gridded_mapping.html">Cartopy with gridded data</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributor Guide</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/instructors_guide.html">Instructor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../6_contributors_instructors/env_setup.html">Contributing to SARP Lessons</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rwegener2/sarp_lessons/issues/new?title=Issue%20on%20page%20%2Fsarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_indexes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_indexes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2.2 Filtering and indexes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-data">Loading our data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-opening-check">Data Opening Check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">Filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-and-and-or">Using <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-a-column-as-an-index">Setting a column as an Index</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iloc-vs-loc"><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> vs. <code class="docutils literal notranslate"><span class="pre">loc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-example-datetime-indices">One more example - datetime indices</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="filtering-and-indexes">
+<h1>2.2 Filtering and indexes<a class="headerlink" href="#filtering-and-indexes" title="Link to this heading">#</a></h1>
+<div class="note dropdown admonition">
+<p class="admonition-title">Lesson Content</p>
+<ul class="simple">
+<li><p>🔍 Data Opening Check</p></li>
+<li><p>🗑️ Filtering</p></li>
+<li><p>📍 Setting an Index</p></li>
+</ul>
+</div>
+<section id="context">
+<h2>Context<a class="headerlink" href="#context" title="Link to this heading">#</a></h2>
+<p>We spent yesterday getting comfortable in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. We opened some data, explored it, and ran a few functions.  Today we are going to expand on what we are doing by learning a few powerful ways to interrogate our data – filtering and grouping.  These manipulations help us get at the specific part of a dataset that we need.</p>
+<section id="loading-our-data">
+<h3>Loading our data<a class="headerlink" href="#loading-our-data" title="Link to this heading">#</a></h3>
+<p>In this lesson we will be using data from the Picarro instrument onboard a 2024 SARP flight.</p>
+<p><a class="reference external" href="https://www-air.larc.nasa.gov/cgi-bin/ArcView/sarp.2024?DA-B200=1">https://www-air.larc.nasa.gov/cgi-bin/ArcView/sarp.2024?DA-B200=1</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># This line shortens the output</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>File format: The file below is an icartt file. This file is specifically designed for flight data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ParserError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/envs/sarp_docs2/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/envs/sarp_docs2/lib/python3.13/site-packages/pandas/io/parsers/readers.py:626,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span> <span class="k">with</span> <span class="n">parser</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">626</span>     <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
+
+<span class="nn">File ~/envs/sarp_docs2/lib/python3.13/site-packages/pandas/io/parsers/readers.py:1923,</span> in <span class="ni">TextFileReader.read</span><span class="nt">(self, nrows)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1916</span> <span class="n">nrows</span> <span class="o">=</span> <span class="n">validate_integer</span><span class="p">(</span><span class="s2">&quot;nrows&quot;</span><span class="p">,</span> <span class="n">nrows</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1917</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1918</span>     <span class="c1"># error: &quot;ParserBase&quot; has no attribute &quot;read&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1919</span>     <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1920</span>         <span class="n">index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1921</span>         <span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1922</span>         <span class="n">col_dict</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">1923</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>  <span class="c1"># type: ignore[attr-defined]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1924</span>         <span class="n">nrows</span>
+<span class="g g-Whitespace">   </span><span class="mi">1925</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1926</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1927</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File ~/envs/sarp_docs2/lib/python3.13/site-packages/pandas/io/parsers/c_parser_wrapper.py:234,</span> in <span class="ni">CParserWrapper.read</span><span class="nt">(self, nrows)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">low_memory</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">234</span>         <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">read_low_memory</span><span class="p">(</span><span class="n">nrows</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>         <span class="c1"># destructive to chunks</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">_concatenate_chunks</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File parsers.pyx:838,</span> in <span class="ni">pandas._libs.parsers.TextReader.read_low_memory</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:905,</span> in <span class="ni">pandas._libs.parsers.TextReader._read_rows</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:874,</span> in <span class="ni">pandas._libs.parsers.TextReader._tokenize_rows</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:891,</span> in <span class="ni">pandas._libs.parsers.TextReader._check_tokenize_status</span><span class="nt">()</span>
+
+<span class="nn">File parsers.pyx:2061,</span> in <span class="ni">pandas._libs.parsers.raise_parser_error</span><span class="nt">()</span>
+
+<span class="ne">ParserError</span>: Error tokenizing data. C error: Expected 2 fields in line 7, saw 6
+</pre></div>
+</div>
+</div>
+</div>
+<p>icartt files store metadata in the first few lines of the file. This metadata information is useful to read through, but isn’t used by pandas for creating the dataframe. What we need to do is let pandas know that it should skip past those first few lines of metadata. We do that with the <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">,</span>
+    <span class="n">skiprows</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>50535.78</th>
+      <th>50537.78</th>
+      <th>-9999.000</th>
+      <th>-9999.00000</th>
+      <th>-9999</th>
+      <th>-9999.0</th>
+      <th>-9999.000000</th>
+      <th>-9999.000000.1</th>
+      <th>-9999.000000.2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>50537.78</td>
+      <td>50539.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>50539.78</td>
+      <td>50541.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>50541.78</td>
+      <td>50543.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>50543.78</td>
+      <td>50545.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7272</th>
+      <td>65081.78</td>
+      <td>65083.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.472604</td>
+      <td>-117.612087</td>
+      <td>34.051407</td>
+    </tr>
+    <tr>
+      <th>7273</th>
+      <td>65083.78</td>
+      <td>65085.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.305524</td>
+      <td>-117.612095</td>
+      <td>34.051402</td>
+    </tr>
+    <tr>
+      <th>7274</th>
+      <td>65085.78</td>
+      <td>65087.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.175135</td>
+      <td>-117.612098</td>
+      <td>34.051393</td>
+    </tr>
+    <tr>
+      <th>7275</th>
+      <td>65087.78</td>
+      <td>65089.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.044566</td>
+      <td>-117.612098</td>
+      <td>34.051386</td>
+    </tr>
+  </tbody>
+</table>
+<p>7276 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>What have we got? Well we’ve made progress in that we have read the file without errors. Notice the column names, however. Those look like data values, not column names. It appears as though we have skipped too many rows. But how do we know how many rows to skip without reading the file?</p>
+<p><strong>Option 1: Open the file outside Python</strong></p>
+<p>Because icartt files are csv files they can be opened in any csv viewer. Cryocloud has a csv viewer built in, or you can use excel if you are on you computer. Double click the file to open it.</p>
+<p><img alt="ICARRT File Viewer" src="../../../_images/icartt_header.png" /></p>
+<p>We can see on that first line the number 41. That 41 tells us that the data header is on line 41 of the file. So, if we skip the first 40 rows of data we should start exactly where we want. Let’s try it out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">,</span>
+    <span class="n">skiprows</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>50517.78</td>
+      <td>50519.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>50519.78</td>
+      <td>50521.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>50521.78</td>
+      <td>50523.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>50523.78</td>
+      <td>50525.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>7282</th>
+      <td>65081.78</td>
+      <td>65083.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.472604</td>
+      <td>-117.612087</td>
+      <td>34.051407</td>
+    </tr>
+    <tr>
+      <th>7283</th>
+      <td>65083.78</td>
+      <td>65085.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.305524</td>
+      <td>-117.612095</td>
+      <td>34.051402</td>
+    </tr>
+    <tr>
+      <th>7284</th>
+      <td>65085.78</td>
+      <td>65087.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.175135</td>
+      <td>-117.612098</td>
+      <td>34.051393</td>
+    </tr>
+    <tr>
+      <th>7285</th>
+      <td>65087.78</td>
+      <td>65089.78</td>
+      <td>-9999.0</td>
+      <td>-9999.0</td>
+      <td>-9999</td>
+      <td>-9999.0</td>
+      <td>303.044566</td>
+      <td>-117.612098</td>
+      <td>34.051386</td>
+    </tr>
+  </tbody>
+</table>
+<p>7286 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>Beautiful! Our raw data.</p>
+<p><strong>(intermediate) Option 2: Use Python to read the first line</strong></p>
+<p>On smaller files its fine to open them in a csv reader. Larger files, though, will struggle to render in Cryocloud and even in excel. To perform the same check programmatically we can use Python to read the file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./data/SARP-PICARRO-GHG-SLOW_DA-B200_20240702_R0_L1.ict&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">firstline</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">firstline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41, 1001
+</pre></div>
+</div>
+</div>
+</div>
+<p>There we have the same information as we found manually – the magic <code class="docutils literal notranslate"><span class="pre">41</span></code> that tells use we need to skip <code class="docutils literal notranslate"><span class="pre">40</span></code> rows of metadata information.</p>
+</section>
+<section id="data-opening-check">
+<h3>Data Opening Check<a class="headerlink" href="#data-opening-check" title="Link to this heading">#</a></h3>
+<p>The first thing you always do when you open a data file is to check the contents and compare that to your expectation. Think of it like opening an unexpected package in the mail – you might have a guess what’s inside, but you need to get into it to look around and perhaps checke the receipt to be sure of what it is and where it came from.</p>
+<p>In general, when opening a dataset you’ll always want to go through the same couple checks:</p>
+<div class="tip admonition">
+<p class="admonition-title">Data Opening Checklist</p>
+<ol class="arabic simple">
+<li><p>What variables or measurements are available in this dataset?</p></li>
+<li><p>How is the dataset organized? What is the shape or size?</p></li>
+<li><p>What spatial and/or temporal range does this dataset cover?</p></li>
+<li><p>Do there appear to be any nodata values in this dataset?</p></li>
+<li><p>Do the variables appear to have reasonable values?</p></li>
+<li><p>Make the simplest plot possible of 1-2 variables. Does it match your expectations?</p></li>
+</ol>
+</div>
+<p>Let’s do these together now with this dataset. Going through these checks will use a many of the skills we learned in lesson 2.1.</p>
+<p><strong>#1: What variables or measurements are available in this dataset?</strong></p>
+<p>In a pandas dataframe the variables are usually shown as independent columns. We can view the columns with the <code class="docutils literal notranslate"><span class="pre">.columns</span></code> property:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Time_Start&#39;, &#39; Time_Stop&#39;, &#39; CO2_ppm&#39;, &#39; CH4_ppm&#39;, &#39; H2O_ppm&#39;,
+       &#39; CO_ppb&#39;, &#39; GPS_Alt&#39;, &#39; GPS_Lon&#39;, &#39; GPS_Lat&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see time, <span class="math notranslate nohighlight">\(CO_2\)</span>, <span class="math notranslate nohighlight">\(CH_4\)</span>, <span class="math notranslate nohighlight">\(H_2O\)</span>, <span class="math notranslate nohighlight">\(CO\)</span>, altitude, and latitude/longitude.</p>
+<p><strong>#2: How is the dataset organized? What is the shape or size?</strong></p>
+<p>This dataset appears to have unique times that move sequentially. Because we know that this is flight data we are also pretty sure that the latitude and longitude will generally vary with time. We can see from the bottom of the output of <code class="docutils literal notranslate"><span class="pre">picarro_flight</span></code> that this datafram has 7,268 rows and 9 columns.</p>
+<p><strong>#3: What spatial and/or temporal range does this dataset cover?</strong></p>
+<p>Looking at the <code class="docutils literal notranslate"><span class="pre">Time_Start</span></code> column we can see that the time of this dataset ranges from 50517.78 to 65087.78 (see the first and last columns). That’s an odd measure of time… The time is actually showing the number of seconds that have passed since midnight on the day of the flight (given in the filename) and is actually a common way to keep time on science flights. Spatially our data looks like it is around about <span class="math notranslate nohighlight">\(34^\circ N\)</span> and <span class="math notranslate nohighlight">\(117^\circ E\)</span>. Entering “34, -117” into Google maps shows us this data was collected in California, just east of Riverside, CA. A scatter plot of latitude and longitude could help us get a sense of the range of the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39; GPS_Lon&#39;</span><span class="p">,</span> <span class="s1">&#39; GPS_Lat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39; GPS_Lon&#39;, ylabel=&#39; GPS_Lat&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/c312ddffe6878ed8ba49112160c9e3e00c0eae8433667b4c58f8f3b0fa512a0f.png" src="../../../_images/c312ddffe6878ed8ba49112160c9e3e00c0eae8433667b4c58f8f3b0fa512a0f.png" />
+</div>
+</div>
+<p>What’s happening here? That leads us to question 4.</p>
+<p><strong>#4: Do there appear to be any nodata values in this dataset?</strong></p>
+<p>The plot made in pursuit of spatial range turned up an important point – there appear to be nodata value in this dataset. We can guess this because -10,000 is not a valid value for latitude or longitude, but -9999 is a common nodata value.</p>
+<p><strong>#5: Do the variables appear to have reasonable values?</strong></p>
+<p>One way to check this question is with the <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> method we saw in the last lesson. This is also a good way to check for nodata values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+      <td>7286.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>57802.780000</td>
+      <td>57804.780000</td>
+      <td>-2407.458023</td>
+      <td>-2719.924926</td>
+      <td>4197.794537</td>
+      <td>-2627.754859</td>
+      <td>294.570163</td>
+      <td>-315.604692</td>
+      <td>-188.445233</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4206.862727</td>
+      <td>4206.862727</td>
+      <td>4642.594653</td>
+      <td>4451.501741</td>
+      <td>9689.124390</td>
+      <td>4508.011123</td>
+      <td>1690.507914</td>
+      <td>1442.314255</td>
+      <td>1460.766440</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>50517.780000</td>
+      <td>50519.780000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>54160.280000</td>
+      <td>54162.280000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>-9999.000000</td>
+      <td>94.697007</td>
+      <td>-116.971742</td>
+      <td>32.825622</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>57802.780000</td>
+      <td>57804.780000</td>
+      <td>427.325500</td>
+      <td>1.974280</td>
+      <td>6564.500000</td>
+      <td>111.000000</td>
+      <td>197.259151</td>
+      <td>-115.700370</td>
+      <td>33.137810</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>61445.280000</td>
+      <td>61447.280000</td>
+      <td>431.731250</td>
+      <td>2.009055</td>
+      <td>10903.750000</td>
+      <td>138.500000</td>
+      <td>502.948411</td>
+      <td>-115.491277</td>
+      <td>33.888635</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>65087.780000</td>
+      <td>65089.780000</td>
+      <td>479.471000</td>
+      <td>2.835930</td>
+      <td>25827.000000</td>
+      <td>367.000000</td>
+      <td>3249.139206</td>
+      <td>0.000000</td>
+      <td>34.058138</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Those data values look pretty reasonble.</p>
+<p>Next we are going to do a bit of data cleaning to get our dataset ready for the rest of the lesson. Don’t dwell on the details right now, just know that you may often do some things to a dataset when you first open it to make it easier to work with.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill -9999 with NaN</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Remove any rows before data started to be collected</span>
+<span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="p">[</span><span class="o">~</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39; CO2_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Convert the star time to a datetime and insert it as the first column in the dataframe</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;datetime (UTC)&#39;</span><span class="p">,</span> <span class="n">picarro_flight</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Time_Start&#39;</span><span class="p">])),</span> 
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">))</span>
+<span class="c1"># Remove spaces from the beginning of column names</span>
+<span class="n">picarro_flight</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cleaned data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:52</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:54</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-07-02 15:00:56</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:58</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-07-02 15:01:00</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now that the data cleaning is complete let’s go back to that spatial plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;GPS_Lon&#39;</span><span class="p">,</span> <span class="s1">&#39;GPS_Lat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;GPS_Lon&#39;, ylabel=&#39;GPS_Lat&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/8b8f1065be8f0b06604ef7ca41fe4181cf29e86812c9ff71f5854c981694f129.png" src="../../../_images/8b8f1065be8f0b06604ef7ca41fe4181cf29e86812c9ff71f5854c981694f129.png" />
+</div>
+</div>
+<p>Inputting (34, -117.5) and (32.8, -115.5) into google maps shows that this flight ranged from just west of Riverside, CA down to the US-Mexico border by Mexicali.</p>
+<p><strong>#6: Make the simplest plot possible of 1-2 variables. Does it match your expectations?</strong></p>
+<p>For the last step let’s make a quick plot as a sanity check to make sure things look as we expect. We want to keep this plot simple, so for this sanity check plot let’s just plot the <span class="math notranslate nohighlight">\(CH_4\)</span> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/53d152eb5658ad5af3b49a297c5e56224e5bbbaeaa16b2e352e1bf2e0d1689e2.png" src="../../../_images/53d152eb5658ad5af3b49a297c5e56224e5bbbaeaa16b2e352e1bf2e0d1689e2.png" />
+</div>
+</div>
+<p>What do we see? Well the y axis, <span class="math notranslate nohighlight">\(CH_4\)</span> looks pretty reasonable. ~1.9-3ppm is in the range of normal for <span class="math notranslate nohighlight">\(CH_4\)</span>. But what is happening on the x axis? The x axis is just showing the data in order. We can tell from looking at the <code class="docutils literal notranslate"><span class="pre">Start_Time</span></code> column of our dataframe that the data are organized in chronological order, following the flight track. So we are seeing the observed values of <span class="math notranslate nohighlight">\(CH_4\)</span> over the course of this flight. That’s all looking normal so far, so let’s move onto to some new operations.</p>
+<p><em>Do you wish that the x axis would show the time instead of the row number? Hang tight until the “Setting an Index” section to make that dream come true.</em></p>
+</section>
+</section>
+<section id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Link to this heading">#</a></h2>
+<p>So let’s start with a general question.  We learned about booleans and comparisons on Monday of this week.</p>
+<blockquote>
+<div><p>What would happen if we used a comparison on a pandas dataframe?</p>
+</div></blockquote>
+<p>Give this a think:
+<code class="docutils literal notranslate"><span class="pre">picarro_flight['CH4_ppm']</span> <span class="pre">&gt;</span> <span class="pre">2.2</span></code></p>
+<p>The answer?  We get another dataframe. This dataframe is the size and shape as the thing used in comparison, but it is full of Boolean values telling us if the comparsion was true.</p>
+<p>So what is the use of a list of booleans?  Let’s start with a simplified list of booleans and experiment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create just a list of booleans, instead of a full dataframe</span>
+<span class="n">random_booleans</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5303</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the list of booleans with square brackets, sort of like a key in a dictionary</span>
+<span class="n">picarro_flight</span><span class="p">[</span><span class="n">random_booleans</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:54</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:58</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-07-02 15:01:00</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2024-07-02 15:01:02</td>
+      <td>54061.78</td>
+      <td>54063.78</td>
+      <td>465.513</td>
+      <td>2.41768</td>
+      <td>17196.0</td>
+      <td>304.5</td>
+      <td>491.383527</td>
+      <td>-117.637150</td>
+      <td>34.029310</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2024-07-02 15:01:04</td>
+      <td>54063.78</td>
+      <td>54065.78</td>
+      <td>459.283</td>
+      <td>2.40071</td>
+      <td>17181.0</td>
+      <td>300.5</td>
+      <td>519.658339</td>
+      <td>-117.636573</td>
+      <td>34.027919</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>That returned only the rows where the value in the list was True!</p>
+<p>This is exciting, because this is the basis for filtering rows in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.  Trying it again with our conditional statement from above <code class="docutils literal notranslate"><span class="pre">picarro_flight['CH4_ppm']</span> <span class="pre">&gt;</span> <span class="pre">2.2</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a dataframe indicating where methane is greater than 2.2</span>
+<span class="n">boolean_dataframe</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># returns only the rows where methane is greater than 2.2</span>
+<span class="n">picarro_flight</span><span class="p">[</span><span class="n">boolean_dataframe</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:52</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:54</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-07-02 15:00:56</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:58</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2024-07-02 15:01:00</td>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>While there are several steps, this process is most commonly done in a single step:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2024-07-02 15:00:52</td>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2024-07-02 15:00:54</td>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024-07-02 15:00:56</td>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2024-07-02 15:00:58</td>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1944</th>
+      <td>2024-07-02 16:05:40</td>
+      <td>57939.78</td>
+      <td>57941.78</td>
+      <td>453.157</td>
+      <td>2.22177</td>
+      <td>11094.0</td>
+      <td>182.7</td>
+      <td>105.505902</td>
+      <td>-115.421393</td>
+      <td>33.110432</td>
+    </tr>
+    <tr>
+      <th>2097</th>
+      <td>2024-07-02 16:10:46</td>
+      <td>58245.78</td>
+      <td>58247.78</td>
+      <td>445.517</td>
+      <td>2.20064</td>
+      <td>12216.0</td>
+      <td>163.3</td>
+      <td>105.562942</td>
+      <td>-115.426698</td>
+      <td>33.052851</td>
+    </tr>
+    <tr>
+      <th>2098</th>
+      <td>2024-07-02 16:10:48</td>
+      <td>58247.78</td>
+      <td>58249.78</td>
+      <td>444.504</td>
+      <td>2.20760</td>
+      <td>12141.0</td>
+      <td>164.5</td>
+      <td>106.693839</td>
+      <td>-115.427742</td>
+      <td>33.051837</td>
+    </tr>
+    <tr>
+      <th>2532</th>
+      <td>2024-07-02 16:25:16</td>
+      <td>59115.78</td>
+      <td>59117.78</td>
+      <td>429.246</td>
+      <td>2.20904</td>
+      <td>13983.0</td>
+      <td>123.5</td>
+      <td>171.185377</td>
+      <td>-115.320763</td>
+      <td>32.758445</td>
+    </tr>
+  </tbody>
+</table>
+<p>122 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span><span class="p">][</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/051a12f26eeeb82a2042431d6adee778bebade123deff62651d54ffd279d37cf.png" src="../../../_images/051a12f26eeeb82a2042431d6adee778bebade123deff62651d54ffd279d37cf.png" />
+</div>
+</div>
+<p>What’s happening in this sanity check plot? Well we can see that our filter worked because there aren’t any values below 2.2. But what is happening in betweeen? In a line plot pandas is going to connect each value to the next value with a line. The lines are connecting across the regions that now don’t have any data in them, making them look odd.</p>
+<p>If you just wanted a simple plot to make sure that all the values are above 2.2 then the plot above does that job. If you’d like it to look a little neater you can use the <code class="docutils literal notranslate"><span class="pre">style</span></code> argument with a value of <code class="docutils literal notranslate"><span class="pre">'.'</span></code>. This tells pandas to render little dots instead of connecting each observation with a line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">2.2</span><span class="p">][</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/864058563ff1255899366c19081648eb915600fc8653462677d7d091e2781420.png" src="../../../_images/864058563ff1255899366c19081648eb915600fc8653462677d7d091e2781420.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>Write a cell of code that returns only the rows of the <code class="docutils literal notranslate"><span class="pre">picarro_flight</span></code> dataframe where CO2 is less than or equal to 440.</p>
+</div>
+<section id="using-and-and-or">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#using-and-and-or" title="Link to this heading">#</a></h3>
+<p>You can continue to make your filter more specific by using multiple filters.  The syntax that we used in the first lesson was:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_cats</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">num_dogs</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_cats</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">num_dogs</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_cats</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">num_dogs</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>While the meaning of <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code> is the same in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the syntax is slightly different.  In pandas:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Python</p></th>
+<th class="head text-center"><p>Pandas</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>and</p></td>
+<td class="text-center"><p>&amp;</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>or</p></td>
+<td class="text-center"><p>|</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You also have to be sure to wrap each individual conditional statement in parenthesis <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cells where methane is greater than 2 and carbon dioxide is less than 440</span>
+<span class="n">picarro_flight</span><span class="p">[(</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CO2_ppm&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">440</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime (UTC)</th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>38</th>
+      <td>2024-07-02 15:02:08</td>
+      <td>54127.78</td>
+      <td>54129.78</td>
+      <td>439.095</td>
+      <td>2.07115</td>
+      <td>14441.0</td>
+      <td>198.6</td>
+      <td>764.617646</td>
+      <td>-117.594656</td>
+      <td>34.002401</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>2024-07-02 15:02:10</td>
+      <td>54129.78</td>
+      <td>54131.78</td>
+      <td>432.902</td>
+      <td>2.04689</td>
+      <td>13602.0</td>
+      <td>164.2</td>
+      <td>787.966822</td>
+      <td>-117.592941</td>
+      <td>34.001951</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>2024-07-02 15:02:12</td>
+      <td>54131.78</td>
+      <td>54133.78</td>
+      <td>430.113</td>
+      <td>2.02776</td>
+      <td>12941.0</td>
+      <td>180.8</td>
+      <td>809.645831</td>
+      <td>-117.591265</td>
+      <td>34.001496</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>2024-07-02 15:02:14</td>
+      <td>54133.78</td>
+      <td>54135.78</td>
+      <td>432.392</td>
+      <td>2.01841</td>
+      <td>12095.0</td>
+      <td>190.7</td>
+      <td>829.670768</td>
+      <td>-117.589655</td>
+      <td>34.001055</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>5253</th>
+      <td>2024-07-02 17:55:58</td>
+      <td>64557.78</td>
+      <td>64559.78</td>
+      <td>431.925</td>
+      <td>2.01713</td>
+      <td>11284.0</td>
+      <td>178.2</td>
+      <td>728.306846</td>
+      <td>-117.496191</td>
+      <td>34.056706</td>
+    </tr>
+    <tr>
+      <th>5254</th>
+      <td>2024-07-02 17:56:00</td>
+      <td>64559.78</td>
+      <td>64561.78</td>
+      <td>432.113</td>
+      <td>2.01684</td>
+      <td>11257.0</td>
+      <td>157.5</td>
+      <td>719.288783</td>
+      <td>-117.498544</td>
+      <td>34.056692</td>
+    </tr>
+    <tr>
+      <th>5255</th>
+      <td>2024-07-02 17:56:02</td>
+      <td>64561.78</td>
+      <td>64563.78</td>
+      <td>432.144</td>
+      <td>2.00731</td>
+      <td>11370.0</td>
+      <td>152.3</td>
+      <td>710.368556</td>
+      <td>-117.500843</td>
+      <td>34.056692</td>
+    </tr>
+    <tr>
+      <th>5256</th>
+      <td>2024-07-02 17:56:04</td>
+      <td>64563.78</td>
+      <td>64565.78</td>
+      <td>432.524</td>
+      <td>2.03067</td>
+      <td>12158.0</td>
+      <td>250.5</td>
+      <td>701.251764</td>
+      <td>-117.503202</td>
+      <td>34.056705</td>
+    </tr>
+  </tbody>
+</table>
+<p>1762 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p>There is more than one way to do this type of filtering in pandas, but it is fine to start with one method and feel really comfortable with it before moving to the others.  <a class="reference external" href="https://www.listendata.com/2019/07/how-to-filter-pandas-dataframe.html">This article</a> has a pretty nice overview of some other methods.</p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>What conditions is the following line of code using to filter the <code class="docutils literal notranslate"><span class="pre">picarro_flight</span></code> dataframe?</p>
+<p><code class="docutils literal notranslate"><span class="pre">picarro_flight[(picarro_flight['H2O_ppm']</span> <span class="pre">&lt;=</span> <span class="pre">17100)</span> <span class="pre">|</span> <span class="pre">(picarro_flight['GPS_Alt']</span> <span class="pre">&gt;</span> <span class="pre">500)]</span></code></p>
+</div>
+</section>
+</section>
+<section id="setting-a-column-as-an-index">
+<h2>Setting a column as an Index<a class="headerlink" href="#setting-a-column-as-an-index" title="Link to this heading">#</a></h2>
+<p>We’ve seen indexes as part of lists, and now we are about to see them as part of a pandas dataframe. An index serves the same role in both cases – it helps us uniquely identify a row in a dataframe.</p>
+<p>Whether using pandas or excel or a SQL database, the index is an important part of your organization.</p>
+<blockquote>
+<div><p>The most important part of in index is that it is <strong>unique</strong>, meaning no two rows of data is allowed to have the same index</p>
+</div></blockquote>
+<p>This is important for keeping the data organized, not just practically but also conceptually.</p>
+<p>So for in our coding instruction an index has only been allowed to be a number: 0, 1, 2, 3, … Pandas lets us do something a bit different and lets us use other data types, like strings, as an index instead. Let’s look at an example of this with this dataframe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Beatriz S&#39;</span><span class="p">,</span> <span class="s1">&#39;Joel H&#39;</span><span class="p">,</span> <span class="s1">&#39;Lashandra T&#39;</span><span class="p">,</span> <span class="s1">&#39;Ari T&#39;</span><span class="p">,</span> <span class="s1">&#39;Hassan A&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;history&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">78</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">79</span><span class="p">],</span>
+        <span class="s1">&#39;science&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">91</span><span class="p">],</span>
+        <span class="s1">&#39;music&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">81</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">89</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>history</th>
+      <th>science</th>
+      <th>music</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Beatriz S</td>
+      <td>78</td>
+      <td>85</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Joel H</td>
+      <td>69</td>
+      <td>80</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Lashandra T</td>
+      <td>80</td>
+      <td>80</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Ari T</td>
+      <td>91</td>
+      <td>73</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Hassan A</td>
+      <td>79</td>
+      <td>91</td>
+      <td>89</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In this dataframe we have default indexes of 0 -&gt; 4 set.  We could pretty smoothly use these if we wanted and just know in our heads that Beatriz is index 0, Sara is index 1 and so on.</p>
+<p>Alternatively, we could skip the step of remembering index numbers and just use the names of the students as the index.  We do that with the <code class="docutils literal notranslate"><span class="pre">.set_index()</span></code> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>history</th>
+      <th>science</th>
+      <th>music</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Beatriz S</th>
+      <td>78</td>
+      <td>85</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>Joel H</th>
+      <td>69</td>
+      <td>80</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>Lashandra T</th>
+      <td>80</td>
+      <td>80</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>Ari T</th>
+      <td>91</td>
+      <td>73</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>Hassan A</th>
+      <td>79</td>
+      <td>91</td>
+      <td>89</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># update the original dataframe with the new index</span>
+<span class="n">grades</span> <span class="o">=</span> <span class="n">grades</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can get the grades of a student using the syntax <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Joel H&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>history    69
+science    80
+music      81
+Name: Joel H, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<section id="iloc-vs-loc">
+<h3><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> vs. <code class="docutils literal notranslate"><span class="pre">loc</span></code><a class="headerlink" href="#iloc-vs-loc" title="Link to this heading">#</a></h3>
+<p>So now that we have names as indexes, how do we select specific rows?</p>
+<p>We can still use the same method we already know, <code class="docutils literal notranslate"><span class="pre">iloc</span></code>, with an integer index number and we will still get the same result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>history    69
+science    80
+music      81
+Name: Joel H, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively we can also use a similar but slightly different method - <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.  <code class="docutils literal notranslate"><span class="pre">.loc</span></code> allows us to find specific rows based on an index label, not the integer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Hassan A&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>history    79
+science    91
+music      89
+Name: Hassan A, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want a deep dive on <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> vs. <code class="docutils literal notranslate"><span class="pre">.loc</span></code> <a class="reference external" href="https://towardsdatascience.com/how-to-use-loc-and-iloc-for-selecting-data-in-pandas-bd09cb4c3d79">this article</a> is for you.</p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>Write 2 lines of code to get Ari’s grades the grades dataframe. In one line use <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> and in the other use <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
+<p>Explain to your partner the difference between <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> and <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
+</div>
+</section>
+<section id="one-more-example-datetime-indices">
+<h3>One more example - datetime indices<a class="headerlink" href="#one-more-example-datetime-indices" title="Link to this heading">#</a></h3>
+<p>To move away from our toy example baack to our real data, we have a great column in the <code class="docutils literal notranslate"><span class="pre">picarro_flight</span></code> table just waiting to be an index – <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
+<p>Dates and times are generally fantastic indices, because, if the world is working in proper order, each moment in time only happens once, meaning their values are unique and they are really common indices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span> <span class="o">=</span> <span class="n">picarro_flight</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;datetime (UTC)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time_Start</th>
+      <th>Time_Stop</th>
+      <th>CO2_ppm</th>
+      <th>CH4_ppm</th>
+      <th>H2O_ppm</th>
+      <th>CO_ppb</th>
+      <th>GPS_Alt</th>
+      <th>GPS_Lon</th>
+      <th>GPS_Lat</th>
+    </tr>
+    <tr>
+      <th>datetime (UTC)</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2024-07-02 15:00:52</th>
+      <td>54051.78</td>
+      <td>54053.78</td>
+      <td>458.790</td>
+      <td>2.32010</td>
+      <td>17173.0</td>
+      <td>335.3</td>
+      <td>389.879753</td>
+      <td>-117.639455</td>
+      <td>34.037073</td>
+    </tr>
+    <tr>
+      <th>2024-07-02 15:00:54</th>
+      <td>54053.78</td>
+      <td>54055.78</td>
+      <td>458.760</td>
+      <td>2.37453</td>
+      <td>17212.0</td>
+      <td>335.1</td>
+      <td>413.698873</td>
+      <td>-117.639068</td>
+      <td>34.035502</td>
+    </tr>
+    <tr>
+      <th>2024-07-02 15:00:56</th>
+      <td>54055.78</td>
+      <td>54057.78</td>
+      <td>460.070</td>
+      <td>2.41431</td>
+      <td>17171.0</td>
+      <td>303.1</td>
+      <td>428.501557</td>
+      <td>-117.638719</td>
+      <td>34.034044</td>
+    </tr>
+    <tr>
+      <th>2024-07-02 15:00:58</th>
+      <td>54057.78</td>
+      <td>54059.78</td>
+      <td>462.200</td>
+      <td>2.50937</td>
+      <td>17072.0</td>
+      <td>302.0</td>
+      <td>443.528247</td>
+      <td>-117.638157</td>
+      <td>34.032327</td>
+    </tr>
+    <tr>
+      <th>2024-07-02 15:01:00</th>
+      <td>54059.78</td>
+      <td>54061.78</td>
+      <td>462.323</td>
+      <td>2.42580</td>
+      <td>17204.0</td>
+      <td>299.7</td>
+      <td>467.734623</td>
+      <td>-117.637646</td>
+      <td>34.030759</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2024-07-02 15:00:56&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time_Start    54055.780000
+Time_Stop     54057.780000
+CO2_ppm         460.070000
+CH4_ppm           2.414310
+                  ...     
+CO_ppb          303.100000
+GPS_Alt         428.501557
+GPS_Lon        -117.638719
+GPS_Lat          34.034044
+Name: 2024-07-02 15:00:56, Length: 9, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another benefit of setting the index is that it makes our plots a little cleaner. Remember how that first plot in the lesson of Methane vs. Time showed a generic row number on the x axis? Checkout what happens on that the index is a datetime:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">picarro_flight</span><span class="p">[</span><span class="s1">&#39;CH4_ppm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;datetime (UTC)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/fa79901bb79de45a111a0dd299dafd612016aebb9b147f9184422da7a47bdf59.png" src="../../../_images/fa79901bb79de45a111a0dd299dafd612016aebb9b147f9184422da7a47bdf59.png" />
+</div>
+</div>
+<p>Beautiful! A much more readable x axis.</p>
+<div class="tip admonition">
+<p class="admonition-title">📝 Check your understanding</p>
+<p>Write a line of code to get the row corresponding to July 4th 2024 at 4:00pm.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sarp_lessons/1_python_progression/2-tabular_data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2-1_pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">2.1 The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> Library</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../3-gridded_data/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">3. Gridded Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#context">Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-our-data">Loading our data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-opening-check">Data Opening Check</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">Filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-and-and-or">Using <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-a-column-as-an-index">Setting a column as an Index</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iloc-vs-loc"><code class="docutils literal notranslate"><span class="pre">.iloc</span></code> vs. <code class="docutils literal notranslate"><span class="pre">loc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-example-datetime-indices">One more example - datetime indices</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
