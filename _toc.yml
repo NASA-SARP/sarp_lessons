@@ -13,7 +13,7 @@ parts:
     - file: sarp_lessons/1_python_progression/2-tabular_data/index.md
       sections:
         - file: sarp_lessons/1_python_progression/2-tabular_data/2-1_pandas
-        - file: sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_groupby
+        - file: sarp_lessons/1_python_progression/2-tabular_data/2-2_filtering_indexes
     - file: sarp_lessons/1_python_progression/3-gridded_data/index.md
       sections:
         - file: sarp_lessons/1_python_progression/3-gridded_data/3-1_xarray
