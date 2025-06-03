@@ -63,6 +63,7 @@ Happy coding!
 * `conda activate sarp_docs`
 * `jupyter-book build .` from root
 * `python -m http.server --directory _build/html/`
+* Open port 8000 to view the built html (localhost:8000 from not-the-cloud and hub.cryointhecloud.com/user/USERNAME/proxy/8000/index.html if launching from a cloud Jupyterhub)
 
 ## Deploy
 [link](https://jupyterbook.org/start/publish.html#publish-your-book-online-with-github-pages)
