@@ -85,6 +85,7 @@ parts:
         - file: sarp_lessons/5_example_gallery/logplot
         - file: sarp_lessons/5_example_gallery/flight_track
         - file: sarp_lessons/5_example_gallery/altitude_twin_axes
+        - file: sarp_lessons/5_example_gallery/binned_altitude
         - file: sarp_lessons/5_example_gallery/gridded_mapping
 
   - caption: Contributor Guide
