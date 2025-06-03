@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Instructor’s Guide" href="../6_contributors_instructors/instructors_guide.html" />
-    <link rel="prev" title="Altitude Plot with Twin Axes" href="altitude_twin_axes.html" />
+    <link rel="prev" title="Binned Altitude Plot" href="binned_altitude.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -252,6 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="logplot.html">Plot with multiple lines and a log axis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="flight_track.html">Flight Track Plot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="altitude_twin_axes.html">Altitude Plot with Twin Axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="binned_altitude.html">Binned Altitude Plot</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Cartopy with gridded data</a></li>
 </ul>
 </details></li>
@@ -518,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f0ef7209fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fe37b66e120&gt;
 </pre></div>
 </div>
 <img alt="../../_images/08712ec44e863b257bdecf3a942d11404055b9556c3cb8b1c713068beef0b8c1.png" src="../../_images/08712ec44e863b257bdecf3a942d11404055b9556c3cb8b1c713068beef0b8c1.png" />
@@ -538,7 +539,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1864/1320405681.py:2: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed in 3.11. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap()`` or ``pyplot.get_cmap()`` instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1888/1320405681.py:2: MatplotlibDeprecationWarning: The get_cmap function was deprecated in Matplotlib 3.7 and will be removed in 3.11. Use ``matplotlib.colormaps[name]`` or ``matplotlib.colormaps.get_cmap()`` or ``pyplot.get_cmap()`` instead.
   bwr_badgrey = plt.cm.get_cmap(&quot;bwr&quot;).copy()
 </pre></div>
 </div>
@@ -551,7 +552,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f0eee8cbd90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fe372d3a5d0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/afa48bbf4d274fbdf64f6370a4a07abf50ff0bf6d299f96901e800451f7ef5b0.png" src="../../_images/afa48bbf4d274fbdf64f6370a4a07abf50ff0bf6d299f96901e800451f7ef5b0.png" />
@@ -584,7 +585,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f0eec9cb610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fe370e35e50&gt;
 </pre></div>
 </div>
 <img alt="../../_images/e7601463b9333fde0496d18afe2d50db948bb3106e9099e87bdfe671e1bb290c.png" src="../../_images/e7601463b9333fde0496d18afe2d50db948bb3106e9099e87bdfe671e1bb290c.png" />
@@ -617,7 +618,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f0eec8b2120&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fe370cf9e80&gt;
 </pre></div>
 </div>
 <img alt="../../_images/9131d979655a9a09f70e7ddfb1cad6f22847da712c29cd7fedae8e2cbb8425a6.png" src="../../_images/9131d979655a9a09f70e7ddfb1cad6f22847da712c29cd7fedae8e2cbb8425a6.png" />
@@ -662,7 +663,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7f0eec7f3250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fe370c61a90&gt;
 </pre></div>
 </div>
 <img alt="../../_images/267f84559032d422d19c6eca8edf29c6acdb89230a1c50de9e5ec78fd2a3e168.png" src="../../_images/267f84559032d422d19c6eca8edf29c6acdb89230a1c50de9e5ec78fd2a3e168.png" />
@@ -704,12 +705,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="altitude_twin_axes.html"
+       href="binned_altitude.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Altitude Plot with Twin Axes</p>
+        <p class="prev-next-title">Binned Altitude Plot</p>
       </div>
     </a>
     <a class="right-next"
