@@ -18,3 +18,5 @@ dependencies:
   - cartopy
   - shapely
   - plotly_express
+  - pdal
+  - tensorflow
