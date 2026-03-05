@@ -15,6 +15,7 @@ dependencies:
   - openpyxl
   - seaborn
   - bokeh
+  - jupyter_bokeh
   - cartopy
   - shapely
   - plotly_express
